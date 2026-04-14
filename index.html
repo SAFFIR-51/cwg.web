@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CWG INC — Lottery Intelligence Research Lab</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span>CWG RESEARCH LAB</span>
+      <span class="sep">///</span>
+      <span>MODEL v3.2 ACTIVE</span>
+      <span class="sep">///</span>
+      <span>ROUND 1127 INDEXED</span>
+      <span class="sep">///</span>
+      <span>NEXT DRAW: SAT 20:45 KST</span>
+      <span class="sep">///</span>
+      <span>ACCURACY 78.4%</span>
+      <span class="sep">///</span>
+      <span>PATTERNS DETECTED: 4,891</span>
+      <span class="sep">///</span>
+      <span>ACTIVE USERS: 51,204</span>
+      <span class="sep">///</span>
+      <span>CWG RESEARCH LAB</span>
+      <span class="sep">///</span>
+      <span>MODEL v3.2 ACTIVE</span>
+      <span class="sep">///</span>
+      <span>ROUND 1127 INDEXED</span>
+      <span class="sep">///</span>
+      <span>NEXT DRAW: SAT 20:45 KST</span>
+      <span class="sep">///</span>
+      <span>ACCURACY 78.4%</span>
+      <span class="sep">///</span>
+      <span>PATTERNS DETECTED: 4,891</span>
+      <span class="sep">///</span>
+      <span>ACTIVE USERS: 51,204</span>
+      <span class="sep">///</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="#" class="nav-logo">
+        <div class="logo-mark">
+          <span>C</span><span>W</span><span>G</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">CWG INC</span>
+          <span class="logo-sub">Lottery Intelligence Lab</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#research">Research</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="nav-status">
+          <span class="status-dot"></span>
+          <span class="status-text">LIVE</span>
+        </div>
+        <a href="#download" class="btn btn-primary nav-cta">Get the App</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="grid-overlay"></div>
+    <div class="scanlines"></div>
+
+    <div class="container hero-layout">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="ey-tag">RESEARCH EDITION</span>
+          <span class="ey-version">v3.2.1</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-line">Data-Driven</span>
+          <span class="title-line title-line--accent">Lottery</span>
+          <span class="title-line">Intelligence</span>
+        </h1>
+
+        <p class="hero-sub">
+          CWG INC applies statistical modeling, machine learning,
+          and 26 years of draw history to surface non-random
+          structural patterns in lottery outcomes.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#download" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Free
+          </a>
+          <a href="#methodology" class="btn btn-outline btn-lg">
+            View Methodology
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hs-item">
+            <span class="hs-val" id="hs1">1,127</span>
+            <span class="hs-label">Rounds Analyzed</span>
+          </div>
+          <div class="hs-div"></div>
+          <div class="hs-item">
+            <span class="hs-val">78.4<em>%</em></span>
+            <span class="hs-label">3rd+ Prize Rate</span>
+          </div>
+          <div class="hs-div"></div>
+          <div class="hs-item">
+            <span class="hs-val">4,891</span>
+            <span class="hs-label">Valid Patterns</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Terminal Panel -->
+      <div class="hero-right">
+        <div class="terminal-panel">
+          <div class="tp-header">
+            <div class="tp-dots">
+              <span class="tp-dot tp-dot--r"></span>
+              <span class="tp-dot tp-dot--y"></span>
+              <span class="tp-dot tp-dot--g"></span>
+            </div>
+            <span class="tp-title">cwg_predictor.py</span>
+            <span class="tp-badge">RUNNING</span>
+          </div>
+          <div class="tp-body" id="terminalBody">
+            <!-- lines injected by JS -->
+          </div>
+        </div>
+
+        <div class="hero-mini-cards">
+          <div class="mini-card">
+            <div class="mc-label">THIS WEEK'S PICK</div>
+            <div class="mc-balls">
+              <span class="ball b-y">07</span>
+              <span class="ball b-b">14</span>
+              <span class="ball b-r">21</span>
+              <span class="ball b-k">33</span>
+              <span class="ball b-g">38</span>
+              <span class="ball b-y">42</span>
+            </div>
+            <div class="mc-conf">
+              <span>Confidence</span>
+              <div class="conf-bar"><div class="conf-fill" style="--w:78.4%"></div></div>
+              <span class="conf-val">78.4%</span>
+            </div>
+          </div>
+
+          <div class="mini-card mini-card--dark">
+            <div class="mc-label">MODEL STATUS</div>
+            <div class="model-metrics">
+              <div class="mm-row"><span>Data freshness</span><span class="mm-val text-green">● LIVE</span></div>
+              <div class="mm-row"><span>Last retrain</span><span class="mm-val">2h ago</span></div>
+              <div class="mm-row"><span>Ensemble score</span><span class="mm-val text-blue">0.821</span></div>
+              <div class="mm-row"><span>P-value</span><span class="mm-val text-green">&lt; 0.001</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="container stats-row">
+      <div class="stt-item">
+        <span class="stt-num" data-target="1127">0</span>
+        <span class="stt-label">Rounds in dataset</span>
+      </div>
+      <div class="stt-sep"></div>
+      <div class="stt-item">
+        <span class="stt-num" data-target="26">0<em>yr</em></span>
+        <span class="stt-label">Historical coverage</span>
+      </div>
+      <div class="stt-sep"></div>
+      <div class="stt-item">
+        <span class="stt-num" data-target="47">0</span>
+        <span class="stt-label">Feature dimensions</span>
+      </div>
+      <div class="stt-sep"></div>
+      <div class="stt-item">
+        <span class="stt-num" data-target="784" data-pct="1">78.4<em>%</em></span>
+        <span class="stt-label">Prediction hit rate</span>
+      </div>
+      <div class="stt-sep"></div>
+      <div class="stt-item">
+        <span class="stt-num" data-target="51204">0</span>
+        <span class="stt-label">Monthly active users</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <section class="section methodology" id="methodology">
+    <div class="container">
+      <div class="section-header">
+        <div class="sh-tag">01 — METHODOLOGY</div>
+        <h2>How CWG Generates <span class="grad">Predictions</span></h2>
+        <p>Not fortune-telling. A reproducible, peer-reviewed statistical pipeline.</p>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipe-step reveal">
+          <div class="ps-num">01</div>
+          <div class="ps-icon icon-blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3>Data Ingestion</h3>
+          <p>All 1,127 official draw results since 2002 are ingested via the DHLOTTERY public API, normalized, and stored in a versioned PostgreSQL warehouse.</p>
+          <ul class="ps-list">
+            <li>6,762 winning number sets</li>
+            <li>Winning amounts + regional data</li>
+            <li>Automated ETL every Saturday</li>
+          </ul>
+          <div class="ps-tags">
+            <span>PostgreSQL</span><span>FastAPI</span><span>ETL</span>
+          </div>
+        </div>
+
+        <div class="pipe-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="pipe-step reveal">
+          <div class="ps-num">02</div>
+          <div class="ps-icon icon-green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Feature Engineering</h3>
+          <p>47 statistical features are computed per round: frequency distribution, odd/even ratio, sum range, consecutive pairs, zone coverage, and recency decay.</p>
+          <ul class="ps-list">
+            <li>47-dimensional feature vector</li>
+            <li>Rolling 52-week window</li>
+            <li>Bayesian prior smoothing</li>
+          </ul>
+          <div class="ps-tags">
+            <span>Pandas</span><span>NumPy</span><span>Bayesian</span>
+          </div>
+        </div>
+
+        <div class="pipe-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="pipe-step reveal">
+          <div class="ps-num">03</div>
+          <div class="ps-icon icon-purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>Ensemble Modeling</h3>
+          <p>Random Forest, LSTM time-series, and Gradient Boosting models are trained independently and combined via a weighted stacking meta-learner.</p>
+          <ul class="ps-list">
+            <li>Random Forest (n=500)</li>
+            <li>LSTM sequence model</li>
+            <li>Gradient Boosting stack</li>
+          </ul>
+          <div class="ps-tags">
+            <span>scikit-learn</span><span>TensorFlow</span><span>XGBoost</span>
+          </div>
+        </div>
+
+        <div class="pipe-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="pipe-step reveal">
+          <div class="ps-num">04</div>
+          <div class="ps-icon icon-orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Output & Validation</h3>
+          <p>Candidates pass a 200-round back-test filter. Only combinations meeting confidence threshold ≥ 0.70 are surfaced to users as weekly picks.</p>
+          <ul class="ps-list">
+            <li>200-round backtesting</li>
+            <li>Confidence ≥ 0.70 filter</li>
+            <li>Weekly auto-refresh</li>
+          </ul>
+          <div class="ps-tags">
+            <span>Cross-Val</span><span>Backtest</span><span>CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="sh-tag">02 — FEATURES</div>
+        <h2>Research-Grade Tools <span class="grad">in Your Pocket</span></h2>
+        <p>Every analytical capability used internally, exposed through a clean mobile interface.</p>
+      </div>
+
+      <div class="feat-bento">
+
+        <!-- Large: AI Pick -->
+        <div class="fb-card fb-large reveal">
+          <div class="fb-top">
+            <div class="fb-icon icon-blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="fb-label">AI NUMBER PICK</span>
+          </div>
+          <h3>Weekly Prediction Engine</h3>
+          <p>Auto-updated every Saturday post-draw. The model retrains on the latest result and surfaces a new pick within 2 hours.</p>
+          <div class="code-block">
+            <div class="cb-header">
+              <span class="cb-file">engine.output</span>
+              <span class="cb-status cb-status--live">● LIVE</span>
+            </div>
+            <div class="cb-body">
+              <div class="cb-line"><span class="cb-dim">round</span>   = <span class="cb-num">1128</span></div>
+              <div class="cb-line"><span class="cb-dim">pick</span>    = <span class="cb-str">[07, 14, 21, 33, 38, 42]</span></div>
+              <div class="cb-line"><span class="cb-dim">conf</span>    = <span class="cb-num">0.784</span> <span class="cb-bar">████████░░</span></div>
+              <div class="cb-line"><span class="cb-dim">p_value</span> = <span class="cb-green">&lt; 0.001</span> <span class="cb-dim">✓ significant</span></div>
+              <div class="cb-line cb-cursor"><span class="cursor-blink">_</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frequency -->
+        <div class="fb-card reveal">
+          <div class="fb-top">
+            <div class="fb-icon icon-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <span class="fb-label">FREQUENCY ANALYSIS</span>
+          </div>
+          <h3>Number Heatmap</h3>
+          <p>Visualize draw frequency for all 45 numbers across any date range.</p>
+          <div class="freq-mini">
+            <div class="fm-row" style="--h:62%"><span>07</span></div>
+            <div class="fm-row" style="--h:88%"><span>14</span></div>
+            <div class="fm-row" style="--h:44%"><span>21</span></div>
+            <div class="fm-row" style="--h:75%"><span>33</span></div>
+            <div class="fm-row" style="--h:93%"><span>38</span></div>
+            <div class="fm-row" style="--h:58%"><span>42</span></div>
+          </div>
+        </div>
+
+        <!-- Pattern Safety -->
+        <div class="fb-card reveal">
+          <div class="fb-top">
+            <div class="fb-icon icon-purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span class="fb-label">PATTERN SAFETY SCORE</span>
+          </div>
+          <h3>Structural Validity</h3>
+          <p>Each pick is scored against 4,891 historically significant patterns.</p>
+          <div class="ring-wrap">
+            <svg class="ring-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" class="ring-track"/>
+              <circle cx="50" cy="50" r="40" class="ring-progress" id="ringProgress"/>
+            </svg>
+            <div class="ring-center">
+              <span class="ring-val">78</span>
+              <span class="ring-unit">/100</span>
+            </div>
+          </div>
+          <div class="ring-grade">
+            <span class="grade-dot text-green">●</span>
+            <span>EXCELLENT — Above avg. pattern match</span>
+          </div>
+        </div>
+
+        <!-- Zone Distribution -->
+        <div class="fb-card reveal">
+          <div class="fb-top">
+            <div class="fb-icon icon-orange">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            </div>
+            <span class="fb-label">ZONE DISTRIBUTION</span>
+          </div>
+          <h3>Range Coverage</h3>
+          <p>Optimal spread across 1–10, 11–20, 21–30, 31–40, 41–45 zones.</p>
+          <div class="zone-grid">
+            <div class="zg-item">
+              <div class="zg-label">1–10</div>
+              <div class="zg-bar-bg"><div class="zg-bar" style="--w:65%"></div></div>
+              <div class="zg-pct">65%</div>
+            </div>
+            <div class="zg-item">
+              <div class="zg-label">11–20</div>
+              <div class="zg-bar-bg"><div class="zg-bar zg-bar--green" style="--w:82%"></div></div>
+              <div class="zg-pct">82%</div>
+            </div>
+            <div class="zg-item">
+              <div class="zg-label">21–30</div>
+              <div class="zg-bar-bg"><div class="zg-bar" style="--w:54%"></div></div>
+              <div class="zg-pct">54%</div>
+            </div>
+            <div class="zg-item">
+              <div class="zg-label">31–40</div>
+              <div class="zg-bar-bg"><div class="zg-bar zg-bar--green" style="--w:91%"></div></div>
+              <div class="zg-pct">91%</div>
+            </div>
+            <div class="zg-item">
+              <div class="zg-label">41–45</div>
+              <div class="zg-bar-bg"><div class="zg-bar" style="--w:38%"></div></div>
+              <div class="zg-pct">38%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Tracker -->
+        <div class="fb-card reveal">
+          <div class="fb-top">
+            <div class="fb-icon icon-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span class="fb-label">LIVE TRACKER</span>
+          </div>
+          <h3>Real-time Result Feed</h3>
+          <p>Draws indexed automatically. Model retrained within 2 hours of each result.</p>
+          <div class="feed-list">
+            <div class="feed-item">
+              <span class="feed-round">#1127</span>
+              <span class="feed-nums">3 · 9 · 22 · 35 · 41 · 44</span>
+              <span class="feed-dot text-green">●</span>
+            </div>
+            <div class="feed-item">
+              <span class="feed-round">#1126</span>
+              <span class="feed-nums">7 · 18 · 24 · 30 · 37 · 43</span>
+              <span class="feed-dot text-green">●</span>
+            </div>
+            <div class="feed-item">
+              <span class="feed-round">#1125</span>
+              <span class="feed-nums">1 · 11 · 19 · 28 · 36 · 45</span>
+              <span class="feed-dot text-green">●</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community -->
+        <div class="fb-card reveal">
+          <div class="fb-top">
+            <div class="fb-icon icon-blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="fb-label">CROWD CONSENSUS</span>
+          </div>
+          <h3>Community Picks</h3>
+          <p>Aggregate 51K+ users into a consensus model — collective intelligence as a signal.</p>
+          <div class="crowd-table">
+            <div class="ct-row ct-head">
+              <span>#</span><span>Combination</span><span>Votes</span>
+            </div>
+            <div class="ct-row">
+              <span class="ct-rank">1</span>
+              <span class="ct-combo">3·17·24·35·40·44</span>
+              <span class="ct-votes">2,841</span>
+            </div>
+            <div class="ct-row">
+              <span class="ct-rank">2</span>
+              <span class="ct-combo">7·14·21·33·38·42</span>
+              <span class="ct-votes">2,213</span>
+            </div>
+            <div class="ct-row">
+              <span class="ct-rank">3</span>
+              <span class="ct-combo">1·9·18·27·36·45</span>
+              <span class="ct-votes">1,992</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA SECTION -->
+  <section class="section data-section" id="data">
+    <div class="container">
+      <div class="section-header">
+        <div class="sh-tag">03 — DATA INSIGHTS</div>
+        <h2>What 26 Years of Draws <span class="grad">Actually Show</span></h2>
+        <p>Raw signal extracted from 1,127 rounds of official lottery data.</p>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card chart-card--full reveal">
+          <div class="cc-header">
+            <div>
+              <h3>Number Frequency Distribution — All 45 Numbers</h3>
+              <p>Cumulative draw appearances across 1,127 rounds. Green = above average, Purple = below average.</p>
+            </div>
+            <div class="cc-meta">
+              <span class="meta-pill">1,127 rounds</span>
+              <span class="meta-pill">6,762 entries</span>
+            </div>
+          </div>
+          <div class="chart-wrap-full">
+            <canvas id="frequencyChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card reveal">
+          <div class="cc-header">
+            <h3>Sum Trend — Last 10 Rounds</h3>
+            <p>Rolling sum of 6 winning numbers. Mean ≈ 138.</p>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="trendChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card reveal">
+          <div class="cc-header">
+            <h3>Odd/Even Ratio Over Time</h3>
+            <p>3-odd/3-even appears in 31.2% of draws.</p>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="oeChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card chart-card--heatmap reveal">
+          <div class="cc-header">
+            <h3>Frequency Heatmap — Numbers 1–45</h3>
+            <p>Color intensity maps to draw frequency. Hover for exact count.</p>
+          </div>
+          <div class="heatmap" id="heatmap"></div>
+          <div class="heatmap-scale">
+            <span>Low</span>
+            <div class="hs-bar"></div>
+            <span>High</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH / CREDIBILITY -->
+  <section class="section research" id="research">
+    <div class="container">
+      <div class="research-grid">
+
+        <div class="rg-left reveal">
+          <div class="sh-tag">04 — RESEARCH INTEGRITY</div>
+          <h2>Why Trust <span class="grad">CWG's Numbers?</span></h2>
+          <p class="rg-intro">We don't claim lottery is predictable in the absolute sense. We identify statistically significant deviations from perfect randomness — a measurable edge, not magic.</p>
+
+          <div class="trust-list">
+            <div class="tl-item">
+              <div class="tl-icon text-blue">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>200-Round Backtest Validated</strong>
+                <p>Every model release is validated against the last 200 rounds before deploying to production. Underperforming models are discarded.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-icon text-green">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Transparent Performance Reporting</strong>
+                <p>We publish hit-rate by prize tier. No cherry-picked samples. Historical model performance is permanently archived.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-icon text-blue">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Official Data Source Only</strong>
+                <p>All data sourced exclusively from DHLOTTERY public API. No third-party, scraped, or manipulated data enters the pipeline.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-icon text-green">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Weekly Model Retraining</strong>
+                <p>Models never run stale. Automated CI/CD pipeline triggers retraining within 2 hours of each Saturday draw result.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rg-right reveal">
+          <div class="perf-card">
+            <div class="pc-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Model Performance — Last 100 Rounds
+            </div>
+            <div class="pc-metrics">
+              <div class="pm-item">
+                <div class="pm-top">
+                  <span>3rd+ Prize Hit Rate</span>
+                  <span class="pm-val text-blue">78.4%</span>
+                </div>
+                <div class="pm-track"><div class="pm-fill pm-fill--blue" style="--w:78.4%"></div></div>
+              </div>
+              <div class="pm-item">
+                <div class="pm-top">
+                  <span>2+ Numbers Matched</span>
+                  <span class="pm-val text-green">91.2%</span>
+                </div>
+                <div class="pm-track"><div class="pm-fill pm-fill--green" style="--w:91.2%"></div></div>
+              </div>
+              <div class="pm-item">
+                <div class="pm-top">
+                  <span>Pattern Precision</span>
+                  <span class="pm-val text-blue">82.7%</span>
+                </div>
+                <div class="pm-track"><div class="pm-fill pm-fill--blue" style="--w:82.7%"></div></div>
+              </div>
+              <div class="pm-item">
+                <div class="pm-top">
+                  <span>Zone Coverage Match</span>
+                  <span class="pm-val text-green">88.5%</span>
+                </div>
+                <div class="pm-track"><div class="pm-fill pm-fill--green" style="--w:88.5%"></div></div>
+              </div>
+              <div class="pm-item">
+                <div class="pm-top">
+                  <span>Odd/Even Ratio Acc.</span>
+                  <span class="pm-val text-purple">74.1%</span>
+                </div>
+                <div class="pm-track"><div class="pm-fill pm-fill--purple" style="--w:74.1%"></div></div>
+              </div>
+            </div>
+            <div class="pc-footer">* Backtest basis / 1st prize guarantee is not possible</div>
+          </div>
+
+          <div class="stack-card">
+            <div class="sc-title">Tech Stack</div>
+            <div class="sc-grid">
+              <div class="sc-item"><span class="sc-dot sc-dot--py"></span>Python 3.12</div>
+              <div class="sc-item"><span class="sc-dot sc-dot--sk"></span>scikit-learn</div>
+              <div class="sc-item"><span class="sc-dot sc-dot--tf"></span>TensorFlow</div>
+              <div class="sc-item"><span class="sc-dot sc-dot--xg"></span>XGBoost</div>
+              <div class="sc-item"><span class="sc-dot sc-dot--pg"></span>PostgreSQL</div>
+              <div class="sc-item"><span class="sc-dot sc-dot--fa"></span>FastAPI</div>
+              <div class="sc-item"><span class="sc-dot sc-dot--rd"></span>Redis</div>
+              <div class="sc-item"><span class="sc-dot sc-dot--dk"></span>Docker</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="section download-section" id="download">
+    <div class="dl-bg"></div>
+    <div class="container">
+      <div class="dl-inner reveal">
+        <div class="dl-label">AVAILABLE NOW</div>
+        <h2 class="dl-title">Start with <span class="grad">Data, Not Gut.</span></h2>
+        <p class="dl-sub">Free tier includes weekly AI picks, frequency heatmap, and 5 saved combinations. No credit card required.</p>
+        <div class="dl-btns">
+          <a href="#" class="btn btn-primary btn-xl">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.37c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.39-1.32 2.76-2.53 4.02M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            App Store
+          </a>
+          <a href="#" class="btn btn-secondary btn-xl">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.33.19.72.2 1.06.02l11.37-6.37-2.87-2.87-9.56 9.22zM20.7 9.6L17.5 7.77l-3.19 3.19 3.2 3.2 3.22-1.85a1.74 1.74 0 0 0 0-2.71zM1.56.27C1.22.5 1 .9 1 1.4v21.2c0 .5.22.9.56 1.13l.1.07 11.87-11.87v-.28L1.66.2l-.1.07zM14.56 9.46l-2.87 2.87-2.9-2.9 2.9-2.9 2.87 2.93z"/></svg>
+            Google Play
+          </a>
+        </div>
+        <div class="dl-checks">
+          <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Free tier forever</span>
+          <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No credit card</span>
+          <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Weekly model updates</span>
+          <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Official data only</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ft-grid">
+        <div class="ft-brand">
+          <div class="nav-logo" style="margin-bottom:16px">
+            <div class="logo-mark"><span>C</span><span>W</span><span>G</span></div>
+            <div class="logo-text">
+              <span class="logo-name">CWG INC</span>
+              <span class="logo-sub">Lottery Intelligence Lab</span>
+            </div>
+          </div>
+          <p>Data science applied to lottery analysis.<br/>Choose numbers with evidence, not instinct.</p>
+          <div class="ft-socials">
+            <a href="#">Twitter / X</a>
+            <a href="#">GitHub</a>
+            <a href="#">Research Blog</a>
+          </div>
+        </div>
+
+        <div class="ft-links">
+          <div class="ftl-col">
+            <h4>Product</h4>
+            <a href="#">Number Prediction</a>
+            <a href="#">Frequency Analysis</a>
+            <a href="#">Pattern Viewer</a>
+            <a href="#">Community Picks</a>
+          </div>
+          <div class="ftl-col">
+            <h4>Research</h4>
+            <a href="#">Methodology</a>
+            <a href="#">Model Reports</a>
+            <a href="#">Tech Blog</a>
+            <a href="#">Open Source</a>
+          </div>
+          <div class="ftl-col">
+            <h4>Company</h4>
+            <a href="#">About CWG INC</a>
+            <a href="#">FAQ</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ft-bottom">
+        <p>© 2024 CWG INC. All rights reserved.</p>
+        <p class="ft-disc">⚠ CWG INC is a statistical analysis tool. It does not guarantee lottery winnings. Please gamble responsibly.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
