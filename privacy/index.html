@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>개인정보처리방침 — CWG INC</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .legal-hero {
+      padding: 120px 0 60px;
+      background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg-0) 100%);
+      border-bottom: 1px solid var(--b-dim);
+      position: relative;
+      overflow: hidden;
+    }
+    .legal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,212,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .legal-hero-inner { position: relative; }
+    .legal-hero-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--cyan);
+      background: var(--cyan-d);
+      border: 1px solid rgba(0,212,255,0.2);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .legal-hero h1 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .legal-hero p {
+      color: var(--t-1);
+      font-size: 15px;
+      max-width: 520px;
+    }
+    .legal-body {
+      padding: 80px 0 100px;
+    }
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .legal-toc {
+      position: sticky;
+      top: 100px;
+      background: var(--c-0);
+      border: 1px solid var(--b-dim);
+      border-radius: var(--r-lg);
+      padding: 24px;
+    }
+    .toc-title {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+    .toc-list { display: flex; flex-direction: column; gap: 4px; }
+    .toc-list a {
+      font-size: 12px;
+      color: var(--t-1);
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all .2s;
+      line-height: 1.4;
+    }
+    .toc-list a:hover {
+      color: var(--cyan);
+      background: var(--cyan-d);
+    }
+    .legal-content { display: flex; flex-direction: column; gap: 48px; }
+    .legal-article {
+      background: var(--c-0);
+      border: 1px solid var(--b-dim);
+      border-radius: var(--r-lg);
+      padding: 36px;
+      scroll-margin-top: 100px;
+    }
+    .la-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .legal-article h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--t-0);
+    }
+    .legal-article p {
+      font-size: 14px;
+      color: var(--t-1);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .legal-article p:last-child { margin-bottom: 0; }
+    .legal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .legal-list li {
+      font-size: 14px;
+      color: var(--t-1);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .legal-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-family: var(--mono);
+    }
+    .legal-sub-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--t-0);
+      margin: 20px 0 8px;
+    }
+    .legal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+    .legal-table th {
+      background: var(--c-2);
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--b-mid);
+    }
+    .legal-table td {
+      padding: 10px 14px;
+      color: var(--t-1);
+      border-bottom: 1px solid var(--b-dim);
+    }
+    .legal-table tr:last-child td { border-bottom: none; }
+    .legal-note {
+      background: var(--cyan-d);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--cyan);
+      font-family: var(--mono);
+      margin-top: 16px;
+    }
+    @media (max-width: 768px) {
+      .legal-layout { grid-template-columns: 1fr; }
+      .legal-toc { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark"><span>C</span><span>W</span><span>G</span></div>
+        <div class="logo-text">
+          <span class="logo-name">CWG INC</span>
+          <span class="logo-sub">Lottery Intelligence Lab</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#methodology">Methodology</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#data">Data</a></li>
+        <li><a href="index.html#research">Research</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-status">
+          <span class="status-dot"></span>
+          <span class="status-text">LIVE</span>
+        </div>
+        <a href="index.html#download" class="btn btn-primary nav-cta">Get the App</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="legal-hero">
+    <div class="container legal-hero-inner">
+      <div class="legal-hero-tag">LEGAL</div>
+      <h1>개인정보<span class="grad">처리방침</span></h1>
+      <p>Privacy Policy — 본 방침은 CWG INC가 수집·이용·보호하는 개인정보에 대해 규정합니다.</p>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="legal-body">
+    <div class="container">
+      <div class="legal-layout">
+
+        <!-- TOC -->
+        <aside class="legal-toc">
+          <div class="toc-title">목차</div>
+          <nav class="toc-list">
+            <a href="#art1">제1조 목적</a>
+            <a href="#art2">제2조 수집 항목</a>
+            <a href="#art3">제3조 수집 방법</a>
+            <a href="#art4">제4조 이용 목적</a>
+            <a href="#art5">제5조 보관 및 이용기간</a>
+            <a href="#art6">제6조 제3자 제공</a>
+            <a href="#art7">제7조 처리 위탁</a>
+            <a href="#art8">제8조 이용자의 권리</a>
+            <a href="#art9">제9조 보호 조치</a>
+            <a href="#art10">제10조 쿠키 사용</a>
+            <a href="#art11">제11조 책임자 및 문의</a>
+            <a href="#art12">제12조 개정</a>
+          </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="legal-content">
+
+          <div class="legal-article" id="art1">
+            <div class="la-num">제1조</div>
+            <h2>목적</h2>
+            <p>본 개인정보처리방침은 회사가 제공하는 서비스(이하 "서비스") 이용과 관련하여 이용자의 개인정보를 어떻게 수집·이용·보관·보호하는지에 대해 규정합니다.</p>
+          </div>
+
+          <div class="legal-article" id="art2">
+            <div class="la-num">제2조</div>
+            <h2>수집하는 개인정보 항목</h2>
+            <p>회사는 서비스 제공을 위해 다음과 같은 개인정보를 수집할 수 있습니다.</p>
+            <div class="legal-sub-title">1. 필수 수집 항목</div>
+            <ul class="legal-list">
+              <li>이메일 주소</li>
+              <li>닉네임 또는 사용자 식별 정보</li>
+              <li>기기 정보 (디바이스 ID, OS, 앱 버전 등)</li>
+            </ul>
+            <div class="legal-sub-title">2. 선택 수집 항목</div>
+            <ul class="legal-list">
+              <li>프로필 정보 (선택 입력)</li>
+              <li>마케팅 수신 동의 정보</li>
+            </ul>
+            <div class="legal-sub-title">3. 자동 수집 항목</div>
+            <ul class="legal-list">
+              <li>접속 로그, 이용 기록</li>
+              <li>쿠키, IP 주소</li>
+            </ul>
+          </div>
+
+          <div class="legal-article" id="art3">
+            <div class="la-num">제3조</div>
+            <h2>개인정보 수집 방법</h2>
+            <ul class="legal-list">
+              <li>회원가입 및 서비스 이용 과정</li>
+              <li>고객 문의 및 이벤트 참여</li>
+              <li>자동 생성 정보 수집 도구</li>
+            </ul>
+          </div>
+
+          <div class="legal-article" id="art4">
+            <div class="la-num">제4조</div>
+            <h2>개인정보 이용 목적</h2>
+            <p>회사는 수집한 개인정보를 다음의 목적으로 이용합니다.</p>
+            <ul class="legal-list">
+              <li>서비스 제공 및 운영</li>
+              <li>사용자 식별 및 관리</li>
+              <li>맞춤형 콘텐츠 및 서비스 제공</li>
+              <li>고객 문의 대응</li>
+              <li>서비스 개선 및 신규 서비스 개발</li>
+              <li>마케팅 및 광고 활용 (동의 시)</li>
+            </ul>
+          </div>
+
+          <div class="legal-article" id="art5">
+            <div class="la-num">제5조</div>
+            <h2>개인정보 보관 및 이용기간</h2>
+            <p>회원 탈퇴 시 즉시 삭제합니다. 단, 관련 법령에 따라 일정 기간 보관이 필요한 경우 해당 기간 동안 보관합니다.</p>
+            <table class="legal-table">
+              <thead>
+                <tr>
+                  <th>보관 항목</th>
+                  <th>보관 기간</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>계약 / 청약철회 기록</td>
+                  <td>5년</td>
+                </tr>
+                <tr>
+                  <td>소비자 불만 기록</td>
+                  <td>3년</td>
+                </tr>
+                <tr>
+                  <td>로그 기록</td>
+                  <td>3개월</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="legal-article" id="art6">
+            <div class="la-num">제6조</div>
+            <h2>개인정보 제3자 제공</h2>
+            <p>회사는 원칙적으로 이용자의 개인정보를 외부에 제공하지 않습니다. 단, 다음의 경우는 예외로 합니다.</p>
+            <ul class="legal-list">
+              <li>이용자가 사전 동의한 경우</li>
+              <li>법령에 의해 요구되는 경우</li>
+            </ul>
+          </div>
+
+          <div class="legal-article" id="art7">
+            <div class="la-num">제7조</div>
+            <h2>개인정보 처리 위탁</h2>
+            <p>회사는 서비스 운영을 위해 일부 업무를 외부에 위탁할 수 있습니다. 위탁 시 관련 법령을 준수하여 안전하게 관리합니다.</p>
+            <ul class="legal-list">
+              <li>클라우드 서비스 제공업체</li>
+              <li>결제 처리 업체</li>
+              <li>마케팅 플랫폼</li>
+            </ul>
+          </div>
+
+          <div class="legal-article" id="art8">
+            <div class="la-num">제8조</div>
+            <h2>이용자의 권리</h2>
+            <p>이용자는 언제든지 다음 권리를 행사할 수 있습니다.</p>
+            <ul class="legal-list">
+              <li>개인정보 열람 요청</li>
+              <li>수정 요청</li>
+              <li>삭제 요청</li>
+              <li>처리 정지 요청</li>
+            </ul>
+          </div>
+
+          <div class="legal-article" id="art9">
+            <div class="la-num">제9조</div>
+            <h2>개인정보 보호 조치</h2>
+            <p>회사는 개인정보 보호를 위해 다음과 같은 조치를 취합니다.</p>
+            <ul class="legal-list">
+              <li>데이터 암호화</li>
+              <li>접근 권한 제한</li>
+              <li>보안 시스템 운영</li>
+            </ul>
+          </div>
+
+          <div class="legal-article" id="art10">
+            <div class="la-num">제10조</div>
+            <h2>쿠키 사용</h2>
+            <p>회사는 사용자 편의를 위해 쿠키를 사용할 수 있습니다. 사용자는 브라우저 설정을 통해 쿠키 저장을 거부할 수 있습니다.</p>
+          </div>
+
+          <div class="legal-article" id="art11">
+            <div class="la-num">제11조</div>
+            <h2>책임자 및 문의</h2>
+            <p>개인정보 관련 문의는 아래로 연락 바랍니다.</p>
+            <div class="legal-note">
+              이메일: support@cwginc.io &nbsp;·&nbsp; 담당자: CWG INC 개인정보보호팀
+            </div>
+          </div>
+
+          <div class="legal-article" id="art12">
+            <div class="la-num">제12조</div>
+            <h2>개정</h2>
+            <p>본 방침은 관련 법령 또는 정책에 따라 변경될 수 있으며, 변경 시 서비스 내 공지를 통해 안내합니다.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ft-grid">
+        <div class="ft-brand">
+          <div class="nav-logo" style="margin-bottom:16px">
+            <div class="logo-mark"><span>C</span><span>W</span><span>G</span></div>
+            <div class="logo-text">
+              <span class="logo-name">CWG INC</span>
+              <span class="logo-sub">Lottery Intelligence Lab</span>
+            </div>
+          </div>
+          <p>Data science applied to lottery analysis.<br/>Choose numbers with evidence, not instinct.</p>
+          <div class="ft-socials">
+            <a href="#">Twitter / X</a>
+            <a href="#">GitHub</a>
+            <a href="#">Research Blog</a>
+          </div>
+        </div>
+        <div class="ft-links">
+          <div class="ftl-col">
+            <h4>Product</h4>
+            <a href="#">Number Prediction</a>
+            <a href="#">Frequency Analysis</a>
+            <a href="#">Pattern Viewer</a>
+            <a href="#">Community Picks</a>
+          </div>
+          <div class="ftl-col">
+            <h4>Research</h4>
+            <a href="#">Methodology</a>
+            <a href="#">Model Reports</a>
+            <a href="#">Tech Blog</a>
+            <a href="#">Open Source</a>
+          </div>
+          <div class="ftl-col">
+            <h4>Legal</h4>
+            <a href="/terms/">이용약관</a>
+            <a href="/privacy/">개인정보처리방침</a>
+            <a href="#">FAQ</a>
+            <a href="#">About CWG INC</a>
+          </div>
+        </div>
+      </div>
+      <div class="ft-bottom">
+        <p>© 2024 CWG INC. All rights reserved.</p>
+        <p class="ft-disc">⚠ CWG INC is a statistical analysis tool. It does not guarantee lottery winnings. Please gamble responsibly.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
