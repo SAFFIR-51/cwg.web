@@ -304,7 +304,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .download-grid { grid-template-columns: 1fr; gap: 4rem; }
-  .download-mock { display: none; }
+  .download-mock { justify-content: center; margin-top: 1rem; }
   .df-grid { grid-template-columns: 1fr; }
   .dn-grid { grid-template-columns: repeat(2, 1fr); }
 }

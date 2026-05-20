@@ -268,6 +268,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- 10b. Mobile menu toggle ---------- */
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuToggle && mobileMenu) {
+    const openMenu = () => {
+      mobileMenu.classList.add('is-open');
+      menuToggle.classList.add('is-open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', '메뉴 닫기');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
+    };
+    const closeMenu = () => {
+      mobileMenu.classList.remove('is-open');
+      menuToggle.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', '메뉴 열기');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+    };
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+    mobileMenu.querySelectorAll('.mobile-nav a, .mobile-util .header-cta').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMenu();
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024 && mobileMenu.classList.contains('is-open')) closeMenu();
+    });
+
+    // Lang toggle inside mobile menu
+    const langItems = mobileMenu.querySelectorAll('.lang-mobile li');
+    langItems.forEach(li => {
+      li.querySelector('a').addEventListener('click', (e) => {
+        e.preventDefault();
+        langItems.forEach(x => x.classList.remove('active'));
+        li.classList.add('active');
+      });
+    });
+  }
+
   /* ---------- 11. Smooth anchor scroll ---------- */
   document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(a => {
     a.addEventListener('click', (e) => {

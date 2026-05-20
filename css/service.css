@@ -972,11 +972,18 @@
   .sol-stage { height: 44rem; }
   .sol-monitor { width: 80%; }
   .sol-mini { font-size: 1.2rem; }
-  .sub-visual-bottom { flex-direction: column; align-items: stretch; gap: 1.6rem; }
+  .sub-visual { height: 68vh; min-height: 52rem; }
+  .sub-visual-inner { padding: calc(var(--header-h) + 4rem) 3rem 4rem; }
+  .sub-visual-text { padding-top: 3rem; }
+  .sub-visual-bottom { flex-direction: column; align-items: stretch; gap: 1.6rem; padding-top: 2.4rem; }
   .product-selector { justify-content: flex-start; }
   .platform-list { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
+  .sub-visual { height: 60vh; min-height: 44rem; }
+  .sub-visual-inner { padding: calc(var(--header-h) + 3rem) 2.4rem 3rem; }
+  .sub-visual-text { padding-top: 2rem; }
+  .sub-desc { font-size: 1.4rem; margin-top: 1rem; }
   .sub-title { font-size: 6rem; }
   .intro-wordmark { font-size: 6rem; }
   .intro-headline { font-size: 2.2rem; }
@@ -997,4 +1004,33 @@
   .spiral-ring-3 { width: 14rem; height: 14rem; }
   .platform-list { grid-template-columns: 1fr; }
   .marquee-inner { font-size: 2.6rem; gap: 1.6rem; }
+}
+
+/* ============================================
+   Mobile section spacing — Core Screens area
+============================================ */
+@media (max-width: 1024px) {
+  .prevax-intro { padding: 8rem 0 5rem; }
+  .prevax-capability { padding: 3rem 0 10rem; }
+  .cap-intro { margin: 0 auto 6rem; }
+  .feature-row { margin-bottom: 14rem; gap: 4rem; }
+}
+
+@media (max-width: 768px) {
+  .prevax-intro { padding: 6rem 0 3.5rem; }
+  .prevax-capability { padding: 2rem 0 9rem; }
+  .cap-intro { margin: 0 auto 5rem; }
+  .cap-intro .section-title { font-size: 3rem; }
+  .feature-row {
+    grid-template-columns: 1fr;
+    margin-bottom: 12rem;
+    gap: 3.5rem;
+  }
+  .feature-row .feature-text { order: 1; }
+  .feature-row .feature-screens,
+  .feature-row .reward-flow { order: 2; }
+  .feature-row.reverse { direction: ltr; }
+  .feature-text .feature-num { font-size: 1.2rem; }
+  .feature-text .feature-title { font-size: 2.4rem; }
+  .feature-text .feature-desc { font-size: 1.4rem; }
 }
