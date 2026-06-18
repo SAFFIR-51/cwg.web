@@ -1,0 +1,226 @@
+/* ============================================
+   Terms / Privacy — legal document (single column, designed)
+============================================ */
+
+.terms-section {
+  padding: 11rem 0 14rem;
+  position: relative;
+}
+.terms-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100rem;
+  max-width: 90%;
+  height: 48rem;
+  background: radial-gradient(ellipse at top, rgba(39,102,248,0.1), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.terms-doc {
+  position: relative;
+  z-index: 1;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+/* ---- Intro ---- */
+.terms-intro {
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+.terms-intro h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 1.6rem;
+}
+.terms-intro p {
+  font-size: 1.6rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+}
+.terms-effective {
+  display: inline-block;
+  margin-top: 2rem;
+  font-family: var(--font-en);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 3rem;
+  background: var(--glass-bg);
+}
+
+/* ---- Article ---- */
+.terms-article {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+.terms-article:last-of-type { border-bottom: 0; }
+.terms-article > h3 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 1.6rem;
+}
+.terms-article > h3 .art-no {
+  flex-shrink: 0;
+  font-family: var(--font-en);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--main-color3);
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(74,130,255,0.35);
+  border-radius: 0.8rem;
+  background: rgba(39,102,248,0.08);
+  transform: translateY(-0.2rem);
+}
+.terms-article p {
+  font-size: 1.6rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+.terms-article p + p { margin-top: 1.2rem; }
+.terms-article strong { color: var(--text-primary); font-weight: 600; }
+.terms-article .accent { color: var(--main-color3); }
+
+/* ---- Sub-heading inside an article (Lucky Points block) ---- */
+.terms-subhead {
+  margin: 2.8rem 0 1.4rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+  padding-left: 1.4rem;
+  border-left: 3px solid var(--main-color);
+}
+
+/* ---- Ordered list with numbered chips ---- */
+.terms-list {
+  list-style: none;
+  margin: 1.6rem 0 0;
+  counter-reset: clause;
+}
+.terms-list > li {
+  position: relative;
+  padding-left: 3.6rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  counter-increment: clause;
+}
+.terms-list > li::before {
+  content: counter(clause);
+  position: absolute;
+  left: 0; top: 0.25rem;
+  width: 2.4rem; height: 2.4rem;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-en);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--main-color3);
+  border: 1px solid rgba(74,130,255,0.35);
+  border-radius: 50%;
+  background: rgba(39,102,248,0.08);
+}
+/* bullet variant (no numbers) */
+.terms-list.is-bullet { counter-reset: none; }
+.terms-list.is-bullet > li { counter-increment: none; }
+.terms-list.is-bullet > li::before {
+  content: '';
+  top: 0.95rem;
+  width: 0.6rem; height: 0.6rem;
+  left: 0.8rem;
+  border: 0;
+  background: var(--main-color3);
+}
+
+/* ---- Highlight callout ---- */
+.terms-callout {
+  padding: 2rem 2.4rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 1.4rem;
+  background: var(--glass-bg);
+}
+.terms-callout p { color: var(--text-primary); font-weight: 500; }
+
+/* ============================================
+   약관 구조 요약 table
+============================================ */
+.terms-summary {
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--glass-border);
+}
+.terms-summary .sub-label { color: var(--main-color3); }
+.terms-summary h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 2.4rem;
+}
+.terms-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--glass-border);
+  border-radius: 1.6rem;
+  background: var(--glass-bg);
+}
+.terms-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 52rem;
+}
+.terms-table th,
+.terms-table td {
+  text-align: left;
+  padding: 1.6rem 2rem;
+  font-size: 1.45rem;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--glass-border);
+  vertical-align: top;
+}
+.terms-table thead th {
+  font-family: var(--font-en);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--main-color3);
+  background: rgba(39,102,248,0.06);
+}
+.terms-table tbody tr:last-child td { border-bottom: 0; }
+.terms-table .grp { color: #fff; font-weight: 600; white-space: nowrap; }
+.terms-table .art {
+  font-family: var(--font-en);
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.terms-table .desc { color: var(--text-secondary); }
+.terms-table tbody tr { transition: var(--transition); }
+.terms-table tbody tr:hover { background: var(--glass-bg-hover); }
+
+/* ============================================
+   Responsive
+============================================ */
+@media (max-width: 768px) {
+  .terms-section { padding: 7rem 0 9rem; }
+  .terms-intro h2 { font-size: 2.6rem; }
+  .terms-intro p { font-size: 1.65rem; }
+  .terms-article > h3 { font-size: 1.95rem; gap: 1rem; }
+  .terms-article p,
+  .terms-list > li { font-size: 1.65rem; }
+  .terms-subhead { font-size: 1.75rem; }
+  .terms-summary h3 { font-size: 2.1rem; }
+}
