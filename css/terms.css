@@ -58,6 +58,30 @@
   background: var(--glass-bg);
 }
 
+/* ---- Chapter heading ---- */
+.terms-chapter {
+  margin: 4rem 0 0.5rem;
+  padding-bottom: 1.2rem;
+  font-family: var(--font-kr);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--main-color3);
+}
+.terms-chapter:first-of-type { margin-top: 1rem; }
+
+/* ---- Company info block ---- */
+.terms-company {
+  margin-top: 3rem;
+  padding: 2.6rem 2.8rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 1.6rem;
+  background: var(--glass-bg);
+}
+.terms-company dl { display: flex; gap: 1rem; padding: 0.5rem 0; font-size: 1.5rem; }
+.terms-company dt { flex: 0 0 14rem; color: var(--text-muted); }
+.terms-company dd { color: var(--text-secondary); }
+
 /* ---- Article ---- */
 .terms-article {
   padding: 3rem 0;
