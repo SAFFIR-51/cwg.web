@@ -10,3 +10,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Secrets / local env (SMTP credentials — never commit)
+.env
+.env.*
+!.env.example

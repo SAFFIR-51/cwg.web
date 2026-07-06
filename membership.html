@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>멤버십 | FULIF by CWG</title>
-<meta name="description" content="FULIF 멤버십 — FREE·STANDARD·PRO 세 개의 문. 월간·연간 구독으로 매주 번호와 참여 기회를 누리세요. 모든 경품 응모는 동등 확률.">
+<title data-i18n="mem.doc.title">멤버십 | FULIF by CWG</title>
+<meta name="description" data-i18n-attr="content:mem.doc.desc" content="FULIF 멤버십 — FREE·STANDARD·PRO 세 개의 문. 월간·연간 구독으로 매주 번호와 참여 기회를 누리세요. 모든 경품 응모는 동등 확률.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060910">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 </head>
 <body class="page-membership page-prevax">
 
-<a href="#sub-visual" class="cm-skip">본문바로가기</a>
+<a href="#sub-visual" class="cm-skip" data-i18n="mem.skip">본문바로가기</a>
 
 <!-- ============ HEADER ============ -->
 <header id="header" class="header-sub">
@@ -25,11 +25,11 @@
     <nav class="gnb">
       <h2 class="blind">Menu</h2>
       <ul>
-        <li><a href="index.html">홈</a></li>
-        <li><a href="service.html">서비스</a></li>
-        <li><a href="patents.html">특허</a></li>
-        <li><a href="membership.html" class="is-active">멤버십</a></li>
-        <li><a href="download.html">다운로드</a></li>
+        <li><a href="index.html" data-i18n="nav.home">홈</a></li>
+        <li><a href="service.html" data-i18n="nav.service">서비스</a></li>
+        <li><a href="patents.html" data-i18n="nav.patents">특허</a></li>
+        <li><a href="membership.html" class="is-active" data-i18n="nav.membership">멤버십</a></li>
+        <li><a href="download.html" data-i18n="nav.download">다운로드</a></li>
       </ul>
     </nav>
     <div class="header-util">
@@ -37,7 +37,7 @@
         <li class="active"><a href="#">KOR</a></li>
         <li><a href="#">ENG</a></li>
       </ul>
-      <a href="partners.html" class="header-cta">광고 파트너 문의 <i>→</i></a>
+      <a href="partners.html" class="header-cta" data-i18n="cta.partner_full">광고 파트너 문의 <i>→</i></a>
     </div>
     <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
@@ -47,11 +47,11 @@
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <nav class="mobile-nav">
     <ul>
-      <li><a href="index.html">홈</a></li>
-      <li><a href="service.html">서비스</a></li>
-      <li><a href="patents.html">특허</a></li>
-      <li><a href="membership.html" class="is-active">멤버십</a></li>
-      <li><a href="download.html">다운로드</a></li>
+      <li><a href="index.html" data-i18n="nav.home">홈</a></li>
+      <li><a href="service.html" data-i18n="nav.service">서비스</a></li>
+      <li><a href="patents.html" data-i18n="nav.patents">특허</a></li>
+      <li><a href="membership.html" class="is-active" data-i18n="nav.membership">멤버십</a></li>
+      <li><a href="download.html" data-i18n="nav.download">다운로드</a></li>
     </ul>
   </nav>
   <div class="mobile-util">
@@ -59,7 +59,7 @@
       <li class="active"><a href="#">KOR</a></li>
       <li><a href="#">ENG</a></li>
     </ul>
-    <a href="partners.html" class="header-cta">광고 파트너 문의 <i>→</i></a>
+    <a href="partners.html" class="header-cta" data-i18n="cta.partner_full">광고 파트너 문의 <i>→</i></a>
   </div>
 </div>
 
@@ -75,7 +75,7 @@
       <nav class="breadcrumb" data-scroll>
         <a href="index.html"><span class="bc-home">⌂</span></a>
         <span class="bc-sep">›</span>
-        <span class="bc-cur">멤버십</span>
+        <span class="bc-cur" data-i18n="nav.membership">멤버십</span>
       </nav>
     </div>
   </div>
@@ -87,12 +87,12 @@
   <div class="container">
     <div class="mb-intro-head" data-scroll>
       <span class="sub-label">Membership</span>
-      <h2 class="section-title">당신의 방식으로,<br><b class="accent">FULIF를 누리세요.</b></h2>
-      <p class="section-desc">가볍게 시작하거나, 나만의 번호를 설계하거나, 챔피언에 도전하거나 — 세 개의 문 중 하나를 여세요.</p>
+      <h2 class="section-title" data-i18n="mem.intro.title">당신의 방식으로,<br><b class="accent">FULIF를 누리세요.</b></h2>
+      <p class="section-desc" data-i18n="mem.intro.desc">가볍게 시작하거나, 나만의 번호를 설계하거나, 챔피언에 도전하거나 — 세 개의 문 중 하나를 여세요.</p>
 
-      <div class="mb-toggle" role="tablist" aria-label="결제 주기 선택">
-        <button id="mbBtnMonth" class="on" type="button" onclick="mbSetCycle('month')">월간</button>
-        <button id="mbBtnYear" type="button" onclick="mbSetCycle('year')">연간 <span class="mb-save">2개월 무료</span></button>
+      <div class="mb-toggle" role="tablist" aria-label="결제 주기 선택" data-i18n-attr="aria-label:mem.toggle.aria">
+        <button id="mbBtnMonth" class="on" type="button" onclick="mbSetCycle('month')" data-i18n="mem.toggle.month">월간</button>
+        <button id="mbBtnYear" type="button" onclick="mbSetCycle('year')" data-i18n="mem.toggle.year">연간 <span class="mb-save">2개월 무료</span></button>
       </div>
     </div>
   </div>
@@ -105,54 +105,54 @@
 
       <!-- FREE -->
       <li class="mb-tier" data-stagger>
-        <span class="mb-gate">The Entrance · 행운의 입구</span>
+        <span class="mb-gate" data-i18n="mem.free.gate">The Entrance · 행운의 입구</span>
         <h3 class="mb-tier-name font-jost">FREE</h3>
-        <div class="mb-price"><span class="mb-num">무료</span></div>
-        <p class="mb-subprice">부담 없이 시작하세요</p>
+        <div class="mb-price"><span class="mb-num" data-i18n="mem.free">무료</span></div>
+        <p class="mb-subprice" data-i18n="mem.free.sub">부담 없이 시작하세요</p>
         <ul class="mb-feats">
-          <li>매주 FULIF 번호 <b>2세트</b></li>
-          <li>광고 시청 포인트 <b>1일 10회</b></li>
-          <li>경품 응모 <b>주 5건</b></li>
-          <li>럭키 스코어 · 넘버 센스</li>
+          <li data-i18n="mem.free.f1">매주 FULIF 번호 <b>2세트</b></li>
+          <li data-i18n="mem.free.f2">광고 시청 포인트 <b>1일 10회</b></li>
+          <li data-i18n="mem.free.f3">경품 응모 <b>주 5건</b></li>
+          <li data-i18n="mem.free.f4">럭키 스코어 · 넘버 센스</li>
         </ul>
-        <a class="mb-cta mb-cta-ghost" href="download.html">무료로 시작</a>
+        <a class="mb-cta mb-cta-ghost" href="download.html" data-i18n="mem.free.cta">무료로 시작</a>
       </li>
 
       <!-- STANDARD -->
       <li class="mb-tier" data-stagger>
-        <span class="mb-gate">Your Numbers · 나만의 번호</span>
+        <span class="mb-gate" data-i18n="mem.std.gate">Your Numbers · 나만의 번호</span>
         <h3 class="mb-tier-name font-jost">STANDARD</h3>
         <div class="mb-price">
           <span class="mb-num" data-month="5,000원" data-year="50,000원">5,000원</span>
           <span class="mb-per" data-month="/ 월" data-year="/ 년">/ 월</span>
         </div>
-        <p class="mb-subprice"><span class="mb-annual-only">연 50,000원 · 2개월 무료</span></p>
+        <p class="mb-subprice"><span class="mb-annual-only" data-i18n="mem.std.annual">연 50,000원 · 2개월 무료</span></p>
         <ul class="mb-feats">
-          <li>매주 FULIF 번호 <b>10세트</b></li>
-          <li>낙첨복권 등록 <b>주 10건</b></li>
-          <li>경품 응모 <b>주 10건</b></li>
-          <li>광고 시청 포인트 <b>1일 20회</b></li>
+          <li data-i18n="mem.std.f1">매주 FULIF 번호 <b>10세트</b></li>
+          <li data-i18n="mem.std.f2">낙첨복권 등록 <b>주 10건</b></li>
+          <li data-i18n="mem.std.f3">경품 응모 <b>주 10건</b></li>
+          <li data-i18n="mem.std.f4">광고 시청 포인트 <b>1일 20회</b></li>
         </ul>
-        <a class="mb-cta mb-cta-solid" href="download.html">STANDARD 시작</a>
+        <a class="mb-cta mb-cta-solid" href="download.html" data-i18n="mem.std.cta">STANDARD 시작</a>
       </li>
 
       <!-- PRO -->
       <li class="mb-tier mb-tier-pro" data-stagger>
-        <span class="mb-badge">가장 인기 · 챔피언십 도전</span>
-        <span class="mb-gate">The Champion · 챔피언의 문</span>
+        <span class="mb-badge" data-i18n="mem.pro.badge">가장 인기 · 챔피언십 도전</span>
+        <span class="mb-gate" data-i18n="mem.pro.gate">The Champion · 챔피언의 문</span>
         <h3 class="mb-tier-name font-jost">PRO</h3>
         <div class="mb-price">
           <span class="mb-num" data-month="8,000원" data-year="80,000원">8,000원</span>
           <span class="mb-per" data-month="/ 월" data-year="/ 년">/ 월</span>
         </div>
-        <p class="mb-subprice"><span class="mb-annual-only">연 80,000원 · 2개월 무료</span></p>
+        <p class="mb-subprice"><span class="mb-annual-only" data-i18n="mem.pro.annual">연 80,000원 · 2개월 무료</span></p>
         <ul class="mb-feats">
-          <li>매주 10세트 <b>+ 본인 생성 10세트</b> (총 20세트)</li>
-          <li>35개 필터로 <b>나만의 번호 설계</b></li>
-          <li>낙첨복권 등록 <b>주 20건</b> · 경품 응모 <b>주 20건</b></li>
-          <li><b>챔피언십 도전권</b> — 트로피에 도전</li>
+          <li data-i18n="mem.pro.f1">매주 10세트 <b>+ 본인 생성 10세트</b> (총 20세트)</li>
+          <li data-i18n="mem.pro.f2">35개 필터로 <b>나만의 번호 설계</b></li>
+          <li data-i18n="mem.pro.f3">낙첨복권 등록 <b>주 20건</b> · 경품 응모 <b>주 20건</b></li>
+          <li data-i18n="mem.pro.f4"><b>챔피언십 도전권</b> — 트로피에 도전</li>
         </ul>
-        <a class="mb-cta mb-cta-solid" href="download.html">PRO 시작</a>
+        <a class="mb-cta mb-cta-solid" href="download.html" data-i18n="mem.pro.cta">PRO 시작</a>
       </li>
     </ul>
   </div>
@@ -164,21 +164,21 @@
     <div class="mb-champ" data-scroll>
       <div class="mb-champ-copy">
         <span class="sub-label">PRO Exclusive · Championship</span>
-        <h2 class="mb-champ-title">당신의 번호 감각이,<br><b class="accent">트로피가 됩니다.</b></h2>
-        <p class="mb-champ-desc">PRO 회원이 필터로 설계한 번호가 매주 추첨 결과와 얼마나 일치했는지 — 그 점수가 회차마다 쌓입니다. 사전에 안내된 기준(예: 전체 회차의 절반 이상 참여)을 충족한 PRO 회원 중, 시즌이 끝나면 최고 득점자를 가려 트로피와 광고주 프리미엄 상품으로 그 감각을 기립니다.</p>
+        <h2 class="mb-champ-title" data-i18n="mem.champ.title">당신의 번호 감각이,<br><b class="accent">트로피가 됩니다.</b></h2>
+        <p class="mb-champ-desc" data-i18n="mem.champ.desc">PRO 회원이 필터로 설계한 번호가 매주 추첨 결과와 얼마나 일치했는지 — 그 점수가 회차마다 쌓입니다. 사전에 안내된 기준(예: 전체 회차의 절반 이상 참여)을 충족한 PRO 회원 중, 시즌이 끝나면 최고 득점자를 가려 트로피와 광고주 프리미엄 상품으로 그 감각을 기립니다.</p>
 
         <div class="mb-path">
-          <div class="mb-step"><b>지역 챔피언</b> 한국</div>
+          <div class="mb-step" data-i18n="mem.champ.s1"><b>지역 챔피언</b> 한국</div>
           <span class="mb-arrow">→</span>
-          <div class="mb-step"><b>지역 챔피언</b> 유럽 · 일본</div>
+          <div class="mb-step" data-i18n="mem.champ.s2"><b>지역 챔피언</b> 유럽 · 일본</div>
           <span class="mb-arrow">→</span>
-          <div class="mb-step"><b>통합 세계 챔피언</b></div>
+          <div class="mb-step" data-i18n="mem.champ.s3"><b>통합 세계 챔피언</b></div>
         </div>
 
-        <p class="mb-champ-note">※ 챔피언십은 번호 분석·설계 실력에 기반한 순위 기반 성취 프로그램이며, 복권 당첨이나 상금과는 무관합니다. 시상은 현금이 아닌 트로피·물품으로 제공됩니다. 지역 확장은 FULIF의 순차 출시 일정에 따릅니다.</p>
+        <p class="mb-champ-note" data-i18n="mem.champ.note">※ 챔피언십은 번호 분석·설계 실력에 기반한 순위 기반 성취 프로그램이며, 복권 당첨이나 상금과는 무관합니다. 시상은 현금이 아닌 트로피·물품으로 제공됩니다. 지역 확장은 FULIF의 순차 출시 일정에 따릅니다.</p>
       </div>
       <div class="mb-champ-visual">
-        <img src="assets/images/trophy-fuli.png" alt="트로피를 든 마스코트 Fuli" loading="lazy">
+        <img src="assets/images/trophy-fuli.png" alt="트로피를 든 마스코트 Fuli" loading="lazy" data-i18n-attr="alt:mem.champ.alt">
       </div>
     </div>
   </div>
@@ -189,32 +189,32 @@
   <div class="container">
     <div class="mb-compare-head" data-scroll>
       <span class="sub-label">Compare</span>
-      <h2 class="section-title">한눈에 비교하기.</h2>
+      <h2 class="section-title" data-i18n="mem.cmp.title">한눈에 비교하기.</h2>
     </div>
     <div class="mb-table-wrap" data-scroll>
       <table class="mb-table">
         <thead>
           <tr>
-            <th>혜택</th>
+            <th data-i18n="mem.cmp.th_benefit">혜택</th>
             <th>FREE</th>
             <th>STANDARD</th>
             <th class="mb-pro-col">PRO</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>월 구독료</td><td>무료</td><td>5,000원</td><td>8,000원</td></tr>
-          <tr><td>연 구독료 (2개월 무료)</td><td class="mb-dash">—</td><td>50,000원</td><td>80,000원</td></tr>
-          <tr><td>매주 제공 번호</td><td>2세트</td><td>10세트</td><td>10세트</td></tr>
-          <tr><td>나만의 번호 추가 생성</td><td class="mb-dash">—</td><td class="mb-dash">—</td><td>+10세트 (총 20)</td></tr>
-          <tr><td>낙첨복권 주간 등록</td><td>5건</td><td>10건</td><td>20건</td></tr>
-          <tr><td>주간 경품 응모</td><td>5건</td><td>10건</td><td>20건</td></tr>
-          <tr><td>광고 시청 포인트 (1일)</td><td>10회</td><td>20회</td><td>20회</td></tr>
-          <tr><td>챔피언십 도전</td><td class="mb-dash">—</td><td class="mb-dash">—</td><td>✓</td></tr>
+          <tr><td data-i18n="mem.cmp.r1">월 구독료</td><td data-i18n="mem.free">무료</td><td>5,000원</td><td>8,000원</td></tr>
+          <tr><td data-i18n="mem.cmp.r2">연 구독료 (2개월 무료)</td><td class="mb-dash">—</td><td>50,000원</td><td>80,000원</td></tr>
+          <tr><td data-i18n="mem.cmp.r3">매주 제공 번호</td><td data-i18n="mem.set2">2세트</td><td data-i18n="mem.set10">10세트</td><td data-i18n="mem.set10">10세트</td></tr>
+          <tr><td data-i18n="mem.cmp.r4">나만의 번호 추가 생성</td><td class="mb-dash">—</td><td class="mb-dash">—</td><td data-i18n="mem.set_pro">+10세트 (총 20)</td></tr>
+          <tr><td data-i18n="mem.cmp.r5">낙첨복권 주간 등록</td><td data-i18n="mem.n5">5건</td><td data-i18n="mem.n10">10건</td><td data-i18n="mem.n20">20건</td></tr>
+          <tr><td data-i18n="mem.cmp.r6">주간 경품 응모</td><td data-i18n="mem.n5">5건</td><td data-i18n="mem.n10">10건</td><td data-i18n="mem.n20">20건</td></tr>
+          <tr><td data-i18n="mem.cmp.r7">광고 시청 포인트 (1일)</td><td data-i18n="mem.n10">10회</td><td data-i18n="mem.n20">20회</td><td data-i18n="mem.n20">20회</td></tr>
+          <tr><td data-i18n="mem.cmp.r8">챔피언십 도전</td><td class="mb-dash">—</td><td class="mb-dash">—</td><td>✓</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="mb-footnote" data-scroll>
+    <div class="mb-footnote" data-scroll data-i18n="mem.cmp.footnote">
       <b>공정성 안내.</b> 모든 경품 응모는 응모권 1건당 동등한 확률로 진행됩니다. 등급별 차이는 <b>참여 기회(수량)</b>일 뿐이며, 개별 응모의 당첨 확률과는 무관합니다. 무료 회원을 포함한 모든 회원은 금전적 지불 없이 광고 시청 등 활동을 통해 경품 추첨에 참여할 수 있습니다. 포인트는 현금이 아니며 환급되지 않습니다. 구독료·혜택·챔피언십 세부 규칙은 <a href="terms.html" class="accent">이용약관</a> 및 운영정책에 따르며, 변경 시 사전 공지합니다.
     </div>
   </div>
@@ -226,34 +226,36 @@
     <div class="footer-left">
       <div class="foot-logo"><img src="assets/images/logo_new.png" alt="FULIF" /></div>
       <div class="footer-info">
-        <dl><dt>법인명</dt><dd>씨더블유지 주식회사</dd></dl>
-        <dl><dt>대표자</dt><dd>이한순</dd></dl>
-        <dl><dt>사업자등록번호</dt><dd>895-88-03534</dd></dl>
-        <dl><dt>통신판매업신고번호</dt><dd>제 2026-서울강남-02697 호</dd></dl>
-        <dl><dt>한국법인</dt><dd>서울특별시 송파구 법원로9길 26 H비즈니스파크 C동 10층 1010호</dd></dl>
-        <dl><dt>유럽법인</dt><dd>19, Baggot Street Lower, Dublin 2, Ireland, D02 X658</dd></dl>
-        <dl><dt>개인정보보호책임자</dt><dd>이한순</dd></dl>
+        <dl><dt data-i18n="foot.company_l">법인명</dt><dd data-i18n="foot.company_v">씨더블유지 주식회사</dd></dl>
+        <dl><dt data-i18n="foot.ceo_l">대표자</dt><dd data-i18n="foot.ceo_v">이한순</dd></dl>
+        <dl><dt data-i18n="foot.bizno_l">사업자등록번호</dt><dd>895-88-03534</dd></dl>
+        <dl><dt data-i18n="foot.ecom_l">통신판매업신고번호</dt><dd data-i18n="foot.ecom_v">제 2026-서울강남-02697 호</dd></dl>
+        <dl><dt data-i18n="foot.kr_l">한국법인</dt><dd data-i18n="foot.kr_v">서울특별시 송파구 법원로9길 26 H비즈니스파크 C동 10층 1010호</dd></dl>
+        <dl><dt data-i18n="foot.eu_l">유럽법인</dt><dd>19, Baggot Street Lower, Dublin 2, Ireland, D02 X658</dd></dl>
+        <dl><dt data-i18n="foot.privacy_l">개인정보보호책임자</dt><dd data-i18n="foot.privacy_v">이한순</dd></dl>
         <dl class="font-jost"><dt>Mail</dt><dd><a href="mailto:terry@fulif.io">terry@fulif.io</a> · <a href="mailto:kntlexpert@fulif.io">kntlexpert@fulif.io</a></dd></dl>
       </div>
     </div>
     <div class="footer-right">
       <ul class="footer-menu">
-        <li><a href="partners.html"><b>광고 파트너 문의</b></a></li>
-        <li><a href="privacy.html">개인정보처리방침</a></li>
-        <li><a href="terms.html">이용약관</a></li>
+        <li><a href="partners.html" data-i18n="foot.menu_partner"><b>광고 파트너 문의</b></a></li>
+        <li><a href="privacy.html" data-i18n="foot.menu_privacy">개인정보처리방침</a></li>
+        <li><a href="terms.html" data-i18n="foot.menu_terms">이용약관</a></li>
       </ul>
       <div class="footer-copy font-jost">© CWG Inc. All Rights Reserved.</div>
     </div>
   </div>
 </footer>
 
-<button class="to-top" aria-label="맨 위로">↑</button>
+<button class="to-top" aria-label="맨 위로" data-i18n-attr="aria-label:a11y.totop">↑</button>
 <div class="quick-menu">
-  <a href="partners.html" class="quick-btn" data-label="광고 파트너 문의"><i>✉</i></a>
-  <a href="download.html" class="quick-btn" data-label="다운로드"><i>↓</i></a>
+  <a href="partners.html" class="quick-btn" data-label="광고 파트너 문의" data-i18n-attr="data-label:float.partner"><i>✉</i></a>
+  <a href="download.html" class="quick-btn" data-label="다운로드" data-i18n-attr="data-label:float.download"><i>↓</i></a>
 </div>
 <div class="cursor-glow"></div>
 
+<script src="js/i18n-dict.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script>
   function mbSetCycle(c){

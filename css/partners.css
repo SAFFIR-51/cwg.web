@@ -532,3 +532,25 @@
   .partner-perk { grid-template-columns: 1fr; gap: 3rem; padding: 3.4rem 2.6rem; }
   .perk-list { grid-template-columns: 1fr; }
 }
+
+/* ---- Inquiry form status message ---- */
+.form-status {
+  margin: 1.8rem 0 0;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  padding: 1.2rem 1.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.85);
+}
+.form-status[data-kind="ok"] {
+  border-color: rgba(80,200,140,0.5);
+  background: rgba(80,200,140,0.12);
+  color: #7fe3ad;
+}
+.form-status[data-kind="fail"] {
+  border-color: rgba(240,110,110,0.5);
+  background: rgba(240,110,110,0.12);
+  color: #ff9b9b;
+}
