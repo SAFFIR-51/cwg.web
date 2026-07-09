@@ -103,19 +103,23 @@
   <div class="container">
     <ul class="mb-tiers" data-stagger-group>
 
-      <!-- FREE -->
-      <li class="mb-tier" data-stagger>
-        <span class="mb-gate" data-i18n="mem.free.gate">The Entrance · 행운의 입구</span>
-        <h3 class="mb-tier-name font-jost">FREE</h3>
-        <div class="mb-price"><span class="mb-num" data-i18n="mem.free">무료</span></div>
-        <p class="mb-subprice" data-i18n="mem.free.sub">부담 없이 시작하세요</p>
+      <!-- PRO -->
+      <li class="mb-tier mb-tier-pro" data-stagger>
+        <span class="mb-badge" data-i18n="mem.pro.badge">가장 인기 · 챔피언십 도전</span>
+        <span class="mb-gate" data-i18n="mem.pro.gate">The Champion · 챔피언의 문</span>
+        <h3 class="mb-tier-name font-jost">PRO</h3>
+        <div class="mb-price">
+          <span class="mb-num" data-month="8,000원" data-year="80,000원">8,000원</span>
+          <span class="mb-per" data-month="/ 월" data-year="/ 년">/ 월</span>
+        </div>
+        <p class="mb-subprice"><span class="mb-annual-only" data-i18n="mem.pro.annual">연 80,000원 · 2개월 무료</span></p>
         <ul class="mb-feats">
-          <li data-i18n="mem.free.f1">매주 FULIF 번호 <b>2세트</b></li>
-          <li data-i18n="mem.free.f2">광고 시청 포인트 <b>1일 10회</b></li>
-          <li data-i18n="mem.free.f3">경품 응모 <b>주 5건</b></li>
-          <li data-i18n="mem.free.f4">럭키 스코어 · 넘버 센스</li>
+          <li data-i18n="mem.pro.f1">매주 10세트 <b>+ 본인 생성 10세트</b> (총 20세트)</li>
+          <li data-i18n="mem.pro.f2">35개 필터로 <b>나만의 번호 설계</b></li>
+          <li data-i18n="mem.pro.f3">낙첨복권 등록 <b>주 20건</b> · 경품 응모 <b>주 20건</b></li>
+          <li data-i18n="mem.pro.f4"><b>챔피언십 도전권</b> — 트로피에 도전</li>
         </ul>
-        <a class="mb-cta mb-cta-ghost" href="download.html" data-i18n="mem.free.cta">무료로 시작</a>
+        <a class="mb-cta mb-cta-solid" href="download.html" data-i18n="mem.pro.cta">PRO 시작</a>
       </li>
 
       <!-- STANDARD -->
@@ -136,23 +140,19 @@
         <a class="mb-cta mb-cta-solid" href="download.html" data-i18n="mem.std.cta">STANDARD 시작</a>
       </li>
 
-      <!-- PRO -->
-      <li class="mb-tier mb-tier-pro" data-stagger>
-        <span class="mb-badge" data-i18n="mem.pro.badge">가장 인기 · 챔피언십 도전</span>
-        <span class="mb-gate" data-i18n="mem.pro.gate">The Champion · 챔피언의 문</span>
-        <h3 class="mb-tier-name font-jost">PRO</h3>
-        <div class="mb-price">
-          <span class="mb-num" data-month="8,000원" data-year="80,000원">8,000원</span>
-          <span class="mb-per" data-month="/ 월" data-year="/ 년">/ 월</span>
-        </div>
-        <p class="mb-subprice"><span class="mb-annual-only" data-i18n="mem.pro.annual">연 80,000원 · 2개월 무료</span></p>
+      <!-- FREE -->
+      <li class="mb-tier" data-stagger>
+        <span class="mb-gate" data-i18n="mem.free.gate">The Entrance · 행운의 입구</span>
+        <h3 class="mb-tier-name font-jost">FREE</h3>
+        <div class="mb-price"><span class="mb-num" data-i18n="mem.free">무료</span></div>
+        <p class="mb-subprice" data-i18n="mem.free.sub">부담 없이 시작하세요</p>
         <ul class="mb-feats">
-          <li data-i18n="mem.pro.f1">매주 10세트 <b>+ 본인 생성 10세트</b> (총 20세트)</li>
-          <li data-i18n="mem.pro.f2">35개 필터로 <b>나만의 번호 설계</b></li>
-          <li data-i18n="mem.pro.f3">낙첨복권 등록 <b>주 20건</b> · 경품 응모 <b>주 20건</b></li>
-          <li data-i18n="mem.pro.f4"><b>챔피언십 도전권</b> — 트로피에 도전</li>
+          <li data-i18n="mem.free.f1">포인트로 매주 <b>2세트</b> 생성</li>
+          <li data-i18n="mem.free.f2">광고 시청 포인트 <b>1일 10회</b></li>
+          <li data-i18n="mem.free.f3">경품 응모 <b>주 5건</b></li>
+          <li data-i18n="mem.free.f4">럭키 스코어 · 넘버 센스</li>
         </ul>
-        <a class="mb-cta mb-cta-solid" href="download.html" data-i18n="mem.pro.cta">PRO 시작</a>
+        <a class="mb-cta mb-cta-ghost" href="download.html" data-i18n="mem.free.cta">무료로 시작</a>
       </li>
     </ul>
   </div>
@@ -204,7 +204,7 @@
         <tbody>
           <tr><td data-i18n="mem.cmp.r1">월 구독료</td><td data-i18n="mem.free">무료</td><td>5,000원</td><td>8,000원</td></tr>
           <tr><td data-i18n="mem.cmp.r2">연 구독료 (2개월 무료)</td><td class="mb-dash">—</td><td>50,000원</td><td>80,000원</td></tr>
-          <tr><td data-i18n="mem.cmp.r3">매주 제공 번호</td><td data-i18n="mem.set2">2세트</td><td data-i18n="mem.set10">10세트</td><td data-i18n="mem.set10">10세트</td></tr>
+          <tr><td data-i18n="mem.cmp.r3">매주 번호 생성</td><td data-i18n="mem.set2">포인트로 2세트 생성</td><td data-i18n="mem.set10">10세트 제공</td><td data-i18n="mem.set10">10세트 제공</td></tr>
           <tr><td data-i18n="mem.cmp.r4">나만의 번호 추가 생성</td><td class="mb-dash">—</td><td class="mb-dash">—</td><td data-i18n="mem.set_pro">+10세트 (총 20)</td></tr>
           <tr><td data-i18n="mem.cmp.r5">낙첨복권 주간 등록</td><td data-i18n="mem.n5">5건</td><td data-i18n="mem.n10">10건</td><td data-i18n="mem.n20">20건</td></tr>
           <tr><td data-i18n="mem.cmp.r6">주간 경품 응모</td><td data-i18n="mem.n5">5건</td><td data-i18n="mem.n10">10건</td><td data-i18n="mem.n20">20건</td></tr>

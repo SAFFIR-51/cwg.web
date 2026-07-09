@@ -222,7 +222,6 @@
 /* Responsive */
 @media (max-width: 900px) {
   .mb-tiers { grid-template-columns: 1fr; max-width: 42rem; margin: 0 auto; }
-  .mb-tier-pro { order: -1; }
   .mb-champ { grid-template-columns: 1fr; text-align: center; }
   .mb-champ-copy { order: 2; text-align: left; }
   .mb-champ-visual { order: 1; }
