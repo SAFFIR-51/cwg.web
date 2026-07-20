@@ -49,9 +49,9 @@ window.FULIF_I18N_EN = {
   'home.hero2.cta2': 'Download the App',
 
   /* ---------- Home: about ---------- */
-  'home.about.line1': "It's analysis, not luck.",
-  'home.about.line2': 'We design fun through value return.',
-  'home.about.desc': 'Scans become points, views become entries, entries become new data.<br>Advertising blends naturally into every one of these actions.',
+  'home.about.line1': 'Expectation into excitement, action into value.',
+  'home.about.line2': 'FULIF designs fun.',
+  'home.about.desc': 'A loss becomes a new chance, and taking part becomes your own kind of fun.<br>FULIF adds a spark of excitement to your everyday.',
 
   /* ---------- Home: value loop ---------- */
   'home.loop.title': 'Action into value,<br>value back into action.',
