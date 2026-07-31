@@ -193,8 +193,8 @@
 }
 .version-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.4rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
 }
 .version-card {
   position: relative;
