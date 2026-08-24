@@ -3371,3 +3371,205 @@ body.menu-open {
   .bs-splash-video { justify-self: center; margin-top: 2rem; }
 }
 
+
+/* ============================================
+   2026-08 리뉴얼 — HERO (신규 카피 + 폰 목업 슬롯)
+============================================ */
+.hero-content.hero-duo {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  text-align: left;
+  padding: 10rem 4rem 0;
+}
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hero-duo .hero-title { font-size: 6.4rem; font-weight: 600; }
+.hero-headline {
+  margin-top: 1.8rem;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+  color: var(--main-color3);
+}
+.hero-duo .hero-sub { margin-top: 1.8rem; font-size: 1.6rem; }
+.hero-duo .hero-cta-group { margin-top: 3.2rem; }
+.hero-open {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+.hero-phone { flex-shrink: 0; }
+.hero-phone .screen-slot {
+  width: 30rem;
+  background-color: rgba(6,9,16,0.4);
+  backdrop-filter: blur(0.4rem);
+}
+@media (max-width: 1024px) {
+  .hero-content.hero-duo { gap: 4rem; }
+  .hero-phone .screen-slot { width: 24rem; }
+  .hero-duo .hero-title { font-size: 5rem; }
+  .hero-headline { font-size: 2.4rem; }
+}
+@media (max-width: 768px) {
+  .hero-content.hero-duo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 14rem;
+    gap: 3rem;
+  }
+  .hero-copy { align-items: center; }
+  .hero-phone .screen-slot { width: 17rem; }
+  .hero-duo .hero-title { font-size: 4.2rem; }
+  .hero-headline { font-size: 2rem; }
+}
+
+/* ============================================
+   2026-08 리뉴얼 — 30초 만에 이해하기
+============================================ */
+.section-quick3 { padding: var(--section-py) 0; background: var(--bg-base); }
+.quick3-head { text-align: center; margin-bottom: 5.6rem; }
+.quick3-head .sub-label { display: inline-block; margin-bottom: 1.6rem; }
+.quick3-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+.quick3-card {
+  padding: 3.6rem 3rem;
+  border-radius: 2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition);
+}
+.quick3-card:hover { background: var(--glass-bg-hover); border-color: rgba(255,255,255,0.16); }
+.quick3-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background: var(--main-color);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.quick3-tit {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+.quick3-desc { font-size: 1.5rem; line-height: 1.7; color: var(--text-secondary); }
+.quick3-tagline {
+  margin-top: 4.8rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.quick3-tagline .accent { color: var(--main-color3); }
+@media (max-width: 900px) {
+  .quick3-cards { grid-template-columns: 1fr; }
+  .quick3-tagline { font-size: 1.6rem; }
+}
+
+/* ============================================
+   2026-08 리뉴얼 — 이용 순서 사진 슬롯 5종
+============================================ */
+.loop-shots {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.6rem;
+  margin-top: 5.6rem;
+}
+.loop-shots .screen-slot { max-width: none; margin: 0; }
+@media (max-width: 1024px) {
+  .loop-shots { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .loop-shots { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================
+   2026-08 리뉴얼 — FULIF가 다른 이유 사진 슬롯 카드
+============================================ */
+.whyads-card-slot { display: flex; align-items: center; justify-content: center; }
+.diff-slot-wrap {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  justify-content: center;
+}
+.diff-slot-wrap .screen-slot { max-width: 14rem; margin: 0; flex: 1; }
+
+/* ============================================
+   2026-08 리뉴얼 — FULIF FOUND
+============================================ */
+.section-found { padding: var(--section-py) 0; background: var(--bg-elev); }
+.found-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.found-text .sub-label { display: inline-block; margin-bottom: 1.6rem; letter-spacing: 0.14em; }
+.found-text .section-title { margin-bottom: 2rem; }
+.found-text .section-desc { margin-bottom: 3.2rem; }
+.found-points { display: flex; flex-direction: column; gap: 1.6rem; }
+.found-points li {
+  position: relative;
+  padding-left: 2.4rem;
+  font-size: 1.55rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.found-points li b { color: #fff; }
+.found-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.85rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--main-color3);
+}
+.found-note { margin-top: 3.2rem; font-size: 1.35rem; color: var(--text-muted); }
+.found-visual .screen-slot { max-width: 28rem; }
+@media (max-width: 900px) {
+  .found-grid { grid-template-columns: 1fr; gap: 4rem; }
+  .found-visual .screen-slot { max-width: 22rem; }
+}
+
+/* ============================================
+   2026-08 리뉴얼 — 공용 (카운터 접두어 · 피처 강조줄 · 슬롯 힌트)
+============================================ */
+.count-prefix { margin-right: 0.8rem; }
+.feature-accent {
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--main-color3);
+}
+.slot-hint {
+  padding: 0 1.6rem;
+  text-align: center;
+  line-height: 1.5;
+  text-transform: none;
+  font-family: var(--font-kr);
+  word-break: keep-all;
+}

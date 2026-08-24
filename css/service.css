@@ -1034,3 +1034,153 @@
   .feature-text .feature-title { font-size: 2.4rem; }
   .feature-text .feature-desc { font-size: 1.4rem; }
 }
+
+/* ============================================
+   2026-08 리뉴얼 — Core Logic 인트로 (설명 + 칩 4종)
+============================================ */
+.cap-intro-desc {
+  margin-top: 1.8rem;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+.cap-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 3.2rem;
+}
+.cap-chip {
+  padding: 1.3rem 2.6rem;
+  border-radius: 1.2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.intro-note { margin-top: 1.4rem; font-size: 1.35rem; color: var(--text-muted); }
+
+/* ============================================
+   2026-08 리뉴얼 — SCREEN 02 확장 · 번호 큐레이션
+============================================ */
+.prevax-curation { padding: 0 0 12rem; }
+.prevax-curation .feature-row { margin-bottom: 12rem; }
+.prevax-capability-cont { padding-top: 0; }
+
+.cur-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  margin-top: 2.8rem;
+}
+.cur-duo-card {
+  padding: 2.4rem 2.2rem;
+  border-radius: 1.6rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+.cur-duo-card strong {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.cur-duo-card p { font-size: 1.4rem; line-height: 1.6; color: var(--text-secondary); }
+.cur-duo-card-dark {
+  background: linear-gradient(155deg, var(--main-color) 0%, var(--main-color2) 100%);
+  border-color: var(--main-color);
+}
+.cur-duo-card-dark strong { color: #fff; }
+.cur-duo-card-dark p { color: rgba(255,255,255,0.85); }
+
+.cur-filters { margin-bottom: 12rem; }
+.cur-block-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #fff;
+  margin-bottom: 1.6rem;
+}
+.cur-block-desc { font-size: 1.55rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 3.2rem; }
+.cur-block-note { margin-top: 3.2rem; font-size: 1.5rem; line-height: 1.75; color: var(--text-secondary); }
+
+.cur-grid { display: grid; gap: 1.6rem; }
+.cur-grid-5 { grid-template-columns: repeat(5, 1fr); }
+.cur-grid-2 { grid-template-columns: repeat(2, 1fr); margin-top: 2.8rem; }
+.cur-card {
+  padding: 2.2rem 2rem;
+  border-radius: 1.6rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition);
+}
+.cur-card:hover { background: var(--glass-bg-hover); border-color: rgba(255,255,255,0.16); }
+.cur-card strong {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.cur-card p { font-size: 1.35rem; line-height: 1.6; color: var(--text-secondary); }
+
+.cur-rows { display: flex; flex-direction: column; gap: 1.4rem; margin-top: 0.6rem; }
+.cur-row {
+  padding: 2.2rem 2.4rem;
+  border-radius: 1.6rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+.cur-row strong {
+  display: block;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+}
+.cur-row p { font-size: 1.4rem; line-height: 1.65; color: var(--text-secondary); }
+
+.cur-banner {
+  padding: 6.4rem 4rem;
+  border-radius: 2.4rem;
+  text-align: center;
+  background: linear-gradient(160deg, #0c1424 0%, #0a0f1c 100%);
+  border: 1px solid rgba(74,130,255,0.18);
+}
+.cur-banner-title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.cur-banner-desc { font-size: 1.6rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2.4rem; }
+.cur-banner-accent { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; color: var(--main-color3); }
+
+/* 이용 등급 2단 그리드 */
+.version-grid-duo {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 96rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .cur-grid-5 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .cur-grid-5 { grid-template-columns: repeat(2, 1fr); }
+  .cur-grid-2 { grid-template-columns: 1fr; }
+  .cur-duo { grid-template-columns: 1fr; }
+  .cur-block-title { font-size: 2.4rem; }
+  .cur-banner { padding: 4.8rem 2.4rem; }
+  .cur-banner-title { font-size: 2.6rem; }
+  .version-grid-duo { grid-template-columns: 1fr; }
+  .prevax-curation .feature-row { margin-bottom: 8rem; }
+}
