@@ -15,3 +15,9 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# 작업용 원본 스크린샷 (assets/screens에 정리본 있음)
+IMG_*.PNG
+스크린샷*.png
+Section.png
+\[사진1\].png

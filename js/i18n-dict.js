@@ -195,16 +195,17 @@ window.FULIF_I18N_EN = {
 
   /* intro */
   'svc.intro.headline': 'The app where one non-winning ticket<br>\n          <b class="accent">becomes useful again.</b>',
-  'svc.intro.sub': 'Scan &middot; numbers &middot; content &middot; prize draws connect into one flow.<br>The four screens below are all of FULIF.',
+  'svc.intro.sub': 'Scan &middot; numbers &middot; content &middot; prize draws connect into one flow.<br>The five screens below are all of FULIF.',
   'svc.intro.note': 'Starting in Korea, continuing to Europe and Japan.',
 
   /* core logic */
-  'svc.core.title': 'The four screens<br>that drive FULIF.',
+  'svc.core.title': 'The five screens<br>that drive FULIF.',
   'svc.core.desc': 'What each screen does, shown in order.',
   'svc.core.chip1': '01 Scan',
   'svc.core.chip2': '02 Numbers &middot; Championship',
-  'svc.core.chip3': '03 Content',
-  'svc.core.chip4': '04 Prize Draw',
+  'svc.core.chip2b': '03 Number Curation',
+  'svc.core.chip3': '04 Content',
+  'svc.core.chip4': '05 Prize Draw',
 
   'svc.f1.num': 'SCREEN 01 &middot; Scan',
   'svc.f1.title': 'Just snap it &mdash;<br>the app does the rest.',
@@ -219,7 +220,7 @@ window.FULIF_I18N_EN = {
   'svc.f2.slot2': 'Filter tuning screen',
 
   /* SCREEN 02 확장 — 번호 큐레이션 */
-  'svc.cur.num': 'SCREEN 02 &middot; Number Curation',
+  'svc.cur.num': 'SCREEN 03 &middot; Number Curation',
   'svc.cur.title': 'Accumulated data<br>comes back as numbers.',
   'svc.cur.desc': 'On top of the round data organized by scanning, FULIF curates numbers through 35 filters designed in-house. The results branch two ways.',
   'svc.cur.duo1.t': 'Numbers FULIF made',
@@ -301,13 +302,13 @@ window.FULIF_I18N_EN = {
   'svc.given.desc': 'Pro members receive, as-is, the numbers the company curates weekly through the same 35 filters.<br>The fun of building in the Championship; the convenience of receiving with provided numbers.',
   'svc.given.accent': 'Numbers you built and numbers you received sit side by side in the archive.',
 
-  'svc.f3.num': 'SCREEN 03 &middot; Content',
+  'svc.f3.num': 'SCREEN 04 &middot; Content',
   'svc.f3.title': 'So it doesn\'t end<br>at checking results.',
   'svc.f3.desc': '<b class="accent">Lucky Score</b> &mdash; shows as a score how close your registered numbers came to that round\'s first-prize numbers. <b class="accent">Number Sense</b> &mdash; a brain game testing your feel for numbers. <b class="accent">Number Stats</b> &mdash; organizes recent round records to show frequent and quiet numbers.',
   'svc.f3.accent': 'Even in a week you didn\'t win, there\'s still something to see.',
   'svc.f3.slot': 'Lucky Score screen',
 
-  'svc.f4.num': 'SCREEN 04 &middot; Prize Draw',
+  'svc.f4.num': 'SCREEN 05 &middot; Prize Draw',
   'svc.f4.title': 'Two actions,<br>one entry.',
   'svc.f4.desc': 'Register your non-winning numbers and points build up; watch an ad to the end and an entry is issued. The winning odds of a single entry are identical regardless of tier. Tiers differ only in how many entries you can make per round &mdash; never in odds.',
   'svc.f4.accent': 'Prizes are e-coupons provided by partner brands.',
@@ -382,7 +383,7 @@ window.FULIF_I18N_EN = {
 
   /* ---------- membership.html ---------- */
   'mem.doc.title': 'Membership | FULIF by CWG',
-  'mem.doc.desc': 'FULIF Membership &mdash; FREE and PRO, two doors. For 5,000 KRW a month, take on 20 sets every round and the Championship. All prize entries carry equal odds.',
+  'mem.doc.desc': 'FULIF Membership &mdash; Starter and PRO, two doors. For 5,000 KRW a month, take on 20 sets every round and the Championship. All prize entries carry equal odds.',
   'mem.skip': 'Skip to content',
   'mem.intro.title': 'Your way,<br><b class="accent">enjoy FULIF.</b>',
   'mem.intro.desc': 'Start light, or design your own numbers and go for champion &mdash; open one of the two doors.',
@@ -422,7 +423,7 @@ window.FULIF_I18N_EN = {
   'mem.trial.r2d': 'One look at the detailed Lucky Score report',
   'mem.trial.r3n': 'PRO for a day',
   'mem.trial.r3d': 'Every PRO feature unlocked for 24 hours',
-  'mem.trial.note': '&#8251; When the trial period ends, your account returns to FREE automatically. Points cannot be used to pay for a subscription or to obtain prize entry tickets.',
+  'mem.trial.note': '&#8251; When the trial period ends, your account returns to Starter automatically. Points cannot be used to pay for a subscription or to obtain prize entry tickets.',
 
   'mem.champ.title': 'Your number sense,<br><b class="accent">becomes a trophy.</b>',
   'mem.champ.desc': 'Each draw, we score how closely the numbers a PRO member designed with filters matched the results &mdash; and those points add up round after round. Even in a week when not a single set matches, the closest one still scores, so the run stays alive all season.',

@@ -94,7 +94,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="hero-open" data-i18n="home.hero1.open">2026년 9월 7일 오픈</p>
         </div>
         <div class="hero-phone">
-          <div class="screen-slot">
+          <div class="screen-slot" style="background-image:url(assets/screens/app-home.png)">
             <span class="slot-hint" data-i18n="home.hero1.slot">[사진 1] 앱 홈화면</span>
           </div>
         </div>
@@ -139,6 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ============ SECTION 1: ABOUT — 가치환원 정체성 ============ -->
+<!-- TEMP-HIDDEN START (About 정체성 — PDF 미포함, 추후 부활 예정)
 <section id="about" class="section-about">
   <div class="flow-bg flow-bg-1 flow-bg-right" aria-hidden="true"></div>
   <div class="container">
@@ -150,6 +151,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="about-desc" data-scroll data-i18n="home.about.desc">낙첨은 새로운 기회로, 참여는 나만의 즐거움으로.<br>FULIF가 당신의 일상에 설렘을 더합니다.</p>
   </div>
 </section>
+TEMP-HIDDEN END -->
 
 <!-- ============ SECTION 2: 이용 순서 — 처음 오신 분도 3분이면 끝납니다 ============ -->
 <section id="loop" class="section-loop">
@@ -162,76 +164,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <ul class="loop-cards" data-stagger-group>
       <li class="loop-card" data-stagger data-bg-num="01">
         <span class="loop-num font-jost">STEP 01</span>
-        <div class="loop-ic">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-            <rect x="3" y="6" width="28" height="22" rx="2" stroke="white" stroke-width="2"/>
-            <circle cx="17" cy="17" r="6" stroke="white" stroke-width="2"/>
-            <path d="M12 6 L14 3 H20 L22 6" stroke="white" stroke-width="2"/>
-          </svg>
-        </div>
+        <div class="loop-shot" style="background-image:url(assets/screens/scan.png)"></div>
         <strong class="loop-tit" data-i18n="home.loop.s1.t">낙첨번호 스캔</strong>
         <p class="loop-desc" data-i18n="home.loop.s1.d">지난 회차 복권을 카메라에 비추면 번호가 자동으로 읽힙니다. 등록 가능 시간은 매주 토요일 21:00 ~ 화요일 20:00입니다.</p>
       </li>
       <li class="loop-card" data-stagger data-bg-num="02">
         <span class="loop-num font-jost">STEP 02</span>
-        <div class="loop-ic">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-            <polygon points="14,10 14,24 24,17" stroke="white" stroke-width="2" stroke-linejoin="round" fill="none"/>
-            <circle cx="17" cy="17" r="14" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
-          </svg>
-        </div>
+        <div class="loop-shot" style="background-image:url(assets/screens/scan-result.png)"></div>
         <strong class="loop-tit" data-i18n="home.loop.s2.t">광고 시청 → 응모권 + 포인트</strong>
         <p class="loop-desc" data-i18n="home.loop.s2.d">스캔한 번호 아래에서 광고를 보면 경품 응모권이 발급됩니다. 포인트는 1초당 1P. 15초 광고면 15P, 30초 광고면 30P입니다.</p>
       </li>
       <li class="loop-card" data-stagger data-bg-num="03">
         <span class="loop-num font-jost">STEP 03</span>
-        <div class="loop-ic">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-            <path d="M11 6 H23 V14 C23 18 20 21 17 21 C14 21 11 18 11 14 Z" stroke="white" stroke-width="2"/>
-            <path d="M14 21 V28 H20 V21" stroke="white" stroke-width="2"/>
-            <path d="M11 9 H6 V12 C6 14 8 16 11 16" stroke="white" stroke-opacity="0.6" stroke-width="2"/>
-            <path d="M23 9 H28 V12 C28 14 26 16 23 16" stroke="white" stroke-opacity="0.6" stroke-width="2"/>
-          </svg>
-        </div>
+        <div class="loop-shot" style="background-image:url(assets/screens/prize-history.png)"></div>
         <strong class="loop-tit" data-i18n="home.loop.s3.t">매주 화요일 20:30 추첨</strong>
         <p class="loop-desc" data-i18n="home.loop.s3.d">응모 마감은 화요일 20:00, 추첨은 같은 날 20:30입니다. 응모권 1건의 확률은 모두 동일합니다.</p>
       </li>
       <li class="loop-card" data-stagger data-bg-num="04">
         <span class="loop-num font-jost">STEP 04</span>
-        <div class="loop-ic">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-            <rect x="5" y="5" width="24" height="24" rx="2" stroke="white" stroke-width="2"/>
-            <path d="M10 12 H24 M10 17 H24 M10 22 H18" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
+        <div class="loop-shot" style="background-image:url(assets/screens/hall-championship.png)"></div>
         <strong class="loop-tit" data-i18n="home.loop.s4.t">FULIF 기록실</strong>
         <p class="loop-desc" data-i18n="home.loop.s4.d">내가 등록한 번호와 응모 이력, 점수가 모두 남습니다. 기록은 사라지지 않습니다.</p>
       </li>
       <li class="loop-card" data-stagger data-bg-num="05">
         <span class="loop-num font-jost">STEP 05</span>
-        <div class="loop-ic">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-            <path d="M27 13 A11 11 0 1 0 22 26" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M27 7 V13 H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+        <div class="loop-shot" style="background-image:url(assets/screens/lucky-score-result.png)"></div>
         <strong class="loop-tit" data-i18n="home.loop.s5.t">럭키 스코어 확인</strong>
         <p class="loop-desc" data-i18n="home.loop.s5.d">기록실에서 내 번호가 그 회차 1등 번호에 얼마나 가까웠는지 확인하실 수 있습니다. 0점은 없습니다. 최소 30점부터 시작합니다.</p>
       </li>
     </ul>
 
-    <div class="loop-shots" data-stagger-group>
-      <div class="screen-slot" data-stagger><span class="slot-hint" data-i18n="home.loop.p2">[사진 2] 낙첨번호 스캔 화면</span></div>
-      <div class="screen-slot" data-stagger><span class="slot-hint" data-i18n="home.loop.p3">[사진 3] 광고 시청 · 응모권 발급</span></div>
-      <div class="screen-slot" data-stagger><span class="slot-hint" data-i18n="home.loop.p4">[사진 4] 경품 추첨 안내 / 발표</span></div>
-      <div class="screen-slot" data-stagger><span class="slot-hint" data-i18n="home.loop.p5">[사진 5] FULIF 기록실 화면</span></div>
-      <div class="screen-slot" data-stagger><span class="slot-hint" data-i18n="home.loop.p6">[사진 6] 럭키 스코어 결과 화면</span></div>
-    </div>
-
   </div>
 </section>
 
 <!-- ============ SECTION 3: 4 CORE PATENT TECH — 가치환원의 핵심 ============ -->
+<!-- TEMP-HIDDEN START (특허 핵심 기술 — PDF 미포함, 추후 부활 예정)
 <section id="ai" class="section-ai">
   <div class="container ai-grid">
     <div class="ai-diagram">
@@ -332,6 +299,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
+TEMP-HIDDEN END -->
 
 <!-- ============ SECTION 3B: FULIF가 다른 이유 ============ -->
 <section id="whyfulif" class="section-whyads">
@@ -379,8 +347,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
       <li class="whyads-card whyads-card-slot" data-stagger>
         <div class="diff-slot-wrap">
-          <div class="screen-slot"><span class="slot-hint" data-i18n="home.diff.p7">[사진 7] 챔피언십 번호생성 화면</span></div>
-          <div class="screen-slot"><span class="slot-hint" data-i18n="home.diff.p8">[사진 8] 번호 통계 / 제공 번호</span></div>
+          <div class="screen-slot" style="background-image:url(assets/screens/championship-style.png)"><span class="slot-hint" data-i18n="home.diff.p7">[사진 7] 챔피언십 번호생성 화면</span></div>
+          <div class="screen-slot" style="background-image:url(assets/screens/score-trend.png)"><span class="slot-hint" data-i18n="home.diff.p8">[사진 8] 번호 통계 / 제공 번호</span></div>
         </div>
       </li>
     </ul>
@@ -402,7 +370,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="found-note" data-i18n="home.found.note">FULIF FOUND는 9월 오픈 후 데이터가 쌓이는 시점부터 순차 공개됩니다.</p>
     </div>
     <div class="found-visual" data-scroll>
-      <div class="screen-slot"><span class="slot-hint" data-i18n="home.found.p9">[사진 9] FULIF FOUND 카드 화면</span></div>
+      <img class="found-card" src="assets/images/found-card.png" alt="FULIF FOUND 카드 — 내 동네 편의점·마트·주유소 혜택 찾기">
     </div>
   </div>
 </section>
@@ -622,6 +590,7 @@ TEMP-HIDDEN END -->
 </section>
 
 <!-- ============ SECTION 9: QUICK ACCESS ============ -->
+<!-- TEMP-HIDDEN START (Quick Access — PDF 미포함, 추후 부활 예정)
 <section id="support" class="section-support">
   <div class="container support-grid">
     <div class="support-left">
@@ -679,6 +648,7 @@ TEMP-HIDDEN END -->
     </div>
   </div>
 </section>
+TEMP-HIDDEN END -->
 
 <!-- ============ SECTION 10: CONTACT (글래스 카드 안에 광고 파트너 문의) ============ -->
 <section id="contact" class="section-contact">
