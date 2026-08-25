@@ -3551,6 +3551,18 @@ body.menu-open {
   align-items: center;
 }
 .found-text .sub-label { display: inline-block; margin-bottom: 1.6rem; letter-spacing: 0.14em; }
+.found-ai-badge {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.3rem 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--main-color) 0%, #8B5CF6 100%);
+  border-radius: 999px;
+  vertical-align: 0.25em;
+}
 .found-text .section-title { margin-bottom: 2rem; }
 .found-text .section-desc { margin-bottom: 3.2rem; }
 .found-points { display: flex; flex-direction: column; gap: 1.6rem; }

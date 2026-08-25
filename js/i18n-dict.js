@@ -397,7 +397,7 @@ window.FULIF_I18N_EN = {
   'mem.free.f1': 'Generate <b>2 sets</b> per round with points',
   'mem.free.f2': 'Ticket registration <b>2 sets/round</b> &middot; Prize entries <b>2/round</b>',
   'mem.free.f3': 'Ad-view points <b>10&times;/day</b>',
-  'mem.free.f4': 'Lucky Score &middot; Number Sense &middot; Lucky Stamp',
+  'mem.free.f4': 'Number Sense &middot; Lucky Stamp',
   'mem.free.f5': 'Try <b>PRO features</b> with points',
   'mem.free.cta': 'Start for Free',
 
@@ -465,7 +465,8 @@ window.FULIF_I18N_EN = {
   'mem.cmp.r5': 'Ticket registration per round',
   'mem.cmp.r6': 'Prize entries per round',
   'mem.cmp.r7': 'Ad-view points (per day)',
-  'mem.cmp.r8': 'Lucky Score &middot; Number Sense &middot; Lucky Stamp',
+  'mem.cmp.r8': 'Number Sense &middot; Lucky Stamp',
+  'mem.cmp.r8b': 'Lucky Score',
   'mem.cmp.r9': 'Try PRO features with points',
   'mem.cmp.r10': 'Championship entry',
   'mem.cmp.r11': 'PRO-only events',
