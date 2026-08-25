@@ -28,6 +28,7 @@
   line-height: 1.2;
   color: #fff;
   margin-bottom: 2.4rem;
+  word-break: keep-all;
 }
 .download-desc {
   font-size: 1.6rem;

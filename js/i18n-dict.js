@@ -49,7 +49,7 @@ window.FULIF_I18N_EN = {
 
   /* ---------- Home: understand in 30 seconds ---------- */
   'home.quick.label': 'Understand in 30 Seconds',
-  'home.quick.title': 'This is how FULIF moves.',
+  'home.quick.title': 'This is how FULIF moves',
   'home.quick.c1.t': 'Scan',
   'home.quick.c1.d': 'Scan your non-winning numbers with the camera.<br>A sheet of paper becomes data.',
   'home.quick.c2.t': 'Watch',
@@ -65,7 +65,7 @@ window.FULIF_I18N_EN = {
 
   /* ---------- Home: how to use (5 steps) ---------- */
   'home.loop.label': 'How It Works',
-  'home.loop.title': 'Even first-timers<br>finish in 3 minutes.',
+  'home.loop.title': 'Even first-timers<br>finish in 3 minutes',
   'home.loop.s1.t': 'Scan your numbers',
   'home.loop.s1.d': 'Point the camera at last round\'s ticket and the numbers are read automatically. Registration opens every Saturday 21:00 through Tuesday 20:00.',
   'home.loop.s2.t': 'Watch an ad → entry + points',
@@ -83,7 +83,7 @@ window.FULIF_I18N_EN = {
   'home.loop.p6': '[Photo 6] Lucky Score result screen',
 
   /* ---------- Home: patent-backed system ---------- */
-  'home.ai.title': 'Core system technology,<br>backed by patents.',
+  'home.ai.title': 'Core system technology,<br>backed by patents',
   'home.ai.n1': 'Data Capture',
   'home.ai.n2': 'Anti-Fraud',
   'home.ai.n3': 'Tiered Rewards',
@@ -99,7 +99,7 @@ window.FULIF_I18N_EN = {
   'home.ai.btn': 'See the Patents',
 
   /* ---------- Home: ad formats ---------- */
-  'home.fmt.title': 'Advertising lives<br>inside the content.',
+  'home.fmt.title': 'Advertising lives<br>inside the content',
   'home.fmt.desc': "Scan, results, entry screens &mdash; wherever users choose to spend time,<br>ads appear alongside the content.",
   'home.fmt.btn': 'Explore Slots',
   'home.fmt.c1.t': 'Rewarded<br>Video Ads',
@@ -113,7 +113,7 @@ window.FULIF_I18N_EN = {
   'home.fmt.c3.h2': '#BrandTie-in',
 
   /* ---------- Home: ad scale (KPIs) ---------- */
-  'home.mission.headline': 'We don\'t show ads to our members &mdash;<br>we create benefits together with brands.',
+  'home.mission.headline': 'We don\'t show ads to our members &mdash;<br>we create benefits together with brands',
   'home.mission.sub': 'One ad a member watches becomes that member\'s entry and points.<br>Advertising where brands and members stand on the same side. That\'s how FULIF works.',
   'home.mission.k1': 'Ad Categories',
   'home.mission.k2': 'Ad Slot Types',
@@ -124,22 +124,22 @@ window.FULIF_I18N_EN = {
 
   /* ---------- Home: why FULIF ---------- */
   'home.diff.label': 'Why FULIF',
-  'home.diff.title': 'What makes<br>FULIF different.',
-  'home.diff.c1.t': '35 in-house filters.',
+  'home.diff.title': 'What makes<br>FULIF different',
+  'home.diff.c1.t': '35 in-house filters',
   'home.diff.c1.d': 'FULIF curates and provides numbers through 35 filters designed in-house. It\'s our own engine combining frequency, pattern, math, and history criteria &mdash; curation, not prediction.',
-  'home.diff.c2.t': 'It starts from<br>a physical ticket.',
+  'home.diff.c2.t': 'It starts from<br>a physical ticket',
   'home.diff.c2.d': 'Not virtual numbers &mdash; the starting point is a real sheet of paper, actually purchased and actually unmatched. That\'s why FULIF\'s data cannot be replaced.',
-  'home.diff.c3.t': 'Lucky Score.',
+  'home.diff.c3.t': 'Lucky Score',
   'home.diff.c3.d': 'A result that used to end at "didn\'t win" now gets a score. The fun of seeing how close you came &mdash; plus points by score bracket.',
-  'home.diff.c4.t': 'Championship<br>(Pro only).',
+  'home.diff.c4.t': 'Championship<br>(Pro only)',
   'home.diff.c4.d': 'Pick your own filters, build your own numbers, and stack weekly scores into a year-long ranking. Three levels &mdash; style pick → filter tuning → expert mode &mdash; easy even for first-timers.',
-  'home.diff.c5.t': 'Points have<br>places to go.',
+  'home.diff.c5.t': 'Points have<br>places to go',
   'home.diff.c5.d': 'Filter-design trial passes, Pro 1-day passes, AI report access, and Championship entry. These aren\'t points that just pile up.',
   'home.diff.p7': '[Photo 7] Championship number-builder screen',
   'home.diff.p8': '[Photo 8] Number stats / provided numbers',
 
   /* ---------- Home: FULIF FOUND ---------- */
-  'home.found.title': 'This week\'s missed ticket<br>becomes this week\'s benefit.',
+  'home.found.title': 'This week\'s missed ticket<br>becomes this week\'s benefit',
   'home.found.desc': 'FULIF FOUND reads your activity area from your scan history,<br>and AI sums up nearby convenience-store, mart, and gas-station benefits in one paragraph.',
   'home.found.p1': '<b>No searching needed.</b> We find it and summarize it before you even ask.',
   'home.found.p2': '<b>We never invent benefits.</b> Only verified information is shown.',
@@ -148,28 +148,28 @@ window.FULIF_I18N_EN = {
   'home.found.p9': '[Photo 9] FULIF FOUND card screen',
 
   /* ---------- Home: why ads ---------- */
-  'home.why.title': 'Why advertisers<br>choose FULIF.',
-  'home.why.c1.t': 'Naturally woven<br>into the content.',
+  'home.why.title': 'Why advertisers<br>choose FULIF',
+  'home.why.c1.t': 'Naturally woven<br>into the content',
   'home.why.c1.d': 'Scan, results, entry screens &mdash; ads sit naturally in the places users choose to stay, showing up without friction.',
-  'home.why.c2.t': 'Watching ads<br>becomes entries.',
+  'home.why.c2.t': 'Watching ads<br>becomes entries',
   'home.why.c2.d': "Watching an ad converts into a prize entry. It's not forced exposure &mdash; there's value for the user too, so viewing happens by choice.",
-  'home.why.c3.t': 'One campaign,<br>many markets.',
+  'home.why.c3.t': 'One campaign,<br>many markets',
   'home.why.c3.d': 'Start in Korea and reach Europe and Japan in turn. The system handles country-by-country operations for you.',
-  'home.why.c4.t': 'Fraudulent traffic,<br>blocked automatically.',
+  'home.why.c4.t': 'Fraudulent traffic,<br>blocked automatically',
   'home.why.c4.d': 'Every scan runs a fraud check. Ads reach only real users, so no ad spend goes to waste.',
 
   /* ---------- Home: brand story ---------- */
-  'home.bs.title': 'Luck, built into<br>our name and our friend.',
+  'home.bs.title': 'Luck, built into<br>our name and our friend',
   'home.bs.desc': 'Everything about FULIF starts from one intention &mdash; refilling the moments that went empty.',
   'home.bs.name.tit': 'FULL <span class="accent">+</span> LIFE',
   'home.bs.name.desc': "<b>FULIF is a name born from 'FULL LIFE'.</b> A non-winning ticket is an empty moment, but FULIF refills that gap with points and fun and returns it to everyday life. The circular, looping logo stands for <b>'value that returns.'</b>",
   'home.bs.friend.tit': 'Fuli, the lucky four-leaf clover',
   'home.bs.friend.desc': 'Like a <b>four-leaf clover</b> that rarely appears among thousands of three-leaf ones, uncommon luck comes to those who look for it. <b>Fuli</b>, in a green cap, is FULIF&rsquo;s mascot &mdash; waiting with you for that luck every week.',
-  'home.bs.splash.tit': 'Every day, Fuli greets you.',
+  'home.bs.splash.tit': 'Every day, Fuli greets you',
   'home.bs.splash.desc': "Every time you open the app, Fuli says hello first. Here's to another full day &mdash; FULIF begins with that small moment of luck.",
 
   /* ---------- Home: quick access ---------- */
-  'home.support.title': 'Jump straight to<br>what you need.',
+  'home.support.title': 'Jump straight to<br>what you need',
   'home.support.btn': 'Apply as Partner',
   'home.support.c1.t': 'Service <i>⊕</i>',
   'home.support.c1.d': 'What the FULIF app is<br>and how it works',
@@ -179,7 +179,7 @@ window.FULIF_I18N_EN = {
   'home.support.c3.d': 'Out on Android &middot; iOS<br>try FULIF now',
 
   /* ---------- Home: contact ---------- */
-  'home.contact.title': 'Bring your brand<br>to FULIF users.',
+  'home.contact.title': 'Bring your brand<br>to FULIF users',
   'home.contact.desc': "Ad slots, sponsorships, data partnerships &mdash; whichever fits, we'll guide you.",
 
   /* ---------- Home: <title> / meta ---------- */
@@ -199,7 +199,7 @@ window.FULIF_I18N_EN = {
   'svc.intro.note': 'Starting in Korea, continuing to Europe and Japan.',
 
   /* core logic */
-  'svc.core.title': 'The five screens<br>that drive FULIF.',
+  'svc.core.title': 'The five screens<br>that drive FULIF',
   'svc.core.desc': 'What each screen does, shown in order.',
   'svc.core.chip1': '01 Scan',
   'svc.core.chip2': '02 Numbers &middot; Championship',
@@ -208,12 +208,12 @@ window.FULIF_I18N_EN = {
   'svc.core.chip4': '05 Prize Draw',
 
   'svc.f1.num': 'SCREEN 01 &middot; Scan',
-  'svc.f1.title': 'Just snap it &mdash;<br>the app does the rest.',
+  'svc.f1.title': 'Just snap it &mdash;<br>the app does the rest',
   'svc.f1.desc': 'Camera, gallery, QR, or direct input &mdash; however you register your non-winning numbers, they\'re organized into the same form of data. OCR and our own verification system work together to filter out bad and duplicate registrations. Once registered, result checking and point earning wrap up on a single screen.',
   'svc.f1.accent': 'No need to pull the ticket back out to compare.',
 
   'svc.f2.num': 'SCREEN 02 &middot; Numbers &middot; Championship',
-  'svc.f2.title': 'Numbers you receive,<br>and numbers you make.',
+  'svc.f2.title': 'Numbers you receive,<br>and numbers you make',
   'svc.f2.desc': '<b class="accent">Number curation</b> &mdash; receive numbers curated weekly through 35 filters designed in-house. <b class="accent">Championship</b> &mdash; pick from those 35 filters yourself, build your own numbers, and stack weekly scores into a year-long ranking. Style pick → hands-on filter tuning → expert mode: go as deep as you like.',
   'svc.f2.accent': 'Not numbers to guess with &mdash; numbers that were selected.',
   'svc.f2.slot1': 'Championship screen',
@@ -221,7 +221,7 @@ window.FULIF_I18N_EN = {
 
   /* SCREEN 02 확장 — 번호 큐레이션 */
   'svc.cur.num': 'SCREEN 03 &middot; Number Curation',
-  'svc.cur.title': 'Accumulated data<br>comes back as numbers.',
+  'svc.cur.title': 'Accumulated data<br>comes back as numbers',
   'svc.cur.desc': 'On top of the round data organized by scanning, FULIF curates numbers through 35 filters designed in-house. The results branch two ways.',
   'svc.cur.duo1.t': 'Numbers FULIF made',
   'svc.cur.duo1.d': 'Curated weekly by the company,<br>delivered to you as they are',
@@ -229,7 +229,7 @@ window.FULIF_I18N_EN = {
   'svc.cur.duo2.d': 'Made by members who pick<br>from the 35 filters themselves',
   'svc.cur.accent': 'Not numbers to guess with &mdash; numbers that were selected.',
   'svc.cur.slotA': '[Photo A] FULIF Archive — provided numbers / Championship numbers tab',
-  'svc.cur.f.title': '35 filters, moving in five branches.',
+  'svc.cur.f.title': '35 filters, moving in five branches',
   'svc.cur.f.desc': 'Each filter carries a different perspective. No single one gives the answer &mdash; many of them sift together.',
   'svc.cur.f1.t': 'Frequency',
   'svc.cur.f1.d': 'Looks at numbers that<br>appear often, and ones that don\'t',
@@ -253,7 +253,7 @@ window.FULIF_I18N_EN = {
   'svc.cur.anytime3': 'You can generate numbers right away at any step.',
 
   'svc.m1.num': 'Method 1/3 &middot; The Easiest',
-  'svc.m1.title': 'Just pick<br>one style.',
+  'svc.m1.title': 'Just pick<br>one style',
   'svc.m1.desc': 'Tap one of four styles and the 35 filters set themselves. Then you can generate numbers right away. First-timers can stop right here.',
   'svc.m1.c1.t': 'Trend',
   'svc.m1.c1.d': 'Leaning on recently frequent numbers',
@@ -265,7 +265,7 @@ window.FULIF_I18N_EN = {
   'svc.m1.c4.d': 'Calculated by sum &middot; odd/even &middot; range',
 
   'svc.m2.num': 'Method 2/3 &middot; Just the Core',
-  'svc.m2.title': 'Move just the<br>three core ones yourself.',
+  'svc.m2.title': 'Move just the<br>three core ones yourself',
   'svc.m2.desc': 'The three core filters of your chosen style open up. Slide the bars left and right to set weak &middot; medium &middot; strong. Touch only what you want to change.',
   'svc.m2.c1.t': 'Range Spread',
   'svc.m2.c1.d': 'So numbers spread evenly across all ranges',
@@ -277,7 +277,7 @@ window.FULIF_I18N_EN = {
   'svc.m2.c4.d': 'A lit blue dot marks the filters currently active',
 
   'svc.m3.num': 'Method 3/3 &middot; All Hands-On',
-  'svc.m3.title': 'All 35,<br>in your own hands.',
+  'svc.m3.title': 'All 35,<br>in your own hands',
   'svc.m3.desc': 'Unfold all five branches and set the filters one by one. Values set in earlier steps carry over, so there\'s no starting from scratch.',
   'svc.m3.c1.t': 'On / Off',
   'svc.m3.c1.d': 'Slide all the way left and that filter isn\'t used',
@@ -289,7 +289,7 @@ window.FULIF_I18N_EN = {
   'svc.m3.c4.d': 'Generate up to 10 sets per round',
 
   'svc.after.num': 'What Remains Afterward',
-  'svc.after.title': 'It doesn\'t end<br>at generation.',
+  'svc.after.title': 'It doesn\'t end<br>at generation',
   'svc.after.r1.t': 'We disclose the filters that fired',
   'svc.after.r1.d': 'See on the spot how many of the 35 were used for these numbers, and which ones. A full report is available too.',
   'svc.after.r2.t': 'Saved to the archive automatically',
@@ -298,18 +298,18 @@ window.FULIF_I18N_EN = {
   'svc.after.r3.d': 'The closer your numbers land to that round\'s results, the more points you stack &mdash; feeding into season rankings. Even if not a single set matches, points still accrue.',
   'svc.after.accent': 'The Championship is exclusive to Pro members.',
 
-  'svc.given.title': 'You don\'t have to build them yourself.',
+  'svc.given.title': 'You don\'t have to build them yourself',
   'svc.given.desc': 'Pro members receive, as-is, the numbers the company curates weekly through the same 35 filters.<br>The fun of building in the Championship; the convenience of receiving with provided numbers.',
   'svc.given.accent': 'Numbers you built and numbers you received sit side by side in the archive.',
 
   'svc.f3.num': 'SCREEN 04 &middot; Content',
-  'svc.f3.title': 'So it doesn\'t end<br>at checking results.',
+  'svc.f3.title': 'So it doesn\'t end<br>at checking results',
   'svc.f3.desc': '<b class="accent">Lucky Score</b> &mdash; shows as a score how close your registered numbers came to that round\'s first-prize numbers. <b class="accent">Number Sense</b> &mdash; a brain game testing your feel for numbers. <b class="accent">Number Stats</b> &mdash; organizes recent round records to show frequent and quiet numbers.',
   'svc.f3.accent': 'Even in a week you didn\'t win, there\'s still something to see.',
   'svc.f3.slot': 'Lucky Score screen',
 
   'svc.f4.num': 'SCREEN 05 &middot; Prize Draw',
-  'svc.f4.title': 'Two actions,<br>one entry.',
+  'svc.f4.title': 'Two actions,<br>one entry',
   'svc.f4.desc': 'Register your non-winning numbers and points build up; watch an ad to the end and an entry is issued. The winning odds of a single entry are identical regardless of tier. Tiers differ only in how many entries you can make per round &mdash; never in odds.',
   'svc.f4.accent': 'Prizes are e-coupons provided by partner brands.',
 
@@ -321,7 +321,7 @@ window.FULIF_I18N_EN = {
   'svc.flow.result': 'Enter prize draw',
 
   /* membership tiers */
-  'svc.ver.title': '<b class="accent">FULIF</b> opens wider depending on your tier.',
+  'svc.ver.title': '<b class="accent">FULIF</b> opens wider depending on your tier',
   'svc.ver.sub': 'Start with <b class="accent">Starter</b>, widen with <b class="accent">PRO</b>.',
 
   'svc.ver.c1.title': 'Start with<br>the basics',
@@ -339,7 +339,7 @@ window.FULIF_I18N_EN = {
   'svc.ver.c3.badge': '&#8361;5,000 / mo',
 
   /* contact */
-  'svc.contact.title': 'Bring your brand<br>to FULIF users.',
+  'svc.contact.title': 'Bring your brand<br>to FULIF users',
   'svc.contact.desc': 'Every screen above is ad space. We\'ll guide you on how to join.',
 
 /* ---------- patents.html ---------- */
@@ -351,7 +351,7 @@ window.FULIF_I18N_EN = {
 'pat.intro.sub': 'FULIF\'s core technologies — including data-filter-based number generation and a participation-based reward platform driven by ad and lottery results — have been formally filed with the Korean Intellectual Property Office and are under examination, with a phased overseas rollout planned.',
 'pat.region.kr': 'Filed with KIPO (under examination)',
 'pat.region.global': 'Overseas expansion planned',
-'pat.filed.title': 'Two core<br>technologies filed.',
+'pat.filed.title': 'Two core<br>technologies filed',
 'pat.filed.desc': 'FULIF\'s core system technologies, filed with the Korean Intellectual Property Office. (Under examination)',
 'pat.p1.status': 'Filed &middot; Under examination',
 'pat.p1.title': 'Participation-based reward platform system using<br>ad and lottery results, and its operating method',
@@ -363,13 +363,13 @@ window.FULIF_I18N_EN = {
 'pat.p2.status': 'Filing planned',
 'pat.p2.title': 'Lottery platform and<br>its operating method',
 'pat.p2.meta1_l': 'Filing schedule',
-'pat.p2.meta1_v': 'Filing planned for early July 2026',
+'pat.p2.meta1_v': 'Filing planned for early September 2026',
 'pat.p2.meta2_l': 'Application no.',
 'pat.p2.meta2_v': 'To be updated once confirmed',
 'pat.p2.point1': 'Generates and curates numbers using a preset pattern-analysis algorithm (35 filters)',
 'pat.p2.point2': 'A participation-based design where users adjust filter strength',
 'pat.p2.point3': 'Aggregates activity data on a ranking basis',
-'pat.why.title': 'What the<br>patents mean.',
+'pat.why.title': 'What the<br>patents mean',
 'pat.why.desc': 'By filing the advertising and service logic itself as patents, we make it hard for competitors to replicate the same structure.',
 'pat.point1.title': 'Barrier to entry',
 'pat.point1.desc': 'By filing the ad-slot and value-return logic itself as patents,<br>we deter similar services from copying the structure.',
@@ -378,7 +378,7 @@ window.FULIF_I18N_EN = {
 'pat.point3.title': 'Defense at the structural level',
 'pat.point3.desc': 'We stake out architecture-level rights<br>that copying the UI or features cannot reach.',
 'pat.disclaimer': '※ FULIF\'s core technologies have been formally filed with the Korean Intellectual Property Office and are under examination. The filings can be verified, but final registration depends on the office\'s examination results. Progress will be updated continuously on this page.',
-'pat.contact.title': 'Run your advertising<br>on proven technology.',
+'pat.contact.title': 'Run your advertising<br>on proven technology',
 'pat.contact.desc': 'Ad slots, sponsorships, data partnerships — we\'ll guide you through how to join.',
 
   /* ---------- membership.html ---------- */
@@ -456,7 +456,7 @@ window.FULIF_I18N_EN = {
   'mem.ev.r3d': 'The top-tier prize that caps off the year',
   'mem.ev.note': '&#8251; Entry is limited to once per person, and spending more points does not raise your odds. Every entrant in the same event has identical odds. The subscription fee is a service fee, not an event entry fee.',
 
-  'mem.cmp.title': 'Compare at a glance.',
+  'mem.cmp.title': 'Compare at a glance',
   'mem.cmp.th_benefit': 'Benefits',
   'mem.cmp.r1': 'Monthly fee',
   'mem.cmp.r2': 'Yearly fee (2 months free)',
@@ -486,8 +486,8 @@ window.FULIF_I18N_EN = {
   'dl.doc.desc': 'Download the FULIF app. Out now on Android and iOS. A lottery value-return app with advertising built into the content.',
   'dl.skip': 'Skip to content',
   'dl.menu_open': 'Open menu',
-  'dl.main.title': 'Enjoy the lottery differently,<br>now with FULIF.',
-  'dl.main.desc': 'Starting in Korea and expanding to Europe and Japan.<br>Available now on Android and iOS.',
+  'dl.main.title': 'Now with FULIF —<br>losing numbers become entries, 35 filters become new numbers',
+  'dl.main.desc': 'Register a losing number and it becomes a prize entry,<br>and get numbers picked by 35 filters every week.<br>Available now on Android and iOS.',
   'dl.slot.pick': 'Number Generation',
   'dl.contact.title': 'Are you an ad or<br>sponsorship partner?',
   'dl.contact.desc': 'We\'ll walk you through the ad formats that reach FULIF users.',
@@ -498,13 +498,13 @@ window.FULIF_I18N_EN = {
   'prt.doc.desc': 'FULIF app advertising &amp; sponsorship partner inquiries. A range of ad slots including video, banner, ribbon-logo, and popup ads.',
   'prt.skip': 'Skip to content',
   'prt.menu_open': 'Open menu',
-  'prt.fmt.title': 'You can join the ad slots below.',
+  'prt.fmt.title': 'You can join the ad slots below',
   'prt.fmt.pill1': 'Video Ads',
   'prt.fmt.pill2': 'Banner Ads',
   'prt.fmt.pill3': 'Ribbon-Logo Ads',
   'prt.fmt.pill4': 'Popup Ads',
   'prt.fmt.note': '* Full system details are available on the <a href="index.html#prevax" class="accent">Home</a> &middot; <a href="service.html" class="accent">Service</a> pages.',
-  'prt.perk.title': 'Early partner benefits<br>for our Korea launch partners.',
+  'prt.perk.title': 'Early partner benefits<br>for our Korea launch partners',
   'prt.perk.desc': 'Exclusive early-access benefits offered only to partners who join at the official Korea launch.',
   'prt.perk.p1.t': 'Category Exclusivity',
   'prt.perk.p1.d': 'Limited to Korea launch partners &mdash; one brand per category runs exclusively.',
