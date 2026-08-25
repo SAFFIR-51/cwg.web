@@ -166,7 +166,7 @@ window.FULIF_I18N_EN = {
   'home.bs.friend.tit': 'Fuli, the lucky four-leaf clover',
   'home.bs.friend.desc': 'Like a <b>four-leaf clover</b> that rarely appears among thousands of three-leaf ones, uncommon luck comes to those who look for it. <b>Fuli</b>, in a green cap, is FULIF&rsquo;s mascot &mdash; waiting with you for that luck every week.',
   'home.bs.splash.tit': 'Every day, Fuli greets you',
-  'home.bs.splash.desc': "Every time you open the app, Fuli says hello first. Here's to another full day &mdash; FULIF begins with that small moment of luck.",
+  'home.bs.splash.desc': "May your day be filled well today. With that one greeting from Fuli, FULIF's day begins.",
 
   /* ---------- Home: quick access ---------- */
   'home.support.title': 'Jump straight to<br>what you need',
@@ -353,7 +353,7 @@ window.FULIF_I18N_EN = {
 'pat.region.global': 'Overseas expansion planned',
 'pat.filed.title': 'Two core<br>technologies filed',
 'pat.filed.desc': 'FULIF\'s core system technologies, filed with the Korean Intellectual Property Office. (Under examination)',
-'pat.p1.status': 'Filed &middot; Under examination',
+'pat.p1.status': 'Filed',
 'pat.p1.title': 'Participation-based reward platform system using<br>ad and lottery results, and its operating method',
 'pat.p1.meta1_l': 'Application no.',
 'pat.p1.meta2_l': 'Filing date',
