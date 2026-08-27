@@ -183,7 +183,7 @@ window.FULIF_I18N_EN = {
   'home.contact.desc': "Ad slots, sponsorships, data partnerships &mdash; whichever fits, we'll guide you.",
 
   /* ---------- Home: <title> / meta ---------- */
-  'home.doc.title': 'FULIF — Value Returns. Data-Driven Fun.',
+  'home.doc.title': 'FULIF — Start with a non-winning ticket. An AI reward platform that finds benefits for your life.',
   'home.doc.desc': 'An AI reward platform that starts with non-winning lottery tickets and finds benefits for your life. The ticket you used to throw away becomes an entry, points, and benefits that fit your life.',
 
   /* ---------- service.html ---------- */
