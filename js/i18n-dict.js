@@ -126,7 +126,7 @@ window.FULIF_I18N_EN = {
   'home.diff.label': 'Why FULIF',
   'home.diff.title': 'What makes<br>FULIF different',
   'home.diff.c1.t': '35 in-house filters',
-  'home.diff.c1.d': 'FULIF curates and provides numbers through 35 filters designed in-house. It\'s our own engine combining frequency, pattern, math, and history criteria &mdash; curation, not prediction.',
+  'home.diff.c1.d': 'The number 35 isn\'t the whole story. Each filter runs its own in-house formula and decision logic, and together the 35 work as one engine to select numbers &mdash; combining frequency, pattern, math, and history. It\'s curation, not prediction.',
   'home.diff.c2.t': 'It starts from<br>a physical ticket',
   'home.diff.c2.d': 'Not virtual numbers &mdash; the starting point is a real sheet of paper, actually purchased and actually unmatched. That\'s why FULIF\'s data cannot be replaced.',
   'home.diff.c3.t': 'Lucky Score',
