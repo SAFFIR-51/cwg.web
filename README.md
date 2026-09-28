@@ -78,6 +78,10 @@ legacy/           2026-09 이전 정적 사이트 원본 (참고용, 배포되�
 
 Toss Impact · Toss Securities · Toss Place · Toss 홈의 구성을 실제 확인하고, 페이지별로 사진·제품·타이포그래피의 비중을 다르게 구성했습니다. 홈 브랜드 소개와 풀리 이야기, FOUND AI 장소 탭, 멤버십 한도 전환, 풀리 노트 검색·읽기 진행선, AD SCALE 소개, 도움말·정책 화면을 포함합니다. 생성 프롬프트와 검증 기록은 `design/EDITORIAL_EDITION_2026-09-28.md`에 있습니다. 변경 전 코드는 `design/archive/pre-edition-2026-09-27.tar.gz`에 보존했습니다.
 
+## 인물 없는 이미지로 교체 (2026-09-28)
+
+사람(얼굴·몸·손·행인)이 나오던 이미지 11장을 같은 파일명·같은 규격의 인물 없는 이미지로 교체했습니다. 현재 홈 히어로는 `bright/hero-neighborhood.png`(모바일 `bright/hero-neighborhood-mobile.png`)이며, 위 2026-09-27 항목의 `fulif-hero-cinema-*` 파일은 더 이상 페이지에서 불러오지 않습니다. 대상 목록과 생성 프롬프트는 `design/NO_PEOPLE_IMAGE_PROMPTS.md`에 있습니다.
+
 빌드 후 개발 서버가 켜진 상태에서 `node scripts/check-site.mjs`로 공개 페이지·내부 앵커·이미지를 읽기 전용으로 점검할 수 있습니다.
 
 ## 남은 확인 항목 (디자인 코멘트)

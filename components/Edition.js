@@ -59,7 +59,7 @@ export function DiscoveryHero() {
 
 const PLACES = [
   {name:'편의점', image:'/images/editorial/note-coffee.png', alt:'일상 속 한 잔의 커피', title:<>늘 들르는 곳에도,<br />챙길 것이 있으니까.</>, description:'자주 가는 편의점의 행사도 놓치지 않게. 풀리가 찾아둔 정보를 가볍게 확인해 보세요.', example:'커피 2+1', date:'2026.09.30까지 · 9월 22일 확인', note:'매장 사정에 따라 일찍 끝나거나 물량이 없을 수 있어요.'},
-  {name:'마트', image:'/images/edition/found-market.png', alt:'동네 마트에서 고르는 신선한 과일', title:<>오늘 장보기에도,<br />반가운 발견 하나.</>, description:'우리 동네 마트의 행사 정보를 한곳에. 필요한 것을 사러 가기 전에 한 번 살펴보세요.', example:'제철 과일 한 팩 더', date:'2026.09.19 ~ 09.20 · 9월 18일 확인', note:'주말 한정 행사 예시예요. 매장별 물량이 다를 수 있어요.'},
+  {name:'마트', image:'/images/edition/found-market.png', alt:'동네 마트에 진열된 신선한 과일', title:<>오늘 장보기에도,<br />반가운 발견 하나.</>, description:'우리 동네 마트의 행사 정보를 한곳에. 필요한 것을 사러 가기 전에 한 번 살펴보세요.', example:'제철 과일 한 팩 더', date:'2026.09.19 ~ 09.20 · 9월 18일 확인', note:'주말 한정 행사 예시예요. 매장별 물량이 다를 수 있어요.'},
   {name:'주유소', image:'/images/edition/found-fuel.png', alt:'파란 주유 노즐이 놓인 동네 주유소', title:<>가까운 주유소를,<br />한 번 더 살펴봐요.</>, description:'내가 정해둔 생활권의 주유 가격을 모아 보여드려요. 확인한 시각도 함께 알려드려요.', example:'우리 동네 최저가 주유소', date:'휘발유 1리터 가격 · 오늘 06:00 기준', note:'주유 가격은 수시로 바뀌어요. 방문 시점에는 달라질 수 있어요.'},
 ];
 
