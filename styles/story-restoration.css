@@ -1,0 +1,21 @@
+/* The established full-frame composition, with PDF-based content. */
+/* Original FULIF cinema campaign; keep the established frame and scroll timing. */
+.intro-photo { object-position:50% 46%; }
+@media(max-width:767px) {
+  .intro-photo { object-position:50% 50%; }
+  .intro-detail-photo { object-position:75% 50%; }
+  .intro-shade { background:linear-gradient(180deg,transparent 35%,#06111918 55%,#061119a6 100%); }
+}
+.story-found-promises { margin:35px 0; }
+.story-found-promises > div { margin:26px 0; }
+.story-found-promises h3 { font-size:19px; font-weight:650; }
+.story-found-promises p { font-size:15px; line-height:1.8; color:#8b95a1; margin-top:10px; }
+.story-accordion button:focus-visible,.chapter-rail a:focus-visible { outline:3px solid #8cbbff; outline-offset:5px; }
+@media(max-width:767px) { .story-found-promises h3 { font-size:18px; }.story-found-promises p { font-size:14px; } }
+@media(prefers-reduced-motion:reduce) { .intro-scroll { height:auto; }.intro-sticky { position:relative; } }
+.neighborhood-clean { height:580px; }
+.neighborhood-clean .neighborhood-image { width:80%; left:-15px; }
+.found-hero-phone { position:absolute; top:35px; right:65px; transform:rotate(7deg); }
+.found-hero-phone .phone { width:250px; box-shadow:0 30px 65px #345d8f20; }
+@media(max-width:1100px) { .found-hero-phone { right:20px; }.neighborhood-clean .neighborhood-image { left:-45px; width:85%; } }
+@media(max-width:767px) { .neighborhood-clean { height:580px; padding-top:0; max-width:430px; }.neighborhood-clean .neighborhood-image { top:0; left:-35px; width:calc(100% + 70px); height:290px; }.found-hero-phone { top:155px; right:50%; transform:translateX(50%) rotate(6deg); }.found-hero-phone .phone { width:205px; }.found-opening-foot > span { text-align:center; line-height:1.8; } }

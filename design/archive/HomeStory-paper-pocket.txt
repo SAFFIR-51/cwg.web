@@ -1,0 +1,120 @@
+// Archived paper-pocket exploration. Not used by the website.
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Seo from './Seo';
+import Icon from './Icon';
+import StoreBadges from './StoreBadges';
+import { BrandSymbol } from './Brand';
+import { NoteCover } from './SubpageDesign';
+import { LocalDiscovery } from './LocalDiscovery';
+import { NOTES } from '../lib/notes';
+import { OPEN_DATE } from '../lib/site';
+
+function Photo({ name, alt = '', className = '', priority = false, landscape = false, sizes = '(max-width: 767px) 100vw, 650px' }) {
+  return <Image src={'/images/fulif-own/' + name + '.png'} alt={alt} width={landscape ? 1536 : 1024} height={1024} sizes={sizes} quality={90} priority={priority} className={className} />;
+}
+function TextLink({ href, children }) {
+  return <Link href={href} className="own-text-link">{children}<Icon name="arrow_forward" size={20} /></Link>;
+}
+function SectionLabel({ number, children }) {
+  return <p className="own-section-label"><span>{number}</span>{children}</p>;
+}
+function tabKey(event, index, count, select, refs) {
+  const offset = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+  if (!offset && !['Home', 'End'].includes(event.key)) return;
+  event.preventDefault();
+  const next = event.key === 'Home' ? 0 : event.key === 'End' ? count - 1 : (index + offset + count) % count;
+  select(next);
+  refs.current[next]?.focus();
+}
+
+function Opening() {
+  return <section id="intro" className="own-opening">
+    <div className="own-hero-copy"><p className="own-kicker"><span />생활의 가치를, 한 번 더</p><h1>다 쓴 줄 알았던<br />하루에,<br /><em>아직 즐거움이.</em></h1><p className="own-hero-lead">커피 한 잔, 영화 한 편, 아쉬웠던 번호.<br />그다음 이야기를 풀리프에서 이어가요.</p><div className="own-hero-actions"><Link href="/download" className="own-button">풀리프 시작하기<Icon name="arrow_forward" size={19} /></Link><a href="#one-more" className="own-quiet-link">먼저 둘러볼게요 <Icon name="arrow_downward" size={18} /></a></div><small>{OPEN_DATE} 오픈 · 만 19세 이상</small></div>
+    <div className="own-hero-visual"><Photo name="everyday-pocket" priority alt="쿠폰과 티켓을 담은 파란 종이 포켓, 커피와 작은 클로버" /><div className="own-hero-ticket"><span>오늘의 일상</span><strong>다음이 있는 한 장.</strong><div aria-hidden="true"><span>ONE</span><Icon name="arrow_forward" size={18} /><span>MORE</span></div></div><span className="own-photo-index" aria-hidden="true">01 — KEEP YOUR EVERYDAY</span></div>
+    <nav className="own-start-paths" aria-label="나에게 맞는 시작"><span>어디서 시작해 볼까요?</span><a href="#one-more"><Icon name="confirmation_number" size={21} />가지고 있는 쿠폰부터<Icon name="arrow_outward" size={17} /></a><a href="#found"><Icon name="location_on" size={21} />우리 동네부터<Icon name="arrow_outward" size={17} /></a><a href="#play"><Icon name="play_arrow" size={20} />잠깐의 재미부터<Icon name="arrow_outward" size={17} /></a></nav>
+  </section>;
+}
+
+const WALLET = [
+  {name:'카페 쿠폰',photo:'coffee-pause',kind:'내 쿠폰',title:<>커피는 마셨고,<br />포인트는 남았어요.</>,desc:'만료 이틀 전에는 알려드리고, 다 쓴 뒤에는 한 번 더. 사용완료로 바꾸면 10P가 쌓여요.',action:'사용완료 눌러보기',result:'다 쓴 쿠폰도, 한 번 더 10P',detail:'쿠폰 화면을 캡처하거나 공유해서 등록해요.',href:'/full-life#one-more'},
+  {name:'다녀온 티켓',photo:'ticket-afternoon',kind:'내 티켓',title:<>영화가 끝나도,<br />이야기는 계속돼요.</>,desc:'영화 · 공연 · 여행 티켓을 등록하면 10P. 쿠폰과 티켓을 합쳐 다섯 번 등록할 때마다 응모권 1개가 생겨요.',action:'티켓 등록해보기',result:'다녀온 날의 티켓, 등록하면 10P',detail:'다녀온 날의 기록을 보관함에 모아두세요.',href:'/full-life#one-more'},
+  {name:'아쉬운 번호',photo:'number-paper',kind:'낙첨 ONE MORE',title:<>이번엔 아니었어도,<br />한 번은 더.</>,desc:'지난 회차 번호를 등록하면 10P. 번호 1세트마다 광고 한 편을 보면 경품 응모권 1개를 받을 수 있어요.',action:'번호 등록해보기',result:'번호 등록 10P · 응모권은 광고 시청 후',detail:'무료 5세트 · FULIF+ 20세트 / 회차',href:'/full-life#lotto-one-more'},
+];
+function PocketExperience() {
+  const [selected,setSelected]=useState(0);
+  const [tried,setTried]=useState([false,false,false]);
+  const refs=useRef([]);
+  const item=WALLET[selected];
+  return <section id="one-more" className="own-pocket own-section">
+    <div className="own-section-heading"><div><SectionLabel number="01">내 일상, 한 번 더</SectionLabel><h2>쓰고, 보고, 다녀온 오늘.<br />그냥 지나치기 아까우니까.</h2></div><p>지금 가지고 있는 한 장을 골라보세요.<br />풀리프에서는 이렇게 이어져요.</p></div>
+    <div className="own-pocket-tabs" role="tablist" aria-label="보관함 체험">{WALLET.map((entry,i)=><button key={entry.name} type="button" role="tab" id={'pocket-tab-'+i} aria-controls="pocket-panel" aria-selected={selected===i} tabIndex={selected===i ? 0 : -1} ref={el=>{refs.current[i]=el;}} onClick={()=>setSelected(i)} onKeyDown={e=>tabKey(e,i,WALLET.length,setSelected,refs)}><span>0{i+1}</span>{entry.name}</button>)}</div>
+    <div className="own-pocket-panel" id="pocket-panel" role="tabpanel" aria-labelledby={'pocket-tab-'+selected} tabIndex={0}>
+      <div className="own-pocket-photo" key={item.photo}><Photo name={item.photo} alt={item.name+'에 담긴 일상의 장면'} /><span className="own-photo-caption">{item.name}<i>ONE MORE</i></span></div>
+      <div className="own-pocket-content"><span className="own-mini-label">{item.kind}</span><h3>{item.title}</h3><p>{item.desc}</p><div className="own-ticket-demo"><div><span>{tried[selected] ? '한 번 더, 완료' : '한 장의 다음 이야기'}</span><Icon name={tried[selected] ? 'check_circle' : 'confirmation_number'} size={24} /></div><strong aria-live="polite">{tried[selected] ? item.result : '다음은, 나의 혜택.'}</strong><button type="button" className={tried[selected] ? 'is-complete' : ''} onClick={()=>setTried(prev=>prev.map((v,i)=>i===selected ? !v : v))}>{tried[selected] ? '처음으로 돌리기' : item.action}<Icon name={tried[selected] ? 'refresh' : 'arrow_forward'} size={18} /></button><small>웹 체험입니다. 실제 등록·적립은 앱에서 진행돼요.</small></div><p className="own-pocket-detail">{item.detail}</p><TextLink href={item.href}>이용 방법 자세히</TextLink></div>
+    </div>
+    <div className="own-stamp-strip" id="rewards"><div><span>쿠폰 · 티켓</span><h3>다섯 번의 기록,<br />한 번의 새로운 기회.</h3></div><div className="own-stamps" aria-label="등록 다섯 번이면 응모권 한 개">{[1,2,3,4].map(n=><span key={n}>{n}</span>)}<span><Icon name="confirmation_number" size={28} /></span></div><p>등록 5번마다 응모권 1개<br /><small>ONE MORE · 매달 마지막 화요일 21:00 추첨</small></p></div>
+    <p className="own-fine">낙첨번호 등록은 토요일 21:00부터 화요일 20:00까지, 추첨은 매주 화요일 20:30이에요. 모든 응모권의 개별 당첨 확률은 같아요.</p>
+  </section>;
+}
+
+function LocalChapter() {
+  return <section id="found" className="own-local own-section"><div className="own-section-heading"><div><SectionLabel number="02">가까운 곳에서 발견</SectionLabel><h2>멀리 찾지 않아도,<br />내 동네에 좋은 소식.</h2></div><div><p>장 보러 가는 길, 주유하기 전.<br />내 생활권의 혜택을 한 번 살펴보세요.</p><TextLink href="/found-ai">FOUND AI 둘러보기</TextLink></div></div><LocalDiscovery /><div className="own-local-foot"><p>시 · 구 · 동만 정해두면 돼요.<br /><span>실시간 위치나 상세 주소는 사용하지 않아요.</span></p><p>무료 회원도, FULIF+ 회원도<br /><span>같은 생활권 혜택을 확인할 수 있어요.</span></p></div></section>;
+}
+
+const ACTIVITIES=[
+  {key:'join',label:'처음 가입',detail:'가입할 때 한 번',points:100,icon:'add'},
+  {key:'vote',label:'오늘의 한 표',detail:'하루 질문 3개 모두 참여',points:30,icon:'chat'},
+  {key:'ticket',label:'티켓 한 장 등록',detail:'다녀온 영화 · 공연 · 여행',points:10,icon:'confirmation_number'},
+  {key:'donate',label:'쿠폰 기부',detail:'기부 가능한 쿠폰 나누기',points:30,icon:'favorite'},
+  {key:'watch',label:'광고 30초 보기',detail:'시청 1초마다 1P',points:30,icon:'play_arrow'},
+];
+function PointsCounter() {
+  const [chosen,setChosen]=useState(['join']);
+  const entries=ACTIVITIES.filter(a=>chosen.includes(a.key));
+  const total=entries.reduce((sum,a)=>sum+a.points,0);
+  return <section id="points" className="own-points"><div className="own-section"><div className="own-section-heading"><div><SectionLabel number="03">작은 습관의 합</SectionLabel><h2>오늘 해보고 싶은 일,<br />얼마나 쌓일까요?</h2></div><p>해볼 활동을 골라보세요.<br />적립 예시를 미리 계산해 드릴게요.</p></div><div className="own-points-layout"><div className="own-mobile-total"><span>선택한 활동의 합 · 적립 예시</span><strong aria-live="polite" aria-atomic="true">{total}P</strong></div><div className="own-activity-list" role="group" aria-label="포인트 적립 활동 선택">{ACTIVITIES.map(a=><button type="button" key={a.key} aria-pressed={chosen.includes(a.key)} onClick={()=>setChosen(prev=>prev.includes(a.key) ? prev.filter(v=>v!==a.key) : [...prev,a.key])}><span className="activity-check"><Icon name={chosen.includes(a.key) ? 'check' : 'add'} size={17} /></span><span><strong>{a.label}</strong><small>{a.detail}</small></span><b>{a.points}P</b></button>)}</div><div className="own-points-receipt"><header><BrandSymbol className="w-7 h-8" /><span>오늘의 적립 예시</span></header><div className="receipt-total" aria-live="polite" aria-atomic="true"><strong>{total}</strong><span>P</span></div><div className="receipt-entries">{entries.length ? entries.map(a=><div key={a.key}><span>{a.label}</span><b>+{a.points}P</b></div>) : <p>해보고 싶은 활동을 골라주세요.</p>}</div><p>선택한 활동의 단순 합산이에요.<br />실제 포인트가 적립되지는 않아요.</p><TextLink href="/full-life#points">포인트 이용 안내</TextLink></div></div><p className="own-fine">친구를 초대하면 두 분 모두 100P · 광고 시청은 무료 하루 10회 / FULIF+ 20회<br />포인트는 현금으로 바꾸거나 사고팔 수 없으며, 적립일로부터 2년 동안 유지돼요.</p></div></section>;
+}
+
+const BOARD=[7,12,23,4,18,31,9,26,42];
+const PATTERNS=[[7,12,23],[4,18,31],[9,26,42]];
+function MemoryGame() {
+  const [phase,setPhase]=useState('idle');
+  const [round,setRound]=useState(0);
+  const [picked,setPicked]=useState([]);
+  const [seconds,setSeconds]=useState(5);
+  const target=PATTERNS[round % PATTERNS.length];
+  useEffect(()=>{
+    if(phase!=='reveal') return undefined;
+    const id=setInterval(()=>setSeconds(n=>Math.max(0,n-1)),1000);
+    return ()=>clearInterval(id);
+  },[phase]);
+  useEffect(()=>{if(phase==='reveal' && seconds===0) setPhase('guess');},[phase,seconds]);
+  const start=()=>{setPicked([]);setSeconds(5);setPhase('reveal');};
+  const choose=n=>{
+    if(phase!=='guess') return;
+    setPicked(prev=>prev.includes(n) ? prev.filter(v=>v!==n) : prev.length<3 ? [...prev,n] : prev);
+  };
+  const won=picked.length===3 && picked.every(n=>target.includes(n));
+  return <div className="own-memory"><div className="memory-topline"><span>넘버 센스</span><small>웹 미니 체험</small></div><p className="memory-instruction" aria-live="polite">{phase==='idle' ? '숫자 세 개, 기억할 수 있나요?' : phase==='reveal' ? '파란 숫자 세 개를 기억해 보세요.' : phase==='guess' ? '방금 본 숫자 세 개를 골라주세요.' : won ? '기억했네요! 세 개 모두 맞았어요.' : '정답은 '+target.join(' · ')+'입니다.'}</p><div className="own-memory-board">{BOARD.map(n=><button type="button" key={n} aria-label={n+'번'+(phase==='reveal' && target.includes(n) ? ', 기억할 숫자' : phase==='done' && target.includes(n) ? ', 정답' : '')} aria-pressed={picked.includes(n)} disabled={phase!=='guess'} onClick={()=>choose(n)} className={(phase==='reveal' && target.includes(n) ? 'is-target ' : '')+(phase==='done' && target.includes(n) ? 'is-answer ' : '')+(picked.includes(n) ? 'is-picked' : '')}>{phase==='idle' ? <span aria-hidden="true">·</span> : n}</button>)}</div><div className="memory-controls">{phase==='idle' ? <button type="button" className="own-button" onClick={start}>5초 동안 기억하기<Icon name="play_arrow" size={18} /></button> : phase==='reveal' ? <><span className="memory-countdown">{seconds}초</span><button type="button" onClick={()=>setSeconds(10)} className="own-quiet-link">조금 더 볼게요</button><button type="button" onClick={()=>setPhase('guess')} className="own-quiet-link">준비됐어요</button></> : phase==='guess' ? <button type="button" className="own-button" disabled={picked.length!==3} onClick={()=>setPhase('done')}>정답 확인하기 <span>{picked.length}/3</span></button> : <button type="button" className="own-button" onClick={()=>{setRound(n=>n+1);start();}}>다른 숫자로 한 번 더<Icon name="refresh" size={18} /></button>}</div><small className="memory-disclaimer">앱에서는 1~45 숫자판으로 즐겨요. 웹 체험은 포인트가 적립되지 않아요.</small></div>;
+}
+function PlayChapter() {
+  return <section id="play" className="own-play own-section"><div className="own-play-copy"><SectionLabel number="04">잠깐, 나를 위한 시간</SectionLabel><h2>숫자와 놀다 보면,<br />어느새 작은 성취.</h2><p>한 번 보고, 기억하고, 다시 골라보세요.<br />넘버 센스는 성공한 단계의 포인트를<br />다음 단계에서 실패해도 가져가지 않아요.</p><TextLink href="/full-life#playground">풀리프 놀이터 자세히</TextLink><div className="own-play-more"><Link href="/full-life#playground"><span>번호 만들기</span><p>35개 필터로, 나만의 기준대로.</p><Icon name="arrow_outward" size={18} /></Link><Link href="/membership"><span>럭키 스코어 · FULIF+</span><p>아쉬웠던 번호를 새로운 기록으로.</p><Icon name="arrow_outward" size={18} /></Link></div><small className="own-fine">번호 기능은 당첨 확률을 높여주지 않아요.</small></div><MemoryGame /></section>;
+}
+
+function MembershipBand() {
+  return <section id="plus" className="own-member"><div><span className="own-member-logo">fulif+</span><h2>좋아하는 일상에,<br />조금 더 넉넉하게.</h2><p>낙첨번호 20세트 · 제공 번호 10세트<br />광고 보기 하루 20회 · 럭키 스코어 · 챔피언십 · 전용 이벤트</p></div><div className="own-member-offer"><span>FULIF+ 월간 멤버십</span><strong>첫 달 0원</strong><p>이후 월 5,000원</p><Link href="/membership" className="own-button">멤버십 알아보기<Icon name="arrow_forward" size={18} /></Link><small>무료 체험 1회 · 체험 후 자동 결제<br />결제 3일 전 안내 · 언제든 스토어에서 해지</small></div></section>;
+}
+function Together() {
+  return <section id="together" className="own-together own-section"><div className="own-kindness"><Photo name="small-kindness" landscape alt="파란 봉투에 담긴 쿠폰과 소박하게 준비한 선물" /><div><SectionLabel number="05">나에게서 우리에게</SectionLabel><h2>나에겐 남은 한 장.<br />누군가에겐 첫 선물.</h2><p>쓰지 않을 쿠폰을 보관함에서 기부하면<br />필요한 아이에게 전해져요.</p><strong>쿠폰 기부 30P + 기부천사 배지</strong><small>기부 가능 금액권 · 문화상품권 등, 만료까지 1개월 이상<br />매월 전달 지역과 아이 수를 알려드려요.</small><TextLink href="/full-life#points">풀리프의 나눔 알아보기</TextLink></div></div><div className="own-partner-line"><div><span>브랜드 파트너</span><h3>누군가의 하루에 반가운 이름으로.</h3></div><TextLink href="/partners">함께할 브랜드를 기다려요</TextLink></div></section>;
+}
+function NotesPreview() {
+  return <section className="own-notes own-section"><div className="own-section-heading"><div><p className="own-mini-label">풀리 노트</p><h2>한 번 더 읽고 싶은 이야기.</h2></div><TextLink href="/notes">노트 모두 보기</TextLink></div><div className="own-note-grid">{NOTES.slice(0,2).map(n=><Link href={'/notes/'+n.slug} className="own-note" key={n.slug}><NoteCover note={n}/><div><span>{n.categoryLabel}</span><h3>{n.title}</h3><p>{n.summary}</p><small>{n.minutes}분 읽기<Icon name="arrow_outward" size={18} /></small></div></Link>)}</div><p className="own-fine">제목과 요약은 형식을 보여드리는 예시입니다.</p></section>;
+}
+function Ending() {
+  return <><section className="own-principles" aria-label="서비스 이용 안내"><div><Icon name="check_circle" size={23}/><p>응모권 하나의 확률은<br />모든 회원에게 같아요.</p></div><div><Icon name="confirmation_number" size={23}/><p>번호는 고르는 재미.<br />당첨을 예측하지 않아요.</p></div><div><Icon name="favorite" size={23}/><p>포인트는 활동으로 쌓는<br />풀리프 안의 혜택이에요.</p></div></section><section id="start" className="own-ending"><div><p>오늘의 한 장에, 다음을 더하세요.</p><h2>생활의 가치를,<br /><span>한 번 더.</span></h2><StoreBadges /><small>{OPEN_DATE} 오픈 · 만 19세 이상</small></div><div className="ending-paper" aria-hidden="true"><BrandSymbol /><span>내 일상의 다음 페이지</span><strong>fulif.</strong><i>ONE MORE / EVERY DAY</i></div></section></>;
+}
+export default function HomeStory() {
+  return <><Seo /><div className="fulif-own"><Opening /><PocketExperience /><LocalChapter /><PointsCounter /><PlayChapter /><MembershipBand /><Together /><NotesPreview /><Ending /></div></>;
+}

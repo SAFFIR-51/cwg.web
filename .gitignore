@@ -1,12 +1,17 @@
-# Folders
-_archive/
-.claude/
+# dependencies / build
+node_modules/
+.next/
+.next-dev/
+out/
+tmp/
+design/archive/*.tar.gz
 
 # OS / Editor
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+.claude/
 
 # Logs
 *.log
@@ -16,8 +21,7 @@ Thumbs.db
 .env.*
 !.env.example
 
-# 작업용 원본 스크린샷 (assets/screens에 정리본 있음)
+# 작업용 원본
+_archive/
 IMG_*.PNG
 스크린샷*.png
-Section.png
-\[사진1\].png
