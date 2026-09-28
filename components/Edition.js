@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Icon from './Icon';
 import { Phone } from './ui';
 import { ArrowLink, Art } from './SubpageDesign';
+import ScrollStory from './ScrollStory';
 
 export function PulliNote({ children, mood = 'hello', className = '' }) {
   const src = mood === 'search' ? '/mascot/clover_search.png' : '/mascot/pulli-profile-v2.png';
@@ -53,7 +54,7 @@ export function ServiceOverview() {
 }
 
 export function DiscoveryHero() {
-  return <header className="discovery-hero"><div className="discovery-hero-copy"><p className="edition-eyebrow">FOUND AI</p><h1>내 생활권의 혜택,<br /><span>풀리가 찾아요.</span></h1><p className="edition-lead">매일 들르는 편의점, 마트, 주유소.<br />일상에 필요한 것을 한곳에 정리해 드려요.<br />검색하지 않아도 괜찮아요.</p><ArrowLink href="#how-it-works">어떻게 찾아주나요?</ArrowLink><PulliNote mood="search">정해둔 동네만 살펴봐요.<br />실시간 위치를 따라다니지 않아요.</PulliNote></div><div className="discovery-hero-visual"><div className="discovery-street"><Image src="/images/edition/found-street.png" alt="햇살이 비치는 동네의 편의점과 카페" fill priority sizes="(max-width: 767px) 100vw, 750px" quality={90} /></div><div className="discovery-device"><Phone src="/screens/found.png" alt="FOUND AI 생활권 혜택 앱 화면" /></div><span className="discovery-photo-caption">가까운 곳에서 발견하는 새로운 일상</span></div><p className="discovery-hero-foot">FOUND AI는 FULIF · FULIF+ 모든 회원이 이용할 수 있어요.</p></header>;
+  return <header className="discovery-hero"><div className="discovery-hero-copy"><p className="edition-eyebrow">FOUND AI</p><h1>내 생활권의 혜택,<br /><span>풀리가 찾아요.</span></h1><p className="edition-lead">매일 들르는 편의점, 마트, 주유소.<br />일상에 필요한 것을 한곳에 정리해 드려요.<br />검색하지 않아도 괜찮아요.</p><ArrowLink href="#how-it-works">어떻게 찾아주나요?</ArrowLink><PulliNote mood="search">정해둔 동네만 살펴봐요.<br />실시간 위치를 따라다니지 않아요.</PulliNote></div><div className="discovery-hero-visual"><div className="discovery-street"><Image src="/images/bright/found-neighborhood.png" alt="밝은 햇살 아래 파란 차양과 과일 상자가 놓인 동네 가게" fill priority sizes="(max-width: 767px) 100vw, 750px" quality={90} /></div><div className="discovery-device"><Phone src="/screens/found.png" alt="FOUND AI 생활권 혜택 앱 화면" /></div><span className="discovery-photo-caption">가까운 곳에서 발견하는 새로운 일상</span></div><p className="discovery-hero-foot">FOUND AI는 FULIF · FULIF+ 모든 회원이 이용할 수 있어요.</p></header>;
 }
 
 const PLACES = [
@@ -63,20 +64,23 @@ const PLACES = [
 ];
 
 export function DiscoveryPlaces() {
-  const [active,setActive] = useState(0);
-  const refs = useRef([]);
-  const item = PLACES[active];
-  function onKey(event,index) {
-    const next = event.key === 'ArrowRight' ? (index+1)%3 : event.key === 'ArrowLeft' ? (index+2)%3 : event.key === 'Home' ? 0 : event.key === 'End' ? 2 : null;
-    if(next===null) return;
-    event.preventDefault(); setActive(next); refs.current[next]?.focus();
-  }
-  return <div className="discovery-places"><div role="tablist" aria-label="FOUND AI가 찾는 곳" className="discovery-tabs">{PLACES.map((p,i)=><button key={p.name} id={`place-tab-${i}`} type="button" role="tab" ref={el=>{refs.current[i]=el;}} tabIndex={i===active?0:-1} aria-selected={i===active} aria-controls="place-panel" onClick={()=>setActive(i)} onKeyDown={e=>onKey(e,i)}>{p.name}<Icon name="arrow_forward" size={19}/></button>)}</div><div role="tabpanel" tabIndex={0} id="place-panel" aria-labelledby={`place-tab-${active}`} className="discovery-place-panel"><div className="discovery-place-photo"><Image key={item.image} src={item.image} alt={item.alt} fill sizes="(max-width: 767px) 100vw, 650px" quality={90}/></div><div className="discovery-place-copy"><span className="edition-eyebrow">{item.name}</span><h3>{item.title}</h3><p>{item.description}</p><div className="discovery-example"><span>화면 예시</span><strong>{item.example}</strong><time>{item.date}</time><p>{item.note}</p></div></div></div><p className="edition-fine">위 정보는 서비스 이해를 위한 예시이며, 실제 제공 중인 행사가 아니에요. 방문 시점에 가격과 혜택이 달라질 수 있어요.</p></div>;
+  return <><ScrollStory id="found-places" items={PLACES.map((item,index) => ({
+    key:String(index), label:item.name,
+    visual:<div className="discovery-place-photo"><Image src={item.image} alt="" fill sizes="(max-width: 899px) 100vw, 650px" quality={90} /></div>,
+    content:<><h3>{item.title}</h3><p>{item.description}</p><div className="discovery-example"><span>화면 예시</span><strong>{item.example}</strong><time>{item.date}</time><p>{item.note}</p></div></>,
+  }))} /><p className="edition-fine">위 정보는 서비스 이해를 위한 예시이며, 실제 제공 중인 행사가 아니에요. 방문 시점에 가격과 혜택이 달라질 수 있어요.</p></>;
 }
 
 export function MembershipBenefits() {
-  const [plus,setPlus] = useState(true);
-  return <div className="membership-benefits"><div className="member-benefit-toolbar"><p>내가 즐길 만큼,<br /><strong>직접 비교해 보세요.</strong></p><div className="plan-switch" role="group" aria-label="멤버십 혜택 비교"><button type="button" aria-pressed={!plus} onClick={()=>setPlus(false)}>FULIF <small>무료</small></button><button type="button" aria-pressed={plus} onClick={()=>setPlus(true)}>FULIF+ <small>월 5,000원</small></button></div></div><div className="member-benefit-numbers" aria-live="polite">{[['number','한 회차 낙첨번호 등록',5,20,'세트'],['ticket','매 회차 풀리프 제공 번호',2,10,'세트'],['watch','하루 광고 보기',10,20,'회']].map(([art,title,free,paid,unit])=><article key={art}><span>{title}</span><strong key={plus?'plus':'free'}>{plus?paid:free}<small>{unit}</small></strong><div className="member-capacity-track" aria-hidden="true"><i style={{width:`${plus?100:(free/paid)*100}%`}}/></div><p>FULIF {free}{unit} <Icon name="arrow_forward" size={14}/> FULIF+ {paid}{unit}</p><Art name={art} sizes="130px"/></article>)}</div><p className="edition-fine">FULIF+는 이용 한도와 기능이 더 넉넉해요. 응모권 1개의 당첨 확률은 모든 회원이 같아요.</p></div>;
+  return <><ScrollStory id="member-capacity" items={[
+    ['number','한 회차 낙첨번호 등록',5,20,'세트','아쉬웠던 번호를,\n더 넉넉하게 모아요.'],
+    ['ticket','매 회차 풀리프 제공 번호',2,10,'세트','번호를 고르는 재미도,\n조금 더 다양하게.'],
+    ['watch','하루 광고 보기',10,20,'회','짧은 여유를,\n차곡차곡 포인트로.'],
+  ].map(([art,title,free,paid,unit,heading]) => ({
+    key:art, label:title,
+    visual:<div className="scroll-member-art"><Art name={art} sizes="400px" /><strong>{paid}<small>{unit}</small></strong><span>FULIF+ · {title}</span></div>,
+    content:<><h3>{heading}</h3><div className="scroll-member-comparison">{[['FULIF',free],['FULIF+',paid]].map(([plan,value],index)=><div key={plan} className={index ? 'is-plus' : ''}><span>{plan}{index ? ' · 월 5,000원' : ' · 무료'}</span><strong>{value}<small>{unit}</small></strong><div className="scroll-member-track" aria-hidden="true"><i style={{width:`${value/paid*100}%`}} /></div></div>)}</div></>,
+  }))} /><p className="edition-fine">FULIF+는 이용 한도와 기능이 더 넉넉해요. 응모권 1개의 당첨 확률은 모든 회원이 같아요.</p></>;
 }
 
 export function PartnerScale() {

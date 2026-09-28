@@ -10,14 +10,15 @@ import { Phone } from './ui';
 import { RewardGallery, PointsScene, Playground } from './BenefitSections';
 import { OPEN_DATE } from '../lib/site';
 import { BrandIntroduction, PulliStory } from './Edition';
+import ScrollStory from './ScrollStory';
 
 const CHAPTERS = [['intro','풀리프'],['brand','한 번 더의 의미'],['one-more','앱의 네 가지'],['rewards','ONE MORE'],['found','FOUND AI'],['points','매일의 포인트'],['play','놀이터'],['plus','FULIF+'],['pulli','풀리 이야기'],['together','함께하는 풀리프'],['start','시작하기']];
 const clamp = n => Math.min(1, Math.max(0, n));
 
 // Art-directed crops: the browser fetches the source for its viewport only.
-const heroProps = { alt: '영화를 본 뒤 나란히 앉아 웃음을 나누는 두 친구', fill: true, sizes: '100vw', quality: 90, loading: 'eager', fetchPriority: 'high', className: 'intro-photo' };
-const { props: desktopHero } = getImageProps({ ...heroProps, src: '/images/fulif-hero-cinema-v2.png' });
-const { props: mobileHero } = getImageProps({ ...heroProps, src: '/images/fulif-hero-cinema-mobile-v2.png' });
+const heroProps = { alt: '밝은 햇살 아래 파란 차양의 편의점과 주유소가 있는 동네 풍경', fill: true, sizes: '100vw', quality: 90, loading: 'eager', fetchPriority: 'high', className: 'intro-photo' };
+const { props: desktopHero } = getImageProps({ ...heroProps, src: '/images/bright/hero-neighborhood.png' });
+const { props: mobileHero } = getImageProps({ ...heroProps, src: '/images/bright/hero-neighborhood-mobile.png' });
 
 function StoryLink({ href, children }) {
   return <Link href={href} className="story-pill">{children}<span className="story-pill-arrow"><Icon name="arrow_forward" size={16} /></span></Link>;
@@ -68,7 +69,7 @@ function IntroScene() {
       <link rel="preload" as="image" imageSrcSet={desktopHero.srcSet} imageSizes={desktopHero.sizes} media="(min-width: 768px)" fetchPriority="high" />
     </Head>
     <picture><source media="(max-width: 767px)" srcSet={mobileHero.srcSet} sizes={mobileHero.sizes} /><img {...desktopHero} /></picture>
-    <Image src="/images/fulif-hero-ticket-v2.png" alt="영화가 끝난 뒤 파란 좌석 위에 남은 두 장의 관람 티켓" fill sizes="100vw" quality={90} className="intro-detail-photo" />
+    <Image src="/images/bright/everyday-still-life.png" alt="햇살이 비치는 테이블 위의 커피, 관람 티켓과 파란 장바구니" fill sizes="100vw" quality={90} className="intro-detail-photo" />
     <div className="intro-shade" /><div className="intro-brand-caption"><span>FULL LIFE, ONE MORE.</span><Link href="/full-life">풀리프 알아보기 <Icon name="arrow_forward" size={17}/></Link></div><h1 className="intro-headline"><span>생활의 가치를,</span><span>한 번 더.</span><span>풀리프.</span></h1>
     <div className="intro-detail-copy"><h2>끝난 줄 알았던 것들에,<br />ONE MORE</h2><p>받아두고 잊은 쿠폰도, 다녀온 날의 티켓도,<br />아쉽게 끝난 번호도.<br />응모권으로, 포인트로, 내 생활 혜택으로 돌아와요.</p></div>
   </div></div></section>;
@@ -82,31 +83,17 @@ const SERVICES = [
 ];
 
 function ServiceScene() {
-  const [active,setActive]=useState(0);
-  const ref=useRef(null);
-  useEffect(()=>{
-    const desktop=window.matchMedia('(min-width: 1024px) and (prefers-reduced-motion: no-preference)');
-    let frame=0;
-    const update=()=>{
-      frame=0;
-      if(!desktop.matches || !ref.current) return;
-      const rect=ref.current.getBoundingClientRect();
-      if(rect.top>0 || rect.bottom<window.innerHeight) return;
-      setActive(Math.min(SERVICES.length-1,Math.floor(clamp(-rect.top/Math.max(1,rect.height-window.innerHeight))*SERVICES.length)));
-    };
-    const request=()=>{if(!frame) frame=requestAnimationFrame(update);};
-    window.addEventListener('scroll',request,{passive:true}); update();
-    return ()=>{cancelAnimationFrame(frame);window.removeEventListener('scroll',request);};
-  },[]);
-  const item=SERVICES[active];
-  return <section id="one-more" className="story-service" ref={ref}><div className="story-service-inner">
-    <div className="story-device-stage"><div className="story-device-halo" /><div className="story-device" key={item.screen}><Phone src={'/screens/'+item.screen+'.png'} alt={item.title+' 앱 화면'} /><div className="device-highlight"><span className="device-check"><Icon name="check" size={20} /></span><div><span>{item.label}</span><strong>{item.value}</strong></div></div></div></div>
-    <div className="story-service-copy"><h2 className="story-heading">앱을 열면,<br />네 가지가 기다려요</h2><div className="story-accordion">{SERVICES.map((service,i)=><div className={'story-accordion-item'+(active===i ? ' is-active' : '')} key={service.title}><h3><button type="button" id={'service-button-'+i} aria-expanded={active===i} aria-controls={'service-panel-'+i} onClick={()=>setActive(i)}>{service.title}<Icon name="arrow_forward" size={20} /></button></h3><div id={'service-panel-'+i} role="region" aria-labelledby={'service-button-'+i} hidden={active!==i}><p>{service.desc}</p><StoryLink href={service.href}>자세히 보기</StoryLink></div></div>)}</div></div>
-  </div></section>;
+  return <section id="one-more" className="service-scroll-section"><div className="service-scroll-heading"><h2>앱을 열면,<br />네 가지가 기다려요</h2></div>
+    <ScrollStory id="home-services" items={SERVICES.map(service => ({
+      key:service.screen, label:service.title,
+      visual:<div className="scroll-phone-visual"><Phone src={'/screens/'+service.screen+'.png'} alt="" /><div className="scroll-phone-badge"><Icon name="check_circle" size={24} /><div><span>{service.label}</span><strong>{service.value}</strong></div></div></div>,
+      content:<><h3>{service.title}</h3><p>{service.desc}</p><StoryLink href={service.href}>자세히 보기</StoryLink></>,
+    }))} />
+  </section>;
 }
 
 function FoundScene() {
-  return <section id="found"><div className="life-scene"><Image src="/images/cafe-life.png" alt="동네 카페에서 함께하는 일상" fill sizes="100vw" quality={90} /><div className="life-scene-shade" /><div className="life-scene-copy"><p>FOUND AI</p><h2>찾지 않아도,<br />먼저 찾아와요</h2><span>내 생활권의 편의점 · 마트 · 주유소 혜택을<br />풀리가 찾아 정리해 드려요.</span></div></div>
+  return <section id="found"><div className="life-scene"><Image src="/images/bright/found-neighborhood.png" alt="파란 차양과 신선한 과일이 있는 햇살 가득한 동네 가게" fill sizes="100vw" quality={90} /><div className="life-scene-shade" /><div className="life-scene-copy"><p>FOUND AI</p><h2>찾지 않아도,<br />먼저 찾아와요</h2><span>내 생활권의 편의점 · 마트 · 주유소 혜택을<br />풀리가 찾아 정리해 드려요.</span></div></div>
     <div className="found-story-detail"><div className="found-story-phone"><Phone src="/screens/found.png" alt="생활권 혜택을 보여주는 FOUND AI 앱 화면" /></div><div><h2 className="story-heading">내 생활권 혜택,<br />풀리가 먼저 찾아요</h2><div className="story-found-promises"><div><h3>찾지 않으셔도 돼요</h3><p>회원님이 검색하지 않아도 풀리프가 먼저 찾아 정리해 드려요.</p></div><div><h3>없는 혜택은 만들지 않아요</h3><p>확인된 것만 올려요. 확인한 날짜를 함께 적어드려요.</p></div><div><h3>위치를 따라다니지 않아요</h3><p>한 번 정하신 지역만 사용하고, 실시간 위치는 보지 않아요.</p></div></div><StoryLink href="/found-ai">FOUND AI 자세히 보기</StoryLink></div></div>
   </section>;
 }
@@ -125,7 +112,7 @@ function TogetherScene() {
 }
 
 function StartScene() {
-  return <section id="start" className="start-story"><Image src="/images/fulif-hero-cinema-v2.png" alt="" fill sizes="100vw" /><div className="start-overlay" /><div className="start-copy"><BrandSymbol className="w-12 h-14 mx-auto" /><h2>오늘 끝난 것에,<br />한 번 더.</h2><p>쿠폰 · 티켓 · 번호로 시작하는 AI 리워드 플랫폼</p><StoreBadges center /><small>{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요.</small></div></section>;
+  return <section id="start" className="start-story"><Image src="/images/bright/everyday-still-life.png" alt="" fill sizes="100vw" /><div className="start-overlay" /><div className="start-copy"><BrandSymbol className="w-12 h-14 mx-auto" /><h2>오늘 끝난 것에,<br />한 번 더.</h2><p>쿠폰 · 티켓 · 번호로 시작하는 AI 리워드 플랫폼</p><StoreBadges center /><small>{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요.</small></div></section>;
 }
 
 export default function HomeStory() {

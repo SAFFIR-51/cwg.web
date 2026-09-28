@@ -1,0 +1,74 @@
+/* The original neighborhood illustration, restored as an accessible preview. */
+.found-neighborhood { max-width:1280px; margin:auto; padding:110px 40px 90px; }
+.found-neighborhood-heading { display:flex; justify-content:space-between; align-items:flex-end; gap:30px; margin-bottom:48px; }
+.found-neighborhood-heading h2 { font-size:clamp(36px,4.3vw,56px); font-weight:700; line-height:1.3; letter-spacing:-.05em; margin-top:20px; }
+.found-neighborhood-heading h2 span { color:#3182f6; }
+.found-neighborhood-heading > p { color:#6b7684; font-size:15px; line-height:1.9; padding-bottom:6px; }
+.found-map-canvas { background:#eaf4ff; min-width:0; display:flex; flex-direction:column; justify-content:space-between; }
+.found-map-caption { display:flex; align-items:center; justify-content:space-between; padding:27px 30px 0; gap:12px; }
+.found-map-caption > span { display:flex; align-items:center; gap:7px; color:#456286; font-size:13px; font-weight:600; }
+.found-map-caption svg { color:#3182f6; }
+.found-map-caption small { color:#647e9c; font-size:11px; border:1px solid #b5cce5; padding:5px 9px; border-radius:7px; }
+.found-map-art { position:relative; margin-block:8px 0; }
+.found-map-art > img { display:block; width:100%; height:auto; mix-blend-mode:multiply; }
+.found-map-pin { position:absolute; display:flex; align-items:center; justify-content:center; gap:7px; min-height:44px; padding:10px 14px; transform:translate(-50%,-50%); border:1px solid #dce7f5; border-radius:14px; background:#fff; color:#47617e; box-shadow:0 5px 18px #213e6817; font-size:13px; font-weight:650; white-space:nowrap; transition:background .2s,color .2s,box-shadow .2s; }
+.found-map-pin::after { content:""; position:absolute; width:9px; height:9px; bottom:-5px; left:calc(50% - 4px); transform:rotate(45deg); background:inherit; border-right:1px solid #dce7f5; border-bottom:1px solid #dce7f5; }
+.found-map-guide { display:flex; align-items:center; gap:13px; padding:0 30px 24px; }
+.found-map-guide img { width:58px; height:58px; object-fit:contain; }
+.found-map-guide p { font-size:12px; line-height:1.8; color:#5a7493; }
+.found-map-guide strong { color:#3c5778; font-weight:500; }
+.found-map-panel-top { display:flex; align-items:center; justify-content:space-between; margin-top:35px; }
+.found-map-panel-top > span { display:grid; place-items:center; width:56px; height:56px; background:#edf4ff; border-radius:19px; color:#3182f6; }
+.found-map-copy h3 { font-size:27px; font-weight:650; line-height:1.45; letter-spacing:-.05em; white-space:pre-line; margin-top:23px; }
+.found-map-copy > p { color:#6b7684; font-size:14px; line-height:1.85; margin-top:17px; min-height:78px; }
+.found-map-copy ul { display:grid; gap:11px; padding:24px 0 28px; margin-top:23px; border-top:1px solid #edf0f5; }
+.found-map-copy li { display:flex; align-items:center; gap:9px; font-size:13px; color:#53667e; }
+.found-map-copy li svg { color:#3182f6; }
+.found-map-link { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:16px 0 0; color:#246bfe; font-size:13px; font-weight:600; margin-top:auto; }
+.found-map-link svg { transition:translate .2s; }
+.found-map-link:hover svg { translate:3px 0; }
+.found-neighborhood-foot { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; padding-top:24px; }
+.found-neighborhood-foot > span { display:flex; align-items:center; gap:7px; font-size:12px; color:#64748a; }
+.found-neighborhood-foot p { font-size:11px; color:#7c8796; line-height:1.8; text-align:right; }
+.found-neighborhood a:focus-visible { outline:3px solid #246bfe; outline-offset:5px; }
+@media (min-width:768px) and (max-width:1100px) {
+  .found-neighborhood-heading { display:block; }
+  .found-neighborhood-heading > p { margin-top:24px; }
+  .found-map-copy h3 { font-size:24px; }
+  .found-map-caption { padding-inline:22px; }
+  .found-map-guide { padding-inline:22px; }
+  .found-map-pin { gap:5px; padding-inline:10px; font-size:12px; }
+}
+@media (max-width:767px) {
+  .found-neighborhood { padding:65px 24px 55px; }
+  .found-neighborhood-heading { display:block; margin-bottom:30px; }
+  .found-neighborhood-heading h2 { font-size:36px; margin-top:16px; }
+  .found-neighborhood-heading > p { font-size:13px; margin-top:22px; }
+  .found-map-caption { padding:22px 20px 0; }
+  .found-map-caption > span { font-size:11px; }
+  .found-map-caption small { font-size:10px; padding:4px 7px; }
+  .found-map-art { margin-top:17px; }
+  .found-map-pin { gap:5px; padding:9px; font-size:11px; border-radius:12px; }
+  .found-map-pin svg { width:15px!important; height:15px!important; }
+  .found-map-guide { gap:9px; padding:0 20px 19px; }
+  .found-map-guide img { width:46px; height:46px; }
+  .found-map-guide p { font-size:11px; }
+  .found-map-panel-top { margin-top:25px; }
+  .found-map-panel-top > span { width:48px; height:48px; border-radius:16px; }
+  .found-map-copy h3 { font-size:28px; margin-top:18px; }
+  .found-map-copy > p { font-size:13px; min-height:72px; margin-top:14px; }
+  .found-map-copy ul { gap:10px; padding:20px 0; margin-top:17px; }
+  .found-map-link { padding-top:7px; min-height:44px; }
+  .found-neighborhood-foot { display:block; padding-top:20px; }
+  .found-neighborhood-foot > span { font-size:11px; gap:5px; }
+  .found-neighborhood-foot p { text-align:left; margin-top:13px; font-size:10px; }
+}
+@media (max-width:359px) {
+  .found-neighborhood { padding-inline:20px; }
+  .found-neighborhood-heading h2 { font-size:32px; }
+  .found-map-copy h3 { font-size:25px; }
+  .found-map-pin { gap:4px; padding-inline:7px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .found-neighborhood * { transition:none!important; }
+}

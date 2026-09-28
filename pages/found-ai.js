@@ -1,14 +1,16 @@
 import Seo from '../components/Seo';
 import Icon from '../components/Icon';
 import { Section, SectionHead, Steps, Faq } from '../components/ui';
-import { ArrowLink, PhoneScene, ClosingCTA } from '../components/SubpageDesign';
+import { PhoneScene, ClosingCTA } from '../components/SubpageDesign';
 import { DiscoveryHero, DiscoveryPlaces, SectionNav, PulliNote } from '../components/Edition';
+import FoundNeighborhood from '../components/FoundNeighborhood';
 
 export default function FoundAi() {
   return <div className="product-page found-product">
     <Seo title="FOUND AI" description="내 생활권의 편의점 · 마트 · 주유소 혜택을, 확인한 날짜와 함께 한곳에 정리해 드려요. 검색하지 않아도 괜찮아요." />
     <DiscoveryHero />
-    <SectionNav label="FOUND AI 페이지 탐색" items={[["found-promises","세 가지 약속"],["how-it-works","이용 방법"],["places","찾아주는 곳"],["found-questions","자주 묻는 질문"]]} />
+    <SectionNav label="FOUND AI 페이지 탐색" items={[["neighborhood","동네 둘러보기"],["found-promises","세 가지 약속"],["how-it-works","이용 방법"],["places","찾아주는 곳"],["found-questions","자주 묻는 질문"]]} />
+    <FoundNeighborhood />
     <Section id="found-promises">
       <SectionHead eyebrow="FOUND AI" title={'FOUND AI는\n이렇게 일해요'} lead="편하게 쓰시도록, 세 가지는 꼭 지켜요." />
       <div className="found-promises">

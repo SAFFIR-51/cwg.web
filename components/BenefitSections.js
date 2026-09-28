@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from './Icon';
+import ScrollStory from './ScrollStory';
 
 const ART = '/images/benefits/';
 
@@ -75,30 +75,13 @@ const PLAY_ITEMS = [
 ];
 
 export function Playground() {
-  const [active, setActive] = useState(0);
-  const tabRefs = useRef([]);
-  const item = PLAY_ITEMS[active];
-  const onTabKeyDown = (event, index) => {
-    let next = index;
-    if (event.key === 'ArrowRight') next = (index + 1) % PLAY_ITEMS.length;
-    else if (event.key === 'ArrowLeft') next = (index + PLAY_ITEMS.length - 1) % PLAY_ITEMS.length;
-    else if (event.key === 'Home') next = 0;
-    else if (event.key === 'End') next = PLAY_ITEMS.length - 1;
-    else return;
-    event.preventDefault();
-    setActive(next);
-    tabRefs.current[next]?.focus();
-  };
   return <section className="play-chapter" id="play">
     <div className="benefit-section-heading reveal"><p>FULIF PLAYGROUND</p><h2>잠깐의 여유마저<br /><span>즐거움이 되도록</span></h2><div>기억하고, 고르고, 나만의 기록을 만들어요.<br />풀리프 놀이터에서 보내는 가벼운 몇 분.</div></div>
-    <div className="play-selector" role="tablist" aria-label="풀리프 놀이터">
-      {PLAY_ITEMS.map((play, i) => <button key={play.key} type="button" role="tab" aria-selected={active === i} aria-controls="play-showcase" id={`play-tab-${play.key}`} tabIndex={active === i ? 0 : -1} onClick={() => setActive(i)} onKeyDown={event => onTabKeyDown(event, i)} ref={el => { tabRefs.current[i] = el; }}><span>0{i + 1}</span>{play.name}{i === 2 && <small>PLUS</small>}</button>)}
-    </div>
-    <div className={`play-showcase play-showcase-${item.key}`} id="play-showcase" role="tabpanel" aria-labelledby={`play-tab-${item.key}`} tabIndex={0}>
-      <div className="play-showcase-copy" key={`${item.key}-copy`}><span className="play-eyebrow">{item.eyebrow}</span><h3>{item.title}</h3><p>{item.desc}</p><Link href="/full-life#playground" className="play-showcase-link">{item.action}<RoundArrow /></Link></div>
-      <div className="play-showcase-art" key={item.key}><div className="play-art-disc" /><ObjectArt name={item.key} sizes="(max-width: 767px) 90vw, 580px" /><span className="play-art-note"><Icon name={item.key === 'score' ? 'auto_awesome' : 'check_circle'} size={18} />{item.badge}</span></div>
-      <div className="play-showcase-meta"><span>{item.detail}</span><span>0{active + 1} <i>/ 03</i></span></div>
-    </div>
+    <ScrollStory id="home-play" className="play-scroll-copy" items={PLAY_ITEMS.map(item => ({
+      key:item.key, label:item.name,
+      visual:<div className="play-scroll-art"><ObjectArt name={item.key} sizes="(max-width: 899px) 90vw, 580px" /><span className="play-art-note"><Icon name={item.key === 'score' ? 'auto_awesome' : 'check_circle'} size={18} />{item.badge}</span></div>,
+      content:<><h3>{item.title}</h3><p>{item.desc}</p><Link href="/full-life#playground" className="play-showcase-link">{item.action}<RoundArrow /></Link></>,
+    }))} />
     <p className="story-fine benefit-disclaimer">번호 기능은 번호를 고르는 재미를 위한 것이며, 당첨 확률을 높여주지 않아요.</p>
   </section>;
 }

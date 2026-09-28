@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Icon from './Icon';
 import { Phone } from './ui';
+import ScrollStory from './ScrollStory';
 
 export function PageHero({ eyebrow, title, lead, children, visual, className = '' }) {
   return <section className={`page-hero ${className}`}>
@@ -84,11 +85,11 @@ export function FeatureExplorer({ items }) {
 }
 
 export function DayTimeline({ items }) {
-  const [active, setActive] = useState(0);
   const times = ['08:00', '12:00', '18:00', '20:00', '20:30'];
   const images = ['benefits/vote-art', 'benefits/coupon-art', 'subpages/neighborhood-art', 'benefits/ticket-art', 'benefits/score-art'];
-  return <div className="day-experience">
-    <div className="day-switcher" aria-label="하루의 순간 선택">{items.map(([time], i) => <button type="button" key={time} onClick={() => setActive(i)} aria-pressed={active === i} className={active === i ? 'active' : ''}><span className="day-step-dot" /><span>{time}</span></button>)}</div>
-    <div className="day-detail" aria-live="polite"><div><span className="day-time">{times[active]}</span><p className="eyebrow">{items[active][0]}</p><h3>{items[active][1]}</h3><p className="lead">{items[active][2]}</p></div><Image src={`/images/${images[active]}.png`} width={320} height={320} sizes="(max-width: 767px) 210px, 290px" alt="" /></div>
-  </div>;
+  return <ScrollStory id="fulif-day" items={items.map(([time,title,description], index) => ({
+    key:String(index), label:time,
+    visual:<div className="day-scroll-art"><strong>{times[index]}</strong><Image src={`/images/${images[index]}.png`} width={400} height={400} sizes="(max-width: 899px) 280px, 400px" alt="" /><span>{time}</span></div>,
+    content:<><h3>{title}</h3><p>{description}</p></>,
+  }))} />;
 }
