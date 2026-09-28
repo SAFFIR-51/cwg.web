@@ -13,6 +13,14 @@ npm run dev                  # http://localhost:3000
 npm run build && npm start   # 프로덕션
 ```
 
+## Vercel 배포
+
+GitHub의 `main` 브랜치에 푸시하면 기존 Vercel 프로젝트에서 자동 배포합니다. 저장소 루트의 `vercel.json`이 프레임워크를 `nextjs`, 설치를 `npm ci`, 빌드를 `npm run build`, 빌드 결과를 `.next`로 명시합니다. 기존 정적 HTML 프로젝트의 `Other`/`public` 설정이 남아 있어도 이 배포 설정을 우선 사용합니다.
+
+Vercel Root Directory는 이 저장소의 루트로 유지해야 합니다. `public`은 이미지·폰트용 폴더이며 사이트 전체 배포 결과가 아닙니다. Next.js의 페이지·이미지 최적화·`/api/contact`를 함께 배포해야 합니다. SMTP 환경변수는 기존 Vercel 프로젝트에서 별도 관리하며 저장소에는 포함하지 않습니다.
+
+배포 성공 표시만으로 완료를 판단하지 말고 실제 도메인의 `/`, `/full-life`, `/found-ai`, `/membership`, `/notes`, `/partners`, `/download` 응답과 화면을 확인합니다. 구 `*.html` 주소의 리다이렉트도 확인합니다.
+
 ## 페이지
 
 | 경로 | 디자인 장 | 비고 |
