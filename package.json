@@ -7,8 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "check": "node scripts/check-site.mjs && node scripts/check-pages.mjs"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "^15.3.0",

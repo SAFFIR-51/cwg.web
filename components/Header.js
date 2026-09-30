@@ -5,14 +5,6 @@ import { BrandLogo } from './Brand';
 import Icon from './Icon';
 import { NAV } from '../lib/site';
 
-const MAIN_NAV = [
-  { href: '/full-life', label: '서비스' },
-  { href: '/found-ai', label: 'FOUND AI' },
-  { href: '/membership', label: '멤버십' },
-  { href: '/notes', label: '풀리 노트' },
-  { href: '/partners', label: '브랜드 파트너' },
-];
-
 export default function Header() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -44,23 +36,29 @@ export default function Header() {
   const isActive = (href) => (href === '/' ? router.pathname === '/' : router.pathname.startsWith(href));
 
   return (
-    <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
-      <div className="container header-inner">
+    <header className={`site-header sticky top-0 z-50 ${scrolled ? 'is-scrolled' : ''}`}>
+      <div className="header-inner">
         <Link href="/" className="shrink-0" aria-label="FULIF 홈">
           <BrandLogo />
         </Link>
 
-        <nav className="header-nav" aria-label="주요 메뉴">
-          {MAIN_NAV.map((n) => (
-            <Link key={n.href} href={n.href} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</Link>
+        <nav className="header-main-nav" aria-label="주요 메뉴">
+          {[{ href: '/full-life', label: '서비스' }, { href: '/found-ai', label: 'FOUND AI' }, { href: '/membership', label: '멤버십' }, { href: '/notes', label: '풀리 노트' }, { href: '/partners', label: '브랜드 파트너' }].map((n) => (
+            <Link
+              key={n.href}
+              href={n.href}
+              aria-current={isActive(n.href) ? 'page' : undefined}
+            >
+              {n.label}
+            </Link>
           ))}
         </nav>
 
-        <div className="header-actions">
-          <Link href="/download" className="btn-primary btn-sm">앱 다운로드</Link>
+        <div className="flex items-center gap-2">
+          <Link href="/download" className="header-download">앱 다운로드</Link>
           <button
             type="button"
-            className="header-menu-btn"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-hair lg:hidden"
             aria-label={open ? '메뉴 닫기' : '메뉴 열기'}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -71,15 +69,24 @@ export default function Header() {
         </div>
       </div>
 
-      <div id="mobile-menu" className={`mobile-menu lg:hidden ${open ? '' : 'hidden'}`} aria-hidden={!open}>
+      {/* 모바일 전체 메뉴 (디자인 p.17) */}
+      <div
+        id="mobile-menu"
+        className={`mobile-menu fixed inset-x-0 bottom-0 top-[72px] md:top-[84px] z-40 overflow-y-auto bg-white lg:hidden ${open ? '' : 'hidden'}`}
+        aria-hidden={!open}
+      >
         <nav className="container pt-2" aria-label="모바일 메뉴">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="mobile-menu-link" aria-current={isActive(n.href) ? 'page' : undefined}>
+            <Link
+              key={n.href}
+              href={n.href}
+              className={`flex items-center justify-between border-b border-hair py-5 text-[22px] font-bold tracking-tightest ${isActive(n.href) ? 'text-blue' : 'text-ink'}`}
+            >
               {n.label}
               <Icon name="chevron_right" className="text-faint" size={22} />
             </Link>
           ))}
-          <Link href="/partners" className="btn-secondary mt-6 w-full">브랜드 파트너 문의</Link>
+          <Link href="/partners" className="btn-primary mt-6 w-full">브랜드 파트너 문의</Link>
         </nav>
       </div>
     </header>
