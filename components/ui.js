@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import Icon, { IconCircle } from './Icon';
-import StoreBadges from './StoreBadges';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Icon from './Icon';
 
 /* ---------- 섹션 골격 ---------- */
 export function Section({ children, className = '', tone = 'white', id }) {
-  const bg = tone === 'gray' ? 'bg-page' : tone === 'blue' ? 'bg-blue-soft' : 'bg-white';
+  const bg = tone === 'gray' ? 'bg-page' : tone === 'blue' ? 'bg-blue-panel' : 'bg-white';
   return (
     <section id={id} className={`content-section ${bg} ${className}`}>
       <div className="container">{children}</div>
@@ -12,12 +12,12 @@ export function Section({ children, className = '', tone = 'white', id }) {
   );
 }
 
-export function SectionHead({ eyebrow, title, lead, center = false, className = '' }) {
+export function SectionHead({ eyebrow, title, lead, center = false, as: Tag = 'h2', className = '' }) {
   return (
     <div className={`section-heading reveal ${center ? 'text-center' : ''} ${className}`}>
-      {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
-      <h2 className="h-section whitespace-pre-line">{title}</h2>
-      {lead && <p className={`lead mt-4 whitespace-pre-line ${center ? 'mx-auto max-w-2xl' : 'max-w-2xl'}`}>{lead}</p>}
+      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+      <Tag className={`${Tag === 'h1' ? 'h-display' : 'h-section'} whitespace-pre-line`}>{title}</Tag>
+      {lead && <p className={`lead whitespace-pre-line ${center ? 'mx-auto' : ''}`}>{lead}</p>}
     </div>
   );
 }
@@ -25,20 +25,6 @@ export function SectionHead({ eyebrow, title, lead, center = false, className = 
 /* ---------- 카드 ---------- */
 export function Card({ children, className = '', white = false }) {
   return <div className={`${white ? 'card-white' : 'card'} reveal ${className}`}>{children}</div>;
-}
-
-export function FeatureCard({ icon, img, title, desc, className = '' }) {
-  return (
-    <Card className={`feature-card ${className}`}>
-      {img ? (
-        <img src={img} alt="" className="mb-4 h-12 w-12 object-contain" />
-      ) : (
-        <IconCircle name={icon} className="mb-4" tone="white" />
-      )}
-      <h3 className="h-card">{title}</h3>
-      <p className="mt-2 text-[15px] leading-relaxed text-sub whitespace-pre-line">{desc}</p>
-    </Card>
-  );
 }
 
 /* ---------- 번호 단계 ---------- */
@@ -100,7 +86,7 @@ export function Note({ title, children, tone = 'blue', className = '' }) {
 }
 
 export function Fine({ children, className = '' }) {
-  return <p className={`text-[13px] leading-relaxed text-dim whitespace-pre-line ${className}`}>{children}</p>;
+  return <p className={`fine whitespace-pre-line ${className}`}>{children}</p>;
 }
 
 /* ---------- FAQ ---------- */
@@ -120,42 +106,50 @@ export function Faq({ items, className = '' }) {
   );
 }
 
-/* ---------- 마무리 CTA ---------- */
-export function CtaBand({ title, badges = true, children, tone = 'gray' }) {
-  return (
-    <Section tone={tone} className="cta-section">
-      <div className="reveal text-center">
-        <p className="eyebrow mb-5">LIFE, ONE MORE.</p>
-        <h2 className="h-section whitespace-pre-line">{title}</h2>
-        {badges && <StoreBadges center className="mt-8" />}
-        {children}
-      </div>
-    </Section>
-  );
-}
-
 /* ---------- 폰 목업 ---------- */
-export function Phone({ src, alt = '', className = '' }) {
+export function Phone({ src, alt = '', className = '', size = 'md', priority = false }) {
+  const sizeClass = size === 'sm' ? 'phone-sm' : size === 'lg' ? 'phone-lg' : '';
   return (
-    <div className={`phone ${className}`}>
+    <div className={`phone ${sizeClass} ${className}`}>
       <div className="phone-status" aria-hidden="true"><span>9:41</span><div className="phone-notch" /><span>▮▮ ▰</span></div>
       <div className="phone-screen">
-        <img src={src} alt={alt} loading="lazy" />
+        <img src={src} alt={alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : undefined} decoding="async" />
       </div>
     </div>
-  );
-}
-
-export function TextLink({ href, children, className = '' }) {
-  return (
-    <Link href={href} className={`inline-flex items-center gap-0.5 text-[15px] font-semibold text-blue hover:underline underline-offset-4 ${className}`}>
-      {children}
-      <Icon name="chevron_right" size={20} />
-    </Link>
   );
 }
 
 export function Tag({ children, tone = 'blue' }) {
   const t = tone === 'blue' ? 'bg-blue-soft text-blue' : tone === 'green' ? 'bg-green-soft text-green' : 'bg-hair text-sub';
   return <span className={`inline-flex h-6 items-center rounded-md px-2 text-[12px] font-bold ${t}`}>{children}</span>;
+}
+
+/* ---------- 풀리의 한마디 ---------- */
+export function PulliNote({ children, mood = 'hello', className = '' }) {
+  const src = mood === 'search' ? '/mascot/clover_search.png' : '/mascot/pulli-profile-v2.png';
+  return <aside className={`pulli-note ${className}`}><Image src={src} alt="풀리" width={72} height={72} sizes="72px" /><div><span>풀리의 한마디</span><p>{children}</p></div></aside>;
+}
+
+/* ---------- 페이지 내 섹션 탐색 (스크롤 위치 추적) ---------- */
+export function SectionNav({ label, items }) {
+  const [active, setActive] = useState(items[0][0]);
+  const key = items.map(item => item[0]).join('|');
+  useEffect(() => {
+    const ids = key.split('|');
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * .4) current = id;
+      }
+      setActive(current);
+    };
+    const request = () => { if (!frame) frame = requestAnimationFrame(update); };
+    window.addEventListener('scroll', request, { passive: true });
+    window.addEventListener('resize', request); update();
+    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', request); window.removeEventListener('resize', request); };
+  }, [key]);
+  return <nav className="section-nav" aria-label={label}><div className="container">{items.map(([id, title]) => <a href={`#${id}`} key={id} aria-current={active === id ? 'location' : undefined}>{title}</a>)}</div></nav>;
 }

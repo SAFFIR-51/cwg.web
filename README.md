@@ -1,16 +1,18 @@
 # FULIF · 풀리프 웹사이트 (fulif.io)
 
-Next.js(Pages Router) + Tailwind CSS로 만든 공식 웹사이트. 내용은 2026-09-24 최종본(`fulif_io_웹사이트 전체디자인(v.2).pdf`)과 기존 서비스 안내를 기준으로 합니다. 디자인은 사용자가 선호한 이전 **토스형 전체 화면 히어로 · 스크롤 전환 · 대형 휴대폰 · 3D 혜택 카드**를 유지합니다. 종이 포켓 중심 재설계는 사용자가 거절하여 실제 화면에서 제외했습니다. 혜택 수치·한도·기간은 PDF와 대조했으며, 연간 멤버십만 사용자의 후속 지시에 따라 제외합니다. 설계 이력은 `DESIGN.md`에 있습니다.
+Next.js(Pages Router) + Tailwind CSS로 만든 공식 웹사이트. 내용은 2026-09-24 최종본(`fulif_io_웹사이트 전체디자인(v.2).pdf`)과 기존 서비스 안내를 기준으로 합니다. 디자인은 2026-09-30 요청(`cwg 웹 수정 전달.md`)에 따라 **토스형 구성을 모두 걷어내고 실제 앱 화면(폰 목업)이 중심인 제품 사이트**로 재구성했습니다. 혜택 수치·한도·기간은 PDF와 대조했으며, 연간 멤버십만 사용자의 후속 지시에 따라 제외합니다. 설계 이력은 `DESIGN.md`에 있습니다.
 
 ## 실행
 
-서비스 · FOUND AI · 멤버십 · 풀리 노트 · 브랜드 파트너 · 다운로드는 각각 생활 사진, 동네 사진과 실제 앱 화면, 블루 멤버십 패스, 검색형 매거진, 매장 캠페인, 앱 갤러리로 다르게 구성했습니다. 본문의 예시 정보와 유의사항은 PDF 내용을 유지합니다. 최신 전체 페이지 확장은 `components/Edition.js`와 `styles/edition.css`이며, 기존 `story.css`, `benefits.css`, `subpages.css`, `page-scenes.css`, `story-restoration.css` 위에 적용됩니다. `styles/fulif-own.css`와 종이 포켓 이미지 6종은 미사용 시안입니다.
+모든 페이지가 같은 프리미티브(`components/blocks.js`)로 조립됩니다. 첫 화면은 `PageHero`(유일한 h1) + 폰 목업, 본문은 `SplitFeature`·`FeatureGrid`·`ScreenCard` 등, 마무리는 `CtaBand`입니다. 본문의 예시 정보와 유의사항은 PDF 내용을 유지합니다. 스타일은 `styles/globals.css`(토큰·기본 요소·헤더·푸터·리걸), `blocks.css`(공용 블록), `home.css`(홈 레이아웃), `pages.css`(서브 페이지) 4개뿐입니다.
 
 ```bash
 npm install
 cp .env.example .env.local   # SMTP 등 채우기
 npm run dev                  # http://localhost:3000
 npm run build && npm start   # 프로덕션
+PORT=3107 npm start          # 다른 프로젝트가 3000번을 쓸 때
+SITE_CHECK_ORIGIN=http://127.0.0.1:3107 npm run check   # 링크·앵커·이미지·섹션·금지 패턴 점검 (프로덕션 서버 필요)
 ```
 
 ## Vercel 배포
@@ -25,7 +27,7 @@ Vercel Root Directory는 이 저장소의 루트로 유지해야 합니다. `pub
 
 | 경로 | 디자인 장 | 비고 |
 |---|---|---|
-| `/` | 01 홈 | 전체 화면 생활 이미지 · 스크롤 연동 휴대폰 · 혜택 카드 · 놀이터 탭 |
+| `/` | 01 홈 | 폰 목업 히어로 · 세 단계 · 앱 화면 벤토 4장 · FOUND · 포인트 · 놀이터 · FULIF+ · 풀리와 약속 · 함께 · 다운로드 밴드 |
 | `/full-life` | 02 Full Life | 상단 칩 → 섹션 앵커 |
 | `/found-ai` | 03 FOUND AI | |
 | `/membership` | 04 멤버십 | 구독 버튼은 스토어로 연결(결제는 앱에서만) |
@@ -41,7 +43,12 @@ Vercel Root Directory는 이 저장소의 루트로 유지해야 합니다. `pub
 
 ```
 pages/            라우트 (+ pages/api/contact.js 메일 발송)
-components/       Header · Footer · Brand(로고) · StoreBadges · ui.js(섹션·카드·단계·FAQ 등)
+components/       Header · Footer · Brand(로고) · StoreBadges · ui.js(섹션·카드·단계·FAQ·Phone·PulliNote·SectionNav)
+components/blocks.js  공용 블록: PageHero · PhoneStack · ScreenCard · SplitFeature · FeatureGrid · PricingCard · CompareBars · StepTimeline · FactList · CtaBand
+components/home/  홈 조립(HomePage · HomeHero · sections)
+components/Art.js 3D 아이콘 · 풀리 노트 표지 / VotePreview.js 오늘의 한 표 웹 데모
+styles/           globals · blocks · home · pages (4개, pages/_app.js 순서)
+scripts/          check-site.mjs(링크·앵커·이미지·h1) · check-pages.mjs(섹션 id·금지 패턴·CSS 토큰)
 lib/site.js       스토어 URL · 메뉴 · 회사 정보 · 오픈일
 lib/notes.js      풀리 노트 글 목록
 content/legal/    약관 · 개인정보처리방침 · 계정삭제 본문
@@ -50,9 +57,9 @@ public/mascot     풀리 마스코트
 public/icons      앱 3D 기능 아이콘
 public/images/benefits  메인 혜택·포인트·놀이터용 오리지널 3D 일러스트 10종
 public/images/subpages  FOUND AI · 멤버십 · 노트용 오리지널 3D 일러스트 3종
-public/images/editorial  각 상세 페이지용 생활 사진 · 동네 지도 · 패스 · 선물 · 매거진 표지 7종
-public/images/edition  티켓 오브제 · 동네 · 마트 · 주유소 새 비주얼 4종
-public/images/fulif-own  미사용 종이 포켓 시안 이미지 6종 (기록용 보관)
+public/images/editorial  found-town(지도) · note-coffee · note-number 사용, 나머지는 미사용
+public/images/edition  found-market · found-fuel 사용, 나머지는 미사용
+public/images/bright · fulif-own · 루트 images/*.png  미사용(리디자인 이전 사진, 기록용 보관)
 public/screens    앱 화면 캡처 (01_개발 앱을 390×844 @2x 로 캡처) — 폰 목업에 사용
 legacy/           2026-09 이전 정적 사이트 원본 (참고용, 배포되지 않음)
 ```
@@ -65,10 +72,10 @@ legacy/           2026-09 이전 정적 사이트 원본 (참고용, 배포되�
 
 ## 디자인 규칙 요약
 
-- 메인: 큰 생활 사진, 화이트·옅은 블루, 넓은 여백과 큰 타이포, 주요 카드 r28~36
-- 파랑 `#3182F6` 중심의 활성 상태·혜택 숫자·3D 비주얼. 다른 상세 페이지는 기존 블루 팔레트 유지
-- 글꼴 Pretendard Variable로 한글·영문·숫자·폼 통일, 작은 UI 아이콘은 외부 폰트가 필요 없는 로컬 SVG
-- 메인 제목 39~78px, 섹션 제목 32~50px, 본문 14~18px
+- 시각 중심은 실제 앱 화면(폰 목업). 생활 사진 리드·스크롤 고정 연출·챕터 레일 없음. 사진은 FOUND 장소 카드 썸네일과 노트 표지에만
+- 색: F 심벌의 하늘→코발트(`#63D5FF → #0786F6 → #064CCE`) 그라데이션, 잉크 `#182638`, 흰색·연블루 서피스(`#F3F7FD`, `#EAF4FF`), 풀리 초록 `#5DBE3F`은 소형 강조. 토큰은 `styles/globals.css :root`와 `tailwind.config.js`에 동일하게 정의
+- 글꼴 Pretendard Variable, 좌정렬. 페이지 제목 40~62px, 섹션 제목 30~42px, 본문 16~17px. 3D 아이콘은 56~96px 소형만
+- 버튼은 파란 solid(`.btn-primary`) / 아웃라인(`.btn-secondary`) / 텍스트 링크(`.btn-link`). 라운드 14/20/28px
 
 ## 히어로 이미지 · 타이포그래피 (2026-09-27)
 
@@ -84,10 +91,15 @@ Toss Impact · Toss Securities · Toss Place · Toss 홈의 구성을 실제 확
 
 빌드 후 개발 서버가 켜진 상태에서 `node scripts/check-site.mjs`로 공개 페이지·내부 앵커·이미지를 읽기 전용으로 점검할 수 있습니다.
 
+## 앱 화면 중심 리디자인 (2026-09-30)
+
+`cwg 웹 수정 전달.md`의 요청(토스와 비슷한 구성 없애기 · 디자인 전반 개선)에 따라 홈과 서브 페이지 전체를 다시 구성했습니다. 제거한 것: 둥근 전체화면 사진 히어로와 3분할 헤드라인, 왼쪽 챕터 눈금 레일, 스크롤 고정 크로스페이드, 초대형 타이포 인터루드, 고정 휴대폰 챕터(`ScrollStory`) 6곳, 전면 사진 섹션, 100P 대형 숫자 패널, 회색 pill 버튼, 남색 푸터와 대형 워드마크, 토스 색 토큰. `scripts/check-pages.mjs`가 이 패턴들이 다시 들어오지 않도록 검사합니다. 서비스 사실관계(포인트 수치, 한도, 추첨 시각, 동일 확률, 19세, 오픈일)는 그대로입니다.
+
 ## 남은 확인 항목 (디자인 코멘트)
 
 1. 스토어 배지: 현재 SVG 로 공식 배지 모양을 그렸음. Google · Apple 공식 배지 이미지를 받으면 `components/StoreBadges.js` 에서 교체.
 2. 다운로드 페이지 QR: 스토어 링크 확정 후 추가. 미완성 자리표시 박스는 노출하지 않음.
 3. 풀리 노트 연재 1편 본문 · 네이버 블로그 주소.
-4. OG 이미지(`public/images/og-image.png`)는 구 사이트(다크) 것 그대로 — 새 톤으로 교체 권장.
+4. OG 이미지(`public/images/og-image.png`)는 구 사이트(다크) 것 그대로 — 새 톤(흰 배경 + 폰 목업) 1200×630으로 재제작 필요.
+6. 미사용 이미지 정리: `public/images/bright/*`, `editorial/{member-pass,partner-gift,partner-moment,service-day}.png`, `edition/{one-more-sculpture,found-street}.png`, 루트 `images/{cafe-life,life-hero,reward-moment,partners-hero,one-more-sculpture,fulif-hero-*}.png`, `fulif-own/*`. 삭제 여부는 별도 확인 후 진행.
 5. 기존 약관의 Starter/PRO 명칭 및 일부 무료 한도는 현재 서비스 안내와 달라 별도 정책 확정이 필요합니다. 이번에는 요청받은 연간 구독 관련 내용만 제거했습니다.

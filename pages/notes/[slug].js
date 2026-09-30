@@ -1,10 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Seo from '../../components/Seo';
 import Icon from '../../components/Icon';
-import { Section, Fine, Tag } from '../../components/ui';
+import { Section, Fine, Tag, PulliNote } from '../../components/ui';
+import { NoteCover } from '../../components/Art';
 import { NOTES, getNote } from '../../lib/notes';
-import { NoteCover } from '../../components/SubpageDesign';
-import { PulliNote, ReadingProgress } from '../../components/Edition';
 
 export async function getStaticPaths() {
   return { paths: NOTES.map((n) => ({ params: { slug: n.slug } })), fallback: false };
@@ -18,25 +18,24 @@ export async function getStaticProps({ params }) {
 export default function NoteDetail({ note, related }) {
   const isSeries = note.category === 'series';
   return (
-    <div className="product-page journal-detail">
+    <div className="page page-journal-detail">
       <Seo title={note.title} description={note.summary} />
-      <ReadingProgress />
       <article className="bg-white">
-        <div className="journal-detail-inner">
+        <div className="container journal-detail">
           <Link href="/notes" className="inline-flex items-center gap-1 text-[14px] font-semibold text-muted hover:text-ink"><Icon name="chevron_left" size={20} />풀리 노트</Link>
           <p className="eyebrow mt-6">{note.categoryLabel}</p>
-          <h1>{note.title}</h1>
+          <h1 className="h-display">{note.title}</h1>
           <div className="journal-author">
-            <img src="/mascot/pulli-profile-v2.png" alt="" className="h-9 w-9 rounded-full bg-panel object-contain" />
+            <Image src="/mascot/pulli-profile-v2.png" alt="" width={36} height={36} className="h-9 w-9 rounded-full bg-panel object-contain" />
             <span>풀리 · {note.date} · {note.minutes}분</span>
           </div>
 
-          <NoteCover note={note} />
+          <NoteCover note={note} className="journal-detail-cover" />
           <p className="journal-sample-note">풀리 노트의 형식을 보여드리는 미리보기예요. 정식 원고와 발행 일정은 공개 시 확정됩니다.</p>
           <div className="journal-body">
             {note.body.length > 0 ? note.body.map((p, i) => <p key={i}>{p}</p>) : (
               <div className="rounded-2xl bg-panel p-10 text-center">
-                <img src="/mascot/clover_hello.png" alt="" className="mx-auto h-20 w-20 object-contain" />
+                <Image src="/mascot/clover_hello.png" alt="" width={80} height={80} className="mx-auto h-20 w-20 object-contain" />
                 <p className="mt-4 text-[17px] font-bold">풀리가 열심히 적고 있어요</p>
                 <p className="mt-1 text-[14px] text-muted">곧 본문이 올라와요.</p>
               </div>
@@ -62,7 +61,7 @@ export default function NoteDetail({ note, related }) {
               </div>
             )}
             {related.slice(0, isSeries ? 1 : 2).map((r) => (
-              <Link key={r.slug} href={`/notes/${r.slug}`} className="rounded-2xl bg-white p-6 transition-shadow hover:shadow-[0_8px_30px_rgba(25,31,40,0.08)]">
+              <Link key={r.slug} href={`/notes/${r.slug}`} className="rounded-2xl bg-white p-6 border border-hair transition-colors hover:border-[#c5def9]">
                 <Tag>{r.categoryLabel}</Tag>
                 <p className="mt-3 text-[17px] font-bold leading-snug">{r.title}</p>
                 <p className="mt-1 text-[13px] text-muted">{r.date} · {r.minutes}분</p>

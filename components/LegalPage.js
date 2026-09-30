@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 export default function LegalPage({ eyebrow, title, intro, effective, html, children }) {
   const { pathname } = useRouter();
   return (
-    <div className="legal-page">
+    <div className="page legal-page">
       <Seo title={title} description={intro} />
       <section className="legal-hero">
         <div className="container max-w-3xl py-14 md:py-20">

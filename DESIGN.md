@@ -1,6 +1,18 @@
 # FULIF web · design and verification history
 
-## Latest: restore the approved Toss-format visual direction — 2026-09-27
+## Latest: app-screen-centric redesign, Toss-pattern removal — 2026-09-30
+
+Request on file: `cwg 웹 수정 전달.md` (2026-09-29) — ① 토스와 비슷한 구성 없애기, 특히 홈 ② 디자인 전반 개선. Follow-up answers: judge the Toss resemblance ourselves, new direction is app-screen-centric, copy may change while service facts stay, all pages at once.
+
+Removed (verified against toss.im side by side): rounded full-viewport lifestyle-photo hero with the three-part bottom headline, fixed left chapter tick rail, scroll-pinned crossfade intro, oversized centered typographic interludes, sticky-phone `ScrollStory` chapters (six instances), full-bleed life-photo sections and photographic closing, the giant 100P numeral panel, gray pill + dark arrow-circle buttons, navy footer with the oversized wordmark, Toss color tokens (`#3182F6 #191f28 #333d4b #f2f4f6 #8b95a1`) and navy scene sections (`#172b4f #152642`), Toss-Securities-style oversized stat rows, `ReadingProgress`.
+
+New system: every section is carried by real app screens (`Phone` mockups). Tokens derive from the F symbol gradient (`#63D5FF → #0786F6 → #064CCE`) with ink `#182638`, white and soft-blue surfaces, clover green for small accents. Type is left-aligned: h1 40–62px, h2 30–42px, body 16–17px. Motion is the `.reveal` fade only. Ten stateless primitives in `components/blocks.js` (`PageHero`, `PhoneStack`, `ScreenCard`, `SplitFeature`, `FeatureGrid`, `PricingCard`, `CompareBars`, `StepTimeline`, `FactList`, `CtaBand`) compose the home (`components/home/*`) and every subpage. CSS went from ten global files to four (`globals`, `blocks`, `home`, `pages`). Deleted: `HomeStory`, `BenefitSections`, `ScrollStory`, `FoundNeighborhood`, `LocalDiscovery`, `visuals`, `PageScenes`, `Edition`, `SubpageDesign` and their stylesheets. `PulliNote`/`SectionNav` moved into `ui.js`; `Art`/`NoteCover` into `Art.js`; `VotePreview` into its own file.
+
+Kept verbatim: open date, age 19+, point values (10P ticket/coupon, 30P vote, 100P signup and referral, 1P per ad second, 30P donation), registration window (Sat 21:00–Tue 20:00), draw times (Tue 20:30 / last Tue 21:00), equal-odds and no-cash-points rules, FULIF+ limits (20 vs 5 sets, 10 vs 2 provided sets, 20 vs 10 ads, 첫 달 0원 → 월 5,000원), AD SCALE 10/8/1/1, all cross-page anchors, the partner inquiry form and `/api/contact`.
+
+Verification: `npm run build` 19 pages; `check-site.mjs` 17 pages, 562 internal links, 30 images, one h1 per page; new `check-pages.mjs` 31 required section ids across 8 pages, no removed pattern in HTML, no forbidden color token in `styles/`, exactly four stylesheets. Browser review at 1478px and in a 390px frame for home, Full Life, FOUND AI, membership, partners, download, notes. Old Toss-derived assets under `public/images` are unused but retained pending a separate deletion decision; `og-image.png` still needs a new light version.
+
+## Earlier: restore the approved Toss-format visual direction — 2026-09-27
 
 The user clarified that the previous Toss-format layouts and styling must be retained, and content must follow the provided PDF. The paper-pocket redesign below was rejected. Its component source is archived at `design/archive/HomeStory-paper-pocket.txt`; the six generated images and prompt record are retained but unused. `fulif-own.css` is no longer imported.
 
