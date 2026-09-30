@@ -100,6 +100,6 @@ Toss Impact · Toss Securities · Toss Place · Toss 홈의 구성을 실제 확
 1. 스토어 배지: 현재 SVG 로 공식 배지 모양을 그렸음. Google · Apple 공식 배지 이미지를 받으면 `components/StoreBadges.js` 에서 교체.
 2. 다운로드 페이지 QR: 스토어 링크 확정 후 추가. 미완성 자리표시 박스는 노출하지 않음.
 3. 풀리 노트 연재 1편 본문 · 네이버 블로그 주소.
-4. OG 이미지(`public/images/og-image.png`)는 구 사이트(다크) 것 그대로 — 새 톤(흰 배경 + 폰 목업) 1200×630으로 재제작 필요.
+4. OG 이미지는 `public/images/og-image-v2.png`(새 톤, 1200×630)로 교체 완료. 카카오 등 캐시에 남은 옛 썸네일은 파일명이 바뀌어 새로 읽힌다.
 6. 미사용 이미지 정리: `public/images/bright/*`, `editorial/{member-pass,partner-gift,partner-moment,service-day}.png`, `edition/{one-more-sculpture,found-street}.png`, 루트 `images/{cafe-life,life-hero,reward-moment,partners-hero,one-more-sculpture,fulif-hero-*}.png`, `fulif-own/*`. 삭제 여부는 별도 확인 후 진행.
 5. 기존 약관의 Starter/PRO 명칭 및 일부 무료 한도는 현재 서비스 안내와 달라 별도 정책 확정이 필요합니다. 이번에는 요청받은 연간 구독 관련 내용만 제거했습니다.
