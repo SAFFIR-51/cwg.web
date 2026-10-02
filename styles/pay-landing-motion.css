@@ -1,0 +1,12 @@
+/* Animation only: preserve the approved section heights, padding, and gaps. */
+@media (prefers-reduced-motion: no-preference) {
+  .pay-will-enter { transition: opacity .6s ease, transform .75s cubic-bezier(.2,.7,.3,1); }
+  .pay-will-enter:not(.pay-visible) { opacity: 0; transform: translate3d(0, 28px, 0); pointer-events: none; }
+  .pay-will-enter.pay-above:not(.pay-visible) { transform: translate3d(0, -28px, 0); }
+  .pay-will-enter.pay-visible { opacity: 1; transform: none; }
+  .pay-wide > .pay-section-copy.pay-will-enter { transition-delay: .08s; }
+  .pay-pair-column:nth-child(2).pay-will-enter { transition-delay: .1s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pay-will-enter { opacity: 1; transform: none; pointer-events: auto; transition: none; }
+}

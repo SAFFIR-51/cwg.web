@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Header from './Header';
 import Footer from './Footer';
+import { PayHeader, PayFooter } from './PayLandingChrome';
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -22,9 +23,9 @@ export default function Layout({ children }) {
   return (
     <div className="site-shell flex min-h-screen flex-col" data-page={router.pathname === '/' ? 'home' : router.pathname.split('/')[1]}>
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:shadow">본문 바로가기</a>
-      <Header />
+      {router.pathname === '/' ? <PayHeader /> : <Header />}
       <main id="main" className="flex-1">{children}</main>
-      <Footer />
+      {router.pathname === '/' ? <PayFooter /> : <Footer />}
     </div>
   );
 }

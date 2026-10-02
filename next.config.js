@@ -4,7 +4,7 @@ const nextConfig = {
   distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
   reactStrictMode: true,
   devIndicators: false,
-  images: { qualities: [75, 90] },
+  images: { qualities: [75, 90, 95] },
   async redirects() {
     // 구 정적 사이트 주소 호환
     return [

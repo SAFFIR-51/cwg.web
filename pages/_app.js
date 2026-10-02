@@ -8,6 +8,10 @@ import '../styles/edition.css';
 import '../styles/found-neighborhood.css';
 import '../styles/scroll-story.css';
 import '../styles/bright-scenes.css';
+import '../styles/pay-landing.css';
+import '../styles/pay-landing-lower.css';
+import '../styles/pay-landing-scale.css';
+import '../styles/pay-landing-motion.css';
 import Layout from '../components/Layout';
 
 export default function App({ Component, pageProps }) {
