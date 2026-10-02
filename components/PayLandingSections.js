@@ -52,5 +52,5 @@ export function TrustStory() {
 }
 
 export function StartStory() {
-  return <section id="start" className="pay-start-story"><div className="pay-content-width pay-start-inner"><div className="pay-enter"><h2>오늘 끝난 것에,<br /><em>한 번 더.</em></h2><p>쿠폰 · 티켓 · 번호로 시작하는 AI 리워드 플랫폼</p></div><div className="pay-start-download pay-enter"><div className="pay-store-links"><AppStoreBadge /><GooglePlayBadge /></div><small>{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요.</small></div></div></section>;
+  return <section id="start" className="pay-start-story"><div className="pay-content-width pay-start-inner"><div className="pay-enter"><h2>오늘 끝난 것에,<br /><em>한 번 더.</em></h2><p>쿠폰 · 티켓 · 번호로 시작하는 AI 리워드 플랫폼</p></div><div className="pay-start-download pay-enter"><div className="pay-store-links"><AppStoreBadge /><GooglePlayBadge /></div><small>{OPEN_DATE} 오픈</small></div></div></section>;
 }
