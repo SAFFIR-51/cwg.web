@@ -75,3 +75,30 @@
   .pay-after-plus .pay-start-story p { margin-top: 20px; font-size: 13px; }
   .pay-after-plus .pay-start-story small { font-size: 11px; }
 }
+
+/* PDF 2026.09.24 content: spacing for added copy, reusing existing type and colors. */
+.pay-hero-content > p.pay-hero-body { margin: -10px 0 26px; max-width: 560px; font-size: 14px; line-height: 1.8; color: #ffffffcc; }
+.pay-hero-note { display: block; margin-top: 16px; font-size: 12px; color: #ffffffb3; }
+.pay-one-more-list { display: grid; gap: 8px; margin-top: 22px; }
+.pay-one-more-list .pay-detail-tag { margin-top: 0; }
+.pay-app-heading { margin-top: 160px; }
+.pay-app-heading + .pay-pair { margin-top: 70px; }
+.pay-pair-copy .pay-description { margin-top: 16px; max-width: 440px; }
+.pay-membership-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.pay-found-promises, .pay-pulli-traits { margin-top: 24px; }
+.pay-found-promises article, .pay-pulli-traits article { padding: 18px 0; }
+.pay-found-promises h3, .pay-pulli-traits h3 { margin-bottom: 6px; }
+.pay-scale-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; margin-top: 26px; width: 100%; border-top: 1px solid #e0e7ee; }
+.pay-scale-stats > div { padding: 18px 0; border-bottom: 1px solid #e0e7ee; }
+.pay-scale-stats dt { font-size: 12px; color: #727c87; }
+.pay-scale-stats dd { margin: 6px 0 0; font-size: 28px; font-weight: 550; letter-spacing: -.04em; color: #0078ff; }
+.pay-scale-stats dd small { font-size: 14px; margin-left: 2px; }
+.pay-points-guard { margin-top: 26px; font-size: 13px; }
+@media (max-width: 767px) {
+  .pay-app-heading { margin-top: 96px; padding-inline: 4px; }
+  .pay-app-heading + .pay-pair { margin-top: 40px; }
+  .pay-hero-content > p.pay-hero-body { font-size: 13px; }
+}
+.pay-footer-top .pay-legal { margin-top: 0; }
+.pay-services .pay-chapter > .pay-text-link,
+.pay-services .pay-chapter > .pay-points-guard { margin-left: var(--pay-copy-inset); }

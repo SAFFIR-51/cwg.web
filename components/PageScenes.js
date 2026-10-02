@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from './Icon';
-import { BrandSymbol } from './Brand';
+import { BrandWordmark } from './Brand';
 import { Phone } from './ui';
 import { Art } from './SubpageDesign';
 
@@ -13,7 +13,7 @@ export function EditorialImage({ name, alt = '', className = '', priority = fals
 
 export function ServiceOpening() {
   return <header className="service-opening">
-    <div className="service-opening-heading"><div><p className="sub-eyebrow">FULL LIFE</p><h1>평범한 하루에도<br />가능성은 있으니까.</h1></div><div><p>잊고 있던 쿠폰부터, 다녀온 날의 티켓까지.<br />이미 가진 일상에서 한 번 더 발견하는 즐거움.</p><a href="#a-fuli-day" className="scene-text-link">풀리프의 하루 만나보기 <Icon name="arrow_downward" size={19} /></a></div></div>
+    <div className="service-opening-heading"><div><p className="sub-eyebrow">Full Life</p><h1>Full Life,<br />풀리프로 채우는<br />하루</h1></div><div><p>쿠폰부터 경품 추첨, 놀이터까지.<br />앱에서 할 수 있는 모든 것을 한 번에 보여드려요.</p></div></div>
     <div className="service-life-photo"><Image src="/images/bright/everyday-still-life.png" alt="밝은 창가에 놓인 커피, 티켓과 파란 장바구니" fill priority sizes="(max-width: 767px) 100vw, 1440px" quality={90} /><div className="life-notification"><span><Art name="coupon" sizes="75px" /></span><div><small>FULIF · 내 쿠폰</small><strong>잊기 전에, 커피 한 잔 어때요?</strong><p>카페 쿠폰이 이틀 뒤 만료돼요.</p></div><time>D−2</time></div><span className="photo-caption">YOUR EVERYDAY, ONE MORE.</span></div>
   </header>;
 }
@@ -37,15 +37,15 @@ export function NeighborhoodExplorer() {
 }
 
 export function MembershipOpening() {
-  return <header className="membership-opening"><div className="membership-orbit" aria-hidden="true" /><div className="membership-opening-copy"><span className="member-wordmark">fulif<span>+</span></span><h1>일상을 더 좋아하는<br />나를 위한 플러스.</h1><p>더 많이 등록하고, 더 다양하게 즐기는 멤버십.<br />첫 한 달은 무료로 경험해 보세요.</p><Link href="/download" className="btn-primary">첫 달 무료로 시작하기 <Icon name="arrow_forward" size={19} /></Link><small>무료 체험 1회 · 이후 월 5,000원 자동 결제</small></div><div className="membership-pass-art"><EditorialImage name="member-pass" priority sizes="(max-width: 767px) 100vw, 650px" /><span className="member-pass-label">ONE MORE POSSIBILITY.</span></div><div className="membership-opening-bottom"><span>월간 멤버십</span><strong>첫 달 <b>0</b>원 <i>이후 월 5,000원</i></strong><a href="#plans">결제 안내 <Icon name="arrow_downward" size={17} /></a></div></header>;
+  return <header className="membership-opening"><div className="membership-orbit" aria-hidden="true" /><div className="membership-opening-copy"><span className="member-wordmark">fulif<span>+</span></span><p className="sub-eyebrow">멤버십</p><h1>풀리프를<br />더 알차게,<br />FULIF+</h1><p>첫 달은 무료로 써보고 결정하세요. 마음에 들지 않으면<br />체험 중에 해지하면 돼요. 결제는 되지 않아요.</p><Link href="/download" className="btn-primary">앱에서 1개월 무료로 시작하기 <Icon name="arrow_forward" size={19} /></Link><small>구독은 앱에서 시작하고, Google Play · App Store 구독 관리에서 해지할 수 있어요.</small></div><div className="membership-pass-art"><EditorialImage name="member-pass" priority sizes="(max-width: 767px) 100vw, 650px" /><span className="member-pass-label">ONE MORE POSSIBILITY.</span></div><div className="membership-opening-bottom"><span>월간 멤버십</span><strong>첫 달 <b>0</b>원 <i>이후 월 5,000원</i></strong><a href="#plans">결제 안내 <Icon name="arrow_downward" size={17} /></a></div></header>;
 }
 
 export function PartnerOpening() {
-  return <header className="partner-opening"><div className="partner-opening-top"><p className="sub-eyebrow">FULIF FOR BRANDS</p><div><h1>혜택으로 만나,<br />좋아하는 브랜드로.</h1><p>회원에게는 기다려지는 일상을.<br />브랜드에게는 새롭게 만나는 고객을.</p><a href="#inquiry" className="btn-primary">파트너십 이야기 나누기 <Icon name="arrow_outward" size={19} /></a></div></div><div className="partner-photo"><Image src="/images/bright/partner-counter.png" alt="밝은 카페 카운터에 놓인 파란 커피 컵과 작은 선물" fill priority sizes="100vw" quality={90} /><div className="partner-photo-note"><span>BRAND × EVERYDAY</span><p>한 번의 노출보다,<br />한 번 더 기억되는 만남.</p></div></div></header>;
+  return <header className="partner-opening"><div className="partner-opening-top"><p className="sub-eyebrow"><Link href="/" aria-label="홈"><Icon name="home" size={14} /></Link> › 브랜드 파트너 문의 · B2B · Partner Program</p><div><h1>Partners</h1><p>Ad &amp; Sponsorship Inquiry</p></div></div><div className="partner-photo"><Image src="/images/bright/partner-counter.png" alt="밝은 카페 카운터에 놓인 파란 커피 컵과 작은 선물" fill priority sizes="100vw" quality={90} /></div></header>;
 }
 
 export function PartnerJourney() {
-  return <section className="partner-journey"><div className="partner-journey-intro"><p className="sub-eyebrow">THE WAY WE CONNECT</p><h2>브랜드의 좋은 제품이<br />누군가의 반가운 하루로.</h2><p>화려한 약속보다, 지금 함께할 수 있는 것부터.<br />풀리프의 일상 속에 브랜드를 자연스럽게 연결합니다.</p></div><div className="partner-journey-stage"><div className="journey-brand"><BrandSymbol className="w-10 h-12" /><small>FULIF × YOUR BRAND</small><h3>우리 브랜드의<br />새로운 접점</h3><EditorialImage name="partner-gift" sizes="380px" /></div><div className="journey-arrow" aria-hidden="true"><Icon name="arrow_forward" size={28} /></div><div className="journey-experience"><span>회원의 하루</span><div><Art name="watch" sizes="85px" /><p>브랜드를 발견하고<small>짧은 영상으로 만나는 브랜드</small></p></div><div><Art name="ticket" sizes="85px" /><p>기대하며 참여하고<small>경품 응모권으로 이어지는 관심</small></p></div><div><Art name="coupon" sizes="85px" /><p>반가운 혜택으로 기억해요<small>브랜드 제품이 경품이 되는 경험</small></p></div></div></div></section>;
+  return <section className="partner-journey"><div className="partner-journey-intro"><p className="sub-eyebrow">THE WAY WE CONNECT</p><h2>브랜드의 좋은 제품이<br />누군가의 반가운 하루로.</h2><p>화려한 약속보다, 지금 함께할 수 있는 것부터.<br />풀리프의 일상 속에 브랜드를 자연스럽게 연결합니다.</p></div><div className="partner-journey-stage"><div className="journey-brand"><BrandWordmark className="w-[73px] h-8" /><small>FULIF × YOUR BRAND</small><h3>우리 브랜드의<br />새로운 접점</h3><EditorialImage name="partner-gift" sizes="380px" /></div><div className="journey-arrow" aria-hidden="true"><Icon name="arrow_forward" size={28} /></div><div className="journey-experience"><span>회원의 하루</span><div><Art name="watch" sizes="85px" /><p>브랜드를 발견하고<small>짧은 영상으로 만나는 브랜드</small></p></div><div><Art name="ticket" sizes="85px" /><p>기대하며 참여하고<small>경품 응모권으로 이어지는 관심</small></p></div><div><Art name="coupon" sizes="85px" /><p>반가운 혜택으로 기억해요<small>브랜드 제품이 경품이 되는 경험</small></p></div></div></div></section>;
 }
 
 export function DownloadPhones() {

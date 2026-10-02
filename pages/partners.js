@@ -3,8 +3,7 @@ import Seo from '../components/Seo';
 import Icon from '../components/Icon';
 import { Section, SectionHead } from '../components/ui';
 import { Art } from '../components/SubpageDesign';
-import { PartnerOpening, PartnerJourney } from '../components/PageScenes';
-import { PartnerScale, SectionNav } from '../components/Edition';
+import { PartnerOpening } from '../components/PageScenes';
 
 const MSG = {
   sending: '전송 중…',
@@ -49,9 +48,6 @@ export default function Partners() {
 
       {/* ① 첫 화면 */}
       <PartnerOpening />
-      <SectionNav label="브랜드 파트너 페이지 탐색" items={[["ad-scale","브랜드와 만나는 방식"],["partnership","세 가지 약속"],["inquiry","파트너십 문의"]]} />
-      <PartnerScale />
-      <PartnerJourney />
 
       {/* ② 브랜드 파트너와 함께하는 방식 */}
       <Section id="partnership" className="partner-promises-section">
@@ -70,7 +66,7 @@ export default function Partners() {
       {/* ③ 브랜드 파트너 문의 폼 */}
       <Section tone="gray" id="inquiry" className="partner-inquiry">
         <div className="mx-auto max-w-2xl">
-          <div><SectionHead eyebrow="LET’S BUILD TOGETHER" title={'함께할 이야기를\n들려주세요.'} lead="브랜드 파트너 문의 정보를 남겨주시면 담당자가 회신드립니다." /><p className="partner-inquiry-note">Ad &amp; Sponsorship Inquiry<br />광고 · 경품 협찬 · 브랜드 파트너십</p></div>
+          <div><SectionHead eyebrow="LET’S BUILD TOGETHER" title="브랜드 파트너 문의" lead="아래 정보를 남겨주시면 담당자가 회신드립니다." /></div>
           <form onSubmit={submit} noValidate className="mt-10 space-y-5 rounded-3xl bg-white p-6 md:p-10">
             <div className="partner-form-fields">
             <Field label="회사명" required><input className={inputCls} name="company" value={form.company} onChange={set('company')} placeholder="회사명을 입력해주세요" required autoComplete="organization" /></Field>

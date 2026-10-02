@@ -35,8 +35,8 @@ export function FoundObject({ className = '' }) {
   return <div className={`sub-found-object ${className}`}><Art name="neighborhood" /><span className="sub-map-tag"><Icon name="location_on" size={19} />내 생활권의 발견</span><img src="/mascot/clover_search.png" alt="생활권 혜택을 찾는 풀리" className="sub-found-pulli" /></div>;
 }
 
-export function ClosingCTA({ title = <>오늘의 작은 가능성,<br />풀리프에서 만나보세요.</>, lead = '생활의 가치를, 한 번 더.', children, art = 'ticket' }) {
-  return <section className="sub-closing"><div className="sub-closing-inner"><div><p className="sub-eyebrow">LIFE, ONE MORE.</p><h2>{title}</h2><p>{lead}</p>{children || <StoreBadges className="sub-closing-stores" />}</div><Art name={art} /></div></section>;
+export function ClosingCTA({ title = <>오늘의 작은 가능성,<br />풀리프에서 만나보세요.</>, lead, children, art = 'ticket' }) {
+  return <section className="sub-closing"><div className="sub-closing-inner"><div><p className="sub-eyebrow">LIFE, ONE MORE.</p><h2>{title}</h2>{lead && <p>{lead}</p>}{children || <StoreBadges className="sub-closing-stores" />}</div><Art name={art} /></div></section>;
 }
 
 export const NOTE_ART = {

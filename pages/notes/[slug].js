@@ -4,7 +4,7 @@ import Icon from '../../components/Icon';
 import { Section, Fine, Tag } from '../../components/ui';
 import { NOTES, getNote } from '../../lib/notes';
 import { NoteCover } from '../../components/SubpageDesign';
-import { PulliNote, ReadingProgress } from '../../components/Edition';
+import { ReadingProgress } from '../../components/Edition';
 
 export async function getStaticPaths() {
   return { paths: NOTES.map((n) => ({ params: { slug: n.slug } })), fallback: false };
@@ -32,7 +32,6 @@ export default function NoteDetail({ note, related }) {
           </div>
 
           <NoteCover note={note} />
-          <p className="journal-sample-note">풀리 노트의 형식을 보여드리는 미리보기예요. 정식 원고와 발행 일정은 공개 시 확정됩니다.</p>
           <div className="journal-body">
             {note.body.length > 0 ? note.body.map((p, i) => <p key={i}>{p}</p>) : (
               <div className="rounded-2xl bg-panel p-10 text-center">
@@ -44,7 +43,7 @@ export default function NoteDetail({ note, related }) {
           </div>
 
           {isSeries && (
-            <PulliNote className="mt-10">끝난 줄 알았던 한 장에도,<br />아직 이야기가 남아 있어요.</PulliNote>
+            <div className="mt-10 rounded-2xl bg-blue-soft p-6"><p className="text-[17px] font-bold text-ink">지금까지 몇 장을 버리셨나요?</p><p className="mt-1 text-[14px] text-sub">댓글로 들려주세요. 다음 노트의 이야기가 돼요.</p></div>
           )}
           <Fine className="mt-8">번호 기능은 번호를 고르는 재미를 위한 것으로, 당첨 확률을 높여주지 않아요.</Fine>
         </div>

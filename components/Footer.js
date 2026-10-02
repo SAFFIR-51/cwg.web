@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { COMPANY } from '../lib/site';
 
+// PDF 2026.09.24 푸터: 메뉴 · 브랜드 파트너 문의 · 이용 안내
 const GROUPS = [
-  ['풀리프 서비스', [['Full Life', '/full-life'], ['FOUND AI', '/found-ai'], ['FULIF+', '/membership'], ['앱 다운로드', '/download']]],
-  ['풀리프 이야기', [['풀리 노트', '/notes'], ['브랜드 파트너', '/partners'], ['생활의 가치를, 한 번 더', '/']]],
-  ['서비스 이용 안내', [['고객센터', '/support'], ['이용약관', '/terms'], ['개인정보처리방침', '/privacy']]],
+  ['풀리프', [['홈', '/'], ['Full Life', '/full-life'], ['FOUND AI', '/found-ai'], ['멤버십', '/membership'], ['풀리 노트', '/notes'], ['다운로드', '/download']]],
+  ['브랜드 파트너', [['브랜드 파트너 문의', '/partners']]],
+  ['이용 안내', [['이용약관', '/terms'], ['개인정보처리방침', '/privacy'], ['고객센터', '/support']]],
 ];
 
 export default function Footer() {

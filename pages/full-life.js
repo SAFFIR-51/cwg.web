@@ -6,7 +6,6 @@ import { Section, SectionHead, Steps, StatGrid, Rows, Note, Fine, Phone } from '
 import { DayTimeline } from '../components/visuals';
 import { Art, FoundObject, ClosingCTA } from '../components/SubpageDesign';
 import { ServiceOpening, CouponWallet, VotePreview } from '../components/PageScenes';
-import { ServiceOverview, PulliNote } from '../components/Edition';
 
 const CHIPS = [
   ['#one-more', 'ONE MORE'], ['#lotto-one-more', '낙첨 ONE MORE'], ['#vote', '오늘의 한 표'], ['#draw', '경품 추첨'],
@@ -60,7 +59,6 @@ export default function FullLife() {
 
       {/* ① 첫 화면 */}
       <ServiceOpening />
-      <ServiceOverview />
       <nav className="service-nav" aria-label="Full Life 기능 바로가기"><div className="container">{CHIPS.map(([href, label]) => <a key={href} href={href} className={active === href ? 'active' : ''} aria-current={active === href ? 'location' : undefined}>{label}</a>)}</div></nav>
 
       {/* ② 풀리프의 하루 */}
@@ -68,7 +66,6 @@ export default function FullLife() {
         <SectionHead eyebrow="A DAY WITH FULIF" title={'풀리프와 함께하는\n어느 하루'} lead="특별한 날이 아니어도 괜찮아요. 평범한 하루 곳곳에 한 번 더가 숨어 있어요." />
         <DayTimeline items={DAY} />
         <Fine className="mt-5">하루 흐름은 이해를 돕기 위한 예시예요.</Fine>
-        <PulliNote>특별한 날만 기다리지 않아도 돼요.<br />지금 가진 쿠폰 한 장부터 시작해 보세요.</PulliNote>
       </Section>
 
       {/* ③ ONE MORE */}
@@ -207,7 +204,7 @@ export default function FullLife() {
             </tbody>
           </table>
         </div>
-        <Fine className="mt-4">첫 달 무료, 이후 월 5,000원. 무료 체험은 한 번만 받을 수 있고, 결제 3일 전에 미리 알려드려요.</Fine>
+        <Fine className="mt-4">첫 달 무료 · 월 5,000원. 무료 체험은 한 번만 받을 수 있고, 결제 3일 전에 미리 알려드려요.</Fine>
         <Link href="/membership" className="btn-secondary mt-6 !bg-white">멤버십 자세히 보기</Link>
       </Section>
 

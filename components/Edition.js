@@ -5,6 +5,7 @@ import Icon from './Icon';
 import { Phone } from './ui';
 import { ArrowLink, Art } from './SubpageDesign';
 import ScrollStory from './ScrollStory';
+import StoreBadges from './StoreBadges';
 
 export function PulliNote({ children, mood = 'hello', className = '' }) {
   const src = mood === 'search' ? '/mascot/clover_search.png' : '/mascot/pulli-profile-v2.png';
@@ -54,21 +55,21 @@ export function ServiceOverview() {
 }
 
 export function DiscoveryHero() {
-  return <header className="discovery-hero"><div className="discovery-hero-copy"><p className="edition-eyebrow">FOUND AI</p><h1>내 생활권의 혜택,<br /><span>풀리가 찾아요.</span></h1><p className="edition-lead">매일 들르는 편의점, 마트, 주유소.<br />일상에 필요한 것을 한곳에 정리해 드려요.<br />검색하지 않아도 괜찮아요.</p><ArrowLink href="#how-it-works">어떻게 찾아주나요?</ArrowLink><PulliNote mood="search">정해둔 동네만 살펴봐요.<br />실시간 위치를 따라다니지 않아요.</PulliNote></div><div className="discovery-hero-visual"><div className="discovery-street"><Image src="/images/bright/found-neighborhood.png" alt="밝은 햇살 아래 파란 차양과 과일 상자가 놓인 동네 가게" fill priority sizes="(max-width: 767px) 100vw, 750px" quality={90} /></div><div className="discovery-device"><Phone src="/screens/found.png" alt="FOUND AI 생활권 혜택 앱 화면" /></div><span className="discovery-photo-caption">가까운 곳에서 발견하는 새로운 일상</span></div><p className="discovery-hero-foot">FOUND AI는 FULIF · FULIF+ 모든 회원이 이용할 수 있어요.</p></header>;
+  return <header className="discovery-hero"><div className="discovery-hero-copy"><p className="edition-eyebrow">FOUND AI</p><h1>일상에 필요한 것을,<br /><span>풀리가 찾아 드려요</span></h1><p className="edition-lead">내 생활권의 편의점 · 마트 · 주유소 혜택을, 확인한 날짜와<br />함께 한곳에 정리해 드려요. 검색하지 않아도 괜찮아요.</p><StoreBadges className="mt-8" /></div><div className="discovery-hero-visual"><div className="discovery-street"><Image src="/images/bright/found-neighborhood.png" alt="밝은 햇살 아래 파란 차양과 과일 상자가 놓인 동네 가게" fill priority sizes="(max-width: 767px) 100vw, 750px" quality={90} /></div><div className="discovery-device"><Phone src="/screens/found.png" alt="FOUND AI 생활권 혜택 앱 화면" /></div><span className="discovery-photo-caption">가까운 곳에서 발견하는 새로운 일상</span></div><p className="discovery-hero-foot">FOUND AI는 FULIF · FULIF+ 모든 회원이 이용할 수 있어요.</p></header>;
 }
 
 const PLACES = [
-  {name:'편의점', image:'/images/editorial/note-coffee.png', alt:'일상 속 한 잔의 커피', title:<>늘 들르는 곳에도,<br />챙길 것이 있으니까.</>, description:'자주 가는 편의점의 행사도 놓치지 않게. 풀리가 찾아둔 정보를 가볍게 확인해 보세요.', example:'커피 2+1', date:'2026.09.30까지 · 9월 22일 확인', note:'매장 사정에 따라 일찍 끝나거나 물량이 없을 수 있어요.'},
-  {name:'마트', image:'/images/edition/found-market.png', alt:'동네 마트에 진열된 신선한 과일', title:<>오늘 장보기에도,<br />반가운 발견 하나.</>, description:'우리 동네 마트의 행사 정보를 한곳에. 필요한 것을 사러 가기 전에 한 번 살펴보세요.', example:'제철 과일 한 팩 더', date:'2026.09.19 ~ 09.20 · 9월 18일 확인', note:'주말 한정 행사 예시예요. 매장별 물량이 다를 수 있어요.'},
-  {name:'주유소', image:'/images/edition/found-fuel.png', alt:'파란 주유 노즐이 놓인 동네 주유소', title:<>가까운 주유소를,<br />한 번 더 살펴봐요.</>, description:'내가 정해둔 생활권의 주유 가격을 모아 보여드려요. 확인한 시각도 함께 알려드려요.', example:'우리 동네 최저가 주유소', date:'휘발유 1리터 가격 · 오늘 06:00 기준', note:'주유 가격은 수시로 바뀌어요. 방문 시점에는 달라질 수 있어요.'},
+  {name:'주유소', image:'/images/edition/found-fuel.png', example:'우리 동네 최저가 주유소', date:'휘발유 1리터 가격 · 오늘 06:00 기준', note:'주유 가격은 수시로 바뀌어요. 방문 시점에는 달라질 수 있어요.'},
+  {name:'편의점', image:'/images/editorial/note-coffee.png', example:'커피 2+1', date:'2026.09.30까지 · 9월 22일 확인', note:'매장 사정에 따라 일찍 끝나거나 물량이 없을 수 있어요.'},
+  {name:'마트', image:'/images/edition/found-market.png', example:'제철 과일 한 팩 더', date:'2026.09.19 ~ 09.20 주말 한정 · 9월 18일 확인', note:'매장별 물량이 다를 수 있어요.'},
 ];
 
 export function DiscoveryPlaces() {
   return <><ScrollStory id="found-places" items={PLACES.map((item,index) => ({
     key:String(index), label:item.name,
     visual:<div className="discovery-place-photo"><Image src={item.image} alt="" fill sizes="(max-width: 899px) 100vw, 650px" quality={90} /></div>,
-    content:<><h3>{item.title}</h3><p>{item.description}</p><div className="discovery-example"><span>화면 예시</span><strong>{item.example}</strong><time>{item.date}</time><p>{item.note}</p></div></>,
-  }))} /><p className="edition-fine">위 정보는 서비스 이해를 위한 예시이며, 실제 제공 중인 행사가 아니에요. 방문 시점에 가격과 혜택이 달라질 수 있어요.</p></>;
+    content:<><h3>{item.name}</h3><div className="discovery-example"><span>화면 예시</span><strong>{item.example}</strong><time>{item.date}</time><p>{item.note}</p></div></>,
+  }))} /></>;
 }
 
 export function MembershipBenefits() {

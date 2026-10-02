@@ -2,11 +2,10 @@
 import assert from 'node:assert/strict';
 
 const origin = process.env.SITE_CHECK_ORIGIN || 'http://127.0.0.1:3000';
+// 홈은 PayLanding(스크롤 스토리 없음), FOUND AI 지도와 멤버십 한도 스토리는 PDF 구성에 따라 제거됨.
 const cases = [
-  ['/', [['home-services', ['one-more', 'lotto-one-more', 'today-vote', 'prize-draw']], ['home-play', ['memory', 'number', 'score']]]],
   ['/full-life', [['fulif-day', ['0', '1', '2', '3', '4']]]],
-  ['/found-ai', [['found-map', ['0', '1', '2']], ['found-places', ['0', '1', '2']]]],
-  ['/membership', [['member-capacity', ['number', 'ticket', 'watch']]]],
+  ['/found-ai', [['found-places', ['0', '1', '2']]]],
 ];
 let stories = 0;
 let chapters = 0;

@@ -4,10 +4,11 @@ import Link from 'next/link';
 import Icon from './Icon';
 
 const BENEFITS = [
-  { art: 'vote', title: '오늘의 한 표', description: '세 가지 질문에 모두 답하면', reward: '30P', href: '/full-life#vote' },
-  { art: 'invite', title: '친구 초대', description: '초대한 분도, 초대받은 분도', reward: '100P', href: '/full-life#points' },
-  { art: 'watch', title: '광고 보기', description: '보는 시간만큼 차곡차곡', reward: '1초에 1P', href: '/full-life#points' },
-  { art: 'donate', title: '쿠폰 기부', description: '따뜻한 마음을 나누면', reward: '30P', href: '/full-life#points' },
+  { art: 'attendance', src: '/icons/attendance.png', title: '출석체크', description: '하루 한 번,', reward: '차곡차곡', href: '/full-life#a-fuli-day' },
+  { art: 'invite', title: '친구초대', description: '초대한 분도, 초대받은 분도', reward: '100P', href: '/full-life#points' },
+  { art: 'watch', title: '광고 보기', description: 'FULIF 하루 10회 · FULIF+ 하루 20회', reward: '1초에 1P', href: '/full-life#points' },
+  { art: 'vote', title: '오늘의 한 표', description: '하루 세 번 고르면', reward: '30P', href: '/full-life#vote' },
+  { art: 'memory', title: '넘버 센스', description: '성공한 단계만큼', reward: '받아요', href: '/full-life#playground' },
 ];
 
 function getMetrics(track) {
@@ -61,10 +62,10 @@ export default function PointBenefitCarousel() {
 
   return <div className="pay-benefit-carousel" role="region" aria-label="매일의 포인트 혜택" aria-roledescription={view.visible < BENEFITS.length ? '캐러셀' : undefined}>
     <div className="pay-benefit-track" id="pay-benefit-track" ref={trackRef} tabIndex={view.visible < BENEFITS.length ? 0 : -1} aria-label={view.visible < BENEFITS.length ? '포인트 혜택 카드, 좌우 방향키로 이동' : '포인트 혜택 카드'} onKeyDown={onKeyDown}>
-      {BENEFITS.map(({ art, title, description, reward, href }, index) => <Link className="pay-benefit-card" key={art} href={href} aria-label={`${title}, ${description} ${reward}, ${index + 1} / ${BENEFITS.length}`}>
+      {BENEFITS.map(({ art, src, title, description, reward, href }, index) => <Link className="pay-benefit-card" key={art} href={href} aria-label={`${title}, ${description} ${reward}, ${index + 1} / ${BENEFITS.length}`}>
         <div className="pay-benefit-copy"><h3>{title}</h3><p>{description}</p><strong>{reward}</strong></div>
         <span className="pay-benefit-link-arrow" aria-hidden="true"><Icon name="arrow_forward" size={20} /></span>
-        <Image className="pay-benefit-art" src={`/images/benefits/${art}-art.png`} alt="" width={1024} height={1024} sizes="(max-width: 767px) 164px, (max-width: 1199px) 144px, 164px" quality={90} />
+        <Image className="pay-benefit-art" src={src || `/images/benefits/${art}-art.png`} alt="" width={1024} height={1024} sizes="(max-width: 767px) 164px, (max-width: 1199px) 144px, 164px" quality={90} />
       </Link>)}
     </div>
     <div className="pay-benefit-controls">

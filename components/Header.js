@@ -43,7 +43,7 @@ export default function Header() {
         </Link>
 
         <nav className="header-main-nav" aria-label="주요 메뉴">
-          {[{ href: '/full-life', label: '서비스' }, { href: '/found-ai', label: 'FOUND AI' }, { href: '/membership', label: '멤버십' }, { href: '/notes', label: '풀리 노트' }, { href: '/partners', label: '브랜드 파트너' }].map((n) => (
+          {[{ href: '/full-life', label: 'Full Life' }, { href: '/found-ai', label: 'FOUND AI' }, { href: '/membership', label: '멤버십' }, { href: '/notes', label: '풀리 노트' }, { href: '/partners', label: '브랜드 파트너' }].map((n) => (
             <Link
               key={n.href}
               href={n.href}

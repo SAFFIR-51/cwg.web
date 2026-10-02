@@ -5,14 +5,17 @@ import { BrandLogo } from './Brand';
 import Icon from './Icon';
 import { COMPANY } from '../lib/site';
 
+// 모바일 메뉴(PDF 2026.09.24): 홈 · Full Life · FOUND AI · 멤버십 · 풀리 노트 · 다운로드
 const MENU = [
-  { label: '풀리프', href: '/full-life', detail: '생활의 가치를, 한 번 더' },
-  { label: '서비스', href: '/full-life#one-more', detail: '쿠폰부터 경품까지' },
-  { label: 'FOUND AI', href: '/found-ai', detail: '내 생활권의 새로운 발견' },
-  { label: '멤버십', href: '/membership', detail: '더 넉넉하게, FULIF+' },
-  { label: '풀리 노트', href: '/notes', detail: '풀리가 전하는 일상의 이야기' },
-  { label: '브랜드 파트너', href: '/partners', detail: '함께 만드는 더 좋은 혜택' },
+  { label: '홈', href: '/', detail: '생활의 가치를, 한 번 더.' },
+  { label: 'Full Life', href: '/full-life', detail: '풀리프로 채우는 하루' },
+  { label: 'FOUND AI', href: '/found-ai', detail: '풀리가 찾아 드려요' },
+  { label: '멤버십', href: '/membership', detail: 'FULIF+' },
+  { label: '풀리 노트', href: '/notes', detail: '풀리가 적어둔 이야기' },
+  { label: '다운로드', href: '/download', detail: 'Google Play · App Store' },
 ];
+// 데스크톱 상단 메뉴: 홈 · 다운로드는 로고와 다운로드 버튼이 대신하고, 브랜드 파트너 문의를 둔다.
+const TOP_NAV = [...MENU.slice(1, 5), { label: '브랜드 파트너', href: '/partners' }];
 
 export function PayHeader() {
   const router = useRouter();
@@ -51,7 +54,7 @@ export function PayHeader() {
       <div className="pay-header-inner">
         <Link className="pay-logo" href="/" aria-label="FULIF 홈"><BrandLogo /></Link>
         <nav className="pay-nav" aria-label="주요 메뉴">
-          {MENU.map(item => <Link key={item.label} href={item.href}>{item.label}</Link>)}
+          {TOP_NAV.map(item => <Link key={item.label} href={item.href}>{item.label}</Link>)}
         </nav>
         <div className="pay-header-actions">
           <Link href="/download" className="pay-download-link">앱 다운로드 <Icon name="arrow_outward" size={14} /></Link>
@@ -68,8 +71,9 @@ export function PayHeader() {
 
 export function PayFooter() {
   return <footer className="pay-footer">
-    <div className="pay-footer-top"><p>{COMPANY.copyright}</p><details className="pay-related"><summary>풀리프 더 알아보기 <Icon name="add" size={16} /></summary><nav aria-label="관련 페이지"><Link href="/notes">풀리 노트</Link><Link href="/partners">브랜드 파트너</Link><Link href="/download">앱 다운로드</Link><Link href="/support">고객센터</Link></nav></details></div>
-    <nav className="pay-legal" aria-label="이용 안내"><Link href="/terms">이용약관</Link><Link href="/privacy"><strong>개인정보처리방침</strong></Link><Link href="/delete-account">계정 및 데이터 삭제</Link><Link href="/support">고객센터</Link><Link href="/partners">광고 및 제휴 문의</Link></nav>
+    <div className="pay-footer-top"><nav className="pay-legal" aria-label="풀리프 메뉴">{MENU.map(item => <Link key={item.label} href={item.href}>{item.label}</Link>)}</nav><Link href="/partners" className="pay-download-link">브랜드 파트너 문의 <Icon name="arrow_outward" size={14} /></Link></div>
+    <nav className="pay-legal" aria-label="이용 안내"><Link href="/terms">이용약관</Link><Link href="/privacy"><strong>개인정보처리방침</strong></Link><Link href="/support">고객센터</Link></nav>
     <p className="pay-company">{COMPANY.name}<span />{COMPANY.ecommerce}</p>
+    <p className="pay-company">{COMPANY.copyright}</p>
   </footer>;
 }
