@@ -8,6 +8,8 @@ export default function Document() {
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/brand/favicon-32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
         <meta name="theme-color" content="#FFFFFF" />
         <link rel="preload" href="/fonts/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script

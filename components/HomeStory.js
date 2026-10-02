@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Seo from './Seo';
 import Icon from './Icon';
 import StoreBadges from './StoreBadges';
-import { BrandSymbol } from './Brand';
+import { BrandWordmark } from './Brand';
 import { Phone } from './ui';
 import { RewardGallery, PointsScene, Playground } from './BenefitSections';
 import { OPEN_DATE } from '../lib/site';
@@ -99,7 +99,7 @@ function FoundScene() {
 }
 
 function MembershipScene() {
-  return <section id="plus" className="plus-story"><div className="plus-story-head reveal"><p>FULIF+</p><h2>풀리프를 더 알차게,<br />FULIF+</h2><span>첫 달은 무료로 써보고 결정하세요.</span></div><div className="plus-presentation"><div className="plus-pass"><div><BrandSymbol className="w-10 h-11" /><b>fulif<span>+</span></b></div><p>생활의 가치를,<br />한 번 더 넉넉하게.</p><span>ONE MORE POSSIBILITY. FULLER EVERY DAY.</span><i aria-hidden="true">+</i></div><div className="plus-offer"><span>첫 달 무료 · 월간 멤버십</span><h3>5,000<small>원 / 월</small></h3><p>한 회차 낙첨번호 20세트 · 제공 번호 10세트<br />하루 광고 보기 20회 · 럭키 스코어<br />챔피언십 · FULIF+ 전용 이벤트</p><StoryLink href="/membership">멤버십 자세히 보기</StoryLink><small>무료 체험 1회 · 이후 매월 5,000원 자동 결제<br />결제 3일 전 안내 · 체험 중 해지하면 결제되지 않아요.</small></div></div><p className="story-fine">FULIF든 FULIF+든, 응모권 1개의 가치는 같아요.</p></section>;
+  return <section id="plus" className="plus-story"><div className="plus-story-head reveal"><p>FULIF+</p><h2>풀리프를 더 알차게,<br />FULIF+</h2><span>첫 달은 무료로 써보고 결정하세요.</span></div><div className="plus-presentation"><div className="plus-pass"><div><b>fulif<span>+</span></b></div><p>생활의 가치를,<br />한 번 더 넉넉하게.</p><span>ONE MORE POSSIBILITY. FULLER EVERY DAY.</span><i aria-hidden="true">+</i></div><div className="plus-offer"><span>첫 달 무료 · 월간 멤버십</span><h3>5,000<small>원 / 월</small></h3><p>한 회차 낙첨번호 20세트 · 제공 번호 10세트<br />하루 광고 보기 20회 · 럭키 스코어<br />챔피언십 · FULIF+ 전용 이벤트</p><StoryLink href="/membership">멤버십 자세히 보기</StoryLink><small>무료 체험 1회 · 이후 매월 5,000원 자동 결제<br />결제 3일 전 안내 · 체험 중 해지하면 결제되지 않아요.</small></div></div><p className="story-fine">FULIF든 FULIF+든, 응모권 1개의 가치는 같아요.</p></section>;
 }
 
 function TogetherScene() {
@@ -112,7 +112,7 @@ function TogetherScene() {
 }
 
 function StartScene() {
-  return <section id="start" className="start-story"><Image src="/images/bright/everyday-still-life.png" alt="" fill sizes="100vw" /><div className="start-overlay" /><div className="start-copy"><BrandSymbol className="w-12 h-14 mx-auto" /><h2>오늘 끝난 것에,<br />한 번 더.</h2><p>쿠폰 · 티켓 · 번호로 시작하는 AI 리워드 플랫폼</p><StoreBadges center /><small>{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요.</small></div></section>;
+  return <section id="start" className="start-story"><Image src="/images/bright/everyday-still-life.png" alt="" fill sizes="100vw" /><div className="start-overlay" /><div className="start-copy"><BrandWordmark className="w-[92px] h-10 mx-auto" /><h2>오늘 끝난 것에,<br />한 번 더.</h2><p>쿠폰 · 티켓 · 번호로 시작하는 AI 리워드 플랫폼</p><StoreBadges center /><small>{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요.</small></div></section>;
 }
 
 export default function HomeStory() {
