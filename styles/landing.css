@@ -36,8 +36,8 @@
 .fulif-hero h1 { margin: 0; font-size: clamp(52px, 4.1vw, 72px); font-weight: 550; line-height: 1.19; letter-spacing: -.052em; }
 .fulif-hero-content > p { margin: 23px 0 26px; font-size: 16px; letter-spacing: -.03em; color: #ffffffe6; }
 .fulif-store-links { display: flex; flex-wrap: wrap; gap: 10px; }
-.fulif-store-links > a { height: 51px; border: 1px solid #ffffff40; border-radius: 30px; background: #143dab38; padding: 0 20px; gap: 9px; backdrop-filter: blur(16px); transition: background .2s; }
-.fulif-store-links > a:hover { background: #ffffff45; }
+.fulif-store-links > a { height: 51px; border: 1px solid #ffffff29; border-radius: 8px; background: #ffffff12; padding: 0 20px; gap: 9px; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: none; transition: background .2s, border-color .2s; }
+.fulif-store-links > a:hover { background: #ffffff1f; border-color: #ffffff40; opacity: 1; }
 .fulif-store-links > a > span > span:first-child { display: none; }
 .fulif-store-links > a > span > span:last-child { font-weight: 500; font-size: 18px; }
 .fulif-hero-icons { position: absolute; z-index: 1; width: clamp(470px, 43vw, 650px); aspect-ratio: 1; top: 50%; right: calc(var(--fulif-gutter) - 100px); transform: translateY(-44%); pointer-events: none; }
