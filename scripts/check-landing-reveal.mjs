@@ -103,6 +103,6 @@ assert.ok(reduced.card.classes.has('fulif-visible') && !reduced.card.classes.has
 reduced.cleanup();
 const fallback = run({ supported: false });
 assert.equal(fallback.card.classes.size, 0, 'Missing observers must leave content visible');
-const motionStyles = await readFile(new URL('../styles/fulif-landing-motion.css', import.meta.url), 'utf8');
+const motionStyles = await readFile(new URL('../styles/landing-motion.css', import.meta.url), 'utf8');
 assert.ok(!/min-height|padding|margin\s*:/.test(motionStyles.replace(/\/\*[\s\S]*?\*\//g, '')), 'Animation styles must not add spacing');
 console.log('Landing reveal: both scroll directions, repeated reveals, unchanged spacing, grouping, deep links, focus, reduced motion, fallback, and cleanup passed.');
