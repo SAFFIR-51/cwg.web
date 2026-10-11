@@ -1,5 +1,5 @@
 // Read-only check: home follows the PDF 2026.09.24 (fulif_io_웹사이트 전체디자인(v.2).pdf) text and order.
-// Exceptions by later user request: no annual plan, no "만 19세" notice on home.
+// Exceptions by later user request: price 4,900원/월 · 49,000원/연, no "만 19세" notice on home.
 // SITE_CHECK_ORIGIN=http://127.0.0.1:3107 node scripts/check-home-story.mjs
 import assert from 'node:assert/strict';
 
@@ -35,7 +35,7 @@ const copy = [
 ];
 for (const phrase of copy) assert.ok(text.includes(phrase.replace(/\s+/g, '')), `Missing PDF copy: ${phrase}`);
 
-for (const removed of ['만 19세', '연간', '50,000원', '12개월을 10개월']) {
+for (const removed of ['만 19세', '5,000원', '50,000원', '12개월을 10개월']) {
   assert.ok(!text.includes(removed), `Excluded by user request: ${removed}`);
 }
 const menu = html.match(/<dialog[\s\S]*?<\/dialog>/)?.[0] || '';

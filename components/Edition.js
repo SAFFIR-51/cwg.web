@@ -80,7 +80,7 @@ export function MembershipBenefits() {
   ].map(([art,title,free,paid,unit,heading]) => ({
     key:art, label:title,
     visual:<div className="scroll-member-art"><Art name={art} sizes="400px" /><strong>{paid}<small>{unit}</small></strong><span>FULIF+ · {title}</span></div>,
-    content:<><h3>{heading}</h3><div className="scroll-member-comparison">{[['FULIF',free],['FULIF+',paid]].map(([plan,value],index)=><div key={plan} className={index ? 'is-plus' : ''}><span>{plan}{index ? ' · 월 5,000원' : ' · 무료'}</span><strong>{value}<small>{unit}</small></strong><div className="scroll-member-track" aria-hidden="true"><i style={{width:`${value/paid*100}%`}} /></div></div>)}</div></>,
+    content:<><h3>{heading}</h3><div className="scroll-member-comparison">{[['FULIF',free],['FULIF+',paid]].map(([plan,value],index)=><div key={plan} className={index ? 'is-plus' : ''}><span>{plan}{index ? ' · 월 4,900원' : ' · 무료'}</span><strong>{value}<small>{unit}</small></strong><div className="scroll-member-track" aria-hidden="true"><i style={{width:`${value/paid*100}%`}} /></div></div>)}</div></>,
   }))} /><p className="edition-fine">FULIF+는 이용 한도와 기능이 더 넉넉해요. 응모권 1개의 당첨 확률은 모든 회원이 같아요.</p></>;
 }
 

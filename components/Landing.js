@@ -57,7 +57,7 @@ function Membership() {
         <span className="fulif-membership-wordmark" aria-label="풀리프 플러스">FULIF<span>+</span></span>
         <h2 id="fulif-membership-title">풀리프를 더 알차게,<br />FULIF+</h2>
         <p className="fulif-membership-price">첫 달은 무료로 써보고 결정하세요.</p>
-        <p className="fulif-membership-price"><strong>월간 5,000원</strong><span>첫 달 무료</span></p>
+        <p className="fulif-membership-price"><strong>월간 4,900원</strong><span>연간 49,000원</span><span>첫 달 무료</span></p>
         <div className="fulif-membership-actions"><Link href="/download" className="fulif-membership-cta">1개월 무료로 시작하기<Icon name="arrow_forward" size={19} /></Link><Link href="/membership" className="fulif-membership-cta">멤버십 보기<Icon name="arrow_forward" size={19} /></Link></div>
       </div>
       <div className="fulif-membership-card">
@@ -70,7 +70,7 @@ function Membership() {
       </div>
     </div>
     <MembershipDetails />
-    <p className="fulif-membership-note">무료 체험은 한 번만 받을 수 있어요. 체험이 끝나면 매월 5,000원이 자동으로 결제되고,<br />결제 3일 전에 미리 알려드려요. 체험 중에 해지하면 결제되지 않아요.</p>
+    <p className="fulif-membership-note">무료 체험은 한 번만 받을 수 있어요. 체험이 끝나면 매월 4,900원이 자동으로 결제되고,<br />결제 3일 전에 미리 알려드려요. 체험 중에 해지하면 결제되지 않아요.</p>
   </section>;
 }
 

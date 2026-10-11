@@ -186,7 +186,7 @@ export default function FullLife() {
               <tr className="border-b border-hair">
                 <th className="px-5 py-4 text-left font-semibold text-muted">기능</th>
                 <th className="whitespace-nowrap px-4 py-4 text-center"><p className="font-bold">FULIF</p><p className="text-[12px] font-medium text-dim">무료</p></th>
-                <th className="whitespace-nowrap px-4 py-4 text-center text-blue"><p className="font-bold">FULIF+</p><p className="text-[12px] font-medium">월 5,000원</p></th>
+                <th className="whitespace-nowrap px-4 py-4 text-center text-blue"><p className="font-bold">FULIF+</p><p className="text-[12px] font-medium">월 4,900원 · 연 49,000원</p></th>
               </tr>
             </thead>
             <tbody>
@@ -204,7 +204,7 @@ export default function FullLife() {
             </tbody>
           </table>
         </div>
-        <Fine className="mt-4">첫 달 무료 · 월 5,000원. 무료 체험은 한 번만 받을 수 있고, 결제 3일 전에 미리 알려드려요.</Fine>
+        <Fine className="mt-4">첫 달 무료 · 월 4,900원. 무료 체험은 한 번만 받을 수 있고, 결제 3일 전에 미리 알려드려요.</Fine>
         <Link href="/membership" className="btn-secondary mt-6 !bg-white">멤버십 자세히 보기</Link>
       </Section>
 
