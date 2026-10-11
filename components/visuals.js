@@ -54,7 +54,7 @@ export function MembershipVisual() {
   return <div className="membership-visual" aria-label="FULIF+ 멤버십, 첫 달 무료">
     <div className="member-orbit" />
     <div className="member-card member-card-back" aria-hidden="true" />
-    <div className="member-card"><div className="member-card-top"><b>fulif<span>+</span></b><Icon name="arrow_outward" size={30} /></div><p>하루를 채우는<br />조금 더 많은 가능성.</p><div className="member-card-bottom"><span>FULL LIFE MEMBERSHIP</span><Icon name="auto_awesome" size={24} /></div></div>
+    <div className="member-card"><div className="member-card-top"><b>FULIF<span>+</span></b><Icon name="arrow_outward" size={30} /></div><p>하루를 채우는<br />조금 더 많은 가능성.</p><div className="member-card-bottom"><span>FULL LIFE MEMBERSHIP</span><Icon name="auto_awesome" size={24} /></div></div>
     <div className="member-trial"><span>첫 달은</span><strong>0<span>원</span></strong><small>월간 멤버십 첫 이용 시</small></div>
   </div>;
 }

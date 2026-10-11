@@ -34,6 +34,13 @@ export function PayHeader() {
   useEffect(() => { setOpen(false); }, [router.asPath]);
 
   useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 768px)');
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
     if (!open) {
       dialog.current?.close();
       return;
@@ -50,11 +57,11 @@ export function PayHeader() {
   const close = () => { setOpen(false); trigger.current?.focus(); };
 
   return <>
-    <header className={`pay-header${scrolled ? ' pay-header-solid' : ''}`}>
+    <header className={`pay-header${scrolled || router.pathname !== '/' ? ' pay-header-solid' : ''}${router.pathname !== '/' ? ' pay-header-subpage' : ''}`}>
       <div className="pay-header-inner">
-        <Link className="pay-logo" href="/" aria-label="FULIF 홈"><BrandLogo /></Link>
+        <Link className="pay-logo" href="/" aria-label="FULIF 홈"><BrandLogo tone={scrolled || router.pathname !== '/' ? 'black' : 'white'} /></Link>
         <nav className="pay-nav" aria-label="주요 메뉴">
-          {TOP_NAV.map(item => <Link key={item.label} href={item.href}>{item.label}</Link>)}
+          {TOP_NAV.map(item => <Link key={item.label} href={item.href} aria-current={router.pathname.startsWith(item.href) ? 'page' : undefined}>{item.label}</Link>)}
         </nav>
         <div className="pay-header-actions">
           <Link href="/download" className="pay-download-link">앱 다운로드 <Icon name="arrow_outward" size={14} /></Link>
@@ -63,8 +70,8 @@ export function PayHeader() {
       </div>
     </header>
     <dialog id="pay-menu" ref={dialog} className="pay-menu" aria-labelledby="pay-menu-title" onCancel={close} onClose={() => setOpen(false)}>
-      <div className="pay-menu-top"><Link href="/" onClick={close} className="pay-logo" aria-label="FULIF 홈"><BrandLogo /></Link><button className="pay-menu-close" onClick={close} aria-label="전체 메뉴 닫기"><Icon name="close" size={28} /></button></div>
-      <div className="pay-menu-content"><p id="pay-menu-title">생활의 가치를, 한 번 더.</p><nav aria-label="전체 메뉴">{MENU.map((item, index) => <Link key={item.label} href={item.href} onClick={close}><span className="pay-menu-number">0{index + 1}</span><span><strong>{item.label}</strong><small>{item.detail}</small></span><Icon name="arrow_forward" size={25} /></Link>)}</nav><Link className="pay-menu-start" href="/download" onClick={close}>풀리프 시작하기 <Icon name="arrow_outward" size={22} /></Link></div>
+      <div className="pay-menu-top"><Link href="/" onClick={close} className="pay-logo" aria-label="FULIF 홈"><BrandLogo tone="black" /></Link><button className="pay-menu-close" onClick={close} aria-label="전체 메뉴 닫기"><Icon name="close" size={28} /></button></div>
+      <div className="pay-menu-content"><p id="pay-menu-title">생활의 가치를, 한 번 더.</p><nav aria-label="전체 메뉴">{MENU.map(item => <Link key={item.label} href={item.href} onClick={close}><span><strong>{item.label}</strong><small>{item.detail}</small></span></Link>)}</nav><Link className="pay-menu-start" href="/download" onClick={close}>풀리프 시작하기 <Icon name="arrow_outward" size={22} /></Link></div>
     </dialog>
   </>;
 }

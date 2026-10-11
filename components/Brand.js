@@ -1,30 +1,23 @@
-import React, { useId } from 'react';
+import React from 'react';
 
-// 워드마크만 쓴다 — F 심벌은 포뮬러원 F 와 닮아 분쟁 소지가 있다는 의견으로
-// 2026-10 에 걷었다(앱도 같은 결정). 경로는 앱 FUBrandLogo 와 같다.
-export function BrandWordmark({ className = '', color = 'currentColor' }) {
+export function BrandWordmark({ className = '', color = 'currentColor', tone = 'black', compact = false }) {
+  const light = tone === 'white' || color === '#fff' || color === '#ffffff' || color === 'white';
+  const size = compact ? 'small' : 'big';
+  const viewBox = compact ? '0 0 1024 1024' : '0 0 2152 811';
   return (
-    <svg className={className} viewBox="0 0 124 54" fill="none" aria-hidden="true">
-      <g stroke={color} strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M15 44V19Q15 8 28 9M8 24H27" />
-        <path d="M40 24V34Q40 44 50 44Q60 44 60 34V24" />
-        <path d="M74 9V37Q74 44 79 44" />
-        <path d="M91 25V44" />
-        <path d="M107 44V19Q107 8 119 9M101 24H120" />
-      </g>
-      <circle cx="91" cy="11" r="4.5" fill="#0078FF" />
+    <svg className={className} viewBox={viewBox} fill="none" aria-hidden="true">
+      <image href={`/brand/logo-${size}-${light ? 'white' : 'black'}.svg?v=uppercase-20261011`} width={compact ? 1024 : 2152} height={compact ? 1024 : 811} />
     </svg>
   );
 }
 
-export function BrandLogo({ className = '', word = 'w-[73px] h-[32px]' }) {
+export function BrandLogo({ className = '', word = 'w-[73px] h-[32px]', tone = 'black' }) {
   return (
     <span className={`inline-flex items-center ${className}`} role="img" aria-label="풀리프 FULIF">
-      <BrandWordmark className={`${word} text-ink`} />
+      <BrandWordmark className={word} tone={tone} />
     </span>
   );
 }
-
 export function CloverSymbol({ className = '' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">

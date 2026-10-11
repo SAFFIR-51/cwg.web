@@ -19,8 +19,6 @@ function Device({ screen, alt, className = '', priority = false }) {
 function Hero() {
   return <section id="intro" className="pay-hero" aria-label="풀리프 소개">
     <div className="pay-hero-aura" aria-hidden="true" />
-    <div className="pay-hero-outline" aria-hidden="true" />
-    <div className="pay-hero-grid" aria-hidden="true"><i /><i /><i /></div>
     <div className="pay-hero-content"><span className="pay-hero-eyebrow">FULIF · 풀리프</span><h1>생활의 가치를,<br />한 번 더.</h1><p>쿠폰 · 티켓 · 번호로 시작해, 생활 혜택을 찾아주는 AI 리워드 플랫폼</p><p className="pay-hero-body">받아두고 잊은 쿠폰도, 다녀온 날의 티켓도, 아쉽게 끝난 번호도.<br />끝난 줄 알았던 것들이 응모권으로, 포인트로, 내 생활 혜택으로 돌아와요.</p><div className="pay-store-links"><GooglePlayBadge /><AppStoreBadge /></div><small className="pay-hero-note">{OPEN_DATE} 오픈</small></div>
   </section>;
 }
@@ -56,7 +54,7 @@ function Membership() {
   return <section id="membership" className="pay-membership" aria-labelledby="pay-membership-title">
     <div className="pay-membership-display pay-content-width">
       <div className="pay-membership-words pay-enter">
-        <span className="pay-membership-wordmark" aria-label="풀리프 플러스">fulif<span>+</span></span>
+        <span className="pay-membership-wordmark" aria-label="풀리프 플러스">FULIF<span>+</span></span>
         <h2 id="pay-membership-title">풀리프를 더 알차게,<br />FULIF+</h2>
         <p className="pay-membership-price">첫 달은 무료로 써보고 결정하세요.</p>
         <p className="pay-membership-price"><strong>월간 5,000원</strong><span>첫 달 무료</span></p>
@@ -64,7 +62,7 @@ function Membership() {
       </div>
       <div className="pay-membership-card">
         <div className="plus-pass">
-          <div><b>fulif<span>+</span></b></div>
+          <div><b>FULIF<span>+</span></b></div>
           <p>생활의 가치를,<br />한 번 더 넉넉하게.</p>
           <span>ONE MORE POSSIBILITY. FULLER EVERY DAY.</span>
           <i aria-hidden="true">+</i>

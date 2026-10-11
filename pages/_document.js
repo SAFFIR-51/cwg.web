@@ -7,9 +7,9 @@ export default function Document() {
     <Html lang="ko" data-scroll-behavior="smooth">
       <Head>
         <meta charSet="utf-8" />
-        <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/brand/favicon-32.png" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+        <link rel="icon" href="/brand/favicon.svg?v=fulif-20261011" type="image/svg+xml" />
+        <link rel="icon" href="/brand/favicon-32.png?v=fulif-20261011" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png?v=fulif-20261011" />
         <meta name="theme-color" content="#FFFFFF" />
         <link rel="preload" href="/fonts/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script
