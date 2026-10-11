@@ -1,0 +1,12 @@
+/* Animation only: preserve the approved section heights, padding, and gaps. */
+@media (prefers-reduced-motion: no-preference) {
+  .fulif-will-enter { transition: opacity .6s ease, transform .75s cubic-bezier(.2,.7,.3,1); }
+  .fulif-will-enter:not(.fulif-visible) { opacity: 0; transform: translate3d(0, 28px, 0); pointer-events: none; }
+  .fulif-will-enter.fulif-above:not(.fulif-visible) { transform: translate3d(0, -28px, 0); }
+  .fulif-will-enter.fulif-visible { opacity: 1; transform: none; }
+  .fulif-wide > .fulif-section-copy.fulif-will-enter { transition-delay: .08s; }
+  .fulif-pair-column:nth-child(2).fulif-will-enter { transition-delay: .1s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fulif-will-enter { opacity: 1; transform: none; pointer-events: auto; transition: none; }
+}

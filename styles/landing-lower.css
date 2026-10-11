@@ -1,0 +1,103 @@
+/* The lower landing shares the existing blue palette, grid, and generous rhythm. */
+.fulif-after-plus { position: relative; display: flow-root; }
+.fulif-after-plus .fulif-wide .fulif-section-copy { justify-content: center; padding-block: 32px; }
+.fulif-after-plus .fulif-section-copy h2,
+.fulif-after-plus .fulif-chapter-heading h2 { font-size: clamp(28px, 2.6vw, 38px); line-height: 1.45; }
+.fulif-after-plus .fulif-description,
+.fulif-after-plus .fulif-chapter-heading > p { max-width: 390px; color: #66788c; }
+.fulif-after-plus .fulif-service-icon { width: 62px; height: 62px; border-radius: 20px; transform: none; background: #eaf2ff; }
+.fulif-after-plus .fulif-service-icon svg { transform: none; }
+.fulif-after-plus .fulif-found-wash { background: linear-gradient(100deg, #e9f4ff66, #d5eaff40); }
+.fulif-after-plus .fulif-map-pin { width: 49px; height: 49px; background: #fff; color: #327fda; box-shadow: 0 8px 24px #2754821a; }
+.fulif-after-plus .fulif-pin-two { background: #e4efff; }
+.fulif-after-plus .fulif-pin-three { background: #367ede; color: #fff; }
+
+.fulif-after-plus .fulif-text-link { color: #286fc5; gap: 18px; min-height: 36px; }
+.fulif-after-plus .fulif-text-link svg { width: 28px; height: 28px; padding: 5px; border: 1px solid #a9c3e3; border-radius: 50%; }
+.fulif-after-plus .fulif-text-link:hover svg { transform: translateX(3px); background: #e1edfc; }
+
+/* Partners retain the established image grid and concise introduction. */
+.fulif-after-plus .fulif-partners .fulif-story-icon { width: 64px; height: 64px; margin-bottom: 24px; }
+.fulif-after-plus .fulif-partner-caption { left: 32px; bottom: 30px; letter-spacing: .09em; background: #f5f9ffe8; color: #294d74; border: 1px solid #ffffff80; border-radius: 4px; }
+
+/* A clear four-card promise grid replaces the long single-column list. */
+.fulif-after-plus .fulif-trust-story { display: block; padding: 44px; background: #f2f6fb; border-radius: 6px; }
+.fulif-after-plus .fulif-trust-story .fulif-chapter-heading { padding: 0; }
+.fulif-after-plus .fulif-trust-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.fulif-after-plus .fulif-trust-list article { padding: 28px; gap: 16px; border: 1px solid #e4edf7; border-radius: 4px; background: #fff; }
+.fulif-after-plus .fulif-trust-list article > svg { width: 26px; height: 26px; color: #4283d2; }
+.fulif-after-plus .fulif-trust-list h3 { font-size: 17px; color: #213951; word-break: keep-all; }
+.fulif-after-plus .fulif-trust-list p { font-size: 13px; color: #66788c; }
+
+/* The original mascot closes the story on a soft blue illustration panel. */
+.fulif-after-plus .fulif-pulli-story { column-gap: 0; }
+.fulif-after-plus .fulif-pulli-art { align-self: stretch; min-height: 360px; border-radius: 0; background: linear-gradient(140deg, #f1f7ff, #e5effc); overflow: hidden; }
+.fulif-after-plus .fulif-pulli-art > span { top: 32px; left: 32px; font-size: clamp(62px, 7vw, 90px); color: #cadcf4; }
+.fulif-after-plus .fulif-pulli-art i { color: #b6d0ef; }
+.fulif-after-plus .fulif-pulli-art img { margin: 88px 24px 0 0; filter: drop-shadow(0 14px 18px #6082aa14); }
+.fulif-after-plus .fulif-pulli-signoff { border-color: #dce7f3; margin-top: 0; color: #66788c; }
+
+/* Calm download close, with the established store links and eligibility notice. */
+.fulif-after-plus .fulif-start-story { padding: 88px 0; background: linear-gradient(110deg, #e7f1ff, #f2f7ff 62%, #e8f0fc); color: #203a58; text-align: left; border-top: 1px solid #e0eafa; }
+.fulif-start-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 36px; padding-inline: 32px; }
+.fulif-after-plus .fulif-start-story h2 { font-size: clamp(34px, 3vw, 46px); font-weight: 550; }
+.fulif-after-plus .fulif-start-story p { font-size: 14px; color: #637b96; margin: 24px 0 0; word-break: keep-all; }
+.fulif-start-download { justify-self: end; }
+.fulif-after-plus .fulif-start-story .fulif-store-links { justify-content: flex-start; flex-wrap: wrap; }
+.fulif-after-plus .fulif-start-story .fulif-store-links > a { background: #203a58; border-color: #203a58; border-radius: 6px; backdrop-filter: none; }
+.fulif-after-plus .fulif-start-story .fulif-store-links > a:hover { background: #2d5078; border-color: #2d5078; }
+.fulif-after-plus .fulif-start-story small { color: #667d98; margin-top: 22px; font-size: 12px; line-height: 1.8; }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fulif-after-plus .fulif-trust-story { padding: 32px; }
+  .fulif-after-plus .fulif-trust-list article { padding: 24px 20px; gap: 12px; }
+  .fulif-start-inner { padding-inline: 24px; gap: 24px; }
+}
+@media (max-width: 767px) {
+  .fulif-after-plus .fulif-wide .fulif-section-copy { padding: 0 12px 32px; }
+  .fulif-after-plus .fulif-section-copy h2,
+  .fulif-after-plus .fulif-chapter-heading h2 { font-size: 28px; }
+  .fulif-after-plus .fulif-service-icon { width: 54px; height: 54px; border-radius: 18px; }
+  .fulif-after-plus .fulif-map-pin { width: 42px; height: 42px; }
+  .fulif-after-plus .fulif-partner-caption { left: 20px; bottom: 20px; font-size: 10px; }
+  .fulif-after-plus .fulif-trust-story { padding: 32px 20px 20px; }
+  .fulif-after-plus .fulif-trust-story .fulif-chapter-heading { padding-inline: 4px; }
+  .fulif-after-plus .fulif-trust-list { grid-template-columns: 1fr; gap: 12px; margin-top: 26px; }
+  .fulif-after-plus .fulif-trust-list article { padding: 22px 18px; gap: 12px; }
+  .fulif-after-plus .fulif-trust-list h3 { font-size: 16px; }
+  .fulif-after-plus .fulif-pulli-art { min-height: 300px; margin-top: 32px; }
+  .fulif-after-plus .fulif-pulli-art > span { top: 28px; left: 24px; font-size: 70px; }
+  .fulif-after-plus .fulif-pulli-art img { width: 180px; margin: 85px 18px 0 0; }
+  .fulif-after-plus .fulif-start-story { padding: 56px 0; }
+  .fulif-start-inner { grid-template-columns: 1fr; gap: 32px; padding-inline: 12px; }
+  .fulif-start-download { justify-self: start; }
+  .fulif-after-plus .fulif-start-story h2 { font-size: 36px; }
+  .fulif-after-plus .fulif-start-story p { margin-top: 20px; font-size: 13px; }
+  .fulif-after-plus .fulif-start-story small { font-size: 11px; }
+}
+
+/* PDF 2026.09.24 content: spacing for added copy, reusing existing type and colors. */
+.fulif-hero-content > p.fulif-hero-body { margin: -10px 0 26px; max-width: 560px; font-size: 14px; line-height: 1.8; color: #ffffffcc; }
+.fulif-hero-note { display: block; margin-top: 16px; font-size: 12px; color: #ffffffb3; }
+.fulif-one-more-list { display: grid; gap: 8px; margin-top: 22px; }
+.fulif-one-more-list .fulif-detail-tag { margin-top: 0; }
+.fulif-app-heading { margin-top: 160px; }
+.fulif-app-heading + .fulif-pair { margin-top: 70px; }
+.fulif-pair-copy .fulif-description { margin-top: 16px; max-width: 440px; }
+.fulif-membership-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.fulif-found-promises, .fulif-pulli-traits { margin-top: 24px; }
+.fulif-found-promises article, .fulif-pulli-traits article { padding: 18px 0; }
+.fulif-found-promises h3, .fulif-pulli-traits h3 { margin-bottom: 6px; }
+.fulif-scale-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; margin-top: 26px; width: 100%; border-top: 1px solid #e0e7ee; }
+.fulif-scale-stats > div { padding: 18px 0; border-bottom: 1px solid #e0e7ee; }
+.fulif-scale-stats dt { font-size: 12px; color: #727c87; }
+.fulif-scale-stats dd { margin: 6px 0 0; font-size: 28px; font-weight: 550; letter-spacing: -.04em; color: #0078ff; }
+.fulif-scale-stats dd small { font-size: 14px; margin-left: 2px; }
+.fulif-points-guard { margin-top: 26px; font-size: 13px; }
+@media (max-width: 767px) {
+  .fulif-app-heading { margin-top: 96px; padding-inline: 4px; }
+  .fulif-app-heading + .fulif-pair { margin-top: 40px; }
+  .fulif-hero-content > p.fulif-hero-body { font-size: 13px; }
+}
+.fulif-services .fulif-chapter > .fulif-text-link,
+.fulif-services .fulif-chapter > .fulif-points-guard { margin-left: var(--fulif-copy-inset); }

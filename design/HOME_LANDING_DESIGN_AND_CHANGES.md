@@ -23,7 +23,7 @@
 
 **디자인 모티브와 기하학적 구현은 구분한다.** 현재는 실제로 꼬인 3D 뫼비우스 띠나 무한대 기호를 렌더링한 것이 아니다. `border-radius: 50%`의 큰 CSS 타원을 회전하고 화면 밖으로 확장해, 그 연속성의 이미지를 추상적으로 표현한다. 따라서 이 요소를 설명할 때는 ‘뫼비우스 띠를 모티브로 한 순환 곡선’이라고 표현한다.
 
-관련 코드: [Hero 구성](../components/PayLanding.js), [`.pay-hero-outline` 스타일](../styles/pay-landing.css).
+관련 코드: [Hero 구성](../components/Landing.js), [`.fulif-hero-outline` 스타일](../styles/landing.css).
 
 ## 2. 첫 화면 디자인과 구현
 
@@ -32,11 +32,11 @@
 현재 배경은 [`main-hero-3.png`](../public/images/main-hero-3.png)다. 사람들의 일상 장면과 블루 포인트를 유지하고, 그 위에 짙은 오버레이를 얹었다. 왼쪽 문구 영역을 상대적으로 더 어둡게 만들어 흰색 제목과 다운로드 버튼이 배경에 묻히지 않도록 했다.
 
 ```css
-.pay-hero {
+.fulif-hero {
   background: #315879 url('/images/main-hero-3.png') center / cover no-repeat;
 }
 
-.pay-hero-aura {
+.fulif-hero-aura {
   background: linear-gradient(
     90deg,
     #08111db3 0%,
@@ -53,7 +53,7 @@
 데스크톱의 곡선은 다음 형태다.
 
 ```css
-.pay-hero-outline {
+.fulif-hero-outline {
   left: -12%;
   top: 11%;
   width: 125%;
@@ -73,7 +73,7 @@
 현재는 고정 최소·최대 높이를 없앴다.
 
 ```css
-.pay-hero {
+.fulif-hero {
   width: 100%;
   height: 100vh;
   height: 100svh;
@@ -102,7 +102,7 @@
 
 ### 2.5 헤더와 전체 메뉴
 
-홈페이지 전용 `PayHeader`를 적용했다. 첫 화면 최상단에서는 투명 배경과 흰 로고·메뉴를 사용하고, 스크롤이 `40px`를 넘으면 흰 배경과 어두운 글자로 전환한다.
+홈페이지 전용 `Header`를 적용했다. 첫 화면 최상단에서는 투명 배경과 흰 로고·메뉴를 사용하고, 스크롤이 `40px`를 넘으면 흰 배경과 어두운 글자로 전환한다.
 
 전체 메뉴는 네이티브 `<dialog>`로 열고, 메뉴가 열린 동안 배경 스크롤을 잠근다. 닫기와 포커스 복귀 처리를 포함하며, 모바일에서는 가로 메뉴 대신 전체 메뉴 버튼을 사용한다.
 
@@ -128,7 +128,7 @@
 중앙 콘텐츠 폭과 바깥 여백을 CSS 변수로 관리한다.
 
 ```css
---pay-gutter: max(32px, calc((100% - var(--pay-content)) / 2));
+--fulif-gutter: max(32px, calc((100% - var(--fulif-content)) / 2));
 ```
 
 넓은 이미지 섹션은 `바깥 여백 / 왼쪽 열 / 오른쪽 열 / 바깥 여백`의 4열 그리드를 사용한다. 이미지는 화면 가장자리까지 뻗고, 문구는 중앙 콘텐츠 기준선에 맞춘다. 문구에는 별도 안쪽 여백을 두어 기준선에 붙어 답답하게 보이지 않도록 했다.
@@ -186,12 +186,12 @@ FOUND AI의 실제 앱 화면은 이미지에 합성하지 않고 기존 `Device
 
 현재 구현은 [useLandingReveal.js](../components/useLandingReveal.js)의 `IntersectionObserver`를 사용한다.
 
-- 화면의 관찰 영역 안으로 들어오면 `.pay-visible`을 추가한다.
+- 화면의 관찰 영역 안으로 들어오면 `.fulif-visible`을 추가한다.
 - 관찰 영역을 벗어나면 클래스를 제거해 다시 숨긴다.
 - 아래로 내릴 때와 위로 올릴 때 모두 반복한다. 한 번 등장하고 끝나는 방식이 아니다.
 - 투명도는 `0.6초`, 이동은 `0.75초`, 이동 거리는 `28px`다.
 - 화면 위로 벗어난 요소는 위쪽, 아래로 벗어난 요소는 아래쪽으로 이동하며 사라진다.
-- 앱 화면과 관련 문구가 속한 `.pay-pair-column`, 가입 배너는 각각 묶어서 관찰해 중첩 애니메이션을 피한다.
+- 앱 화면과 관련 문구가 속한 `.fulif-pair-column`, 가입 배너는 각각 묶어서 관찰해 중첩 애니메이션을 피한다.
 - 상단 제외 영역은 `max(84px, 화면 높이의 12%)`, 하단은 화면 높이의 `18%`다. 높이를 기준으로 계산한 픽셀 값을 사용한다.
 
 이는 스크롤을 강제로 고정하는 방식, 스크롤 스냅, 전체 페이지 슬라이드 전환이 아니다. 원래 문서 흐름을 유지하면서 요소의 등장·퇴장만 제어한다. 화면 높이에 따라 여러 요소가 동시에 보일 수 있다.
@@ -216,17 +216,17 @@ FOUND AI의 실제 앱 화면은 이미지에 합성하지 않고 기존 `Device
 
 | 파일 | 역할과 변경 사항 |
 | --- | --- |
-| [pages/index.js](../pages/index.js) | 홈페이지 진입점을 `HomeStory`에서 `PayLanding`으로 변경 |
-| [components/Layout.js](../components/Layout.js) | `/`에만 `PayHeader`, `PayFooter` 적용. 다른 경로는 기존 헤더·푸터 유지 |
-| [components/PayLanding.js](../components/PayLanding.js) | Hero, 서비스 개요·화면, FULIF+, FOUND AI, 파트너와 전체 순서 구성 |
-| [components/PayLandingSections.js](../components/PayLandingSections.js) | 포인트·놀이터·멤버십 세부 혜택·신뢰·풀리·마지막 다운로드 영역 |
-| [components/PayLandingChrome.js](../components/PayLandingChrome.js) | 홈페이지 헤더, 스크롤 상태 전환, 전체 메뉴, 푸터 |
+| [pages/index.js](../pages/index.js) | 홈페이지 진입점을 `HomeStory`에서 `Landing`으로 변경 |
+| [components/Layout.js](../components/Layout.js) | `/`에만 `Header`, `Footer` 적용. 다른 경로는 기존 헤더·푸터 유지 |
+| [components/Landing.js](../components/Landing.js) | Hero, 서비스 개요·화면, FULIF+, FOUND AI, 파트너와 전체 순서 구성 |
+| [components/LandingSections.js](../components/LandingSections.js) | 포인트·놀이터·멤버십 세부 혜택·신뢰·풀리·마지막 다운로드 영역 |
+| [components/Header.js](../components/Header.js) | 홈페이지 헤더, 스크롤 상태 전환, 전체 메뉴, 푸터 |
 | [components/PointBenefitCarousel.js](../components/PointBenefitCarousel.js) | 4개 포인트 혜택 카드, 반응형 가로 이동과 접근성 처리 |
 | [components/useLandingReveal.js](../components/useLandingReveal.js) | 양방향 반복 등장·퇴장, 포커스·해시·모션 감소 대응 |
-| [styles/pay-landing.css](../styles/pay-landing.css) | 기본 그리드·Hero·반응형·서비스 카드·간격 |
-| [styles/pay-landing-lower.css](../styles/pay-landing-lower.css) | FULIF+ 이후 영역의 톤, 캐릭터 패널, 다운로드 마무리 |
-| [styles/pay-landing-scale.css](../styles/pay-landing-scale.css) | 큰 화면의 콘텐츠 폭, 타이포그래피, 이미지 크기 보정 |
-| [styles/pay-landing-motion.css](../styles/pay-landing-motion.css) | 레이아웃을 바꾸지 않는 모션 전용 스타일 |
+| [styles/landing.css](../styles/landing.css) | 기본 그리드·Hero·반응형·서비스 카드·간격 |
+| [styles/landing-lower.css](../styles/landing-lower.css) | FULIF+ 이후 영역의 톤, 캐릭터 패널, 다운로드 마무리 |
+| [styles/landing-scale.css](../styles/landing-scale.css) | 큰 화면의 콘텐츠 폭, 타이포그래피, 이미지 크기 보정 |
+| [styles/landing-motion.css](../styles/landing-motion.css) | 레이아웃을 바꾸지 않는 모션 전용 스타일 |
 | [pages/_app.js](../pages/_app.js) | 위 CSS 네 파일을 기본 → 하단 → 크기 → 모션 순으로 불러옴 |
 | [next.config.js](../next.config.js) | 이미지 허용 품질에 `95` 추가 |
 

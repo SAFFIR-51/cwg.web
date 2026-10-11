@@ -1,1 +1,1 @@
-export { default } from '../components/PayLanding';
+export { default } from '../components/Landing';

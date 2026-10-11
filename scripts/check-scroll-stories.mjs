@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 
 const origin = process.env.SITE_CHECK_ORIGIN || 'http://127.0.0.1:3000';
-// 홈은 PayLanding(스크롤 스토리 없음), FOUND AI 지도와 멤버십 한도 스토리는 PDF 구성에 따라 제거됨.
+// 홈은 Landing(스크롤 스토리 없음), FOUND AI 지도와 멤버십 한도 스토리는 PDF 구성에 따라 제거됨.
 const cases = [
   ['/full-life', [['fulif-day', ['0', '1', '2', '3', '4']]]],
   ['/found-ai', [['found-places', ['0', '1', '2']]]],

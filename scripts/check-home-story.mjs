@@ -40,6 +40,6 @@ for (const removed of ['만 19세', '연간', '50,000원', '12개월을 10개월
 }
 const menu = html.match(/<dialog[\s\S]*?<\/dialog>/)?.[0] || '';
 for (const label of ['홈', 'Full Life', 'FOUND AI', '멤버십', '풀리 노트', '다운로드']) assert.ok(menu.includes(`<strong>${label}</strong>`), `Mobile menu item: ${label}`);
-assert.equal((html.match(/class="pay-benefit-card"/g) || []).length, 5, 'Five daily point items');
+assert.equal((html.match(/class="fulif-benefit-card"/g) || []).length, 5, 'Five daily point items');
 
 console.log(JSON.stringify({ sections: order.length, copyChecks: copy.length, issues: [] }, null, 2));

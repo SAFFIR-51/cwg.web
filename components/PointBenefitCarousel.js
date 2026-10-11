@@ -60,18 +60,18 @@ export default function PointBenefitCarousel() {
     }
   };
 
-  return <div className="pay-benefit-carousel" role="region" aria-label="매일의 포인트 혜택" aria-roledescription={view.visible < BENEFITS.length ? '캐러셀' : undefined}>
-    <div className="pay-benefit-track" id="pay-benefit-track" ref={trackRef} tabIndex={view.visible < BENEFITS.length ? 0 : -1} aria-label={view.visible < BENEFITS.length ? '포인트 혜택 카드, 좌우 방향키로 이동' : '포인트 혜택 카드'} onKeyDown={onKeyDown}>
-      {BENEFITS.map(({ art, src, title, description, reward, href }, index) => <Link className="pay-benefit-card" key={art} href={href} aria-label={`${title}, ${description} ${reward}, ${index + 1} / ${BENEFITS.length}`}>
-        <div className="pay-benefit-copy"><h3>{title}</h3><p>{description}</p><strong>{reward}</strong></div>
-        <span className="pay-benefit-link-arrow" aria-hidden="true"><Icon name="arrow_forward" size={20} /></span>
-        <Image className="pay-benefit-art" src={src || `/images/benefits/${art}-art.png`} alt="" width={1024} height={1024} sizes="(max-width: 767px) 164px, (max-width: 1199px) 144px, 164px" quality={90} />
+  return <div className="fulif-benefit-carousel" role="region" aria-label="매일의 포인트 혜택" aria-roledescription={view.visible < BENEFITS.length ? '캐러셀' : undefined}>
+    <div className="fulif-benefit-track" id="fulif-benefit-track" ref={trackRef} tabIndex={view.visible < BENEFITS.length ? 0 : -1} aria-label={view.visible < BENEFITS.length ? '포인트 혜택 카드, 좌우 방향키로 이동' : '포인트 혜택 카드'} onKeyDown={onKeyDown}>
+      {BENEFITS.map(({ art, src, title, description, reward, href }, index) => <Link className="fulif-benefit-card" key={art} href={href} aria-label={`${title}, ${description} ${reward}, ${index + 1} / ${BENEFITS.length}`}>
+        <div className="fulif-benefit-copy"><h3>{title}</h3><p>{description}</p><strong>{reward}</strong></div>
+        <span className="fulif-benefit-link-arrow" aria-hidden="true"><Icon name="arrow_forward" size={20} /></span>
+        <Image className="fulif-benefit-art" src={src || `/images/benefits/${art}-art.png`} alt="" width={1024} height={1024} sizes="(max-width: 767px) 164px, (max-width: 1199px) 144px, 164px" quality={90} />
       </Link>)}
     </div>
-    <div className="pay-benefit-controls">
-      <button type="button" onClick={() => move(-1)} disabled={view.start === 0} aria-label="이전 포인트 혜택" aria-controls="pay-benefit-track"><Icon name="chevron_left" size={22} /></button>
-      <span className="pay-benefit-progress" aria-live="polite" aria-atomic="true"><span className="sr-only">총 {BENEFITS.length}개 중 </span>{view.start + 1}{view.visible > 1 ? `–${Math.min(BENEFITS.length, view.start + view.visible)}` : ''}<span aria-hidden="true"> / {BENEFITS.length}</span><span className="sr-only">번째 혜택</span></span>
-      <button type="button" onClick={() => move(1)} disabled={view.start >= BENEFITS.length - view.visible} aria-label="다음 포인트 혜택" aria-controls="pay-benefit-track"><Icon name="chevron_right" size={22} /></button>
+    <div className="fulif-benefit-controls">
+      <button type="button" onClick={() => move(-1)} disabled={view.start === 0} aria-label="이전 포인트 혜택" aria-controls="fulif-benefit-track"><Icon name="chevron_left" size={22} /></button>
+      <span className="fulif-benefit-progress" aria-live="polite" aria-atomic="true"><span className="sr-only">총 {BENEFITS.length}개 중 </span>{view.start + 1}{view.visible > 1 ? `–${Math.min(BENEFITS.length, view.start + view.visible)}` : ''}<span aria-hidden="true"> / {BENEFITS.length}</span><span className="sr-only">번째 혜택</span></span>
+      <button type="button" onClick={() => move(1)} disabled={view.start >= BENEFITS.length - view.visible} aria-label="다음 포인트 혜택" aria-controls="fulif-benefit-track"><Icon name="chevron_right" size={22} /></button>
     </div>
   </div>;
 }

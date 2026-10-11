@@ -6,9 +6,9 @@ export default function useLandingReveal(root) {
     const container = root.current;
     if (!container || !window.IntersectionObserver) return;
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const grouped = '.pay-pair-column, .pay-join-banner';
+    const grouped = '.fulif-pair-column, .fulif-join-banner';
     const elements = [...container.querySelectorAll(
-      `${grouped}, .pay-wide > .pay-media, .pay-membership-card, .pay-pulli-art, .pay-enter`
+      `${grouped}, .fulif-wide > .fulif-media, .fulif-membership-card, .fulif-pulli-art, .fulif-enter`
     )].filter(element => {
       const group = element.closest(grouped);
       return !group || group === element;
@@ -19,13 +19,13 @@ export default function useLandingReveal(root) {
     let blurFrame = 0;
 
     const reveal = element => {
-      element.classList.add('pay-visible');
+      element.classList.add('fulif-visible');
     };
     const hide = (element, above) => {
       if (element.contains(document.activeElement)) return;
-      if (above) element.classList.add('pay-above');
-      else element.classList.remove('pay-above');
-      element.classList.remove('pay-visible');
+      if (above) element.classList.add('fulif-above');
+      else element.classList.remove('fulif-above');
+      element.classList.remove('fulif-visible');
     };
     const revealAnchor = () => {
       let id;
@@ -41,7 +41,7 @@ export default function useLandingReveal(root) {
       observer?.disconnect();
       if (preference.matches) {
         elements.forEach(element => {
-          element.classList.remove('pay-will-enter');
+          element.classList.remove('fulif-will-enter');
           reveal(element);
         });
         return;
@@ -57,7 +57,7 @@ export default function useLandingReveal(root) {
         });
       }, { rootMargin: `-${topInset}px 0px -${bottomInset}px 0px`, threshold: 0 });
       elements.forEach(element => {
-        element.classList.add('pay-will-enter');
+        element.classList.add('fulif-will-enter');
         observer.observe(element);
       });
       revealAnchor();
@@ -98,7 +98,7 @@ export default function useLandingReveal(root) {
       preference.removeEventListener('change', observe);
       container.removeEventListener('focusin', onFocus);
       container.removeEventListener('focusout', onBlur);
-      elements.forEach(element => element.classList.remove('pay-will-enter', 'pay-visible', 'pay-above'));
+      elements.forEach(element => element.classList.remove('fulif-will-enter', 'fulif-visible', 'fulif-above'));
     };
   }, [root]);
 }
