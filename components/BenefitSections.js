@@ -41,7 +41,7 @@ export function RewardGallery() {
         <div className="benefit-card-bottom"><p>{item.desc}</p><RoundArrow /></div>
       </Link>)}
     </div>
-    <p className="story-fine benefit-disclaimer">낙첨번호 등록: 토요일 21:00 ~ 화요일 20:00 · 무료 5세트 / FULIF+ 20세트<br />낙첨 ONE MORE 응모권은 번호 등록 후 광고 시청 시 지급돼요. 모든 응모권은 동일한 확률이에요.</p>
+    <p className="story-fine benefit-disclaimer">낙첨번호 등록: 토요일 20:50 ~ 화요일 20:00 · 무료 5세트 / FULIF+ 20세트<br />낙첨 ONE MORE 응모권은 번호 등록 후 광고 시청 시 지급돼요. 모든 응모권은 동일한 확률이에요.</p>
   </section>;
 }
 

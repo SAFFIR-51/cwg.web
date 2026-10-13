@@ -79,7 +79,7 @@ export default function FullLife() {
         ]}
         stats={[
           { label: '쿠폰 사용완료', value: '10P' }, { label: '티켓 등록', value: '10P' },
-          { label: '등록 5번', value: '응모권 1개' }, { label: '경품 추첨', value: '매달 마지막 화요일 21:00' },
+          { label: '등록 5번', value: '응모권 1개' }, { label: '경품 추첨', value: '매달 마지막 화요일 20:30' },
         ]}
         fine="번호 직접 입력과 종이 쿠폰은 받지 않아요."
         shot="/screens/one-more.png"
@@ -95,7 +95,7 @@ export default function FullLife() {
           { desc: '매주 화요일 20:30 경품 추첨. 당첨된 경품은 보관함에 넣어드려요.' },
         ]}
         stats={[
-          { label: '등록 기간', value: '토 21:00 ~ 화 20:00' }, { label: '등록 1세트', value: '10P' },
+          { label: '등록 기간', value: '토 20:50 ~ 화 20:00' }, { label: '등록 1세트', value: '10P' },
           { label: 'FULIF', value: '5세트까지' }, { label: 'FULIF+', value: '20세트까지' },
         ]}
         fine="직접 입력한 번호로 당첨되면, 모든 회원에게 공정하도록 실제 구매한 번호인지 한 번 확인해요."
@@ -118,7 +118,7 @@ export default function FullLife() {
           <div className="reveal rounded-2xl bg-white px-6">
             <Rows items={[
               { label: '낙첨 ONE MORE', value: '매주 화요일 20:30' },
-              { label: 'ONE MORE', value: '매달 마지막 화요일 21:00' },
+              { label: 'ONE MORE', value: '매달 마지막 화요일 20:30' },
               { label: '당첨되면', value: '보관함에 바로 넣어드려요' },
             ]} />
           </div>
@@ -193,7 +193,7 @@ export default function FullLife() {
               {[
                 ['ONE MORE · 쿠폰 기부', '✓', '✓'], ['낙첨번호 등록', '5세트', '20세트'], ['풀리프 제공 번호', '2세트', '10세트'],
                 ['하루 광고 보기', '10회', '20회'], ['오늘의 한 표 · FOUND AI', '✓', '✓'], ['넘버 센스', '✓', '✓'],
-                ['럭키 스코어', '–', '✓'], ['챔피언십 · 전용 이벤트', '–', '✓'], ['응모권 1개의 확률', '같아요', '같아요'],
+                ['럭키 스코어', '–', '✓'], ['월간 리포트', '–', '✓'], ['챔피언십 · 전용 경품 이벤트', '–', '✓'], ['응모권 1개의 확률', '같아요', '같아요'],
               ].map(([f, a, b]) => (
                 <tr key={f} className="border-b border-hair last:border-b-0">
                   <td className="px-5 py-3.5 pr-2 font-medium">{f}</td>

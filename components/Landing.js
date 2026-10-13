@@ -19,7 +19,7 @@ function Device({ screen, alt, className = '', priority = false }) {
 function Hero() {
   return <section id="intro" className="fulif-hero" aria-label="풀리프 소개">
     <div className="fulif-hero-aura" aria-hidden="true" />
-    <div className="fulif-hero-content"><span className="fulif-hero-eyebrow">FULIF · 풀리프</span><h1>생활의 가치를,<br />한 번 더.</h1><p>쿠폰 · 티켓 · 번호로 시작해, 생활 혜택을 찾아주는 AI 리워드 플랫폼</p><p className="fulif-hero-body">받아두고 잊은 쿠폰도, 다녀온 날의 티켓도, 아쉽게 끝난 번호도.<br />끝난 줄 알았던 것들이 응모권으로, 포인트로, 내 생활 혜택으로 돌아와요.</p><div className="fulif-store-links"><GooglePlayBadge /><AppStoreBadge /></div><small className="fulif-hero-note">{OPEN_DATE} 오픈</small></div>
+    <div className="fulif-hero-content"><span className="fulif-hero-eyebrow">FULIF · 풀리프</span><h1>생활의 가치를<br />한 번 더</h1><p>쿠폰 · 티켓 · 번호로 시작해, 생활 혜택을 찾아주는 AI 리워드 플랫폼</p><p className="fulif-hero-body">받아두고 잊은 쿠폰도, 다녀온 날의 티켓도, 아쉽게 끝난 번호도.<br />끝난 줄 알았던 것들이 응모권으로, 포인트로, 내 생활 혜택으로 돌아와요.</p><div className="fulif-store-links"><GooglePlayBadge /><AppStoreBadge /></div><small className="fulif-hero-note">{OPEN_DATE} 오픈</small></div>
   </section>;
 }
 
@@ -43,7 +43,7 @@ function ServicePair() {
       <Link href="/full-life#one-more" className="fulif-media fulif-coupon-media" aria-label="ONE MORE 서비스 자세히 보기"><Device screen="one-more" alt="쿠폰 등록과 만료 알림을 제공하는 풀리프 ONE MORE 화면" /><div className="fulif-coupon-floats" aria-hidden="true"><span><Icon name="confirmation_number" size={33} /><b>내 쿠폰</b></span><span><Icon name="redeem" size={33} /><b>내 티켓</b></span><span><Icon name="favorite" size={33} /><b>쿠폰 기부</b></span></div></Link>
     </section>
     <section id="lotto-one-more" className="fulif-pair-column">
-      <div className="fulif-pair-copy fulif-enter"><p className="fulif-kicker">낙첨 ONE MORE</p><h2>아쉬운 내 번호,<br />이번 주를 <em>한 번 더</em></h2><p className="fulif-description">지난 회차 번호를 사진으로 등록하고, 브랜드 파트너의 짧은 영상을 한 편 보면 경품 응모권 1개. 등록한 번호는 1세트마다 10P도 쌓여요. 등록은 매주 토요일 21:00부터 화요일 20:00까지예요.</p><Arrow href="/full-life#lotto-one-more" label="낙첨 ONE MORE 알아보기" /></div>
+      <div className="fulif-pair-copy fulif-enter"><p className="fulif-kicker">낙첨 ONE MORE</p><h2>아쉬운 내 번호,<br />이번 주를 <em>한 번 더</em></h2><p className="fulif-description">지난 회차 번호를 사진으로 등록하고, 브랜드 파트너의 짧은 영상을 한 편 보면 경품 응모권 1개. 등록한 번호는 1세트마다 10P도 쌓여요. 등록은 매주 토요일 20:50부터 화요일 20:00까지예요.</p><Arrow href="/full-life#lotto-one-more" label="낙첨 ONE MORE 알아보기" /></div>
       <Link href="/full-life#lotto-one-more" className="fulif-media fulif-lotto-media" aria-label="낙첨번호 등록과 경품 응모 알아보기"><Device screen="lotto-one-more" alt="지난 회차 번호를 등록하는 낙첨 ONE MORE 앱 화면" /><div className="fulif-message fulif-message-first" aria-hidden="true">지난 회차 번호를 등록했어요</div><div className="fulif-message fulif-message-second" aria-hidden="true">광고 한 편 보면 응모권 1개!</div><span className="fulif-message-answer" aria-hidden="true">한 번 더 응모하기 <Icon name="arrow_forward" size={17} /></span></Link>
     </section>
   </div>

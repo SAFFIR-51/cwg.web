@@ -16,7 +16,7 @@ export function StoryLink({ href, children }) {
 export function MoreServices({ Device, Arrow }) {
   return <div className="fulif-pair fulif-content-width fulif-extra-services">
     <section id="vote" className="fulif-pair-column"><div className="fulif-pair-copy fulif-enter"><p className="fulif-kicker">오늘의 한 표</p><h2>오늘은<br /><em>어떤 생각이신가요?</em></h2><p className="fulif-description">하루 세 번, 정답은 없어요. 가볍게 하나씩 고르면 30P.</p><Arrow href="/full-life#vote" label="오늘의 한 표 알아보기" /></div><Link href="/full-life#vote" className="fulif-media fulif-vote-media" aria-label="오늘의 한 표 앱 화면 자세히 보기"><Device screen="today-vote" alt="세 가지 질문에 참여하는 오늘의 한 표 앱 화면" /><span className="fulif-result-pill">세 가지 모두 답하면 <b>30P</b></span></Link></section>
-    <section id="draw" className="fulif-pair-column fulif-pair-lower"><div className="fulif-pair-copy fulif-enter"><p className="fulif-kicker">경품 추첨</p><h2>내 응모 현황,<br /><em>한눈에 보기</em></h2><p className="fulif-description">낙첨 ONE MORE는 매주 화요일 20:30, ONE MORE는 매달 마지막 화요일 21:00에 경품 추첨을 해요. 모든 응모권은 같은 확률이고, 당첨된 경품은 보관함에 바로 넣어드려요.</p><Arrow href="/full-life#draw" label="경품 추첨 일정과 방식 알아보기" /></div><Link href="/full-life#draw" className="fulif-media fulif-draw-media" aria-label="경품 추첨 앱 화면 자세히 보기"><Device screen="prize-draw" alt="경품과 추첨 일정을 확인하는 풀리프 앱 화면" /><span className="fulif-result-pill"><Icon name="verified" size={20} /> 응모권 1개, 모두에게 같은 확률</span></Link></section>
+    <section id="draw" className="fulif-pair-column fulif-pair-lower"><div className="fulif-pair-copy fulif-enter"><p className="fulif-kicker">경품 추첨</p><h2>내 응모 현황,<br /><em>한눈에 보기</em></h2><p className="fulif-description">낙첨 ONE MORE는 매주 화요일 20:30, ONE MORE는 매달 마지막 화요일 20:30에 경품 추첨을 해요. 모든 응모권은 같은 확률이고, 당첨된 경품은 보관함에 바로 넣어드려요.</p><Arrow href="/full-life#draw" label="경품 추첨 일정과 방식 알아보기" /></div><Link href="/full-life#draw" className="fulif-media fulif-draw-media" aria-label="경품 추첨 앱 화면 자세히 보기"><Device screen="prize-draw" alt="경품과 추첨 일정을 확인하는 풀리프 앱 화면" /><span className="fulif-result-pill"><Icon name="verified" size={20} /> 응모권 1개, 모두에게 같은 확률</span></Link></section>
   </div>;
 }
 
@@ -42,7 +42,7 @@ export function PlaygroundStory() {
 
 export function MembershipDetails() {
   return <div id="plus" className="fulif-content-width fulif-plus-details"><div className="fulif-plus-grid">{[
-    ['한 회차 낙첨번호 등록', '20', '세트까지'], ['매 회차 풀리프 제공 번호', '10', '세트'], ['하루 광고 보기', '20', '회까지'], ['더 다양한 즐거움', '럭키 스코어 이용 · 챔피언십 참여 · FULIF+ 전용 이벤트', ''],
+    ['한 회차 낙첨번호 등록', '20', '세트까지'], ['매 회차 풀리프 제공 번호', '10', '세트'], ['하루 광고 보기', '20', '회까지'], ['더 다양한 즐거움', '럭키 스코어 · 월간 리포트 · 챔피언십 · FULIF+ 전용 경품 이벤트', ''],
   ].map(([label, value, unit]) => <div key={label}><span>{label}</span><strong className={unit ? 'fulif-plus-number' : 'fulif-plus-exclusive'}>{value}{unit && <small>{unit}</small>}</strong></div>)}</div></div>;
 }
 
