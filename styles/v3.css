@@ -59,7 +59,10 @@
 .member-founder p { margin-top: 6px; font-size: 15px; line-height: 1.75; color: #4e5968; word-break: keep-all; }
 .member-plans-cta { grid-column: 1 / -1; }
 @media (max-width: 767px) {
-  .member-plans-v3 { grid-template-columns: 1fr !important; gap: 14px !important; }
+  /* page-scenes.css 의 옛 모바일 규칙이 이 칸을 display:block 으로 바꾸고 가격 카드에만
+     margin-top:35px 을 줘서, 월간↔연간은 35px · 연간↔창립 회원↔버튼은 0px 으로 붙었다. */
+  .member-plans-v3 { display: grid !important; grid-template-columns: 1fr !important; gap: 14px !important; }
+  .member-plans-v3 .member-price-card { margin-top: 0; }
   .member-plans-v3 .member-price-card h3 b { font-size: 32px; }
   .member-plans-v3 .member-price-card p, .member-founder p { font-size: 14px; }
   .member-founder { align-items: flex-start; gap: 14px; padding: 20px 18px; border-radius: 22px; }
@@ -351,3 +354,10 @@
 .note-table, .note-compare { table-layout: fixed; }
 .note-table thead th:nth-child(1) { width: 30%; } .note-table thead th:nth-child(2) { width: 36%; } .note-table thead th:nth-child(3) { width: 34%; }
 .note-compare thead th:nth-child(1) { width: 25%; } .note-compare thead th:nth-child(2) { width: 27%; } .note-compare thead th:nth-child(3) { width: 48%; }
+
+/* FOUND AI 세 가지 약속(모바일) — edition.css 는 위 선, page-scenes.css 는 아래 선을 줘서
+   항목 사이에 선이 두 줄로 겹치고 간격이 들쭉날쭉했다. 위 선 하나로 맞춘다. */
+@media (max-width: 767px) {
+  .found-product .found-promises { gap: 28px; }
+  .found-product .found-promises article { padding: 27px 0 0; border-bottom: 0; }
+}
