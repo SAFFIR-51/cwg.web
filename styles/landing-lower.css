@@ -44,8 +44,6 @@
 .fulif-after-plus .fulif-start-story p { font-size: 14px; color: #637b96; margin: 24px 0 0; word-break: keep-all; }
 .fulif-start-download { justify-self: end; }
 .fulif-after-plus .fulif-start-story .fulif-store-links { justify-content: flex-start; flex-wrap: wrap; }
-.fulif-after-plus .fulif-start-story .fulif-store-links > a { background: #203a58; border-color: #203a58; border-radius: 6px; backdrop-filter: none; }
-.fulif-after-plus .fulif-start-story .fulif-store-links > a:hover { background: #2d5078; border-color: #2d5078; }
 .fulif-after-plus .fulif-start-story small { color: #667d98; margin-top: 22px; font-size: 12px; line-height: 1.8; }
 
 @media (min-width: 768px) and (max-width: 1023px) {

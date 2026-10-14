@@ -1,0 +1,5 @@
+/* 2026-10-14 컴팩트 최종본 v3 반영분 — 기존 디자인 토큰 위에 얹는 추가 규칙만 둔다 */
+/* 스토어 공식 배지 이미지 — 예전 SVG 배지용 여백 · 배경 규칙을 무력화 (2026-10-14) */
+.store-badge { padding: 0 !important; background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.store-badge > img { display: block; height: 100%; width: auto; max-width: none; }
+@media (max-width: 359px) { .store-badge { height: 40px !important; } }
