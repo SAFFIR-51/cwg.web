@@ -41,3 +41,38 @@
 .found-examples .discovery-example time { display: block; font-size: 13px; line-height: 1.6; color: #e8590c; word-break: keep-all; }
 .found-examples-note { margin-top: 18px; font-size: 14px; line-height: 1.7; color: #3182f6; word-break: keep-all; }
 @media (max-width: 767px) { .found-examples { grid-template-columns: 1fr; gap: 12px; margin-top: 36px; } .found-examples-note { font-size: 13px; } }
+
+/* 멤버십 ① 요금 — 월간 · 연간 카드 + 창립 회원 + 시작 버튼 */
+.member-plans-v3 { grid-template-columns: 1fr 1fr; gap: 20px !important; align-items: stretch !important; }
+.member-plans-v3 .member-price-card { display: flex; flex-direction: column; gap: 14px; }
+.member-plans-v3 .member-price-card.is-monthly { border-color: #3182f6; }
+.member-price-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 15px; color: #6b7684; }
+.member-badge { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 999px; background: #3182f6; color: #fff; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.member-badge.is-soft { background: #e8f3ff; color: #1b64da; }
+.member-plans-v3 .member-price-card h3 { font-size: 18px; color: #6b7684; font-weight: 500; }
+.member-plans-v3 .member-price-card h3 { margin: 4px 0 0; }
+.member-plans-v3 .member-price-card h3 b { margin: 0 4px 0 0; font-size: 40px; font-weight: 800; letter-spacing: -.04em; color: #191f28; }
+.member-plans-v3 .member-price-card p { font-size: 15px; line-height: 1.75; color: #4e5968; word-break: keep-all; }
+.member-founder { grid-column: 1 / -1; display: flex; align-items: center; gap: 22px; padding: 24px 28px; border-radius: 28px; background: #fff; border: 1px solid #d9e7fb; }
+.member-founder > img { width: 96px; height: auto; flex-shrink: 0; border-radius: 22px; }
+.member-founder h3 { font-size: 18px; font-weight: 700; letter-spacing: -.03em; word-break: keep-all; }
+.member-founder p { margin-top: 6px; font-size: 15px; line-height: 1.75; color: #4e5968; word-break: keep-all; }
+.member-plans-cta { grid-column: 1 / -1; }
+@media (max-width: 767px) {
+  .member-plans-v3 { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .member-plans-v3 .member-price-card h3 b { font-size: 32px; }
+  .member-plans-v3 .member-price-card p, .member-founder p { font-size: 14px; }
+  .member-founder { align-items: flex-start; gap: 14px; padding: 20px 18px; border-radius: 22px; }
+  .member-founder > img { width: 72px; border-radius: 16px; }
+  .member-founder h3 { font-size: 16px; }
+  .member-plans-cta .btn-primary { width: 100%; justify-content: center; }
+}
+
+/* 멤버십 ② 혜택 표 — FULIF+ 열 · 생활권 저장 강조 · 줄 아래 설명 */
+.member-compare th small { display: block; margin-top: 3px; font-size: 12px; font-weight: 400; line-height: 1.6; color: #8b95a1; word-break: keep-all; }
+.member-compare th[scope="row"] { word-break: keep-all; }
+.member-compare .is-plus { background: #eaf2ff; }
+.member-compare tr.is-highlight { background: #f2f9e8; }
+.member-compare tr.is-highlight th { color: #2c5a17; font-weight: 700; }
+.member-compare tr.is-highlight .is-plus { background: #e4f3d4; }
+@media (max-width: 767px) { .member-compare table { font-size: 14px; } .member-compare th[scope="row"] { padding-left: 16px; padding-right: 8px; } }
