@@ -22,14 +22,14 @@ export function CouponWallet() {
   return <div className="coupon-wallet-scene" aria-label="쿠폰과 티켓을 모으면 등록 다섯 번마다 응모권 한 개">
     <div className="wallet-title"><span>내 쿠폰 · 내 티켓</span><Icon name="add" size={24} /></div>
     <div className="wallet-item"><Art name="coupon" sizes="170px" /><div><small>쿠폰</small><h3>아직 남아 있는<br />커피 한 잔의 여유</h3><span className="wallet-expiry">만료 이틀 전, 먼저 알려드려요</span></div></div>
-    <div className="wallet-item wallet-ticket"><Art name="ticket" sizes="170px" /><div><small>티켓</small><h3>다녀온 날의 기억도<br />차곡차곡</h3><b>등록하면 10P</b></div></div>
+    <div className="wallet-item wallet-ticket"><Art name="ticket" sizes="170px" /><div><small>티켓</small><h3>다녀온 날의 기억도<br />차곡차곡</h3><b>등록하면 응모 기회 한 칸</b></div></div>
     <div className="wallet-progress"><div>{[1,2,3,4].map(n=><span key={n}><Icon name="check" size={18} /></span>)}<span className="wallet-last"><Icon name="confirmation_number" size={20} /></span></div><p>등록 <b>5번</b>이면, 응모권 <b>1개</b></p></div>
   </div>;
 }
 
 export function VotePreview() {
   const [choice,setChoice]=useState('');
-  return <div className="vote-preview"><Art name="vote" sizes="230px" /><small>오늘의 한 표 · 웹 체험 예시</small><h3>잠깐의 여유가 생긴다면?</h3><div>{['커피 한 잔의 여유','좋아하는 음악 한 곡'].map((t,i)=><button key={t} type="button" aria-pressed={choice===t} onClick={()=>setChoice(t)}><Icon name={i ? 'music_note' : 'local_cafe'} size={23} />{t}<span>{choice===t ? <Icon name="check_circle" size={23} /> : <Icon name="chevron_right" size={21} />}</span></button>)}</div><p aria-live="polite">{choice ? '골랐어요! 실제 참여와 포인트 적립은 앱에서 진행돼요.' : '정답은 없어요. 지금 내 마음을 골라보세요.'}</p><b>하루 세 번 고르면 <em>30P</em></b></div>;
+  return <div className="vote-preview"><Art name="vote" sizes="230px" /><small>오늘의 한 표 · 웹 체험 예시</small><h3>잠깐의 여유가 생긴다면?</h3><div>{['커피 한 잔의 여유','좋아하는 음악 한 곡'].map((t,i)=><button key={t} type="button" aria-pressed={choice===t} onClick={()=>setChoice(t)}><Icon name={i ? 'music_note' : 'local_cafe'} size={23} />{t}<span>{choice===t ? <Icon name="check_circle" size={23} /> : <Icon name="chevron_right" size={21} />}</span></button>)}</div><p aria-live="polite">{choice ? '골랐어요! 실제 참여와 포인트 적립은 앱에서 진행돼요.' : '정답은 없어요. 지금 내 마음을 골라보세요.'}</p><b>세 가지 모두 고르면 <em>포인트</em></b></div>;
 }
 
 export function NeighborhoodExplorer() {
