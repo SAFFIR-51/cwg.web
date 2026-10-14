@@ -47,7 +47,7 @@ export default function Membership() {
         ['체험 끝나는 날','매월 4,900원 자동 결제','그 전에 해지하면 결제되지 않아요.'],
       ].map(([when,title,desc])=><li className="reveal" key={when}><span>{when}</span><h3>{title}</h3><p>{desc}</p></li>)}</ol>
     </Section>
-    <Section id="cancel"><div className="sub-faq-grid"><div><SectionHead title={'해지는 언제든,\n쌓은 건 그대로'} lead="Google Play · App Store 구독 관리에서 언제든 해지할 수 있어요. 이번 결제 기간이 끝날 때까지 혜택은 그대로이고, 모든 포인트와 이번 시즌 챔피언십 점수도 남아요." /><Fine className="mt-5">풀리프 계정을 삭제해도 구독은 자동으로 해지되지 않아요. 먼저 구독을 해지해 주세요.</Fine></div><Faq items={[
+    <Section id="cancel"><div className="sub-faq-grid"><div><SectionHead title={'해지는 언제든,\n쌓은 건 그대로'} lead="Google Play · App Store 구독 관리에서 언제든 해지할 수 있어요. 이번 결제 기간이 끝날 때까지 혜택은 그대로이고, 모은 포인트와 이번 시즌 챔피언십 점수도 남아요." /><Fine className="mt-5">풀리프 계정을 삭제해도 구독은 자동으로 해지되지 않아요. 먼저 구독을 해지해 주세요.</Fine></div><Faq items={[
       {q:'FULIF+면 경품 추첨에 더 유리한가요?',a:'아니요. 응모권 1개의 확률은 같아요. 등록할 수 있는 번호와 쓸 수 있는 기능이 더 있을 뿐이에요.'},
       {q:'무료 체험을 다시 받을 수 있나요?',a:'한 번만 받을 수 있어요. 이미 받으셨다면 첫 달부터 월 4,900원으로 시작해요.'},
       {q:'포인트로 구독할 수 있나요?',a:'아니요. 포인트는 결제 · 구독과 연결되지 않아요.'},

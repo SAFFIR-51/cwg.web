@@ -87,7 +87,7 @@ export default function FullLife() {
       <Section id="donate" className="v3-donate-section">
         <div className="v3-donate reveal">
           <img src="/mascot/v3/fuli-heart.jpg" alt="하트를 안은 풀리" width={270} height={245} loading="lazy" />
-          <div><h3>쿠폰 한 장으로, 아이에게 기쁜 하루</h3><p>내 쿠폰 한 장을 응원이 필요한 우리 곁의 아이들에게 선물할 수 있어요.</p><small>고마운 마음을 담아 30P와 기부천사 배지를 드려요.</small></div>
+          <div><h3>쿠폰 한 장으로, 아이에게 기쁜 하루를</h3><p>내 쿠폰 한 장을 응원이 필요한 우리 곁의 아이들에게 선물할 수 있어요.</p><small>고마운 마음을 담아 30P와 기부천사 배지를 드려요.</small></div>
         </div>
       </Section>
 
