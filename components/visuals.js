@@ -78,7 +78,7 @@ export function FeatureExplorer({ items }) {
       </button>)}
     </div>
     <div id="feature-panel" role="tabpanel" aria-labelledby={`feature-tab-${active}`} tabIndex={0} className="feature-panel">
-      <div className="feature-panel-copy" key={item.title}><p className="eyebrow">{item.title}</p><h3>{item.sub}</h3><p>{item.desc}</p>{item.fine && <small>{item.fine}</small>}<Link href={['/full-life#one-more', '/full-life#lotto-one-more', '/full-life#vote', '/full-life#draw'][active]} className="explore-link">자세히 알아보기 <Icon name="arrow_outward" size={18} /></Link></div>
+      <div className="feature-panel-copy" key={item.title}><p className="eyebrow">{item.title}</p><h3>{item.sub}</h3><p>{item.desc}</p>{item.fine && <small>{item.fine}</small>}<Link href={['/full-life#one-more', '/full-life#number-one-more', '/full-life#vote', '/full-life#draw'][active]} className="explore-link">자세히 알아보기 <Icon name="arrow_outward" size={18} /></Link></div>
       <Phone src={item.shot} alt={`${item.title} 앱 화면`} />
     </div>
   </div>;

@@ -9,7 +9,7 @@ import { ServiceOpening, CouponWallet, VotePreview } from '../components/PageSce
 
 // 컴팩트 최종본 v3(2026-10-14): 칩을 누르면 해당 섹션으로
 const CHIPS = [
-  ['#one-more', 'ONE MORE'], ['#lotto-one-more', '낙첨 ONE MORE'], ['#vote', '오늘의 한 표'], ['#playground', '놀이터'], ['#points', '포인트'],
+  ['#one-more', 'ONE MORE'], ['#number-one-more', '낙첨 ONE MORE'], ['#vote', '오늘의 한 표'], ['#playground', '놀이터'], ['#points', '포인트'],
 ];
 
 const DAY = [
@@ -93,7 +93,7 @@ export default function FullLife() {
 
       {/* ④ 낙첨 ONE MORE · 경품 추첨 */}
       <Feature
-        id="lotto-one-more" art="number" eyebrow="낙첨 ONE MORE" title={'아쉬운 내 번호,\n이번 주를 한 번 더'}
+        id="number-one-more" art="number" eyebrow="낙첨 ONE MORE" title={'아쉬운 내 번호,\n이번 주를 한 번 더'}
         lead="지난 회차에 아쉽게 끝난 번호가, 브랜드 파트너의 경품 응모권으로 돌아와요."
         steps={[
           { desc: 'QR과 사진으로 낙첨 번호를 등록해요. 온라인 · 모바일로 구매한 번호는 직접 입력할 수 있어요.' },
@@ -105,7 +105,7 @@ export default function FullLife() {
           { label: 'FULIF', value: '5세트까지' }, { label: 'FULIF+', value: '20세트까지' },
         ]}
         note={{ title: '모든 응모권은 같은 확률이에요', body: 'FULIF든 FULIF+든, 응모권 1개의 가치는 같아요. FULIF+는 한 회차에 더 많은 세트를 등록할 수 있어요.' }}
-        shot="/screens/lotto-one-more.png"
+        shot="/screens/number-one-more.png"
       />
 
       {/* ⑤ 오늘의 한 표 */}

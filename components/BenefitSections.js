@@ -27,7 +27,7 @@ const REWARDS = [
   {
     name: 'number', label: '낙첨 ONE MORE', title: <>아쉬웠던 내 번호의<br />새로운 시작</>,
     desc: <>지난 회차 번호를 등록하고 광고 한 편.<br />이번 주의 경품 응모권으로 돌아와요.</>,
-    tag: '번호 1세트마다', metric: '10P + 응모권 1개', href: '/full-life#lotto-one-more',
+    tag: '번호 1세트마다', metric: '10P + 응모권 1개', href: '/full-life#number-one-more',
   },
 ];
 
