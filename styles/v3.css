@@ -96,3 +96,255 @@
   .partner-product .partner-value h3 { grid-column: 2 !important; grid-row: 1 !important; font-size: 19px !important; word-break: keep-all; }
   .partner-product .partner-value p { grid-column: 2 / 3 !important; grid-row: 2; word-break: keep-all; }
 }
+
+/* ===== 풀리 노트 ③ 연재 카드 · 목차 ===== */
+.journal-series { max-width: 1184px; margin: 0 auto; padding: 40px 48px 20px; }
+.journal-series-card { display: flex; align-items: center; gap: 28px; padding: 32px 36px; border-radius: 30px; background: #f0f5fb; transition: box-shadow .2s; }
+.journal-series-card:hover { box-shadow: 0 14px 40px #25466d14; }
+.journal-series-card > img { width: 128px; height: auto; flex-shrink: 0; border-radius: 28px; }
+.journal-series-card span { font-size: 13px; font-weight: 700; color: #3182f6; }
+.journal-series-card h2 { margin-top: 8px; font-size: 34px; line-height: 1.35; font-weight: 700; letter-spacing: -.05em; word-break: keep-all; }
+.journal-series-card p { margin-top: 10px; font-size: 15px; line-height: 1.75; color: #6b7684; word-break: keep-all; }
+.journal-series-toc { margin-top: 18px; border-top: 1px solid #e5e8eb; }
+.journal-series-toc li > * { display: flex; align-items: baseline; gap: 18px; padding: 16px 4px; border-bottom: 1px solid #eef0f3; font-size: 16px; }
+.journal-series-toc b { flex: 0 0 44px; font-weight: 700; color: #3182f6; }
+.journal-series-toc span { flex: 1; color: #191f28; word-break: keep-all; }
+.journal-series-toc small { flex-shrink: 0; font-size: 13px; color: #8b95a1; }
+.journal-series-toc li:not(.is-open) span { color: #8b95a1; }
+.journal-series-toc li:not(.is-open) b { color: #a9c6f5; }
+.journal-series-toc li.is-open a:hover span { color: #3182f6; }
+.journal-series-note { margin-top: 14px; font-size: 13px; line-height: 1.7; color: #8b95a1; word-break: keep-all; }
+.journal-product .sub-closing-mascot[src*="meadow"] { width: min(420px, 100%); border-radius: 28px; mix-blend-mode: normal; }
+@media (max-width: 767px) {
+  .journal-series { padding: 24px 20px 8px; }
+  .journal-series-card { gap: 16px; padding: 22px 20px; border-radius: 24px; align-items: flex-start; }
+  .journal-series-card > img { width: 76px; border-radius: 18px; }
+  .journal-series-card h2 { font-size: 23px; }
+  .journal-series-card p { font-size: 13px; }
+  .journal-series-toc li > * { gap: 12px; padding: 14px 2px; font-size: 14px; }
+  .journal-series-toc b { flex-basis: 38px; }
+  .journal-series-toc small { font-size: 11px; }
+  .journal-product .sub-closing-mascot[src*="meadow"] { width: 100%; border-radius: 22px; }
+}
+
+/* ===== 풀리 노트 글 상세(①~⑨ 공통 편집 순서) ===== */
+.note-v3 article { background: #fffef9; }
+.note-inner { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; word-break: keep-all; }
+.note-crumb { font-size: 13px; color: #8b95a1; }
+.note-crumb a:hover { color: #191f28; }
+.note-label { display: inline-flex; margin-top: 16px; padding: 7px 14px; border-radius: 999px; background: #e8f3ff; color: #1b64da; font-size: 13px; font-weight: 700; }
+.note-label.is-howto { background: #e6f6ea; color: #1f7a3a; }
+.note-label.is-news { background: #fff0e6; color: #c2410c; }
+.note-label.is-onemore, .note-label.is-life { background: #eef2f7; color: #4e5968; }
+.note-v3 h1 { margin-top: 18px; font-size: 44px; line-height: 1.32; font-weight: 700; letter-spacing: -.045em; white-space: pre-line; color: #191f28; }
+.note-subtitle { margin-top: 12px; font-size: 18px; color: #6b7684; }
+.note-byline { display: flex; align-items: center; gap: 10px; margin-top: 22px; font-size: 14px; color: #8b95a1; }
+.note-byline img { width: 38px; height: 38px; border-radius: 50%; background: #fff; border: 1px solid #eef0e4; object-fit: contain; }
+
+.note-hero-figure { margin-top: 30px; }
+.note-hero-figure figcaption { margin-top: 10px; text-align: center; font-size: 13px; color: #8b95a1; }
+.note-hero { position: relative; overflow: hidden; border-radius: 26px; }
+/* 대표 그림 1 — 쿠폰 · 영화 티켓 · 주유 영수증 정물 */
+.note-hero-still { height: 330px; background: linear-gradient(160deg, #f6efe2, #efe6d4); }
+.nh-phone { position: absolute; left: 7%; top: 9%; width: 30%; height: 82%; padding: 16px 12px; border: 7px solid #1d2433; border-radius: 26px; background: #f7f8fb; transform: rotate(-8deg); box-shadow: 0 18px 30px #2a20101f; }
+.nh-coupon { display: flex; gap: 8px; padding: 10px; border-radius: 12px; background: #fff; box-shadow: 0 2px 8px #0000000d; }
+.nh-coupon i { width: 5px; border-radius: 4px; background: #1b64da; }
+.nh-coupon small { display: block; font-size: 9px; color: #8b95a1; }
+.nh-coupon b { display: block; font-size: 12px; margin-top: 2px; }
+.nh-coupon em { display: inline-block; margin-top: 5px; padding: 1px 7px; border-radius: 6px; background: #ffe8e8; color: #e03131; font-size: 9px; font-style: normal; font-weight: 700; }
+.nh-line { display: block; height: 7px; margin-top: 9px; border-radius: 4px; background: #e5e9f0; }
+.nh-line.short { width: 60%; }
+.nh-btn { position: absolute; left: 12px; right: 12px; bottom: 16px; padding: 8px 0; border-radius: 12px; background: #1b64da; color: #fff; font-size: 11px; font-weight: 700; text-align: center; }
+.nh-ticket { position: absolute; left: 42%; top: 22%; width: 42%; display: flex; justify-content: space-between; align-items: center; padding: 16px 18px; border-radius: 12px; background: #1b2442; color: #fff; transform: rotate(5deg); box-shadow: 0 14px 24px #1b24422e; }
+.nh-ticket small { font-size: 10px; letter-spacing: .2em; color: #aab4cc; }
+.nh-ticket b { display: block; margin: 4px 0; font-size: 15px; }
+.nh-ticket time { font-size: 10px; color: #c7cede; }
+.nh-ticket > span { padding-left: 12px; border-left: 1px dashed #5b6684; color: #f4c542; font-size: 12px; font-weight: 700; }
+.nh-receipt { position: absolute; left: 55%; top: 50%; width: 30%; padding: 14px 14px 22px; background: #fff; transform: rotate(-3deg); box-shadow: 0 10px 20px #2a20101a; clip-path: polygon(0 0, 100% 0, 100% 92%, 92% 100%, 84% 92%, 76% 100%, 68% 92%, 60% 100%, 52% 92%, 44% 100%, 36% 92%, 28% 100%, 20% 92%, 12% 100%, 4% 92%, 0 100%); }
+.nh-receipt b { font-size: 12px; }
+.nh-receipt small { display: block; margin-top: 12px; font-size: 9px; color: #8b95a1; }
+.nh-fuli { position: absolute; right: 3%; top: 4%; width: 20%; border-radius: 50%; }
+/* 대표 그림 2 — 홈 화면 */
+.note-hero-home { height: 330px; background: linear-gradient(160deg, #eef4ff, #e3ecfb); }
+.nh-home-phone { position: absolute; left: 50%; top: 26px; width: 210px; transform: translateX(-50%); }
+.nh-home-phone .phone { width: 210px; }
+.nh-home-fuli { position: absolute; left: 6%; bottom: 14px; width: 120px; filter: drop-shadow(0 10px 12px #2a4a7a1a); }
+.nh-home-badge { position: absolute; right: 7%; top: 30px; padding: 9px 14px; border-radius: 14px; background: #fff; color: #1b64da; font-size: 14px; font-weight: 800; box-shadow: 0 8px 20px #25466d1a; }
+/* 대표 그림 3 — 10.19 TEST OPEN */
+.note-hero-open { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 36px 40px; background: radial-gradient(circle at 110% 0%, #2c66e8 0 34%, transparent 35%), linear-gradient(140deg, #0d1b4b, #1b3fa0); color: #fff; }
+.note-hero-open small { font-size: 13px; font-weight: 700; letter-spacing: .22em; color: #c9d6ff; }
+.note-hero-open strong { display: block; margin-top: 8px; font-size: 84px; line-height: 1; font-weight: 800; letter-spacing: -.04em; }
+.note-hero-open b { display: block; margin-top: 12px; font-size: 22px; }
+.note-hero-open div > span { display: block; margin-top: 12px; font-size: 14px; color: #dbe4ff; }
+.note-hero-open img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+
+.note-body { margin-top: 44px; font-size: 17px; line-height: 1.9; color: #333d4b; }
+.note-body section + section { margin-top: 44px; }
+.note-body h2 { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; font-size: 24px; line-height: 1.4; font-weight: 700; letter-spacing: -.035em; color: #191f28; }
+.note-body h2 span { font-size: 15px; font-weight: 700; color: #3182f6; }
+.note-body p + p { margin-top: 16px; }
+.note-em { font-weight: 700; color: #191f28; background: linear-gradient(transparent 62%, #d8e6ff 62%); }
+.note-fig { margin: 22px 0; padding: 22px; border: 1px solid #ece8dc; border-radius: 22px; background: #fff; }
+.note-fig-title { margin-bottom: 14px; font-size: 14px; font-weight: 700; color: #1b64da; }
+.note-fig-caption { margin-top: 14px !important; font-size: 14px; line-height: 1.7; color: #6b7684; }
+.note-week { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.note-week div { padding: 14px 6px; border-radius: 14px; background: #f5f2ea; text-align: center; }
+.note-week small { display: block; font-size: 12px; color: #8b95a1; }
+.note-week b { display: block; margin-top: 6px; font-size: 15px; line-height: 1.45; color: #191f28; }
+.note-week .is-alert { background: #fdecec; }
+.note-week .is-alert b { color: #c92a2a; }
+.note-compare, .note-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.55; }
+.note-compare th, .note-compare td { padding: 12px 8px; border-top: 1px solid #eef0f3; text-align: left; vertical-align: top; }
+.note-compare thead th { border-top: 0; font-size: 13px; color: #8b95a1; font-weight: 600; }
+.note-compare tbody th { width: 26%; font-weight: 700; color: #191f28; }
+.note-compare td { color: #8b95a1; }
+.note-compare .is-fulif { color: #191f28; font-weight: 700; }
+.note-compare thead .is-fulif { color: #1b64da; }
+.note-slots { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.note-slot { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 58px; height: 58px; border: 2px solid #3182f6; border-radius: 14px; background: #f2f7ff; color: #1b64da; font-size: 12px; font-weight: 700; line-height: 1.2; }
+.note-slot i { font-style: normal; font-size: 20px; line-height: 1.1; }
+.note-slot-arrow { font-size: 20px; font-weight: 700; color: #1b64da; }
+.note-slot-result { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 14px; background: #1b64da; color: #fff; font-size: 14px; font-weight: 800; line-height: 1.3; text-align: center; }
+.note-homemap { display: grid; grid-template-columns: 200px 1fr; gap: 22px; align-items: center; }
+.note-homemap-shot { position: relative; border: 6px solid #1d2433; border-radius: 26px; overflow: hidden; }
+.note-homemap-shot img { display: block; width: 100%; }
+.note-homemap-shot span, .note-homemap li > span { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #f76707; color: #fff; font-size: 12px; font-weight: 800; }
+.note-homemap-shot span { position: absolute; box-shadow: 0 0 0 2px #fff; }
+.note-homemap ol { display: grid; gap: 10px; }
+.note-homemap li { display: flex; gap: 10px; align-items: flex-start; }
+.note-homemap li b { display: block; font-size: 15px; color: #191f28; }
+.note-homemap li small { display: block; font-size: 13px; line-height: 1.5; color: #6b7684; }
+.note-steps { display: grid; gap: 10px; margin: 20px 0; }
+.note-steps li { display: flex; gap: 14px; padding: 16px 18px; border: 1px solid #e3ecfb; border-radius: 18px; background: #fff; }
+.note-steps li > span { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 26px; height: 26px; border: 2px solid #1b64da; border-radius: 8px; color: #1b64da; font-size: 13px; font-weight: 800; }
+.note-steps b { font-size: 16px; color: #191f28; }
+.note-steps p { margin-top: 4px !important; font-size: 14px; line-height: 1.7; color: #6b7684; }
+.note-fig-table { padding: 0; overflow: hidden; }
+.note-table thead th { padding: 12px 14px; background: #1d2433; color: #fff; font-size: 13px; text-align: left; }
+.note-table tbody th, .note-table td { padding: 14px; border-top: 1px solid #eef0f3; text-align: left; vertical-align: top; font-size: 14px; }
+.note-table tbody th { font-weight: 700; color: #191f28; }
+.note-table td { color: #333d4b; }
+.note-table small { display: block; margin-top: 4px; font-size: 12px; font-weight: 400; color: #8b95a1; }
+.note-fig-table .note-fig-caption { padding: 0 14px 14px; margin-top: 4px !important; }
+.note-timeline { position: relative; display: grid; gap: 18px; padding-left: 26px; }
+.note-timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: #c7dafc; }
+.note-timeline li { position: relative; }
+.note-timeline li::before { content: ''; position: absolute; left: -26px; top: 5px; width: 16px; height: 16px; border: 3px solid #1b64da; border-radius: 50%; background: #fff; }
+.note-timeline li.is-filled::before { background: #1b64da; }
+.note-timeline small { display: block; font-size: 13px; font-weight: 700; color: #1b64da; }
+.note-timeline b { display: block; font-size: 16px; color: #191f28; }
+.note-timeline p { margin-top: 2px !important; font-size: 14px; line-height: 1.65; color: #6b7684; }
+.note-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+.note-cards div { padding: 16px; border: 1px solid #ece8dc; border-radius: 16px; background: #fff; }
+.note-cards b { font-size: 15px; color: #191f28; }
+.note-cards p { margin-top: 4px !important; font-size: 13px; line-height: 1.6; color: #6b7684; }
+.note-donate, .note-founder { display: flex; align-items: center; gap: 16px; margin: 20px 0; padding: 18px 20px; border-radius: 20px; }
+.note-donate { background: #fff1f3; }
+.note-donate img, .note-founder img { width: 72px; flex-shrink: 0; border-radius: 16px; }
+.note-donate small { font-size: 13px; font-weight: 700; color: #2f6b1f; }
+.note-donate p { margin-top: 4px !important; font-size: 15px; line-height: 1.6; font-weight: 700; color: #6b2132; }
+.note-founder { background: linear-gradient(135deg, #10235f, #1d48b8); color: #fff; }
+.note-founder small { font-size: 13px; color: #c9d6ff; }
+.note-founder b { display: block; margin-top: 2px; font-size: 18px; }
+.note-founder p { margin-top: 4px !important; font-size: 14px; line-height: 1.6; color: #dbe4ff; }
+.note-number-notice { margin-top: 28px !important; font-size: 14px; color: #8b95a1; }
+.note-pending { padding: 40px 20px; border-radius: 20px; background: #f6f7f2; text-align: center; }
+.note-pending img { width: 80px; margin: 0 auto; }
+.note-pending p { margin-top: 12px; font-size: 17px; font-weight: 700; color: #191f28; }
+.note-pending small { font-size: 14px; color: #8b95a1; }
+
+.note-fulinotes { margin-top: 48px; padding: 26px; border-radius: 24px; background: #1b64da; color: #fff; }
+.note-fulinotes > small { font-size: 12px; font-weight: 800; letter-spacing: .2em; color: #c9dcff; }
+.note-fulinotes h2 { margin-top: 6px; font-size: 20px; font-weight: 700; }
+.note-fulinotes ol { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+.note-fulinotes li { position: relative; padding: 16px 10px; border-radius: 16px; background: #ffffff1f; text-align: center; }
+.note-fulinotes li + li::before { content: '›'; position: absolute; left: -11px; top: 50%; transform: translateY(-50%); color: #c9dcff; font-weight: 700; }
+.note-fulinotes li.is-last { background: #fff; color: #1b64da; }
+.note-fulinotes li b { display: block; font-size: 17px; }
+.note-fulinotes li span { display: block; margin-top: 4px; font-size: 12px; line-height: 1.5; opacity: .9; }
+.note-fulinotes li.is-last span { color: #4e5968; }
+.note-fulinotes > p { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 14px; font-size: 13px; color: #dbe7ff; }
+.note-fulisays { display: flex; align-items: center; gap: 16px; margin-top: 18px; padding: 18px 22px; border-radius: 22px; background: #f0f6e6; }
+.note-fulisays img { width: 72px; flex-shrink: 0; border-radius: 50%; mix-blend-mode: multiply; }
+.note-fulisays small { font-size: 13px; font-weight: 700; color: #5b7a3a; }
+.note-fulisays p { margin-top: 4px; font-size: 17px; line-height: 1.55; font-weight: 700; color: #2c4a1c; }
+.note-comment { margin-top: 18px; padding: 20px 22px; border: 1.5px dashed #b9cff5; border-radius: 22px; background: #fff; }
+.note-comment small { font-size: 13px; font-weight: 700; color: #1b64da; }
+.note-comment p { margin-top: 6px; font-size: 18px; line-height: 1.5; font-weight: 700; color: #191f28; }
+.note-comment > span { display: block; margin-top: 6px; font-size: 13px; color: #8b95a1; }
+.note-related { margin-top: 40px; }
+.note-related h2 { font-size: 18px; font-weight: 700; color: #191f28; }
+.note-related ul { margin-top: 10px; border-top: 1px solid #e5e8eb; }
+.note-related li > * { display: block; padding: 14px 2px; border-bottom: 1px solid #eef0f3; }
+.note-related small { display: block; font-size: 12px; font-weight: 700; color: #1b64da; }
+.note-related b { display: block; margin-top: 4px; font-size: 16px; color: #191f28; }
+.note-related em { margin-left: 8px; font-size: 12px; font-style: normal; font-weight: 500; color: #8b95a1; }
+.note-related a:hover b { color: #1b64da; }
+.note-related .is-pending b { color: #6b7684; }
+.note-signoff { margin-top: 36px; text-align: center; font-size: 15px; font-weight: 600; color: #3182f6; }
+
+@media (max-width: 767px) {
+  .note-inner { padding: 36px 20px 72px; }
+  .note-v3 h1 { font-size: 30px; }
+  .note-subtitle { font-size: 16px; }
+  .note-hero-still, .note-hero-home { height: 250px; border-radius: 22px; }
+  .nh-phone { border-width: 5px; border-radius: 20px; padding: 10px 8px; left: 5%; width: 34%; }
+  .nh-coupon { padding: 7px; } .nh-coupon b { font-size: 10px; } .nh-btn { font-size: 9px; padding: 6px 0; left: 8px; right: 8px; bottom: 10px; }
+  .nh-ticket { left: 40%; width: 50%; padding: 11px 12px; } .nh-ticket b { font-size: 11px; } .nh-ticket small, .nh-ticket time { font-size: 8px; } .nh-ticket > span { font-size: 10px; padding-left: 8px; }
+  .nh-receipt { left: 52%; width: 36%; padding: 10px 10px 18px; } .nh-receipt b { font-size: 10px; }
+  .nh-fuli { width: 22%; }
+  .nh-home-phone, .nh-home-phone .phone { width: 160px; }
+  .nh-home-fuli { width: 84px; left: 2%; }
+  .nh-home-badge { right: 3%; top: 18px; font-size: 12px; padding: 7px 10px; }
+  .note-hero-open { padding: 26px 22px; border-radius: 22px; }
+  .note-hero-open strong { font-size: 58px; }
+  .note-hero-open b { font-size: 17px; }
+  .note-hero-open span { font-size: 12px; }
+  .note-hero-open img { width: 96px; height: 96px; }
+  .note-body { font-size: 16px; }
+  .note-body h2 { font-size: 20px; }
+  .note-fig { padding: 16px; border-radius: 18px; }
+  .note-week { gap: 6px; } .note-week b { font-size: 13px; } .note-week small { font-size: 11px; }
+  .note-compare { font-size: 13px; } .note-compare th, .note-compare td { padding: 10px 5px; }
+  .note-slot { width: 46px; height: 50px; font-size: 11px; border-radius: 12px; } .note-slot i { font-size: 16px; }
+  .note-slots { gap: 6px; } .note-slot-result { padding: 8px 10px; font-size: 13px; }
+  .note-homemap { grid-template-columns: 128px 1fr; gap: 14px; }
+  .note-homemap-shot { border-width: 4px; border-radius: 18px; }
+  .note-homemap-shot span, .note-homemap li > span { width: 18px; height: 18px; font-size: 10px; }
+  .note-homemap li b { font-size: 14px; } .note-homemap li small { font-size: 12px; }
+  .note-table tbody th, .note-table td { padding: 11px 8px; font-size: 13px; } .note-table thead th { padding: 10px 8px; }
+  .note-cards div { padding: 13px; }
+  .note-fulinotes { padding: 20px 16px; border-radius: 20px; }
+  .note-fulinotes ol { gap: 10px; } .note-fulinotes li { padding: 12px 4px; border-radius: 12px; }
+  .note-fulinotes li b { font-size: 14px; } .note-fulinotes li span { font-size: 10px; }
+  .note-fulinotes li + li::before { left: -9px; }
+  .note-fulisays, .note-comment { padding: 16px; }
+  .note-fulisays img { width: 56px; }
+  .note-fulisays p { font-size: 15px; } .note-comment p { font-size: 16px; }
+}
+/* v3 풀리 노트 ⑤ 마무리 — 예전 시안에서 숨겼던 마무리 영역을 다시 보인다 */
+.journal-product .sub-closing { display: block !important; }
+/* 글 상세 — 전역 표 · 문단 규칙보다 우선 */
+.note-v3 .note-compare th, .note-v3 .note-compare td { padding: 11px 6px !important; background: none !important; font-size: 14px; }
+.note-v3 .note-table th, .note-v3 .note-table td { padding: 12px 10px !important; font-size: 14px; }
+.note-v3 .note-table thead th { background: #1d2433 !important; }
+.note-v3 .note-comment p { font-size: 18px; color: #191f28; }
+.note-v3 .note-fulisays p { color: #2c4a1c; }
+@media (max-width: 767px) {
+  .note-v3 .note-compare th, .note-v3 .note-compare td { padding: 9px 4px !important; font-size: 12.5px; }
+  .note-v3 .note-table th, .note-v3 .note-table td { padding: 10px 7px !important; font-size: 12.5px; }
+  .note-v3 .note-comment p { font-size: 16px; }
+  .note-slots { flex-wrap: nowrap; gap: 5px; }
+  .note-slot { flex: 1 1 0; width: auto; min-width: 0; height: 52px; font-size: 10.5px; }
+  .note-slot-arrow { font-size: 16px; }
+  .note-slot-result { flex: none; padding: 8px 8px; font-size: 12px; }
+}
+.note-v3 .note-table td, .note-v3 .note-table tbody th { background: none !important; }
+.note-v3 .note-table tbody th { width: 30%; }
+.note-v3 .note-table td:nth-child(2) { width: 36%; }
+@media (max-width: 767px) {
+  .note-fulinotes ol { gap: 8px; }
+  .note-fulinotes li { padding: 12px 2px; }
+  .note-fulinotes li + li::before { left: -8px; }
+}
+.note-v3 .note-cover-legacy { margin-top: 30px; }

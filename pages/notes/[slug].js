@@ -1,75 +1,74 @@
 import Link from 'next/link';
 import Seo from '../../components/Seo';
-import Icon from '../../components/Icon';
-import { Section, Tag } from '../../components/ui';
-import { NOTES, getNote } from '../../lib/notes';
-import { NoteCover } from '../../components/SubpageDesign';
+import { NOTES, getNote, seriesStatus, kstToday, NUMBER_NOTICE } from '../../lib/notes';
 import { ReadingProgress } from '../../components/Edition';
+import { NoteCover } from '../../components/SubpageDesign';
+import { NoteHero, NoteBlock, FuliNotes, FuliSays, CommentLine, Related } from '../../components/NoteBlocks';
 
 export async function getStaticPaths() {
   return { paths: NOTES.map((n) => ({ params: { slug: n.slug } })), fallback: false };
 }
-export async function getStaticProps({ params }) {
-  const note = getNote(params.slug);
-  const related = NOTES.filter((n) => n.slug !== note.slug).slice(0, 2);
-  return { props: { note, related } };
+
+// 함께 보면 좋아요: 연재 편은 공개일이 지나야 링크(ISR 로 한 시간마다 다시 계산)
+function resolveRelated(note, today) {
+  const episodes = seriesStatus(today);
+  const items = note.related || NOTES.filter((n) => n.slug !== note.slug && n.category !== 'series' && n.body?.length !== 0).slice(0, 2).map((n) => ({ label: n.categoryLabel, slug: n.slug }));
+  return items.map((it) => {
+    if (it.episode) {
+      const ep = episodes.find((e) => e.n === it.episode);
+      return { label: it.label, title: ep.title, href: ep.open ? `/notes/${ep.slug}` : null, status: ep.open ? null : ep.openOnDot };
+    }
+    if (it.slug) {
+      const n = getNote(it.slug);
+      return { label: it.label, title: n.title.replace(/\n/g, ' '), href: `/notes/${n.slug}`, status: null };
+    }
+    return { label: it.label, title: it.title, href: null, status: null };
+  });
 }
 
+export async function getStaticProps({ params }) {
+  const note = getNote(params.slug);
+  const related = resolveRelated(note, kstToday());
+  return { props: { note, related }, revalidate: 3600 };
+}
+
+const CATEGORY_TONE = { series: 'is-series', howto: 'is-howto', news: 'is-news', onemore: 'is-onemore', life: 'is-life' };
+
 export default function NoteDetail({ note, related }) {
-  const isSeries = note.category === 'series';
+  const plainTitle = note.title.replace(/\n/g, ' ');
   return (
-    <div className="product-page journal-detail">
-      <Seo title={note.title} description={note.summary} />
+    <div className="product-page journal-detail note-v3">
+      <Seo title={plainTitle} description={note.subtitle || note.summary || plainTitle} />
       <ReadingProgress />
-      <article className="bg-white">
-        <div className="journal-detail-inner">
-          <Link href="/notes" className="inline-flex items-center gap-1 text-[14px] font-semibold text-muted hover:text-ink"><Icon name="chevron_left" size={20} />풀리 노트</Link>
-          <p className="eyebrow mt-6">{note.categoryLabel}</p>
+      <article>
+        <div className="note-inner">
+          <p className="note-crumb"><Link href="/notes">풀리 노트</Link> › {note.crumb || note.categoryLabel}</p>
+          {/* ① 라벨 */}
+          <p className={`note-label ${CATEGORY_TONE[note.category] || ''}`}>{note.categoryLabel}</p>
+          {/* ② 제목 · 부제 */}
           <h1>{note.title}</h1>
-          <div className="journal-author">
-            <img src="/mascot/pulli-profile-v2.png" alt="" className="h-9 w-9 rounded-full bg-panel object-contain" />
-            <span>풀리 · {note.date} · {note.minutes}분</span>
+          {note.subtitle && <p className="note-subtitle">{note.subtitle}</p>}
+          {/* ③ 풀리 · 날짜 · 읽는 시간 */}
+          <div className="note-byline"><img src="/mascot/clover_hello.png" alt="" /><span>풀리 · {note.date} · {note.minutes}분</span></div>
+          {/* ④ 대표 그림 */}
+          {note.hero ? <NoteHero hero={note.hero} /> : <NoteCover note={note} className="note-cover-legacy" />}
+          {/* ⑤ 본문 */}
+          <div className="note-body">
+            {note.sections ? note.sections.map((s, i) => <section key={s.title}><h2><span>{String(i + 1).padStart(2, '0')}</span>{s.title}</h2>{s.blocks.map((b, j) => <NoteBlock key={j} b={b} />)}</section>)
+              : note.body.length > 0 ? note.body.map((p, i) => <p key={i}>{p}</p>) : (
+                <div className="note-pending"><img src="/mascot/clover_hello.png" alt="" /><p>풀리가 열심히 적고 있어요</p><small>곧 본문이 올라와요.</small></div>
+              )}
+            {note.numberStory && <p className="note-number-notice">{NUMBER_NOTICE}</p>}
           </div>
-
-          <NoteCover note={note} />
-          <div className="journal-body">
-            {note.body.length > 0 ? note.body.map((p, i) => <p key={i}>{p}</p>) : (
-              <div className="rounded-2xl bg-panel p-10 text-center">
-                <img src="/mascot/clover_hello.png" alt="" className="mx-auto h-20 w-20 object-contain" />
-                <p className="mt-4 text-[17px] font-bold">풀리가 열심히 적고 있어요</p>
-                <p className="mt-1 text-[14px] text-muted">곧 본문이 올라와요.</p>
-              </div>
-            )}
-          </div>
-
-          {isSeries && (
-            <div className="mt-10 rounded-2xl bg-blue-soft p-6"><p className="text-[17px] font-bold text-ink">지금까지 몇 장을 버리셨나요?</p><p className="mt-1 text-[14px] text-sub">댓글로 들려주세요. 다음 노트의 이야기가 돼요.</p></div>
-          )}
+          {/* ⑥ ~ ⑧ */}
+          {note.fuliNotes && <FuliNotes data={note.fuliNotes} />}
+          {note.fuliSays && <FuliSays text={note.fuliSays} />}
+          {note.comment && <CommentLine data={note.comment} />}
+          {/* ⑨ 함께 보면 좋아요 */}
+          {related.length > 0 && <Related items={related} />}
+          <p className="note-signoff">Have a Fuli Day!</p>
         </div>
       </article>
-
-      <Section tone="gray">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-[20px] font-bold">이 노트와 함께 보면 좋아요</h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            {isSeries && (
-              <div className="rounded-2xl bg-white p-6 opacity-70">
-                <Tag tone="gray">2편</Tag>
-                <p className="mt-3 text-[17px] font-bold">다음 이야기를 준비하고 있어요</p>
-                <p className="mt-1 text-[13px] text-muted">공개 예정</p>
-              </div>
-            )}
-            {related.slice(0, isSeries ? 1 : 2).map((r) => (
-              <Link key={r.slug} href={`/notes/${r.slug}`} className="rounded-2xl bg-white p-6 transition-shadow hover:shadow-[0_8px_30px_rgba(25,31,40,0.08)]">
-                <Tag>{r.categoryLabel}</Tag>
-                <p className="mt-3 text-[17px] font-bold leading-snug">{r.title}</p>
-                <p className="mt-1 text-[13px] text-muted">{r.date} · {r.minutes}분</p>
-              </Link>
-            ))}
-          </div>
-          <p className="mt-10 text-center text-[15px] font-semibold text-blue">Have a Fuli Day!</p>
-        </div>
-      </Section>
     </div>
   );
 }

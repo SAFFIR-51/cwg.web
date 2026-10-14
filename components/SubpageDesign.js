@@ -47,6 +47,10 @@ export const NOTE_ART = {
   'today-vote-what-happens': 'vote',
   'coupon-to-a-child': 'donate',
   'how-to-register-losing-numbers': 'ticket',
+  'why-we-talk-about-one-more': 'ticket',
+  'getting-started-with-fulif': 'notebook',
+  'fulif-opens-october-19': 'invite',
+  'gifticon-balance': 'coupon',
 };
 
 export function NoteCover({ note, className = '' }) {
