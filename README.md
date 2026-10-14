@@ -6,6 +6,10 @@ Next.js(Pages Router) + Tailwind CSS로 만든 공식 웹사이트. 내용은 20
 
 홈 전용 구현은 `components/Landing.js`, `components/Header.js`, `styles/landing.css`입니다. 홈에만 전용 헤더·푸터를 적용하고 상세 페이지는 기존 구성을 유지합니다. 카카오페이의 이미지·로고·코드는 가져오지 않았습니다. 히어로는 블루·라일락 CSS 그라데이션과 `public/icons/`의 풀리프 3D 쿠폰·선물·티켓·낙첨 아이콘으로 구성하며, 영상·사진·휴대폰 목업을 사용하지 않습니다. 아이콘 부유 효과는 CSS 애니메이션이며 시스템의 모션 감소 설정을 지원합니다. 일시정지·전체화면 버튼은 노출하지 않습니다. 아래 서비스 소개에서는 기존 풀리프 생활 사진과 `public/screens/`의 실제 앱 캡처를 유지합니다. 전체 메뉴는 키보드 포커스가 유지되는 네이티브 대화상자입니다.
 
+## 컴팩트 최종본 v3 반영 (2026-10-14)
+
+`10-14/fulif.io 웹사이트 디자인 컴팩트 최종본 v3.pdf` 기준으로 7개 페이지의 내용 · 섹션 구성을 맞췄습니다(시각 디자인은 기존 유지). 추가 규칙은 `styles/v3.css`, 시안 PDF 에서 꺼낸 풀리 그림은 `public/mascot/v3/`, 스토어 공식 배지는 `public/badges/`에 있습니다.
+
 ## 실행
 
 서비스 · FOUND AI · 멤버십 · 풀리 노트 · 브랜드 파트너 · 다운로드는 각각 생활 사진, 동네 사진과 실제 앱 화면, 블루 멤버십 패스, 검색형 매거진, 매장 캠페인, 앱 갤러리로 다르게 구성했습니다. 본문의 예시 정보와 유의사항은 PDF 내용을 유지합니다. 최신 전체 페이지 확장은 `components/Edition.js`와 `styles/edition.css`이며, 기존 `story.css`, `benefits.css`, `subpages.css`, `page-scenes.css`, `story-restoration.css` 위에 적용됩니다. `styles/fulif-own.css`와 종이 포켓 이미지 6종은 미사용 시안입니다.
@@ -33,9 +37,9 @@ Vercel Root Directory는 이 저장소의 루트로 유지해야 합니다. `pub
 | `/full-life` | 02 Full Life | 상단 칩 → 섹션 앵커 |
 | `/found-ai` | 03 FOUND AI | |
 | `/membership` | 04 멤버십 | 구독 버튼은 스토어로 연결(결제는 앱에서만) |
-| `/notes`, `/notes/[slug]` | 05 풀리 노트 | 글 데이터는 `lib/notes.js` (제목·요약은 예시) |
+| `/notes`, `/notes/[slug]` | 05 풀리 노트 | 글 데이터는 `lib/notes.js`, 글 상세 부품은 `components/NoteBlocks.js`(①~⑨ 공통 순서). 연재 공개 편 수는 공개일 · 글 유무로 자동(ISR 1시간) |
 | `/partners` | 06 Partners | 문의 폼 → `POST /api/contact` (SMTP) |
-| `/download` | 07 다운로드 | QR은 스토어 링크 확정 후 이미지 교체 |
+| `/download` | 07 다운로드 | QR은 스토어 링크 확정 후 이미지 교체(지금은 자리만) |
 | `/terms` `/privacy` `/delete-account` | — | 본문 HTML은 `content/legal/*.html` (연간 구독 관련 조항만 요청에 따라 삭제, 다른 원문 유지) |
 | `/support` | — | 푸터 고객센터 링크 |
 

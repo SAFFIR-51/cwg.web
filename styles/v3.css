@@ -340,11 +340,14 @@
   .note-slot-result { flex: none; padding: 8px 8px; font-size: 12px; }
 }
 .note-v3 .note-table td, .note-v3 .note-table tbody th { background: none !important; }
-.note-v3 .note-table tbody th { width: 30%; }
-.note-v3 .note-table td:nth-child(2) { width: 36%; }
+
+
 @media (max-width: 767px) {
   .note-fulinotes ol { gap: 8px; }
   .note-fulinotes li { padding: 12px 2px; }
   .note-fulinotes li + li::before { left: -8px; }
 }
 .note-v3 .note-cover-legacy { margin-top: 30px; }
+.note-table, .note-compare { table-layout: fixed; }
+.note-table thead th:nth-child(1) { width: 30%; } .note-table thead th:nth-child(2) { width: 36%; } .note-table thead th:nth-child(3) { width: 34%; }
+.note-compare thead th:nth-child(1) { width: 25%; } .note-compare thead th:nth-child(2) { width: 27%; } .note-compare thead th:nth-child(3) { width: 48%; }
