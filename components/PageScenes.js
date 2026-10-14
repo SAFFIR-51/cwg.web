@@ -43,7 +43,7 @@ export function MembershipOpening() {
 }
 
 export function PartnerOpening() {
-  return <header className="partner-opening"><div className="partner-opening-top"><p className="sub-eyebrow"><Link href="/" aria-label="홈"><Icon name="home" size={14} /></Link> › 브랜드 파트너 문의 · B2B · Partner Program</p><div><h1>Partners</h1><p>Ad &amp; Sponsorship Inquiry</p></div></div><div className="partner-photo"><Image src="/images/bright/partner-counter.png" alt="밝은 카페 카운터에 놓인 파란 커피 컵과 작은 선물" fill priority sizes="100vw" quality={90} /></div></header>;
+  return <header className="partner-opening"><div className="partner-opening-top"><p className="sub-eyebrow partner-crumb"><span><Link href="/" aria-label="홈"><Icon name="home" size={14} /></Link> › 브랜드 파트너 문의</span><span>B2B · Partner Program</span></p><div><h1>Partners</h1><p>Ad &amp; Sponsorship Inquiry</p></div></div><div className="partner-photo"><Image src="/images/bright/partner-counter.png" alt="밝은 카페 카운터에 놓인 파란 커피 컵과 작은 선물" fill priority sizes="100vw" quality={90} /></div></header>;
 }
 
 export function PartnerJourney() {
@@ -51,5 +51,5 @@ export function PartnerJourney() {
 }
 
 export function DownloadPhones() {
-  return <div className="download-phone-gallery"><span className="download-orbit orbit-one" /><span className="download-orbit orbit-two" /><div className="download-phone-side"><Phone src="/screens/one-more.png" alt="쿠폰과 티켓을 모으는 ONE MORE 화면" /></div><div className="download-phone-main"><Phone src="/screens/home.png" alt="풀리프 앱 홈 화면" /></div><div className="download-phone-side"><Phone src="/screens/found.png" alt="내 생활권 혜택을 확인하는 FOUND AI 화면" /></div><span className="download-floating download-floating-points"><Art name="points" sizes="180px" /><b>반가워요, 100P</b></span><span className="download-floating download-floating-ticket"><Art name="ticket" sizes="175px" /></span></div>;
+  return <div className="download-phone-gallery"><span className="download-orbit orbit-one" /><span className="download-orbit orbit-two" /><div className="download-phone-side"><Phone src="/screens/one-more.png" alt="쿠폰과 티켓을 모으는 ONE MORE 화면" /></div><div className="download-phone-main"><Phone src="/screens/home.png" alt="풀리프 앱 홈 화면" /></div><div className="download-phone-side"><Phone src="/screens/found.png" alt="내 생활권 혜택을 확인하는 FOUND AI 화면" /></div><span className="download-floating download-floating-points"><Art name="points" sizes="180px" /><b>반가워요!</b></span><span className="download-floating download-floating-ticket"><Art name="ticket" sizes="175px" /></span></div>;
 }

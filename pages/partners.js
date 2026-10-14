@@ -55,8 +55,8 @@ export default function Partners() {
         <div className="partner-value-grid">
           {[
             ['01', '카테고리마다 한 브랜드', '같은 카테고리에서는 한 브랜드와만 함께합니다. 회원의 기억에 브랜드가 온전히 남도록.', 'invite'],
-            ['02', '매달 한 번, 브랜드 리포트', '회원이 브랜드를 어떻게 만났는지 매달 정리해 전해드립니다. 개인을 알아볼 수 없는 통계로만 담습니다.', 'notebook'],
-            ['03', '회원이 먼저 기다리는 브랜드', '브랜드의 제품이 경품 추첨의 경품으로 소개되어, 회원이 먼저 갖고 싶어 하는 이름이 됩니다.', 'ticket'],
+            ['02', '매달 한 번, 브랜드 리포트', '회원이 브랜드를 어떻게 만났는지 매달 정리하고, AI 브랜드 분석까지 함께 전해드립니다. 개인을 알아볼 수 없는 통계로만 담습니다.', 'notebook'],
+            ['03', '회원이 먼저 기다리는 브랜드', '광고로 스쳐 가는 이름이 아니라, 회원의 일상에 혜택을 건네는 이름으로 기억됩니다. 그렇게 쌓인 신뢰가 회원이 먼저 기다리는 브랜드를 만듭니다.', 'ticket'],
           ].map(([n, t, d, art]) => (
             <article key={n} className="partner-value reveal"><span>{n}</span><Art name={art} sizes="160px" /><h3>{t}</h3><p>{d}</p></article>
           ))}
@@ -66,7 +66,7 @@ export default function Partners() {
       {/* ③ 브랜드 파트너 문의 폼 */}
       <Section tone="gray" id="inquiry" className="partner-inquiry">
         <div className="mx-auto max-w-2xl">
-          <div><SectionHead eyebrow="LET’S BUILD TOGETHER" title="브랜드 파트너 문의" lead="아래 정보를 남겨주시면 담당자가 회신드립니다." /></div>
+          <div><SectionHead title="브랜드 파트너 문의" lead="아래 정보를 남겨주시면 담당자가 회신드립니다." /></div>
           <form onSubmit={submit} noValidate className="mt-10 space-y-5 rounded-3xl bg-white p-6 md:p-10">
             <div className="partner-form-fields">
             <Field label="회사명" required><input className={inputCls} name="company" value={form.company} onChange={set('company')} placeholder="회사명을 입력해주세요" required autoComplete="organization" /></Field>
