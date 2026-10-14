@@ -3,3 +3,14 @@
 .store-badge { padding: 0 !important; background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
 .store-badge > img { display: block; height: 100%; width: auto; max-width: none; }
 @media (max-width: 359px) { .store-badge { height: 40px !important; } }
+
+/* 홈 ③ 모으고, 참여하고, 발견해요 — 줄마다 해당 페이지 링크 + 맺음 문장 */
+.fulif-flow-list .fulif-text-link { margin-top: 12px; font-size: 14px; }
+.fulif-flow-quote { margin-top: 28px; padding: 4px 0 4px 18px; border-left: 3px solid #0078ff; font-size: 16px; font-weight: 600; line-height: 1.75; letter-spacing: -.02em; color: #213951; word-break: keep-all; }
+.fulif-services .fulif-flow-quote { margin-left: var(--fulif-copy-inset); }
+@media (max-width: 767px) { .fulif-flow-quote { font-size: 14px; } .fulif-services .fulif-flow-quote { margin-left: 0; } }
+
+/* 홈 ④ 풀리 — 시안의 손 흔드는 풀리(크림 바탕)를 기존 블루 패널 위에 곱하기로 얹는다 */
+.fulif-pulli-art.fulif-pulli-art-hello { justify-content: center; }
+.fulif-pulli-art img.fulif-pulli-hello { width: min(440px, 92%); height: auto; margin: 0 !important; mix-blend-mode: multiply; filter: none !important; }
+@media (max-width: 767px) { .fulif-after-plus .fulif-pulli-art.fulif-pulli-art-hello { min-height: 0; padding: 12px 0; } .fulif-pulli-art img.fulif-pulli-hello { width: min(340px, 92%); } }
