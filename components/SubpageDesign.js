@@ -35,8 +35,9 @@ export function FoundObject({ className = '' }) {
   return <div className={`sub-found-object ${className}`}><Art name="neighborhood" /><span className="sub-map-tag"><Icon name="location_on" size={19} />내 생활권의 발견</span><img src="/mascot/clover_search.png" alt="생활권 혜택을 찾는 풀리" className="sub-found-pulli" /></div>;
 }
 
-export function ClosingCTA({ title = <>오늘의 작은 가능성,<br />풀리프에서 만나보세요.</>, lead, children, art = 'ticket' }) {
-  return <section className="sub-closing"><div className="sub-closing-inner"><div><p className="sub-eyebrow">LIFE, ONE MORE.</p><h2>{title}</h2>{lead && <p>{lead}</p>}{children || <StoreBadges className="sub-closing-stores" />}</div><Art name={art} /></div></section>;
+// mascot 을 주면 오른쪽 그림 자리에 풀리 그림(v3 시안)을 둔다
+export function ClosingCTA({ title = <>오늘의 작은 가능성,<br />풀리프에서 만나보세요.</>, lead, children, art = 'ticket', mascot, mascotAlt = '풀리' }) {
+  return <section className="sub-closing"><div className="sub-closing-inner"><div><p className="sub-eyebrow">LIFE, ONE MORE.</p><h2>{title}</h2>{lead && <p>{lead}</p>}{children || <StoreBadges className="sub-closing-stores" />}</div>{mascot ? <img className="sub-closing-mascot" src={mascot} alt={mascotAlt} loading="lazy" /> : <Art name={art} />}</div></section>;
 }
 
 export const NOTE_ART = {

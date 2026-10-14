@@ -29,3 +29,15 @@
 
 /* Full Life ⑥ 놀이터 — 카드가 셋으로 줄어 3열 */
 @media (min-width: 900px) { .service-product .service-games { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* 마무리 영역의 풀리 그림(v3 시안) */
+.sub-closing-mascot { width: 220px; height: auto; margin: 0 auto; border-radius: 40px; mix-blend-mode: multiply; }
+@media (max-width: 767px) { .sub-closing-mascot { width: 150px; border-radius: 30px; margin-top: 18px; } }
+
+/* FOUND AI ③ 예시 카드 · 안내 */
+.found-examples { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 56px; }
+.found-examples .discovery-example { margin: 0; padding: 22px 22px 24px; border: 1px solid #e3e8ef; border-radius: 20px; background: #fff; }
+.found-examples .discovery-example strong { margin: 12px 0 6px; font-size: 18px; word-break: keep-all; }
+.found-examples .discovery-example time { display: block; font-size: 13px; line-height: 1.6; color: #e8590c; word-break: keep-all; }
+.found-examples-note { margin-top: 18px; font-size: 14px; line-height: 1.7; color: #3182f6; word-break: keep-all; }
+@media (max-width: 767px) { .found-examples { grid-template-columns: 1fr; gap: 12px; margin-top: 36px; } .found-examples-note { font-size: 13px; } }
