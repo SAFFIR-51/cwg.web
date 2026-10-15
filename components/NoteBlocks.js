@@ -36,8 +36,50 @@ function OpenDate() {
   </div>;
 }
 
+// ONE MORE 꿀팁 1편 — 겹쳐 둔 쿠폰 세 장
+function CouponStack() {
+  return <div className="note-hero note-hero-cards" aria-hidden="true">
+    {[['카페', '라떼 1잔', 'D-3', '#f59f00'], ['편의점 금액권', '10,000원', null, '#1b64da'], ['베이커리', '케이크 교환권', null, '#2f9e44']].map(([k, t, d, c], i) =>
+      <div key={t} className={`nh-card nh-card-${i}`} style={{ '--c': c }}><small>{k}</small><b>{t}</b>{d && <em>{d}</em>}</div>)}
+    <img className="nh-fuli" src="/mascot/v3/fuli-cheer.jpg" alt="" />
+  </div>;
+}
+
+// ONE MORE 꿀팁 2편 — 공연 티켓 · 기차 승차권 · 주유 영수증
+function TicketStack() {
+  return <div className="note-hero note-hero-cards is-tickets" aria-hidden="true">
+    <div className="nh-pass nh-pass-0"><small>CONCERT</small><b>가을 콘서트</b><time>2026.10.10</time></div>
+    <div className="nh-pass nh-pass-1"><small>기차 승차권</small><b>서울 → 부산</b><time>2026.10.11 · 7호차</time></div>
+    <div className="nh-receipt nh-receipt-2"><b>주유 영수증</b><span className="nh-line" /><span className="nh-line short" /><small>휘발유 · 2026.10.13</small></div>
+    <img className="nh-fuli" src="/mascot/v3/fuli-cheer.jpg" alt="" />
+  </div>;
+}
+
+// 연재 2편 — 아침에서 저녁까지 하루의 호
+function DayArc() {
+  return <div className="note-hero note-hero-day" aria-hidden="true">
+    <span className="nh-sun" /><span className="nh-moon" />
+    <img src="/mascot/v3/fuli-joy.jpg" alt="" />
+    <svg viewBox="0 0 400 80" preserveAspectRatio="none"><path d="M10 40 Q200 -10 390 40" fill="none" stroke="#1b64da" strokeWidth="2" strokeDasharray="4 6" /></svg>
+    <ol>{['아침', '점심', '퇴근길', '저녁'].map((t) => <li key={t}><i />{t}</li>)}</ol>
+  </div>;
+}
+
+// 생활 발견 1편 — 같은 동네, 다른 가격(막대 그림, 예시)
+function PriceBars() {
+  return <div className="note-hero note-hero-bars" aria-hidden="true">
+    <p>같은 동네, 다른 가격 (그림은 예시)</p>
+    <div className="nh-bars">{[['큰길가', '목 좋은 자리', 92], ['일반 주유', '직원이 주유', 70], ['셀프 주유', '내가 직접', 52]].map(([t, d, h]) =>
+      <div key={t}><span style={{ height: `${h}%` }} /><b>{t}</b><small>{d}</small></div>)}</div>
+    <img className="nh-fuli" src="/mascot/v3/fuli-cheer.jpg" alt="" />
+  </div>;
+}
+
+const HEROES = { stillLife: StillLife, couponStack: CouponStack, ticketStack: TicketStack, dayArc: DayArc, priceBars: PriceBars, openDate: OpenDate };
+
 export function NoteHero({ hero }) {
-  const body = hero.type === 'stillLife' ? <StillLife /> : hero.type === 'homeScreen' ? <HomeScreen badge={hero.badge} /> : <OpenDate />;
+  const H = HEROES[hero.type];
+  const body = hero.type === 'homeScreen' ? <HomeScreen badge={hero.badge} /> : H ? <H /> : <OpenDate />;
   return <figure className="note-hero-figure">{body}{hero.caption && <figcaption>{hero.caption}</figcaption>}</figure>;
 }
 
@@ -100,7 +142,77 @@ function Founder({ b }) {
   return <aside className="note-founder"><img src="/mascot/v3/fuli-clover.jpg" alt="" /><div><small>{b.kicker}</small><b>{b.title}</b><p>{b.body}</p></div></aside>;
 }
 
-const FIGS = { week: Week, compare: Compare, slots: Slots, homeMap: HomeMap, steps: StepList, table: Table, timeline: Timeline, cards: Cards, donate: Donate, founder: Founder };
+// 쿠폰이 지나가는 길 — 아이콘 칸이 › 로 이어지고, 마지막 칸만 파랑
+function Flow({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <ol className="note-flow">{b.items.map(([icon, label], i) => <li key={label} className={i === b.items.length - 1 ? 'is-last' : ''}><i aria-hidden="true">{icon}</i>{lines(label)}</li>)}</ol>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 금액권 잔액 예시 — 사용 막대 + 기준 표 + 출처
+function Balance({ b }) {
+  return <figure className="note-fig note-fig-table">
+    <div className="note-balance"><small>{b.kicker}</small><b>{b.title}</b>
+      <div className="note-balance-bar"><span style={{ width: `${b.percent}%` }} /></div>
+      <p><span>{b.used}</span><span>{b.left}</span></p></div>
+    <table className="note-rules"><tbody>{b.rows.map(([k, v]) => <tr key={k}><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody></table>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 두 갈래 카드(다 썼다면 · 쓰기 어렵다면 / 읽는 것 · 저장하지 않는 것)
+function Pair({ b }) {
+  return <><div className="note-pair">{b.items.map((it, i) => <div key={it.title} className={`is-${it.tone || (i ? 'warm' : 'cool')}`}>
+    {it.icon && <i aria-hidden="true">{it.icon}</i>}<b>{it.title}</b>
+    {it.body && <p>{it.body}</p>}
+    {it.list && <ul>{it.list.map((x) => <li key={x}>{x}</li>)}</ul>}
+  </div>)}</div>{b.caption && <p className="note-pair-caption">{b.caption}</p>}</>;
+}
+
+// 아이콘 격자(올릴 수 있는 티켓) + 넓은 한 칸
+function IconGrid({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <ul className="note-icongrid">{b.items.map(([icon, label]) => <li key={label}><i aria-hidden="true">{icon}</i>{label}</li>)}</ul>
+    {b.wide && <p className="note-icongrid-wide"><i aria-hidden="true">{b.wide[0]}</i>{b.wide[1]}</p>}
+    {b.caption && <p className="note-fig-caption"><Rich text={b.caption} /></p>}</figure>;
+}
+
+// 이용한 날부터 7일 — 날짜 칸 + 규칙 두 줄 + 다섯 칸
+function SevenDays({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <ol className="note-days">{b.days.map((d, i) => <li key={d} className={i === 0 ? 'is-first' : i === b.days.length - 1 ? 'is-out' : ''}>{lines(d)}</li>)}</ol>
+    <table className="note-rules"><tbody>{b.rows.map(([k, v]) => <tr key={k}><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody></table>
+    <div className="note-slots">{b.slots.map(([emoji, label], i) => <span key={i} className="note-slot is-soft"><i aria-hidden="true">{emoji}</i>{label}</span>)}<span className="note-slot-arrow" aria-hidden="true">→</span><span className="note-slot-result">{lines(b.result)}</span></div>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 오늘의 한 표 예시 — 앱 화면 + 따옴표 문장
+function VoteSample({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <div className="note-vote"><div className="note-vote-shot"><Phone src="/screens/today-vote.png" alt="오늘의 한 표 앱 화면" /></div><p>{lines(b.body)}</p></div></figure>;
+}
+
+// 알림 예시 — 아이콘 + 시각 · 출처 + 문장
+function Alerts({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <ul className="note-alerts">{b.items.map(([icon, meta, text]) => <li key={meta}><i aria-hidden="true">{icon}</i><div><small>{meta}</small><b>{text}</b></div></li>)}</ul></figure>;
+}
+
+// 이유 네 가지 — 아이콘 · 제목 · 설명 2×2
+function Reasons({ b }) {
+  return <div className="note-reasons">{b.items.map(([icon, title, desc]) => <div key={title}><i aria-hidden="true">{icon}</i><b>{title}</b><p>{desc}</p></div>)}</div>;
+}
+
+// FOUND AI 카드 예시
+function FoundCard({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <div className="note-foundcard"><small>{b.tag}</small><b>{b.name}</b><span>{b.meta}</span></div>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 출처 · 일반 기준 같은 작은 회색 안내
+function Fine({ b }) { return <p className="note-fine">{b.text}</p>; }
+
+const FIGS = { fine: Fine, flow: Flow, balance: Balance, pair: Pair, iconGrid: IconGrid, sevenDays: SevenDays, voteSample: VoteSample, alerts: Alerts, reasons: Reasons, foundCard: FoundCard, week: Week, compare: Compare, slots: Slots, homeMap: HomeMap, steps: StepList, table: Table, timeline: Timeline, cards: Cards, donate: Donate, founder: Founder };
 
 export function NoteBlock({ b }) {
   if (typeof b === 'string') return <p><Rich text={b} /></p>;
@@ -113,7 +225,7 @@ export function FuliNotes({ data }) {
   return <section className="note-fulinotes" aria-label="FULI NOTES">
     <small>FULI NOTES</small><h2>{data.title}</h2>
     <ol style={{ '--n': data.steps.length }}>{data.steps.map(([t, d], i) => <li key={t} className={i === data.steps.length - 1 ? 'is-last' : ''}><b>{t}</b><span>{d}</span></li>)}</ol>
-    {data.foot && <p><Icon name="refresh" size={15} />{data.foot}</p>}
+    {data.foot && <p>{data.footIcon !== false && <Icon name="refresh" size={15} />}{data.foot}</p>}
   </section>;
 }
 

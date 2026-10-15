@@ -16,6 +16,8 @@ const nextConfig = {
       { source: '/privacy.html', destination: '/privacy', permanent: true },
       { source: '/terms.html', destination: '/terms', permanent: true },
       { source: '/delete-account.html', destination: '/delete-account', permanent: true },
+      // 「기프티콘 잔액, 어디까지」는 ONE MORE 꿀팁 1편 02 로 합쳐졌다(2026-10-15)
+      { source: '/notes/gifticon-balance', destination: '/notes/coupon-three-habits', permanent: false },
     ];
   },
 };

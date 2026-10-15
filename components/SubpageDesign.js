@@ -43,6 +43,8 @@ export function ClosingCTA({ title = <>오늘의 작은 가능성,<br />풀리�
 export const NOTE_ART = {
   'series-01-where-do-losing-numbers-go': 'number',
   'coupon-three-habits': 'coupon',
+  'tickets-and-fuel-receipts': 'ticket',
+  'a-day-with-fulif': 'notebook',
   'why-gas-prices-differ': 'neighborhood',
   'today-vote-what-happens': 'vote',
   'coupon-to-a-child': 'donate',
@@ -50,7 +52,6 @@ export const NOTE_ART = {
   'why-we-talk-about-one-more': 'ticket',
   'getting-started-with-fulif': 'notebook',
   'fulif-opens-october-19': 'invite',
-  'gifticon-balance': 'coupon',
 };
 
 export function NoteCover({ note, className = '' }) {
