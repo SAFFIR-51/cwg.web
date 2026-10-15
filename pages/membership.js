@@ -5,6 +5,7 @@ import { ClosingCTA } from '../components/SubpageDesign';
 import { MembershipOpening } from '../components/PageScenes';
 import { SectionNav } from '../components/Edition';
 import StoreCta from '../components/StoreCta';
+import MemberPlans from '../components/MemberPlans';
 
 const BENEFITS = [
   ['ONE MORE · 기부 · 오늘의 한 표', '✓', '✓'],
@@ -28,12 +29,7 @@ export default function Membership() {
     <Seo title="멤버십 FULIF+" description="월 4,900원 · 연 49,000원으로 풀리프를 더 알차게. 첫 달은 무료로 써보고 결정하세요. 창립 회원은 2026.12.31까지." />
     <MembershipOpening />
     <SectionNav label="멤버십 페이지 탐색" items={[["plans","요금"],["member-benefits","FULIF+ 혜택"],["trial","첫 달 무료"],["cancel","해지 · 궁금한 점"]]} />
-    <section className="member-single-plan member-plans-v3" id="plans">
-      <article className="member-price-card is-monthly"><div className="member-price-top"><span>월간</span><b className="member-badge">첫 달 무료</b></div><h3><b>4,900원</b> / 월</h3><p>1개월 무료 체험 뒤 매월 4,900원이 결제돼요. 무료 체험은 한 번만 받을 수 있어요.</p></article>
-      <article className="member-price-card"><div className="member-price-top"><span>연간</span><b className="member-badge is-soft">2개월분 할인</b></div><h3><b>49,000원</b> / 년</h3><p>월간보다 1년에 9,800원 아껴요. 연간은 무료 체험 없이 바로 시작해요.</p></article>
-      <aside className="member-founder"><img src="/mascot/v3/fuli-clover.jpg" alt="네잎클로버를 든 풀리" width={270} height={235} /><div><h3>창립 회원 · 2026.12.31까지</h3><p>이 기간에 연간으로 시작하면 49,000원에 13개월, 그리고 창립 회원 배지를 영구로 드려요.</p></div></aside>
-      <div className="member-plans-cta"><StoreCta /></div>
-    </section>
+    <MemberPlans id="plans" className="member-single-plan" />
     <Section id="member-benefits">
       <SectionHead title={'FULIF+가 되면\n이렇게 달라져요'} />
       <div className="member-compare mt-10 overflow-hidden rounded-3xl bg-panel"><table className="w-full text-[15px]"><caption className="sr-only">FULIF 무료 회원과 FULIF+ 멤버십 기능 비교</caption><thead><tr className="border-b border-hair"><th scope="col" className="px-5 py-4 text-left font-semibold text-muted"><span className="sr-only">기능</span></th><th scope="col" className="whitespace-nowrap px-3 py-4 text-center"><p className="font-bold">FULIF</p><p className="text-[12px] font-medium text-dim">무료</p></th><th scope="col" className="is-plus whitespace-nowrap px-3 py-4 text-center text-blue"><p className="font-bold">FULIF+</p></th></tr></thead><tbody>{BENEFITS.map(([label,a,b,sub,hi])=><tr key={label} className={`border-b border-hair last:border-0 ${hi ? 'is-highlight' : ''}`}><th scope="row" className="px-5 py-3.5 text-left font-medium">{label}{sub && <small>{sub}</small>}</th><td className="px-3 py-3.5 text-center text-sub">{mark(a)}</td><td className="is-plus px-3 py-3.5 text-center font-semibold text-blue">{mark(b)}</td></tr>)}</tbody></table></div>

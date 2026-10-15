@@ -511,3 +511,13 @@
 @media (max-width: 359px) {
   .note-days { grid-template-columns: 1.7fr repeat(4, minmax(0, 1fr)); }
 }
+
+/* 다운로드 첫 화면 — 아이콘 · 「다운로드」 글자를 키움(10-16) */
+.download-opening .download-brand-icon { width: 92px; height: 92px; border-radius: 26px; margin-bottom: 22px; }
+.download-opening .download-brand-icon svg { width: 78px; height: 34px; }
+.download-opening-copy > .sub-eyebrow { font-size: 16px; }
+@media (max-width: 767px) {
+  .download-opening .download-brand-icon { width: 76px; height: 76px; border-radius: 22px; }
+  .download-opening .download-brand-icon svg { width: 64px; height: 28px; }
+  .download-opening-copy > .sub-eyebrow { font-size: 14px; }
+}
