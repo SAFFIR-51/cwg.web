@@ -185,10 +185,11 @@ function SevenDays({ b }) {
     {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
 }
 
-// 오늘의 한 표 예시 — 앱 화면 + 따옴표 문장
+// 오늘의 한 표 예시 — 앱 화면 + 따옴표 문장.
+// 폰 테두리는 작게 줄이면 섬 · 모서리가 뭉개진다(10-16) — 화면 위쪽만 카드로 잘라 보인다
 function VoteSample({ b }) {
   return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
-    <div className="note-vote"><div className="note-vote-shot"><Phone src="/screens/today-vote.png" alt="오늘의 한 표 앱 화면" /></div><p>{lines(b.body)}</p></div></figure>;
+    <div className="note-vote"><div className="note-vote-shot"><img src="/screens/today-vote.png" alt="오늘의 한 표 앱 화면 — 요즘 내 삶의 BGM을 고른다면?" width={780} height={1688} loading="lazy" /></div><p>{lines(b.body)}</p></div></figure>;
 }
 
 // 알림 예시 — 아이콘 + 시각 · 출처 + 문장
