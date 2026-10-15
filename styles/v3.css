@@ -88,10 +88,14 @@
 .download-meadow { display: block; width: min(520px, 100%); height: auto; margin: 0 auto 28px; border-radius: 28px; }
 .download-qr { margin-top: 26px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 @media (max-width: 767px) { .download-qr { align-items: center; } }
-.download-qr-box { width: 132px; height: 132px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border: 1px dashed #c9d3e0; border-radius: 22px; background: #fff; color: #8b95a1; font-size: 14px; font-weight: 600; }
-.download-qr-box small { font-size: 11px; font-weight: 500; }
+.download-qr-list { display: flex; gap: 12px; }
+.download-qr-card { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 14px 12px; border: 1px solid #e5e8eb; border-radius: 20px; background: #fff; text-decoration: none; transition: border-color .15s; }
+.download-qr-card:hover { border-color: #c9d3e0; }
+.download-qr-card img { width: 120px; height: 120px; display: block; }
+.download-qr-card span { display: flex; flex-direction: column; align-items: center; font-size: 12px; line-height: 1.35; color: #8b95a1; }
+.download-qr-card b { font-size: 13px; font-weight: 700; color: #191f28; }
 .download-qr p { font-size: 12px !important; color: #8b95a1 !important; margin: 0 !important; }
-@media (max-width: 767px) { .download-meadow { border-radius: 22px; margin-bottom: 22px; } .download-qr-box { width: 112px; height: 112px; border-radius: 18px; } }
+@media (max-width: 767px) { .download-meadow { border-radius: 22px; margin-bottom: 22px; } .download-qr-list { justify-content: center; } .download-qr-card img { width: 100px; height: 100px; } .download-qr p { text-align: center; } }
 @media (max-width: 767px) {
   .partner-product .partner-value { grid-template-columns: 28px 1fr 64px !important; gap: 8px 12px !important; align-items: start !important; }
   .partner-product .partner-value > span { grid-column: 1; grid-row: 1; padding-top: 4px; }
