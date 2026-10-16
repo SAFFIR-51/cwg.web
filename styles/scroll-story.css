@@ -30,7 +30,7 @@
 .play-scroll-art { position:relative; width:100%; height:100%; min-height:360px; display:grid; place-items:center; background:radial-gradient(circle,#edf4ff 0,transparent 68%); }
 .play-scroll-art > .benefit-object { width:100%; height:100%; max-height:500px; object-fit:contain; }
 .play-scroll-art .play-art-note { bottom:9%; right:5%; transform:rotate(-4deg); white-space:normal; }
-.play-scroll-copy > small { display:block; color:#8b95a1; font-size:12px; margin-top:20px; }
+.play-scroll-copy > small { display:block; color:#66717f; font-size:12px; margin-top:20px; }
 .day-scroll-art { height:100%; min-height:340px; background:#fff; border-radius:30px; padding:35px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
 .day-scroll-art strong { font-size:clamp(52px,6vw,90px); font-weight:650; color:#d9e7fb; letter-spacing:-.065em; line-height:1; }
 .day-scroll-art img { width:75%; height:auto; max-height:320px; object-fit:contain; }
@@ -118,3 +118,16 @@
   .scroll-story[data-enhanced=true] .scroll-story-mobile-visual { display:block; }
   .scroll-story[data-enhanced=true] .scroll-story-step { display:block; min-height:0; break-inside:avoid; }
 }
+/* Full Life 「풀리프의 하루」 — 기능 설명 전에 화면 4~5장을 쓰던 것을 절반 남짓으로(QA-21).
+   그림은 그대로 붙어 있고, 글 단계만 짧게 넘어간다. */
+@media (min-width:900px) and (min-height:680px) and (prefers-reduced-motion:no-preference) {
+  .scroll-story[data-scroll-story=fulif-day][data-enhanced=true] .scroll-story-step { min-height:calc(var(--story-height) * .5); padding:28px 0; }
+}
+@media (max-width:899px), (max-height:679px), (prefers-reduced-motion:reduce) {
+  [data-scroll-story=fulif-day] .scroll-story-step { padding:30px 0; }
+  [data-scroll-story=fulif-day] .scroll-story-mobile-visual { height:250px; margin-top:22px; }
+  [data-scroll-story=fulif-day] .day-scroll-art img { height:150px; }
+  [data-scroll-story=fulif-day] .day-scroll-art strong { font-size:44px; }
+}
+.day-skip { display:inline-flex; align-items:center; gap:6px; margin-top:18px; font-size:14px; font-weight:600; color:#3182f6; }
+.day-skip:hover { text-decoration:underline; }

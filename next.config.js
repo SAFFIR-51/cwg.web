@@ -5,6 +5,8 @@ const nextConfig = {
   reactStrictMode: true,
   devIndicators: false,
   images: { qualities: [75, 90, 95] },
+  // 노트 글을 읽고 뒤로 오면 보던 자리로(QA-11)
+  experimental: { scrollRestoration: true },
   async redirects() {
     // 구 정적 사이트 주소 호환
     return [

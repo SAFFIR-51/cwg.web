@@ -21,7 +21,9 @@ const BENEFITS = [
   ['응모권 1개의 확률', '같아요', '같아요'],
 ];
 
-const mark = (v) => v === '✓' ? <Icon name="check" size={20} /> : v;
+// 체크 · 줄표는 그림이라 화면낭독기가 읽지 못한다 — 숨긴 글자로 「제공」 · 「미제공」을 함께 둔다(QA-17)
+const mark = (v) => v === '✓' ? <><Icon name="check" size={20} /><span className="sr-only">제공</span></>
+  : v === '–' ? <><span aria-hidden="true">–</span><span className="sr-only">미제공</span></> : v;
 
 // 구성은 컴팩트 최종본 v3(2026-10-14) 멤버십 장 — 요금 · 혜택 · 첫 달 무료 · 해지 · 마무리
 export default function Membership() {
@@ -32,7 +34,7 @@ export default function Membership() {
     <MemberPlans id="plans" className="member-single-plan" />
     <Section id="member-benefits">
       <SectionHead title={'FULIF+가 되면\n이렇게 달라져요'} />
-      <div className="member-compare mt-10 overflow-hidden rounded-3xl bg-panel"><table className="w-full text-[15px]"><caption className="sr-only">FULIF 무료 회원과 FULIF+ 멤버십 기능 비교</caption><thead><tr className="border-b border-hair"><th scope="col" className="px-5 py-4 text-left font-semibold text-muted"><span className="sr-only">기능</span></th><th scope="col" className="whitespace-nowrap px-3 py-4 text-center"><p className="font-bold">FULIF</p><p className="text-[12px] font-medium text-dim">무료</p></th><th scope="col" className="is-plus whitespace-nowrap px-3 py-4 text-center text-blue"><p className="font-bold">FULIF+</p></th></tr></thead><tbody>{BENEFITS.map(([label,a,b,sub,hi])=><tr key={label} className={`border-b border-hair last:border-0 ${hi ? 'is-highlight' : ''}`}><th scope="row" className="px-5 py-3.5 text-left font-medium">{label}{sub && <small>{sub}</small>}</th><td className="px-3 py-3.5 text-center text-sub">{mark(a)}</td><td className="is-plus px-3 py-3.5 text-center font-semibold text-blue">{mark(b)}</td></tr>)}</tbody></table></div>
+      <div className="member-compare mt-10 overflow-hidden rounded-3xl bg-panel"><table className="w-full text-[15px]"><caption className="sr-only">FULIF 무료 회원과 FULIF+ 멤버십 기능 비교</caption><thead><tr className="border-b border-hair"><th scope="col" className="px-5 py-4 text-left font-semibold text-muted"><span className="sr-only">기능</span></th><th scope="col" className="whitespace-nowrap px-3 py-4 text-center"><p className="font-bold">FULIF</p><p className="text-[13px] font-medium text-dim">무료</p></th><th scope="col" className="is-plus whitespace-nowrap px-3 py-4 text-center text-blue"><p className="font-bold">FULIF+</p></th></tr></thead><tbody>{BENEFITS.map(([label,a,b,sub,hi])=><tr key={label} className={`border-b border-hair last:border-0 ${hi ? 'is-highlight' : ''}`}><th scope="row" className="px-5 py-3.5 text-left font-medium">{label}{sub && <small>{sub}</small>}</th><td className="px-3 py-3.5 text-center text-sub">{mark(a)}</td><td className="is-plus px-3 py-3.5 text-center font-semibold text-blue">{mark(b)}</td></tr>)}</tbody></table></div>
       <Fine className="mt-4">FULIF+ 혜택은 계속 늘어나요.</Fine>
     </Section>
     <Section tone="gray" id="trial">
@@ -44,7 +46,7 @@ export default function Membership() {
       ].map(([when,title,desc])=><li className="reveal" key={when}><span>{when}</span><h3>{title}</h3><p>{desc}</p></li>)}</ol>
     </Section>
     <Section id="cancel"><div className="sub-faq-grid"><div><SectionHead title={'해지는 언제든,\n쌓은 건 그대로'} lead="Google Play · App Store 구독 관리에서 언제든 해지할 수 있어요. 이번 결제 기간이 끝날 때까지 혜택은 그대로이고, 모은 포인트와 이번 시즌 챔피언십 점수도 남아요." /><Fine className="mt-5">풀리프 계정을 삭제해도 구독은 자동으로 해지되지 않아요. 먼저 구독을 해지해 주세요.</Fine></div><Faq items={[
-      {q:'FULIF+면 경품 추첨에 더 유리한가요?',a:'아니요. 응모권 1개의 확률은 같아요. 등록할 수 있는 번호와 쓸 수 있는 기능이 더 있을 뿐이에요.'},
+      {q:'FULIF+면 경품 추첨에 더 유리한가요?',a:'응모권 1개의 확률은 등급과 관계없이 같아요. 다만 한 회차에 등록할 수 있는 낙첨 번호가 FULIF는 5세트, FULIF+는 20세트라서, FULIF+는 응모권을 더 많이 가질 수 있어요. 응모권이 많을수록 기회도 그만큼 늘어요.'},
       {q:'무료 체험을 다시 받을 수 있나요?',a:'한 번만 받을 수 있어요. 이미 받으셨다면 첫 달부터 월 4,900원으로 시작해요.'},
       {q:'포인트로 구독할 수 있나요?',a:'아니요. 포인트는 결제 · 구독과 연결되지 않아요.'},
     ]} /></div></Section>

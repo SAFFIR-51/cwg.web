@@ -24,9 +24,15 @@ export default function Support() {
             return <Link key={t} href={href} className="reveal"><IconCircle name={icon} tone="blue" size={48} /><h2>{t}</h2><p>{d}</p><span className="support-arrow">{href==='/download'?'앱 다운로드 안내':'안내 자세히 보기'}<Icon name="arrow_forward" size={17}/></span></Link>;
           })}
         </div>
+        <div className="support-mail reveal">
+          <h2>앱에 들어갈 수 없나요?</h2>
+          <p>설치 · 로그인이 안 되거나 앱을 열 수 없을 때는 이메일로 알려 주세요. 영업일에 차례대로 답장드려요.</p>
+          <p className="support-mail-tip">쓰는 휴대폰 기종 · 앱 버전 · 가입한 방법(Google · Apple · 이메일)과 어떤 화면에서 막혔는지 적어 주시면 더 빨리 도와드릴 수 있어요.</p>
+          <a className="btn-primary" href="mailto:terry@fulif.io?subject=%5B%ED%92%80%EB%A6%AC%ED%94%84%20%EB%AC%B8%EC%9D%98%5D%20">terry@fulif.io 로 문의하기 <Icon name="arrow_forward" size={17} /></a>
+        </div>
         <p className="mt-8 text-[14px] text-sub">광고 · 스폰서십 관련 문의는 <Link href="/partners" className="font-semibold text-blue">브랜드 파트너 문의</Link>를 이용해 주세요.</p>
       </Section>
-      <Section><div className="sub-faq-grid"><div><SectionHead eyebrow="QUICK ANSWERS" title={'자주 궁금한 것부터\n확인해 보세요.'}/><PulliNote>궁금한 점이 더 있나요?<br />앱의 마이 → 고객센터에서 만나요.</PulliNote></div><Faq items={[
+      <Section><div className="sub-faq-grid"><div><SectionHead eyebrow="QUICK ANSWERS" title={'자주 궁금한 것부터\n확인해 보세요.'}/><PulliNote>궁금한 점이 더 있나요?<br />앱의 마이 → 고객센터에서 만나요.<br />앱을 열 수 없다면 terry@fulif.io 로 보내 주세요.</PulliNote></div><Faq items={[
         {q:'풀리프는 누구나 이용할 수 있나요?',a:'만 19세 이상부터 이용할 수 있어요. 무료 FULIF 회원도 쿠폰·티켓, 오늘의 한 표, FOUND AI를 이용할 수 있어요.'},
         {q:'앱을 지우면 멤버십도 해지되나요?',a:'앱 삭제나 회원 탈퇴로는 스토어 구독이 자동 해지되지 않아요. 결제한 Google Play 또는 App Store의 구독 관리에서 직접 해지해 주세요.'},
         {q:'포인트를 현금으로 바꿀 수 있나요?',a:'포인트는 현금으로 바꾸거나 다른 사람에게 양도·거래할 수 없어요. 유효기간은 적립일부터 2년이에요.'},

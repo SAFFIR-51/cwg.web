@@ -3,7 +3,8 @@ import Seo from '../../components/Seo';
 import { NOTES, getNote, seriesStatus, kstToday, NUMBER_NOTICE } from '../../lib/notes';
 import { ReadingProgress } from '../../components/Edition';
 import { NoteCover } from '../../components/SubpageDesign';
-import { NoteHero, NoteBlock, FuliNotes, FuliSays, CommentLine, Related } from '../../components/NoteBlocks';
+import { NoteHero, NoteBlock, FuliNotes, FuliSays, Related } from '../../components/NoteBlocks';
+import NoteComments from '../../components/NoteComments';
 
 export async function getStaticPaths() {
   return { paths: NOTES.map((n) => ({ params: { slug: n.slug } })), fallback: false };
@@ -63,7 +64,7 @@ export default function NoteDetail({ note, related }) {
           {/* ⑥ ~ ⑧ */}
           {note.fuliNotes && <FuliNotes data={note.fuliNotes} />}
           {note.fuliSays && <FuliSays text={note.fuliSays} />}
-          {note.comment && <CommentLine data={note.comment} />}
+          {note.comment && <NoteComments key={note.slug} slug={note.slug} prompt={note.comment} />}
           {/* ⑨ 함께 보면 좋아요 */}
           {related.length > 0 && <Related items={related} />}
           <p className="note-signoff">Have a Fuli Day!</p>

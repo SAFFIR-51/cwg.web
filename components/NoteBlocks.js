@@ -234,10 +234,6 @@ export function FuliSays({ text }) {
   return <aside className="note-fulisays"><img src="/mascot/v3/fuli-hands.jpg" alt="풀리" /><div><small>풀리의 한마디</small><p>{lines(text)}</p></div></aside>;
 }
 
-export function CommentLine({ data }) {
-  return <aside className="note-comment"><small>댓글 한 줄</small><p>{lines(data.q)}</p><span>{data.sub}</span></aside>;
-}
-
 // 함께 보면 좋아요 — 연재 편은 공개됐을 때만 링크, 글이 없는 항목은 링크 없이 둔다
 export function Related({ items }) {
   return <section className="note-related"><h2>함께 보면 좋아요</h2><ul>{items.map((it) => {

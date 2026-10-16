@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { PLAY_URL, APPSTORE_URL } from '../lib/site';
+import { detectDevice } from '../lib/device';
 
 /* 앱 다운로드 QR — public/qr/*.svg 는 lib/site.js 의 스토어 주소로 만든 것.
    주소가 바뀌면 QR 도 다시 만든다(segno, 오류 정정 M).
@@ -10,15 +11,6 @@ const QRS = {
   android: { href: PLAY_URL, src: '/qr/play.svg', device: 'Android', store: 'Google Play' },
   ios: { href: APPSTORE_URL, src: '/qr/appstore.svg', device: 'iPhone', store: 'App Store' },
 };
-
-function detectDevice() {
-  if (typeof navigator === 'undefined') return null;
-  const ua = navigator.userAgent || '';
-  if (/android/i.test(ua)) return 'android';
-  // 아이패드는 데스크톱 사파리처럼 보고하므로 터치 지점 수로 가른다
-  if (/iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1)) return 'ios';
-  return null;
-}
 
 export default function DownloadQr() {
   const [device, setDevice] = useState(null);

@@ -5,7 +5,7 @@ import Icon from './Icon';
 import { BrandWordmark } from './Brand';
 import { Phone } from './ui';
 import { Art } from './SubpageDesign';
-import StoreCta from './StoreCta';
+import StoreCta, { TRIAL_TERMS } from './StoreCta';
 
 export function EditorialImage({ name, alt = '', className = '', priority = false, sizes = '(max-width: 767px) 100vw, 1200px' }) {
   const square = name === 'member-pass' || name === 'partner-gift';
@@ -30,7 +30,7 @@ export function CouponWallet() {
 
 export function VotePreview() {
   const [choice,setChoice]=useState('');
-  return <div className="vote-preview"><Art name="vote" sizes="230px" /><small>오늘의 한 표 · 웹 체험 예시</small><h3>잠깐의 여유가 생긴다면?</h3><div>{['커피 한 잔의 여유','좋아하는 음악 한 곡'].map((t,i)=><button key={t} type="button" aria-pressed={choice===t} onClick={()=>setChoice(t)}><Icon name={i ? 'music_note' : 'local_cafe'} size={23} />{t}<span>{choice===t ? <Icon name="check_circle" size={23} /> : <Icon name="chevron_right" size={21} />}</span></button>)}</div><p aria-live="polite">{choice ? '골랐어요! 실제 참여와 포인트 적립은 앱에서 진행돼요.' : '정답은 없어요. 지금 내 마음을 골라보세요.'}</p><b>세 가지 모두 고르면 <em>포인트</em></b></div>;
+  return <div className="vote-preview"><Art name="vote" sizes="230px" /><small>오늘의 한 표 · 질문 1개 미리보기</small><h3>잠깐의 여유가 생긴다면?</h3><div>{['커피 한 잔의 여유','좋아하는 음악 한 곡'].map((t,i)=><button key={t} type="button" aria-pressed={choice===t} onClick={()=>setChoice(t)}><Icon name={i ? 'music_note' : 'local_cafe'} size={23} />{t}<span>{choice===t ? <Icon name="check_circle" size={23} /> : <Icon name="chevron_right" size={21} />}</span></button>)}</div><p aria-live="polite">{choice ? '골랐어요! 실제 참여와 포인트 적립은 앱에서 진행돼요.' : '정답은 없어요. 지금 내 마음을 골라보세요.'}</p><b>앱에서는 오늘의 질문 3개에 모두 답하면 <em>포인트</em></b></div>;
 }
 
 export function NeighborhoodExplorer() {
@@ -39,7 +39,7 @@ export function NeighborhoodExplorer() {
 
 export function MembershipOpening() {
   // 구독 버튼은 앱 스토어로(components/StoreCta.js)
-  return <header className="membership-opening"><div className="membership-orbit" aria-hidden="true" /><div className="membership-opening-copy"><span className="member-wordmark">FULIF<span>+</span></span><p className="sub-eyebrow">멤버십</p><h1>풀리프를<br />더 알차게,<br />FULIF+</h1><p>첫 달은 무료로 써보고 결정하세요.</p><StoreCta /><small>구독은 앱에서 시작하고, Google Play · App Store 구독 관리에서 해지할 수 있어요.</small></div><div className="membership-pass-art"><EditorialImage name="member-pass" priority sizes="(max-width: 767px) 100vw, 650px" /><span className="member-pass-label">ONE MORE POSSIBILITY.</span></div><div className="membership-opening-bottom"><span>월간 멤버십</span><strong>첫 달 <b>0</b>원 <i>이후 월 4,900원 · 연 49,000원</i></strong><a href="#plans">결제 안내 <Icon name="arrow_downward" size={17} /></a></div></header>;
+  return <header className="membership-opening"><div className="membership-orbit" aria-hidden="true" /><div className="membership-opening-copy"><span className="member-wordmark">FULIF<span>+</span></span><p className="sub-eyebrow">멤버십</p><h1>풀리프를<br />더 알차게,<br />FULIF+</h1><p>첫 달은 무료로 써보고 결정하세요.</p><StoreCta terms={false} /><small>{TRIAL_TERMS}.<br />해지는 Google Play · App Store 구독 관리에서 언제든 할 수 있어요.</small></div><div className="membership-pass-art"><EditorialImage name="member-pass" priority sizes="(max-width: 767px) 100vw, 650px" /><span className="member-pass-label">ONE MORE POSSIBILITY.</span></div><div className="membership-opening-bottom"><span>월간 멤버십</span><strong>첫 달 <b>0</b>원 <i>이후 월 4,900원 · 연 49,000원</i></strong><a href="#plans">결제 안내 <Icon name="arrow_downward" size={17} /></a></div></header>;
 }
 
 export function PartnerOpening() {

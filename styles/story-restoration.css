@@ -9,7 +9,7 @@
 .story-found-promises { margin:35px 0; }
 .story-found-promises > div { margin:26px 0; }
 .story-found-promises h3 { font-size:19px; font-weight:650; }
-.story-found-promises p { font-size:15px; line-height:1.8; color:#8b95a1; margin-top:10px; }
+.story-found-promises p { font-size:15px; line-height:1.8; color:#66717f; margin-top:10px; }
 .story-accordion button:focus-visible,.chapter-rail a:focus-visible { outline:3px solid #8cbbff; outline-offset:5px; }
 @media(max-width:767px) { .story-found-promises h3 { font-size:18px; }.story-found-promises p { font-size:14px; } }
 @media(prefers-reduced-motion:reduce) { .intro-scroll { height:auto; }.intro-sticky { position:relative; } }

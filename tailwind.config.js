@@ -8,7 +8,7 @@ module.exports = {
         ink: '#182638',
         sub: '#4E5968',
         muted: '#6B7684',
-        dim: '#8B95A1',
+        dim: '#66717F',
         faint: '#B0B8C1',
         line: '#E5E8EB',
         hair: '#F2F4F6',

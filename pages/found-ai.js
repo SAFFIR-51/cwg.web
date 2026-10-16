@@ -7,7 +7,7 @@ import { DiscoveryHero, SectionNav } from '../components/Edition';
 // 컴팩트 최종본 v3(2026-10-14) — 예시 카드에는 실제 매장 · 브랜드 이름을 쓰지 않는다
 const EXAMPLES = [
   ['주유소', '우리 동네 최저가 주유소', '휘발유 1리터 가격 · 오늘 06:00 기준'],
-  ['편의점', '커피 2+1', '2026.10.31까지 · 10월 19일 확인'],
+  ['편의점', '커피 2+1', '이번 달 말까지 · 확인한 날짜를 함께 적어드려요'],
   ['영화관', '관람객 증정 이벤트', '상영 정보가 아니라, 영화관에서 열리는 이벤트 · 증정 소식이에요.'],
 ];
 
@@ -32,9 +32,10 @@ export default function FoundAi() {
         <div><SectionHead eyebrow="JUST YOUR NEIGHBORHOOD" title={'생활권만 정하면,\n나머지는 풀리가'} /><Steps className="mt-7" items={[
           {title:'생활권 정하기',desc:'시 · 구 · 동을 한 번만 정해두면 돼요. FULIF+ 회원은 집과 자주 가는 곳, 두 곳까지 정할 수 있어요.'},
           {title:'풀리가 찾아 정리',desc:'주유 가격, 편의점 행사, 문화·전시와 영화관 소식을 모아 카드로 보여드려요.'},
-          {title:'지금 챙길 것부터',desc:'보관함에서 만료가 가까운 쿠폰을 맨 위에 먼저 보여드려요.'},
-        ]} /></div>
+          {title:'확인하고 다녀오기',desc:'기간 · 대상 · 장소와 확인한 날짜를 보고, 지도에서 바로 찾아가요. 마감이 가까운 혜택은 남은 날을 먼저 알려드려요.'},
+        ]} /><p className="found-howto-plus"><b>함께 쓰면 좋아요</b> 내 쿠폰 보관함의 만료가 가까운 쿠폰도 FOUND 첫 화면에서 먼저 챙겨드려요.</p></div>
       </div>
+      <p className="found-examples-label">화면 예시 · 실제로 안내되는 혜택과 달라요</p>
       <div className="found-examples">
         {EXAMPLES.map(([place,title,meta])=><article className="discovery-example reveal" key={place}><span>{place}</span><strong>{title}</strong><time>{meta}</time></article>)}
       </div>

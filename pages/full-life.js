@@ -64,6 +64,7 @@ export default function FullLife() {
       {/* ② 풀리프의 하루 */}
       <Section tone="gray" id="a-fuli-day">
         <SectionHead eyebrow="A DAY WITH FULIF" title={'풀리프와 함께하는\n어느 하루'} lead="특별한 날이 아니어도 괜찮아요. 평범한 하루 곳곳에 한 번 더가 숨어 있어요." />
+        <a className="day-skip" href="#one-more">하루 이야기는 건너뛰고 기능 바로 보기 <span aria-hidden="true">↓</span></a>
         <DayTimeline items={DAY} />
         <Fine className="mt-5">하루 흐름은 이해를 돕기 위한 예시예요.</Fine>
       </Section>
@@ -111,7 +112,7 @@ export default function FullLife() {
       {/* ⑤ 오늘의 한 표 */}
       <Feature
         id="vote" art="vote" eyebrow="오늘의 한 표" title={'정답은 없어요,\n오늘의 생각만 있을 뿐'}
-        lead="요즘 내 삶의 BGM은? 같은 가벼운 질문이 하루 세 개씩 올라와요. 세 가지 모두 고르면 포인트를 드려요."
+        lead="요즘 내 삶의 BGM은? 같은 가벼운 질문이 하루 세 개씩 올라와요. 오늘의 질문 3개에 모두 답하면 포인트를 드려요."
         shot="/screens/today-vote.png"
       />
 
@@ -139,14 +140,14 @@ export default function FullLife() {
               <Rows items={[
                 { label: '광고 보기', value: '1초에 1P · 하루 FULIF 10회 · FULIF+ 20회' },
                 { label: '출석체크', value: '하루 한 번, 차곡차곡' },
-                { label: '오늘의 한 표', value: '세 가지 모두 고르면' },
+                { label: '오늘의 한 표', value: '오늘의 질문 3개에 모두 답하면' },
                 { label: '쿠폰 · 티켓 · 번호 등록', value: '등록하고 쓸 때마다' },
                 { label: '쿠폰 기부', value: '기부할 때마다' },
                 { label: '넘버 센스', value: '성공한 단계만큼' },
               ]} />
             </div>
             <Fine className="mt-3">항목별 포인트는 앱의 포인트 안내에서 확인할 수 있어요. 포인트로 누릴 수 있는 혜택은 계속 늘려갈게요.</Fine>
-            <Note className="mt-4" title="포인트는 이렇게 지켜져요">앱 안의 다양한 활동으로 쌓이고, 정해진 교환 날에는 풀리프 경품 쿠폰으로 바꿀 수 있어요. 사고팔거나 현금으로 바꿀 수는 없고, 적립일로부터 2년 동안 유지돼요.</Note>
+            <Note className="mt-4" title="포인트는 이렇게 지켜져요">앱 안의 다양한 활동으로 쌓이고, FOUND의 쿠폰 교환에서 동네 쿠폰으로 바꿀 수 있어요. 쿠폰마다 필요한 포인트와 이번 주 남은 수량이 표시되고, 수량은 매주 월요일에 새로 열려 선착순으로 나가요. 같은 쿠폰은 한 주에 한 번 바꿀 수 있어요. 사고팔거나 현금으로 바꿀 수는 없고, 적립일로부터 2년 동안 유지돼요.</Note>
           </div>
         </div>
       </Section>
