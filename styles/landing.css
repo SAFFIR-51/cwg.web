@@ -34,9 +34,11 @@
 .fulif-hero-content { position: absolute; z-index: 2; left: var(--fulif-gutter); right: var(--fulif-gutter); top: 47%; transform: translateY(-10%); }
 .fulif-hero-eyebrow { display: block; margin-bottom: 26px; font-size: 16px; letter-spacing: -.03em; font-weight: 400; line-height: 1.6; color: #e0ebff; }
 .fulif-hero h1 { margin: 0; font-size: clamp(52px, 4.1vw, 72px); font-weight: 550; line-height: 1.19; letter-spacing: -.052em; }
-/* 앱 홈 슬로건과 같은 「한 번 더」 — 8° 기울임 · 자간 조금 좁게 · 블루 #0163FA → 풀리 녹색 #2E9E3A.
-   어두운 사진 위라 「생활의 가치를」은 앱의 네이비 대신 흰색 그대로 둔다. */
-.fulif-hero h1 .fulif-slogan-accent { display: inline-block; padding-right: .14em; letter-spacing: -.065em; transform: skewX(-8deg); transform-origin: left bottom; background: linear-gradient(90deg, #0163fa, #2e9e3a); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 1px #ffffff73) drop-shadow(0 2px 12px #ffffff26); }
+/* 앱 홈 슬로건과 같은 「한 번 더」 — 8° 기울임 · 자간 조금 좁게 · 블루 → 풀리 녹색 그러데이션.
+   어두운 사진 위라 앱 색(#0163FA → #2E9E3A)을 그대로 쓰면 묻힌다(10-16 확인). 같은 색상을
+   밝게 올리고 굵기를 한 단 높인다. 흰 테두리 빛은 번져 보여서 빼고 옅은 어두운 그림자로 띄운다.
+   「생활의 가치를」은 앱의 네이비 대신 흰색 그대로. */
+.fulif-hero h1 .fulif-slogan-accent { display: inline-block; padding-right: .14em; font-weight: 700; letter-spacing: -.065em; transform: skewX(-8deg); transform-origin: left bottom; background: linear-gradient(90deg, #4b97ff 0%, #3fc2c8 50%, #5fdc78 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 14px #050d1f80); }
 .fulif-hero-content > p { margin: 23px 0 26px; font-size: 16px; letter-spacing: -.03em; color: #ffffffe6; }
 .fulif-store-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .fulif-store-links > a { height: 50px; }
