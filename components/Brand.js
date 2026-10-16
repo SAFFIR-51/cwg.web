@@ -6,7 +6,7 @@ export function BrandWordmark({ className = '', color = 'currentColor', tone = '
   const viewBox = compact ? '0 0 1024 1024' : '0 0 2152 811';
   return (
     <svg className={className} viewBox={viewBox} fill="none" aria-hidden="true">
-      <image href={`/brand/logo-${size}-${light ? 'white' : 'black'}.png?v=fulif-20261016b`} width={compact ? 1024 : 2152} height={compact ? 1024 : 811} />
+      <image href={`/brand/logo-${size}-${light ? 'white' : 'black'}.png?v=fulif-20261016`} width={compact ? 1024 : 2152} height={compact ? 1024 : 811} />
     </svg>
   );
 }
