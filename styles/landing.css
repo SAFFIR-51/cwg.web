@@ -36,7 +36,7 @@
 .fulif-hero h1 { margin: 0; font-size: clamp(52px, 4.1vw, 72px); font-weight: 550; line-height: 1.19; letter-spacing: -.052em; }
 /* 앱 홈 슬로건과 같은 「한 번 더」 — 8° 기울임 · 자간 조금 좁게 · 블루 #0163FA → 풀리 녹색 #2E9E3A.
    어두운 사진 위라 「생활의 가치를」은 앱의 네이비 대신 흰색 그대로 둔다. */
-.fulif-hero h1 .fulif-slogan-accent { display: inline-block; padding-right: .14em; letter-spacing: -.065em; transform: skewX(-8deg); transform-origin: left bottom; background: linear-gradient(90deg, #0163fa, #2e9e3a); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 1px #ffffff73) drop-shadow(0 2px 12px #ffffff26); }
+.fulif-hero h1 .fulif-slogan-accent { display: inline-block; padding-right: .14em; letter-spacing: -.065em; transform: skewX(-8deg); transform-origin: left bottom; color: #0163fa; -webkit-text-fill-color: #0163fa; }
 .fulif-hero-content > p { margin: 23px 0 26px; font-size: 16px; letter-spacing: -.03em; color: #ffffffe6; }
 .fulif-store-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .fulif-store-links > a { height: 50px; }

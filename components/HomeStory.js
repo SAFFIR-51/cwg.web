@@ -77,9 +77,9 @@ function IntroScene() {
 
 const SERVICES = [
   {title:'ONE MORE',desc:'받은 쿠폰을 사진이나 공유로 등록하면 보관함에 모이고, 만료 전에 알려드려요. 등록 다섯 번이면 응모권 1개. 다 쓴 쿠폰은 사용완료하면 10P, 다녀온 티켓은 등록하면 바로 10P.',screen:'one-more',label:'내 쿠폰 · 내 티켓',value:'한 번 더 쓰기',href:'/full-life#one-more'},
-  {title:'낙첨 ONE MORE',desc:'지난 회차 번호를 등록하면 1세트마다 10P. 브랜드 파트너의 짧은 영상을 한 편 보면 경품 응모권 1개를 받아요. 등록은 토요일 20:50부터 화요일 20:00까지예요.',screen:'number-one-more',label:'지난 회차 번호 1세트',value:'등록하면 10P',href:'/full-life#number-one-more'},
-  {title:'오늘의 한 표',desc:'하루 세 번, 정답은 없어요. 가볍게 하나씩 고르면 30P. 답하고 나면 다른 회원들은 어떻게 골랐는지도 볼 수 있어요.',screen:'today-vote',label:'오늘의 질문 세 가지',value:'모두 고르면 30P',href:'/full-life#vote'},
-  {title:'경품 추첨',desc:'낙첨 ONE MORE는 매주 화요일 20:30, ONE MORE는 매달 마지막 화요일 20:30에 추첨해요. 모든 응모권은 같은 확률이고, 당첨된 경품은 보관함에 넣어드려요.',screen:'prize-draw',label:'모든 회원에게',value:'같은 응모권 확률',href:'/full-life#draw'},
+  {title:'낙첨 ONE MORE',desc:'지난 회차 번호 1세트마다 브랜드 파트너 하이라이트 5초를 보면 경품 응모권 1개를 받아요. 등록은 토요일 20:50부터 목요일 20:00까지예요.',screen:'number-one-more',label:'지난 회차 번호 1세트',value:'5초 보면 응모권 1개',href:'/full-life#number-one-more'},
+  {title:'오늘의 한 표',desc:'하루 세 번, 정답은 없어요. 가볍게 하나씩 고르면 10P. 답하고 나면 다른 회원들은 어떻게 골랐는지도 볼 수 있어요.',screen:'today-vote',label:'오늘의 질문 세 가지',value:'모두 고르면 10P',href:'/full-life#vote'},
+  {title:'경품 추첨',desc:'낙첨 ONE MORE는 매주 목요일 20:30, ONE MORE는 매달 마지막 목요일 20:30에 추첨해요. 모든 응모권은 같은 확률이고, 당첨된 경품은 보관함에 넣어드려요.',screen:'prize-draw',label:'모든 회원에게',value:'같은 응모권 확률',href:'/full-life#draw'},
 ];
 
 function ServiceScene() {
@@ -99,7 +99,7 @@ function FoundScene() {
 }
 
 function MembershipScene() {
-  return <section id="plus" className="plus-story"><div className="plus-story-head reveal"><p>FULIF+</p><h2>풀리프를 더 알차게,<br />FULIF+</h2><span>첫 달은 무료로 써보고 결정하세요.</span></div><div className="plus-presentation"><div className="plus-pass"><div><b>FULIF<span>+</span></b></div><p>생활의 가치를,<br />한 번 더 넉넉하게.</p><span>ONE MORE POSSIBILITY. FULLER EVERY DAY.</span><i aria-hidden="true">+</i></div><div className="plus-offer"><span>첫 달 무료 · 월간 멤버십</span><h3>4,900<small>원 / 월</small></h3><p>한 회차 낙첨번호 20세트 · 제공 번호 10세트<br />하루 광고 보기 20회 · 럭키 스코어<br />챔피언십 · FULIF+ 전용 이벤트</p><StoryLink href="/membership">멤버십 자세히 보기</StoryLink><small>무료 체험 1회 · 이후 매월 4,900원 자동 결제<br />결제 3일 전 안내 · 체험 중 해지하면 결제되지 않아요.</small></div></div><p className="story-fine">FULIF든 FULIF+든, 응모권 1개의 가치는 같아요.</p></section>;
+  return <section id="plus" className="plus-story"><div className="plus-story-head reveal"><p>FULIF+</p><h2>풀리프를 더 알차게,<br />FULIF+</h2><span>첫 달은 무료로 써보고 결정하세요.</span></div><div className="plus-presentation"><div className="plus-pass"><div><b>FULIF<span>+</span></b></div><p>생활의 가치를,<br />한 번 더 넉넉하게.</p><span>ONE MORE POSSIBILITY. FULLER EVERY DAY.</span><i aria-hidden="true">+</i></div><div className="plus-offer"><span>첫 달 무료 · 월간 멤버십</span><h3>4,900<small>원 / 월</small></h3><p>한 회차 낙첨번호 20세트 · 제공 번호 10세트<br />하루 브랜드 시청 12회 · 럭키 스코어<br />챔피언십 · FULIF+ 전용 이벤트</p><StoryLink href="/membership">멤버십 자세히 보기</StoryLink><small>무료 체험 1회 · 이후 매월 4,900원 자동 결제<br />결제 3일 전 안내 · 체험 중 해지하면 결제되지 않아요.</small></div></div><p className="story-fine">FULIF든 FULIF+든, 응모권 1개의 가치는 같아요.</p></section>;
 }
 
 function TogetherScene() {

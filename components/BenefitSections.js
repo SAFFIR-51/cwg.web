@@ -26,8 +26,8 @@ const REWARDS = [
   },
   {
     name: 'number', label: '낙첨 ONE MORE', title: <>아쉬웠던 내 번호의<br />새로운 시작</>,
-    desc: <>지난 회차 번호를 등록하고 광고 한 편.<br />이번 주의 경품 응모권으로 돌아와요.</>,
-    tag: '번호 1세트마다', metric: '10P + 응모권 1개', href: '/full-life#number-one-more',
+    desc: <>지난 회차 번호를 등록하고 하이라이트 5초.<br />이번 주의 경품 응모권으로 돌아와요.</>,
+    tag: '번호 1세트마다', metric: '응모권 1개', href: '/full-life#number-one-more',
   },
 ];
 
@@ -41,14 +41,14 @@ export function RewardGallery() {
         <div className="benefit-card-bottom"><p>{item.desc}</p><RoundArrow /></div>
       </Link>)}
     </div>
-    <p className="story-fine benefit-disclaimer">낙첨번호 등록: 토요일 20:50 ~ 화요일 20:00 · 무료 5세트 / FULIF+ 20세트<br />낙첨 ONE MORE 응모권은 번호 등록 후 광고 시청 시 지급돼요. 모든 응모권은 동일한 확률이에요.</p>
+    <p className="story-fine benefit-disclaimer">낙첨번호 등록: 토요일 20:50 ~ 목요일 20:00 · 무료 5세트 / FULIF+ 20세트<br />낙첨 ONE MORE 응모권은 세트마다 브랜드 파트너 하이라이트 5초를 보면 생겨요. 모든 응모권은 동일한 확률이에요.</p>
   </section>;
 }
 
 const DAILY_REWARDS = [
   { name: 'vote', label: '오늘의 한 표', desc: '하루 세 번, 내 생각을 고르면', reward: '30', unit: 'P', href: '/full-life#vote' },
   { name: 'invite', label: '친구 초대', desc: '초대한 분도, 초대받은 분도', reward: '100', unit: 'P', href: '/full-life#points' },
-  { name: 'watch', label: '광고 보기', desc: '보는 시간만큼 차곡차곡', reward: '1초에 1', unit: 'P', href: '/full-life#points' },
+  { name: 'watch', label: '브랜드 시청', desc: '카드 3P · 숏 5P · 풀 8P', reward: '최대 8', unit: 'P', href: '/full-life#points' },
   { name: 'donate', label: '쿠폰 기부', desc: '따뜻한 마음을 나누면', reward: '30', unit: 'P', href: '/full-life#points' },
 ];
 
@@ -64,7 +64,7 @@ export function PointsScene() {
         <ObjectArt name={item.name} sizes="160px" /><div><h3>{item.label}</h3><p>{item.desc}</p><strong>{item.reward}<span>{item.unit}</span></strong></div><Icon name="chevron_right" size={19} className="daily-card-chevron" />
       </Link>)}
     </div>
-    <p className="story-fine benefit-disclaimer">광고 보기: 무료 하루 10회 / FULIF+ 하루 20회<br />포인트는 현금으로 바꾸거나 사고팔 수 없으며, 적립일로부터 2년 동안 유지돼요.</p>
+    <p className="story-fine benefit-disclaimer">매일 브랜드 시청: FULIF 하루 6회 / FULIF+ 하루 12회<br />포인트는 현금으로 바꾸거나 사고팔 수 없으며, 적립일로부터 2년 동안 유지돼요.</p>
   </section>;
 }
 

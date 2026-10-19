@@ -15,7 +15,7 @@ export function StoryLink({ href, children }) {
 export function FlowStory() {
   return <section id="flow" className="fulif-chapter fulif-content-width fulif-trust-story" aria-labelledby="fulif-flow-heading"><div className="fulif-chapter-heading fulif-enter"><h2 id="fulif-flow-heading">모으고, 참여하고,<br /><em>발견해요</em></h2></div><div><div className="fulif-trust-list fulif-flow-list">{[
     ['confirmation_number', '1 모으기', '쿠폰 · 티켓 · 주유 영수증은 사진이나 공유로, 낙첨 번호는 QR과 사진으로. 흩어진 것들이 보관함 한곳에 모여요.', '/full-life', 'Full Life에서 보기'],
-    ['check_circle', '2 참여하기', '광고 한 편, 오늘의 한 표, 출석체크. 하루 몇 분이면 포인트와 응모권이 쌓여요. 모든 응모권은 같은 확률이에요.', '/full-life', 'Full Life에서 보기'],
+    ['check_circle', '2 참여하기', '브랜드 시청, 오늘의 한 표, 출석체크, 놀이터 게임. 하루 몇 분이면 포인트가 쌓여요. 응모권은 낙첨 번호 등록에서 생기고, 모든 응모권은 같은 확률이에요.', '/full-life', 'Full Life에서 보기'],
     ['search', '3 발견하기', 'FOUND AI가 내 생활권의 주유소 · 편의점 · 문화 · 전시 · 영화관 혜택을 먼저 찾아 드려요.', '/found-ai', 'FOUND AI에서 보기'],
   ].map(([icon, title, desc, href, link]) => <article className="fulif-enter" key={icon}><Icon name={icon} size={23} /><div><h3>{title}</h3><p>{desc}</p><StoryLink href={href}>{link}</StoryLink></div></article>)}</div><p className="fulif-flow-quote fulif-enter">버리기 전에 한 번 더, 잊기 전에 한 번 더.<br />풀리프는 일상의 가치를 다시 찾아 드려요.</p></div></section>;
 }

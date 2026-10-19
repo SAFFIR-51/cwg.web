@@ -75,11 +75,19 @@ function PriceBars() {
   </div>;
 }
 
+// 사용법 글 표지 — 테스트 오픈 표지와 같은 남색 판에 글자만 바꾼다
+function Banner({ hero }) {
+  return <div className="note-hero note-hero-open is-text">
+    <div><small>{hero.kicker}</small><strong>{lines(hero.headline)}</strong><span>{hero.sub}</span></div>
+    <img src={hero.img || '/mascot/v3/fuli-joy.jpg'} alt="" />
+  </div>;
+}
+
 const HEROES = { stillLife: StillLife, couponStack: CouponStack, ticketStack: TicketStack, dayArc: DayArc, priceBars: PriceBars, openDate: OpenDate };
 
 export function NoteHero({ hero }) {
   const H = HEROES[hero.type];
-  const body = hero.type === 'homeScreen' ? <HomeScreen badge={hero.badge} /> : H ? <H /> : <OpenDate />;
+  const body = hero.type === 'homeScreen' ? <HomeScreen badge={hero.badge} /> : hero.type === 'banner' ? <Banner hero={hero} /> : H ? <H /> : <OpenDate />;
   return <figure className="note-hero-figure">{body}{hero.caption && <figcaption>{hero.caption}</figcaption>}</figure>;
 }
 
@@ -115,7 +123,7 @@ function HomeMap({ b }) {
 }
 
 function StepList({ b }) {
-  return <ol className="note-steps">{b.items.map(([title, desc], i) => <li key={title}><span>{i + 1}</span><div><b>{title}</b><p>{desc}</p></div></li>)}</ol>;
+  return <ol className="note-steps" start={b.start || 1}>{b.items.map(([title, desc], i) => <li key={title}><span>{(b.start || 1) + i}</span><div><b>{title}</b><p>{desc}</p></div></li>)}</ol>;
 }
 
 function Table({ b }) {
@@ -210,10 +218,24 @@ function FoundCard({ b }) {
     {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
 }
 
+// 한 번 더 떠올리면 오래 남아요 — 개념도(실제 수치 아님)
+function Curve({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <svg className="note-curve" viewBox="0 0 400 170" role="img" aria-label="그냥 두면 기억이 빠르게 흐려지고, 다시 볼 때마다 높아져 천천히 내려가는 개념도">
+      <line x1="30" y1="150" x2="390" y2="150" stroke="#c9d3e0" /><line x1="30" y1="10" x2="30" y2="150" stroke="#c9d3e0" />
+      <path d="M30 20 C70 90 110 120 390 138" fill="none" stroke="#a7b3c4" strokeWidth="2" strokeDasharray="5 5" />
+      <path d="M30 20 C55 60 80 72 110 78 L110 26 C150 60 180 66 220 70 L220 24 C280 44 330 50 390 54" fill="none" stroke="#1b64da" strokeWidth="3" />
+      <text x="110" y="18" textAnchor="middle" fill="#1b64da" fontSize="12">다시 보기</text><text x="220" y="16" textAnchor="middle" fill="#1b64da" fontSize="12">다시 보기</text>
+      <text x="386" y="46" textAnchor="end" fill="#1b64da" fontSize="12" fontWeight="700">한 번 더 떠올리면</text><text x="386" y="130" textAnchor="end" fill="#8b95a1" fontSize="12">그냥 두면</text>
+      <text x="36" y="166" fill="#8b95a1" fontSize="11">기억</text><text x="388" y="166" textAnchor="end" fill="#8b95a1" fontSize="11">시간</text>
+    </svg>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
 // 출처 · 일반 기준 같은 작은 회색 안내
 function Fine({ b }) { return <p className="note-fine">{b.text}</p>; }
 
-const FIGS = { fine: Fine, flow: Flow, balance: Balance, pair: Pair, iconGrid: IconGrid, sevenDays: SevenDays, voteSample: VoteSample, alerts: Alerts, reasons: Reasons, foundCard: FoundCard, week: Week, compare: Compare, slots: Slots, homeMap: HomeMap, steps: StepList, table: Table, timeline: Timeline, cards: Cards, donate: Donate, founder: Founder };
+const FIGS = { curve: Curve, fine: Fine, flow: Flow, balance: Balance, pair: Pair, iconGrid: IconGrid, sevenDays: SevenDays, voteSample: VoteSample, alerts: Alerts, reasons: Reasons, foundCard: FoundCard, week: Week, compare: Compare, slots: Slots, homeMap: HomeMap, steps: StepList, table: Table, timeline: Timeline, cards: Cards, donate: Donate, founder: Founder };
 
 export function NoteBlock({ b }) {
   if (typeof b === 'string') return <p><Rich text={b} /></p>;

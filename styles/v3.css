@@ -76,7 +76,6 @@
 .member-compare th[scope="row"] { word-break: keep-all; }
 .member-compare .is-plus { background: #eaf2ff; }
 .member-compare tr.is-highlight { background: #f2f9e8; }
-.member-compare tr.is-highlight th { color: #2c5a17; font-weight: 700; }
 .member-compare tr.is-highlight .is-plus { background: #e4f3d4; }
 @media (max-width: 767px) { .member-compare table { font-size: 14px; } .member-compare th[scope="row"] { padding-left: 16px; padding-right: 8px; } }
 
@@ -183,6 +182,8 @@
 .note-hero-open strong { display: block; margin-top: 8px; font-size: 84px; line-height: 1; font-weight: 800; letter-spacing: -.04em; }
 .note-hero-open b { display: block; margin-top: 12px; font-size: 22px; }
 .note-hero-open div > span { display: block; margin-top: 12px; font-size: 14px; color: #dbe4ff; }
+.note-hero-open.is-text strong { font-size: 46px; line-height: 1.15; }
+.note-curve { display: block; width: 100%; height: auto; margin-top: 8px; }
 .note-hero-open img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 
 .note-body { margin-top: 44px; font-size: 17px; line-height: 1.9; color: #333d4b; }
@@ -305,6 +306,9 @@
   .nh-home-badge { right: 3%; top: 18px; font-size: 12px; padding: 7px 10px; }
   .note-hero-open { padding: 26px 22px; border-radius: 22px; }
   .note-hero-open strong { font-size: 58px; }
+  .note-hero-open.is-text strong { font-size: 30px; }
+  .note-hero-open.is-text strong span { font-size: inherit; color: inherit; }
+  .note-hero-open.is-text img { width: 92px; height: 92px; }
   .note-hero-open b { font-size: 17px; }
   .note-hero-open span { font-size: 12px; }
   .note-hero-open img { width: 96px; height: 96px; }

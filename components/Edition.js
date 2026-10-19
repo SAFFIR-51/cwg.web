@@ -40,7 +40,7 @@ export function BrandIntroduction() {
     <div className="brand-intro-top"><div className="reveal"><p className="edition-eyebrow">FULL LIFE, ONE MORE</p><h2 id="brand-intro-heading">끝이 아니라,<br /><span>다음의 시작.</span></h2><p className="edition-lead">쿠폰은 쓰면 끝, 티켓은 다녀오면 끝.<br />풀리프에서는 그 끝이<br />한 번 더의 시작이에요.</p></div><div className="brand-loop-art reveal"><Image src="/images/edition/one-more-sculpture.png" alt="티켓이 새로운 시작으로 이어지는 파란 고리 조형물" width={1536} height={1024} sizes="(max-width: 767px) 100vw, 650px" quality={90} /></div></div>
     <div className="brand-three-steps">{[
       ['01', '모으고', '쿠폰과 티켓, 아쉬웠던 번호.\n흩어진 기록을 한곳에 모아요.', '/full-life#one-more'],
-      ['02', '참여하고', '광고 한 편, 오늘의 한 표.\n하루 몇 분이면 포인트와 응모권이 쌓여요.', '/full-life#vote'],
+      ['02', '참여하고', '브랜드 시청, 오늘의 한 표.\n하루 몇 분이면 포인트가 쌓여요.', '/full-life#vote'],
       ['03', '발견해요', '내 생활권의 새로운 혜택.\nFOUND AI가 먼저 찾아드려요.', '/found-ai'],
     ].map(([n,t,d,href]) => <Link href={href} key={n} className="reveal"><span>{n}</span><h3>{t}<Icon name="arrow_forward" size={22} /></h3><p>{d}</p></Link>)}</div>
   </section>;
@@ -62,7 +62,7 @@ export function MembershipBenefits() {
   return <><ScrollStory id="member-capacity" items={[
     ['number','한 회차 낙첨번호 등록',5,20,'세트','아쉬웠던 번호를,\n더 넉넉하게 모아요.'],
     ['ticket','매 회차 풀리프 제공 번호',2,10,'세트','번호를 고르는 재미도,\n조금 더 다양하게.'],
-    ['watch','하루 광고 보기',10,20,'회','짧은 여유를,\n차곡차곡 포인트로.'],
+    ['watch','하루 브랜드 시청',6,12,'회','짧은 여유를,\n차곡차곡 포인트로.'],
   ].map(([art,title,free,paid,unit,heading]) => ({
     key:art, label:title,
     visual:<div className="scroll-member-art"><Art name={art} sizes="400px" /><strong>{paid}<small>{unit}</small></strong><span>FULIF+ · {title}</span></div>,

@@ -13,8 +13,9 @@ const BENEFITS = [
   ['한 회차 낙첨 번호 등록', '5세트', '20세트'],
   ['매 회차 풀리프 제공 번호', '2세트', '10세트'],
   ['럭키 스코어 이용', '–', '✓'],
-  ['FOUND 생활권 저장', '1곳', '2곳', '집 · 자주 가는 곳, 두 곳의 새 혜택을 함께 찾아 드려요', true],
+  ['FOUND 생활권 저장', '1곳', '2곳', '집 · 자주 가는 곳, 두 곳의 새 혜택을 함께 찾아 드려요'],
   ['하루 브랜드 시청', '6회', '12회'],
+  ['교환 데이 브랜드 파트너 쿠폰', '4,500P', '3,600P', '1,500원 쿠폰 기준 · 열리는 날과 품목은 일주일 전에 알려 드려요'],
   ['구독 회원 전용 월간 리포트', '–', '✓', '응모 · 당첨 현황, 럭키 스코어 흐름, 넘버 센스 기록, 포인트 · 기부 내역, 그리고 나의 ONE MORE 지수까지'],
   ['챔피언십 참여 · 시즌 · 연간 시상', '–', '✓'],
   ['FULIF+ 전용 경품 이벤트 참여', '–', '✓'],
@@ -34,7 +35,7 @@ export default function Membership() {
     <MemberPlans id="plans" className="member-single-plan" />
     <Section id="member-benefits">
       <SectionHead title={'FULIF+가 되면\n이렇게 달라져요'} />
-      <div className="member-compare mt-10 overflow-hidden rounded-3xl bg-panel"><table className="w-full text-[15px]"><caption className="sr-only">FULIF 무료 회원과 FULIF+ 멤버십 기능 비교</caption><thead><tr className="border-b border-hair"><th scope="col" className="px-5 py-4 text-left font-semibold text-muted"><span className="sr-only">기능</span></th><th scope="col" className="whitespace-nowrap px-3 py-4 text-center"><p className="font-bold">FULIF</p><p className="text-[13px] font-medium text-dim">무료</p></th><th scope="col" className="is-plus whitespace-nowrap px-3 py-4 text-center text-blue"><p className="font-bold">FULIF+</p></th></tr></thead><tbody>{BENEFITS.map(([label,a,b,sub,hi])=><tr key={label} className={`border-b border-hair last:border-0 ${hi ? 'is-highlight' : ''}`}><th scope="row" className="px-5 py-3.5 text-left font-medium">{label}{sub && <small>{sub}</small>}</th><td className="px-3 py-3.5 text-center text-sub">{mark(a)}</td><td className="is-plus px-3 py-3.5 text-center font-semibold text-blue">{mark(b)}</td></tr>)}</tbody></table></div>
+      <div className="member-compare mt-10 overflow-hidden rounded-3xl bg-panel"><table className="w-full text-[15px]"><caption className="sr-only">FULIF 무료 회원과 FULIF+ 멤버십 기능 비교</caption><thead><tr className="border-b border-hair"><th scope="col" className="px-5 py-4 text-left font-semibold text-muted"><span className="sr-only">기능</span></th><th scope="col" className="whitespace-nowrap px-3 py-4 text-center"><p className="font-bold">FULIF</p><p className="text-[13px] font-medium text-dim">무료</p></th><th scope="col" className="is-plus whitespace-nowrap px-3 py-4 text-center text-blue"><p className="font-bold">FULIF+</p></th></tr></thead><tbody>{BENEFITS.map(([label,a,b,sub],i)=><tr key={label} className={`border-b border-hair last:border-0 ${i % 2 === 0 ? 'is-highlight' : ''}`}><th scope="row" className="px-5 py-3.5 text-left font-medium">{label}{sub && <small>{sub}</small>}</th><td className="px-3 py-3.5 text-center text-sub">{mark(a)}</td><td className="is-plus px-3 py-3.5 text-center font-semibold text-blue">{mark(b)}</td></tr>)}</tbody></table></div>
       <Fine className="mt-4">FULIF+ 혜택은 계속 늘어나요.</Fine>
     </Section>
     <Section tone="gray" id="trial">

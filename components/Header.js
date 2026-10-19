@@ -59,7 +59,7 @@ export default function Header() {
   return <>
     <header className={`fulif-header${scrolled || router.pathname !== '/' ? ' fulif-header-solid' : ''}${router.pathname !== '/' ? ' fulif-header-subpage' : ''}`}>
       <div className="fulif-header-inner">
-        <Link className="fulif-logo" href="/" aria-label="FULIF 홈"><BrandLogo tone={scrolled || router.pathname !== '/' ? 'black' : 'white'} /></Link>
+        <Link className="fulif-logo" href="/" aria-label="FULIF 홈"><BrandLogo tone="black" /></Link>
         <nav className="fulif-nav" aria-label="주요 메뉴">
           {TOP_NAV.map(item => <Link key={item.label} href={item.href} aria-current={router.pathname.startsWith(item.href) ? 'page' : undefined}>{item.label}</Link>)}
         </nav>
