@@ -98,7 +98,7 @@ export default function FullLife() {
         lead="지난 회차에 아쉽게 끝난 번호가, 브랜드 파트너의 경품 응모권으로 돌아와요."
         steps={[
           { desc: 'QR과 사진으로 낙첨 번호를 등록해요. 온라인 · 모바일로 구매한 번호는 직접 입력할 수 있어요.' },
-          { desc: '번호 1세트마다 브랜드 파트너 하이라이트를 5초 보면 응모권 1개.' },
+          { desc: '번호 1세트마다 광고 한 편(카드 · 숏 · 풀 중 선택)을 보면 응모권 1개 + 1초당 1P.' },
           { desc: '매주 목요일 20:30 경품 추첨. 당첨된 경품은 보관함에 넣어드려요.' },
         ]}
         stats={[
@@ -138,7 +138,7 @@ export default function FullLife() {
           <div>
             <div className="reveal rounded-2xl bg-panel px-6">
               <Rows items={[
-                { label: '매일 브랜드 시청', value: '카드 3P · 숏 5P · 풀 8P · 하루 FULIF 6회 · FULIF+ 12회' },
+                { label: '오늘의 광고 보기', value: '1초당 1P — 카드 5P · 숏 10P · 풀 15~30P · 낙첨 응모 광고와 합쳐 하루 FULIF 10편 · FULIF+ 20편' },
                 { label: '출석체크', value: '매일 5P · 일~토 다 채우면 토요일 20P 더 · 출석 후 브랜드 5초 5P' },
                 { label: '오늘의 한 표', value: '하나씩 세 번 고르면 10P' },
                 { label: '티켓 등록 · 쿠폰 사용완료', value: '할 때마다 10P' },
