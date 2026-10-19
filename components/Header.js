@@ -57,7 +57,8 @@ export default function Header() {
   const close = () => { setOpen(false); trigger.current?.focus(); };
 
   return <>
-    <header className={`fulif-header${scrolled || router.pathname !== '/' ? ' fulif-header-solid' : ''}${router.pathname !== '/' ? ' fulif-header-subpage' : ''}`}>
+    {/* 헤더는 어느 페이지 · 어느 스크롤에서나 흰 바탕(2026-10-19) — 앱과 같은 남색 + 파란 U 로고를 그대로 쓰려고 */}
+    <header className={`fulif-header fulif-header-solid${scrolled ? ' is-scrolled' : ''}${router.pathname !== '/' ? ' fulif-header-subpage' : ''}`}>
       <div className="fulif-header-inner">
         <Link className="fulif-logo" href="/" aria-label="FULIF 홈"><BrandLogo tone="black" /></Link>
         <nav className="fulif-nav" aria-label="주요 메뉴">
