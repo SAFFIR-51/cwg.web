@@ -64,7 +64,7 @@ export function PointsScene() {
         <ObjectArt name={item.name} sizes="160px" /><div><h3>{item.label}</h3><p>{item.desc}</p><strong>{item.reward}<span>{item.unit}</span></strong></div><Icon name="chevron_right" size={19} className="daily-card-chevron" />
       </Link>)}
     </div>
-    <p className="story-fine benefit-disclaimer">광고 보기(낙첨 응모 광고 포함): FULIF 하루 10편 / FULIF+ 하루 20편<br />포인트는 현금으로 바꾸거나 사고팔 수 없으며, 적립일로부터 2년 동안 유지돼요.</p>
+    <p className="story-fine benefit-disclaimer">오늘의 광고 보기: FULIF 하루 5편 / FULIF+ 하루 10편 (낙첨 응모 광고는 따로)<br />포인트는 현금으로 바꾸거나 사고팔 수 없으며, 적립일로부터 2년 동안 유지돼요.</p>
   </section>;
 }
 

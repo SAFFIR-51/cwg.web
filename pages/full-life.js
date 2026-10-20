@@ -138,7 +138,7 @@ export default function FullLife() {
           <div>
             <div className="reveal rounded-2xl bg-panel px-6">
               <Rows items={[
-                { label: '오늘의 광고 보기', value: '1초당 1P — 카드 5P · 숏 10P · 풀 15~30P · 낙첨 응모 광고와 합쳐 하루 FULIF 10편 · FULIF+ 20편' },
+                { label: '오늘의 광고 보기', value: '1초당 1P — 카드 5P · 숏 10P · 풀 15~30P · 하루 FULIF 5편 · FULIF+ 10편 (낙첨 응모 광고는 따로)' },
                 { label: '출석체크', value: '매일 5P · 일~토 다 채우면 토요일 20P 더 · 출석 후 브랜드 5초 5P' },
                 { label: '오늘의 한 표', value: '하나씩 세 번 고르면 10P' },
                 { label: '티켓 등록 · 쿠폰 사용완료', value: '할 때마다 10P' },
