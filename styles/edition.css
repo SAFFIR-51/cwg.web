@@ -676,3 +676,5 @@
   .discovery-place-photo img,.member-benefit-numbers strong { animation:none; }
   .member-capacity-track i,.brand-three-steps h3 svg { transition:none; }
 }
+/* 영문 슬로건 — 우리말 아래 작게(FULIF 영문 슬로건 표기 기준 2026-10-20) */
+.footer-scene-slogan { margin-top:10px; font-size:14px; font-weight:600; letter-spacing:-.01em; opacity:.75; }
