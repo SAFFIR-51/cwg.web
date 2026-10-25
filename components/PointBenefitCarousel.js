@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Icon from './Icon';
 
 const BENEFITS = [
-  { art: 'attendance', src: '/icons/attendance.png', title: '출석체크', description: '하루 한 번,', reward: '차곡차곡', href: '/full-life#a-fuli-day' },
+  { art: 'attendance', src: '/icons/attendance.png', title: '출석체크', description: '하루 한 번,', reward: '차곡차곡', href: '/full-life#a-week' },
   { art: 'invite', title: '친구초대', description: '초대한 분도, 초대받은 분도', reward: '100P', href: '/full-life#points' },
   { art: 'watch', title: '오늘의 광고 보기', description: 'FULIF 하루 5회 · FULIF+ 하루 10회', reward: '1초당 1P', href: '/full-life#points' },
   { art: 'vote', title: '오늘의 한 표', description: '하루 세 번 고르면', reward: '10P', href: '/full-life#vote' },

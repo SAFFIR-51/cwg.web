@@ -1,0 +1,92 @@
+/* Full Life 수정 목업(2026-10-21) — 일주일 띠 · 쿠폰/티켓 카드 · 한 표 카드 · 놀이터 2×2.
+   첫 화면은 사진 높이를 줄여 1280×720 에서 탭 칩이 보이게 한다. */
+
+.service-product .service-opening { padding-top:64px; padding-bottom:28px; }
+.service-product .service-opening-heading { margin-bottom:32px; }
+.service-product .service-opening h1 { font-size:54px; }
+.service-product .service-life-photo { height:300px; }
+@media (max-width:767px) {
+  .service-product .service-opening { padding-top:40px; }
+  .service-product .service-opening h1 { font-size:34px; }
+  .service-product .service-life-photo { height:200px; }
+  .service-product .life-notification { display:none; }
+}
+
+/* ② 풀리프의 일주일 */
+.fl-week { margin-top:32px; max-width:760px; }
+.fl-week-strip { display:grid; grid-template-columns:repeat(7,1fr); gap:8px; }
+.fl-day { display:flex; flex-direction:column; align-items:center; gap:4px; padding:12px 4px; border-radius:14px; background:#fff; border:1px solid #e9edf2; text-align:center; }
+.fl-day b { font-size:15px; color:#191f28; }
+.fl-day span { font-size:11px; color:#8b95a1; white-space:pre-line; line-height:1.35; }
+.fl-day-draw { background:#1b2a4a; border-color:#1b2a4a; }
+.fl-day-draw b, .fl-day-draw span { color:#fff; font-weight:700; }
+.fl-day-open { background:#3182f6; border-color:#3182f6; }
+.fl-day-open b, .fl-day-open span { color:#fff; font-weight:700; }
+.fl-week-rows { margin-top:14px; background:#fff; border:1px solid #e9edf2; border-radius:20px; padding:4px 22px; }
+.fl-week-rows > div { display:grid; grid-template-columns:120px 1fr; gap:12px; padding:18px 0; border-bottom:1px solid #eef1f4; }
+.fl-week-rows > div:last-child { border-bottom:0; }
+.fl-week-rows dt { color:#3182f6; font-weight:700; font-size:15px; white-space:pre-line; }
+.fl-week-rows dd strong { display:block; font-size:16px; color:#191f28; }
+.fl-week-rows dd span { display:block; margin-top:4px; font-size:15px; color:#4e5968; line-height:1.55; }
+
+/* ③ ONE MORE — 아이콘 카드 */
+.fl-criteria { display:grid; gap:12px; align-content:start; }
+.fl-crit { display:flex; gap:16px; padding:22px; border-radius:20px; background:#fff; border:1px solid #e9edf2; }
+.fl-crit > img { width:72px; height:72px; flex:none; object-fit:contain; }
+.fl-crit small { color:#4e5968; font-size:13px; font-weight:600; }
+.fl-crit h3 { font-size:18px; font-weight:700; color:#191f28; margin:4px 0 8px; letter-spacing:-.02em; }
+.fl-crit p { font-size:14px; color:#8b95a1; line-height:1.6; }
+.fl-crit p.fl-no { color:#e5484d; font-weight:700; margin-top:4px; }
+.fl-cells { display:flex; align-items:center; gap:8px; margin-top:22px; flex-wrap:wrap; }
+.fl-cells > span { width:34px; height:34px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:#e8f1fe; color:#3182f6; font-weight:700; }
+.fl-cells > span.fl-cells-last { background:#3182f6; color:#fff; font-size:15px; }
+.fl-cells p { margin-left:6px; font-size:15px; color:#4e5968; }
+.fl-cells b { color:#3182f6; }
+.fl-donate { background:#f1f9e8 !important; }
+.fl-donate img { width:120px !important; height:auto !important; }
+.fl-donate p { font-size:15px; line-height:1.65; color:#4e5968; }
+
+/* ④ 낙첨 ONE MORE — 앱 화면을 작게 */
+.fl-shot-small { transform:scale(.82); transform-origin:top center; }
+
+/* ⑤ 오늘의 한 표 — 질문 카드 하나 */
+.fl-vote { padding:26px; border-radius:24px; background:#fff; border:1px solid #e9edf2; box-shadow:0 20px 60px #1b4b7908; }
+.fl-vote-head { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+.fl-vote-head img { width:56px; height:56px; object-fit:contain; }
+.fl-vote-head small { color:#8b95a1; font-size:12px; }
+.fl-vote-head h3 { font-size:20px; font-weight:700; color:#191f28; letter-spacing:-.03em; }
+.fl-vote ul { display:grid; gap:10px; }
+.fl-vote li { display:flex; justify-content:space-between; align-items:center; padding:15px 16px; border:1px solid #e9edf2; border-radius:14px; font-size:15px; color:#333d4b; }
+.fl-vote li i { font-style:normal; color:#8b95a1; }
+.fl-vote-fine { margin-top:12px; font-size:13px; color:#8b95a1; }
+
+/* ⑥ 놀이터 2×2 */
+.fl-play { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:28px; max-width:860px; }
+.fl-tile { position:relative; padding:22px; border-radius:22px; background:#fff; border:1px solid #e9edf2; }
+.fl-tile > img { width:64px; height:64px; object-fit:contain; margin-bottom:10px; }
+.fl-tile h3 { font-size:18px; font-weight:700; color:#191f28; }
+.fl-tile p { margin-top:6px; font-size:14px; line-height:1.6; color:#4e5968; }
+.fl-badge { position:absolute; top:16px; right:16px; padding:3px 8px; border-radius:6px; font-size:11px; font-weight:800; }
+.fl-badge-new { background:#fde8e8; color:#e5484d; }
+.fl-badge-plus { background:#e8f1fe; color:#3182f6; }
+.fl-cardgrid { display:grid; grid-template-columns:repeat(3,14px); gap:5px; margin:4px 0 16px; }
+.fl-cardgrid i { width:14px; height:14px; border-radius:4px; background:#dbe7f7; }
+.fl-cardgrid i.on { background:#3182f6; }
+.fl-video-link { display:inline-block; margin-top:10px; font-size:14px; font-weight:700; color:#3182f6; }
+.fl-video-link:hover { text-decoration:underline; }
+@media (max-width:767px) {
+  .fl-week-strip { gap:4px; }
+  .fl-day { padding:9px 2px; }
+  .fl-day span { font-size:9.5px; }
+  .fl-week-rows { padding:2px 16px; }
+  .fl-week-rows > div { grid-template-columns:84px 1fr; }
+  .fl-week-rows dd span { font-size:14px; }
+  .fl-play { gap:10px; }
+  .fl-tile { padding:16px; }
+  .fl-tile p { font-size:13px; }
+  .fl-shot-small { transform:scale(.72); }
+}
+
+/* ONE MORE 는 한 칸 — 리드 바로 아래 쿠폰 · 티켓 카드(목업 순서), 넓은 화면에선 카드 두 장을 나란히 */
+.fl-one-col > div { max-width:860px; }
+@media (min-width:768px) { .fl-one-col .fl-criteria { grid-template-columns:1fr 1fr; } }

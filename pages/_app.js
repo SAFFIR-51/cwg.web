@@ -13,6 +13,7 @@ import '../styles/landing-lower.css';
 import '../styles/landing-scale.css';
 import '../styles/landing-motion.css';
 import '../styles/v3.css';
+import '../styles/full-life-1021.css';
 import Layout from '../components/Layout';
 
 export default function App({ Component, pageProps }) {

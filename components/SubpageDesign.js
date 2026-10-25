@@ -37,7 +37,7 @@ export function FoundObject({ className = '' }) {
 
 // mascot 을 주면 오른쪽 그림 자리에 풀리 그림(v3 시안)을 둔다
 export function ClosingCTA({ title = <>오늘의 작은 가능성,<br />풀리프에서 만나보세요.</>, lead, children, art = 'ticket', mascot, mascotAlt = '풀리' }) {
-  return <section className="sub-closing"><div className="sub-closing-inner"><div><p className="sub-eyebrow">LIFE, ONE MORE.</p><h2>{title}</h2>{lead && <p>{lead}</p>}{children || <StoreBadges className="sub-closing-stores" />}</div>{mascot ? <img className="sub-closing-mascot" src={mascot} alt={mascotAlt} loading="lazy" /> : <Art name={art} />}</div></section>;
+  return <section className="sub-closing"><div className="sub-closing-inner"><div><p className="sub-eyebrow">LIFE, ONE MORE.</p><h2>{title}</h2>{lead && <p>{lead}</p>}{children || <StoreBadges className="sub-closing-stores" />}</div>{mascot ? <img className="sub-closing-mascot" src={mascot} alt={mascotAlt} loading="lazy" /> : art ? <Art name={art} /> : null}</div></section>;
 }
 
 export const NOTE_ART = {

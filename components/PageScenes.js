@@ -14,7 +14,7 @@ export function EditorialImage({ name, alt = '', className = '', priority = fals
 
 export function ServiceOpening() {
   return <header className="service-opening">
-    <div className="service-opening-heading"><div><p className="sub-eyebrow">Full Life</p><h1>Full Life,<br />풀리프로 채우는<br />하루</h1></div><div><p>쿠폰부터 경품 추첨, 놀이터까지.<br />앱에서 할 수 있는 모든 것을 한 번에 보여드려요.</p></div></div>
+    <div className="service-opening-heading"><div><p className="sub-eyebrow">Full Life</p><h1>Full Life,<br />풀리프로 채우는 일상</h1></div><div><p>쿠폰부터 경품 추첨, 놀이터까지.<br />앱에서 할 수 있는 모든 것을 한 번에 보여드려요.</p></div></div>
     <div className="service-life-photo"><Image src="/images/bright/everyday-still-life.png" alt="밝은 창가에 놓인 커피, 티켓과 파란 장바구니" fill priority sizes="(max-width: 767px) 100vw, 1440px" quality={90} /><div className="life-notification"><span><Art name="coupon" sizes="75px" /></span><div><small>FULIF · 내 쿠폰</small><strong>잊기 전에, 커피 한 잔 어때요?</strong><p>카페 쿠폰이 이틀 뒤 만료돼요.</p></div><time>D−2</time></div><span className="photo-caption">YOUR EVERYDAY, ONE MORE.</span></div>
   </header>;
 }
