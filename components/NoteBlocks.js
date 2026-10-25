@@ -23,7 +23,7 @@ function StillLife() {
 
 function HomeScreen({ badge }) {
   return <div className="note-hero note-hero-home">
-    <div className="nh-home-phone"><Phone src="/screens/home.png" alt="풀리프 앱 홈 화면" /></div>
+    <div className="nh-home-phone"><Phone src="/screens/home-v1026.png" alt="풀리프 앱 홈 화면" /></div>
     <img className="nh-home-fuli" src="/mascot/pulli-profile-v2.png" alt="" />
     {badge && <span className="nh-home-badge">{badge}</span>}
   </div>;
@@ -139,7 +139,7 @@ const HOME_MARKS = [[6, 24.5], [52.5, 24.5], [6, 46.5], [52.5, 46.5], [6, 70]];
 function HomeMap({ b }) {
   return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
     <div className="note-homemap">
-      <div className="note-homemap-shot"><img src="/screens/home.png" alt="번호를 붙인 풀리프 앱 홈 화면" loading="lazy" />{HOME_MARKS.map(([x, y], i) => <span key={i} style={{ left: `${x}%`, top: `${y}%` }} aria-hidden="true">{i + 1}</span>)}</div>
+      <div className="note-homemap-shot"><img src="/screens/home-v1026.png" alt="번호를 붙인 풀리프 앱 홈 화면" loading="lazy" />{HOME_MARKS.map(([x, y], i) => <span key={i} style={{ left: `${x}%`, top: `${y}%` }} aria-hidden="true">{i + 1}</span>)}</div>
       <ol>{b.items.map(([title, desc], i) => <li key={title}><span>{i + 1}</span><div><b>{title}</b><small>{desc}</small></div></li>)}</ol>
     </div></figure>;
 }

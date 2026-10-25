@@ -25,7 +25,7 @@ function Hero() {
 
 function Overview() {
   return <section id="one-more" className="fulif-wide fulif-wide-left fulif-overview">
-    <Link href="/full-life" className="fulif-media fulif-overview-media" aria-label="풀리프 서비스 자세히 보기"><span className="fulif-media-word" aria-hidden="true">ONE MORE</span><div className="fulif-overview-devices"><Device screen="one-more" alt="내 쿠폰과 티켓을 관리하는 ONE MORE 화면" className="fulif-overview-back" /><Device screen="home" alt="풀리프의 서비스를 모아 보는 앱 홈 화면" className="fulif-overview-front" /></div></Link>
+    <Link href="/full-life" className="fulif-media fulif-overview-media" aria-label="풀리프 서비스 자세히 보기"><span className="fulif-media-word" aria-hidden="true">ONE MORE</span><div className="fulif-overview-devices"><Device screen="one-more-v1026" alt="내 쿠폰과 티켓을 관리하는 ONE MORE 화면" className="fulif-overview-back" /><Device screen="home-v1026" alt="풀리프의 서비스를 모아 보는 앱 홈 화면" className="fulif-overview-front" /></div></Link>
     <div className="fulif-section-copy fulif-enter"><span className="fulif-overview-icon" aria-hidden="true"><StoryIcon name="ticket" hero /></span><p className="fulif-kicker">ONE MORE</p><h2>끝난 줄 알았던 것들에,<br /><em>ONE MORE</em></h2><p className="fulif-description">쿠폰은 쓰면 끝, 티켓과 주유 영수증은 다녀오면 끝, 낙첨 번호는 발표가 나면 끝.<br />풀리프에서는 그 끝이 한 번 더의 시작이에요.</p><ul className="fulif-one-more-list">{[
       ['쿠폰', '만료 전에 챙기고, 등록하면 응모 기회, 다 쓰면 포인트로'],
       ['티켓', '다녀온 날의 기록이 응모 기회로'],

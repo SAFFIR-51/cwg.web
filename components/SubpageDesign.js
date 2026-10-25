@@ -22,7 +22,7 @@ export function SubHero({ eyebrow, title, lead, children, visual, className = ''
   </div></section>;
 }
 
-export function PhoneScene({ src = '/screens/home.png', alt = '풀리프 앱 홈 화면', art = 'coupon', className = '', badge = '일상의 작은 가능성, 한 번 더' }) {
+export function PhoneScene({ src = '/screens/home-v1026.png', alt = '풀리프 앱 홈 화면', art = 'coupon', className = '', badge = '일상의 작은 가능성, 한 번 더' }) {
   return <div className={`sub-phone-scene ${className}`}>
     <div className="sub-phone-disc" /><span className="sub-scene-word" aria-hidden="true">full life.</span>
     <Phone src={src} alt={alt} />

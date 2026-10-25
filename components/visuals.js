@@ -28,7 +28,7 @@ export function RewardArt() {
   </div>;
 }
 
-export function AppStage({ src = '/screens/home.png', label = '풀리프 앱 홈 화면', compact = false }) {
+export function AppStage({ src = '/screens/home-v1026.png', label = '풀리프 앱 홈 화면', compact = false }) {
   return <div className={`app-stage ${compact ? 'compact' : ''}`}>
     <div className="stage-orbit" aria-hidden="true" />
     <span className="stage-word" aria-hidden="true">full life.</span>
