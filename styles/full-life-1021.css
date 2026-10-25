@@ -109,6 +109,9 @@
 .ng-lines b { color:#3182f6; margin-right:6px; }
 
 /* 헤더 로고 아래 「FULL • LIFE」 · 푸터 큰 글씨 위 짝(10-23 헤더 · 푸터 수정 목업) */
-.brand-logo-stack { display:inline-flex; flex-direction:column; align-items:stretch; gap:2px; }
-.brand-logo-tagline { display:block; text-align:center; font-size:8.5px; line-height:1; font-weight:600; letter-spacing:.32em; padding-left:.32em; color:#8b95a1; white-space:nowrap; }
+/* 로고 칸(.fulif-logo > span)이 112px 로 고정돼 있어 글씨가 로고보다 넓게 퍼졌다(10-26) — 묶음은 로고 폭만큼만 */
+.fulif-logo > span.brand-logo-stack, .brand-logo-stack { display:inline-flex; flex-direction:column; align-items:stretch; gap:3px; width:auto !important; }
+.brand-logo-stack svg { display:block; }
+.brand-logo-tagline { display:flex; justify-content:space-between; font-size:8.5px; line-height:1; font-weight:600; color:#8b95a1; white-space:nowrap; padding:0 3.8%; } /* 로고 그림 좌우 투명 여백(41 · 41 / 1076px)만큼 안쪽 */
+.brand-logo-tagline .dot { font-size:7px; transform:translateY(-.5px); }
 .footer-scene-tagline { font-size:11px; font-weight:600; letter-spacing:.32em; color:#8b95a1; margin-bottom:12px; }

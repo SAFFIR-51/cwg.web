@@ -18,7 +18,10 @@ export function BrandLogo({ className = '', word = 'w-[73px] h-[32px]', tone = '
     return (
       <span className={`brand-logo-stack ${className}`} role="img" aria-label="풀리프 FULIF · FULL LIFE">
         <BrandWordmark className={word} tone={tone} />
-        <span className="brand-logo-tagline" aria-hidden="true">FULL • LIFE</span>
+        {/* 글자를 로고 폭 양 끝에 맞춰 고르게 편다 — 「FULIF」 왼쪽 끝 F 와 오른쪽 끝 F 아래에 딱 맞게 */}
+        <span className="brand-logo-tagline" aria-hidden="true">
+          {'FULL•LIFE'.split('').map((c, i) => <span key={i} className={c === '•' ? 'dot' : undefined}>{c}</span>)}
+        </span>
       </span>
     );
   }
