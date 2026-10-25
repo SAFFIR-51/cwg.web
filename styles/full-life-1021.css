@@ -107,3 +107,8 @@
 .ng-scenes span { display:block; margin-top:2px; font-size:11px; color:#8b95a1; }
 .ng-lines { margin-top:20px; display:grid; gap:8px; font-size:15px; color:#4e5968; }
 .ng-lines b { color:#3182f6; margin-right:6px; }
+
+/* 헤더 로고 아래 「FULL • LIFE」 · 푸터 큰 글씨 위 짝(10-23 헤더 · 푸터 수정 목업) */
+.brand-logo-stack { display:inline-flex; flex-direction:column; align-items:stretch; gap:2px; }
+.brand-logo-tagline { display:block; text-align:center; font-size:8.5px; line-height:1; font-weight:600; letter-spacing:.32em; padding-left:.32em; color:#8b95a1; white-space:nowrap; }
+.footer-scene-tagline { font-size:11px; font-weight:600; letter-spacing:.32em; color:#8b95a1; margin-bottom:12px; }

@@ -60,7 +60,7 @@ export default function Header() {
     {/* 헤더는 어느 페이지 · 어느 스크롤에서나 흰 바탕(2026-10-19) — 앱과 같은 남색 + 파란 U 로고를 그대로 쓰려고 */}
     <header className={`fulif-header fulif-header-solid${scrolled ? ' is-scrolled' : ''}${router.pathname !== '/' ? ' fulif-header-subpage' : ''}`}>
       <div className="fulif-header-inner">
-        <Link className="fulif-logo" href="/" aria-label="FULIF 홈"><BrandLogo tone="black" /></Link>
+        <Link className="fulif-logo" href="/" aria-label="FULIF 홈"><BrandLogo tone="black" tagline /></Link>
         <nav className="fulif-nav" aria-label="주요 메뉴">
           {TOP_NAV.map(item => <Link key={item.label} href={item.href} aria-current={router.pathname.startsWith(item.href) ? 'page' : undefined}>{item.label}</Link>)}
         </nav>
@@ -71,7 +71,7 @@ export default function Header() {
       </div>
     </header>
     <dialog id="fulif-menu" ref={dialog} className="fulif-menu" aria-labelledby="fulif-menu-title" onCancel={close} onClose={() => setOpen(false)}>
-      <div className="fulif-menu-top"><Link href="/" onClick={close} className="fulif-logo" aria-label="FULIF 홈"><BrandLogo tone="black" /></Link><button className="fulif-menu-close" onClick={close} aria-label="전체 메뉴 닫기"><Icon name="close" size={28} /></button></div>
+      <div className="fulif-menu-top"><Link href="/" onClick={close} className="fulif-logo" aria-label="FULIF 홈"><BrandLogo tone="black" tagline /></Link><button className="fulif-menu-close" onClick={close} aria-label="전체 메뉴 닫기"><Icon name="close" size={28} /></button></div>
       <div className="fulif-menu-content"><p id="fulif-menu-title">생활의 가치를, 한 번 더.</p><nav aria-label="전체 메뉴">{MENU.map(item => <Link key={item.label} href={item.href} onClick={close}><span><strong>{item.label}</strong><small>{item.detail}</small></span></Link>)}</nav><Link className="fulif-menu-start" href="/download" onClick={close}>풀리프 시작하기 <Icon name="arrow_outward" size={22} /></Link></div>
     </dialog>
   </>;

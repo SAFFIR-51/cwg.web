@@ -11,7 +11,17 @@ export function BrandWordmark({ className = '', color = 'currentColor', tone = '
   );
 }
 
-export function BrandLogo({ className = '', word = 'w-[73px] h-[32px]', tone = 'black' }) {
+export function BrandLogo({ className = '', word = 'w-[73px] h-[32px]', tone = 'black', tagline = false }) {
+  // tagline — 로고 아래 작은 회색 「FULL • LIFE」(10-23 헤더 수정 목업). 메뉴의 「Full Life」(페이지 이름)와
+  // 헷갈리지 않게 로고 폭에 맞춘 작은 대문자로, 로고의 일부처럼 보이게 한다.
+  if (tagline) {
+    return (
+      <span className={`brand-logo-stack ${className}`} role="img" aria-label="풀리프 FULIF · FULL LIFE">
+        <BrandWordmark className={word} tone={tone} />
+        <span className="brand-logo-tagline" aria-hidden="true">FULL • LIFE</span>
+      </span>
+    );
+  }
   return (
     <span className={`inline-flex items-center ${className}`} role="img" aria-label="풀리프 FULIF">
       <BrandWordmark className={word} tone={tone} />
