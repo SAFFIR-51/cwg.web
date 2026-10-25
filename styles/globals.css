@@ -193,3 +193,9 @@ section[id] { scroll-margin-top: 110px; }
   .member-card { width:240px; height:182px; }.member-card-top b { font-size:25px; }
   .day-detail { padding:23px; }.day-time { font-size:40px; }
 }
+
+/* 이용약관 개정 예고(2026-11-23 시행) · 판 바로가기 */
+.terms-notice { margin: 24px 0 8px; padding: 16px 18px; border-radius: 16px; background: #eef4ff; border: 1px solid #cfe0ff; font-size: 14px; line-height: 1.6; }
+.terms-notice p + p { margin-top: 2px; color: #4e5968; }
+.terms-notice a { display: inline-block; margin-top: 8px; font-weight: 700; }
+.terms-prev-link { margin: 20px 0 0; font-size: 14px; font-weight: 600; }
