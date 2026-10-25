@@ -8,7 +8,7 @@ import StoreBadges from './StoreBadges';
 import { BrandWordmark } from './Brand';
 import { Phone } from './ui';
 import { RewardGallery, PointsScene, Playground } from './BenefitSections';
-import { OPEN_DATE } from '../lib/site';
+import { OPEN_LABEL } from '../lib/site';
 import { BrandIntroduction, PulliStory } from './Edition';
 import ScrollStory from './ScrollStory';
 
@@ -77,7 +77,7 @@ function IntroScene() {
 
 const SERVICES = [
   {title:'ONE MORE',desc:'받은 쿠폰을 사진이나 공유로 등록하면 보관함에 모이고, 만료 전에 알려드려요. 등록 다섯 번이면 응모권 1개. 다 쓴 쿠폰은 사용완료하면 10P, 다녀온 티켓은 등록하면 바로 10P.',screen:'one-more',label:'내 쿠폰 · 내 티켓',value:'한 번 더 쓰기',href:'/full-life#one-more'},
-  {title:'낙첨 ONE MORE',desc:'지난 회차 번호 1세트마다 광고 한 편(카드 · 숏 · 풀 중 선택)을 보면 경품 응모권 1개와 1초당 1P를 받아요. 등록은 토요일 20:50부터 목요일 20:00까지예요.',screen:'number-one-more',label:'지난 회차 번호 1세트',value:'광고 한 편 보면 응모권 1개',href:'/full-life#number-one-more'},
+  {title:'낙첨 ONE MORE',desc:'지난 회차 번호 1세트마다 브랜드 파트너 5초를 보면 경품 응모권 1개를 받아요. 등록은 토요일 20:50부터 목요일 20:00까지예요.',screen:'number-one-more',label:'지난 회차 번호 1세트',value:'5초 보면 응모권 1개',href:'/full-life#number-one-more'},
   {title:'오늘의 한 표',desc:'하루 세 번, 정답은 없어요. 가볍게 하나씩 고르면 10P. 답하고 나면 다른 회원들은 어떻게 골랐는지도 볼 수 있어요.',screen:'today-vote',label:'오늘의 질문 세 가지',value:'모두 고르면 10P',href:'/full-life#vote'},
   {title:'경품 추첨',desc:'낙첨 ONE MORE는 매주 목요일 20:30, ONE MORE는 매달 마지막 목요일 20:30에 추첨해요. 모든 응모권은 같은 확률이고, 당첨된 경품은 보관함에 넣어드려요.',screen:'prize-draw',label:'모든 회원에게',value:'같은 응모권 확률',href:'/full-life#draw'},
 ];
@@ -112,7 +112,7 @@ function TogetherScene() {
 }
 
 function StartScene() {
-  return <section id="start" className="start-story"><Image src="/images/bright/everyday-still-life.png" alt="" fill sizes="100vw" /><div className="start-overlay" /><div className="start-copy"><BrandWordmark className="w-[92px] h-10 mx-auto" tone="white" /><h2>오늘 끝난 것에,<br />한 번 더.</h2><p>쿠폰 · 티켓 · 번호로 시작하는 AI 리워드 플랫폼</p><StoreBadges center /><small>{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요.</small></div></section>;
+  return <section id="start" className="start-story"><Image src="/images/bright/everyday-still-life.png" alt="" fill sizes="100vw" /><div className="start-overlay" /><div className="start-copy"><BrandWordmark className="w-[92px] h-10 mx-auto" tone="white" /><h2>오늘 끝난 것에,<br />한 번 더.</h2><p>쿠폰 · 티켓 · 번호로 시작하는 AI 리워드 플랫폼</p><StoreBadges center /><small>{OPEN_LABEL} · 만 19세 이상 이용할 수 있어요.</small></div></section>;
 }
 
 export default function HomeStory() {

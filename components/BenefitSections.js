@@ -26,7 +26,7 @@ const REWARDS = [
   },
   {
     name: 'number', label: '낙첨 ONE MORE', title: <>아쉬웠던 내 번호의<br />새로운 시작</>,
-    desc: <>지난 회차 번호를 등록하고 광고 한 편.<br />이번 주의 경품 응모권으로 돌아와요.</>,
+    desc: <>지난 회차 번호를 등록하고 브랜드 파트너 5초.<br />이번 주의 경품 응모권으로 돌아와요.</>,
     tag: '번호 1세트마다', metric: '응모권 1개', href: '/full-life#number-one-more',
   },
 ];
@@ -41,7 +41,7 @@ export function RewardGallery() {
         <div className="benefit-card-bottom"><p>{item.desc}</p><RoundArrow /></div>
       </Link>)}
     </div>
-    <p className="story-fine benefit-disclaimer">낙첨번호 등록: 토요일 20:50 ~ 목요일 20:00 · 무료 5세트 / FULIF+ 20세트<br />낙첨 ONE MORE 응모권은 세트마다 광고 한 편(카드 · 숏 · 풀)을 보면 생기고, 1초당 1P도 함께 쌓여요. 모든 응모권은 동일한 확률이에요.</p>
+    <p className="story-fine benefit-disclaimer">낙첨번호 등록: 토요일 20:50 ~ 목요일 20:00 · 무료 5세트 / FULIF+ 20세트<br />낙첨 ONE MORE 응모권은 번호 1세트마다 브랜드 파트너 5초를 보면 생겨요. 모든 응모권은 동일한 확률이에요.</p>
   </section>;
 }
 

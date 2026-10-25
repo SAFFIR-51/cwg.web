@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Icon from './Icon';
 import { AppStoreBadge, GooglePlayBadge } from './StoreBadges';
-import { OPEN_DATE } from '../lib/site';
+import { OPEN_LABEL } from '../lib/site';
 
 export function StoryIcon({ name, hero = false }) {
   return <Image className="fulif-story-icon" src={hero ? `/icons/hero/${name}-hd.png` : `/images/benefits/${name}-art.png`} alt="" width={160} height={160} sizes="80px" quality={90} />;
@@ -28,5 +28,5 @@ export function PulliStory() {
 }
 
 export function StartStory() {
-  return <section id="start" className="fulif-start-story"><div className="fulif-content-width fulif-start-inner"><div className="fulif-enter"><h2>오늘 끝난 것에,<br /><em>한 번 더.</em></h2></div><div className="fulif-start-download fulif-enter"><div className="fulif-store-links"><GooglePlayBadge /><AppStoreBadge /></div><small>{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요</small></div></div></section>;
+  return <section id="start" className="fulif-start-story"><div className="fulif-content-width fulif-start-inner"><div className="fulif-enter"><h2>오늘 끝난 것에,<br /><em>한 번 더.</em></h2></div><div className="fulif-start-download fulif-enter"><div className="fulif-store-links"><GooglePlayBadge /><AppStoreBadge /></div><small>{OPEN_LABEL} · 만 19세 이상 이용할 수 있어요</small></div></div></section>;
 }

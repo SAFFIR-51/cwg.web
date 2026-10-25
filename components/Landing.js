@@ -5,7 +5,7 @@ import Seo from './Seo';
 import Icon from './Icon';
 import useLandingReveal from './useLandingReveal';
 import { AppStoreBadge, GooglePlayBadge } from './StoreBadges';
-import { OPEN_DATE } from '../lib/site';
+import { OPEN_LABEL } from '../lib/site';
 import { StoryIcon, StoryLink, FlowStory, PulliStory, StartStory } from './LandingSections';
 
 function Arrow({ href, label, className = '' }) {
@@ -19,7 +19,7 @@ function Device({ screen, alt, className = '', priority = false }) {
 function Hero() {
   return <section id="intro" className="fulif-hero" aria-label="풀리프 소개">
     <div className="fulif-hero-aura" aria-hidden="true" />
-    <div className="fulif-hero-content"><span className="fulif-hero-eyebrow">FULIF · 풀리프</span><h1>생활의 가치를<br /><span className="fulif-slogan-accent">한 번 더</span></h1><p>쿠폰 · 티켓 · 주유 영수증 · 낙첨 번호까지,<br />일상의 기록을 생활 혜택으로 바꿔주는 AI 리워드 플랫폼</p><p className="fulif-hero-body">그냥 지나칠 뻔한 것들을 한곳에 모아 두세요.<br />응모권으로, 포인트로, 내 생활권의 혜택으로 다시 돌아와요.</p><div className="fulif-store-links"><GooglePlayBadge /><AppStoreBadge /></div><small className="fulif-hero-note">{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요</small></div>
+    <div className="fulif-hero-content"><span className="fulif-hero-eyebrow">FULIF · 풀리프</span><h1>생활의 가치를<br /><span className="fulif-slogan-accent">한 번 더</span></h1><p>쿠폰 · 티켓 · 주유 영수증 · 낙첨 번호까지,<br />일상의 기록을 생활 혜택으로 바꿔주는 AI 리워드 플랫폼</p><p className="fulif-hero-body">그냥 지나칠 뻔한 것들을 한곳에 모아 두세요.<br />응모권으로, 포인트로, 내 생활권의 혜택으로 다시 돌아와요.</p><div className="fulif-store-links"><GooglePlayBadge /><AppStoreBadge /></div><small className="fulif-hero-note">{OPEN_LABEL} · 만 19세 이상 이용할 수 있어요</small></div>
   </section>;
 }
 

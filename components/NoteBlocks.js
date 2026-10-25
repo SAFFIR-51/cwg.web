@@ -31,7 +31,7 @@ function HomeScreen({ badge }) {
 
 function OpenDate() {
   return <div className="note-hero note-hero-open">
-    <div><small>TEST OPEN</small><strong>10.19</strong><b>월요일, 문을 엽니다</b><span>그랜드 오픈 11.23 월요일</span></div>
+    <div><small>TEST OPEN</small><strong>10월 말</strong><b>문을 엽니다</b><span>그랜드 오픈 11.23 월요일</span></div>
     <img src="/mascot/v3/fuli-joy.jpg" alt="" />
   </div>;
 }

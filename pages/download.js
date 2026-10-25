@@ -2,7 +2,7 @@ import Seo from '../components/Seo';
 import StoreBadges from '../components/StoreBadges';
 import DownloadQr from '../components/DownloadQr';
 import { Section, SectionHead, Fine } from '../components/ui';
-import { OPEN_DATE } from '../lib/site';
+import { OPEN_LABEL } from '../lib/site';
 import { Art } from '../components/SubpageDesign';
 import { BrandWordmark } from '../components/Brand';
 import { DownloadPhones } from '../components/PageScenes';
@@ -10,8 +10,8 @@ import { DownloadPhones } from '../components/PageScenes';
 // 컴팩트 최종본 v3(2026-10-14) 다운로드 장.
 export default function Download() {
   return <div className="product-page download-product">
-    <Seo title="다운로드" description={`Google Play와 App Store에서 풀리프를 받을 수 있어요. ${OPEN_DATE} 오픈 · 만 19세 이상.`} />
-    <header className="download-opening"><div className="download-opening-copy"><span className="download-brand-icon"><BrandWordmark className="w-[96px] h-[42px]" /></span><p className="sub-eyebrow">다운로드</p><h1>오늘부터,<br />생활의 가치를<br /><span>한 번 더</span></h1><p>Google Play와 App Store에서 풀리프를 받을 수 있어요.</p><StoreBadges className="download-main-stores" /><Fine>{OPEN_DATE} 오픈 · 만 19세 이상 이용할 수 있어요</Fine></div><DownloadPhones /><span className="download-back-word" aria-hidden="true">full life.</span></header>
+    <Seo title="다운로드" description={`Google Play와 App Store에서 풀리프를 받을 수 있어요. ${OPEN_LABEL} · 만 19세 이상.`} />
+    <header className="download-opening"><div className="download-opening-copy"><span className="download-brand-icon"><BrandWordmark className="w-[96px] h-[42px]" /></span><p className="sub-eyebrow">다운로드</p><h1>오늘부터,<br />생활의 가치를<br /><span>한 번 더</span></h1><p>Google Play와 App Store에서 풀리프를 받을 수 있어요.</p><StoreBadges className="download-main-stores" /><Fine>{OPEN_LABEL} · 만 19세 이상 이용할 수 있어요</Fine></div><DownloadPhones /><span className="download-back-word" aria-hidden="true">full life.</span></header>
     {/* 첫 화면은 제목 · 설명 · 두 스토어 버튼만 — QR 과 큰 그림은 그 다음(QA-13) */}
     <section className="download-qr-section"><img className="download-meadow" src="/mascot/v3/fuli-meadow.jpg" alt="클로버 들판에서 손을 흔드는 풀리" width={900} height={600} loading="lazy" /><div><p className="sub-eyebrow">휴대폰으로 바로</p><h2>카메라로 비추면<br />설치 화면으로 가요</h2><DownloadQr /></div></section>
     <Section>
