@@ -76,7 +76,7 @@ export default function FullLife() {
         criteria={<OneMoreCriteria />}
         stats={[
           { label: '경품 추첨', value: '매달 마지막\n목요일 20:30' }, { label: '티켓 · 주유 영수증', value: '이용한 날부터\n7일 안' },
-          { label: '주유 영수증', value: '한 주 3장까지' }, { label: '쿠폰', value: '만료 전 알림' },
+          { label: '주유 영수증', value: '1장마다 1칸 · 한 주에 3장까지' }, { label: '쿠폰', value: '만료 전 알림' },
         ]}
         fine="주유 영수증은 날짜 · 주유소 · 유종 같은 정보만 읽고, 카드번호 · 결제 정보 · 차량번호는 저장하지 않아요."
         shot="/screens/one-more.png"
