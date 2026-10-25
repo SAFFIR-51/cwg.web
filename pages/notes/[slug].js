@@ -38,7 +38,7 @@ const CATEGORY_TONE = { series: 'is-series', howto: 'is-howto', news: 'is-news',
 export default function NoteDetail({ note, related }) {
   const plainTitle = note.title.replace(/\n/g, ' ');
   return (
-    <div className="product-page journal-detail note-v3">
+    <div className={`product-page journal-detail note-v3 ${note.theme ? `note-theme-${note.theme}` : ''}`}>
       <Seo title={plainTitle} description={note.subtitle || note.summary || plainTitle} />
       <ReadingProgress />
       <article>
@@ -67,6 +67,8 @@ export default function NoteDetail({ note, related }) {
           {note.comment && <NoteComments key={note.slug} slug={note.slug} prompt={note.comment} />}
           {/* ⑨ 함께 보면 좋아요 */}
           {related.length > 0 && <Related items={related} />}
+          {/* 출처(참고) — 글 맨 끝(10-21 추가 글 2편) */}
+          {note.sources && <p className="note-sources">{note.sources}</p>}
           <p className="note-signoff">Have a Fuli Day!</p>
         </div>
       </article>

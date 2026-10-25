@@ -1,0 +1,98 @@
+/* 풀리 노트 추가 글 2편(2026-10-21) — 새 블록 · 대표 그림 · 청록 테마 · 출처 */
+
+.note-theme-teal { --note-accent:#0f766e; --note-accent-soft:#e3f4f1; }
+.note-theme-teal .note-label { background:#e3f4f1; color:#0f766e; }
+.note-theme-teal .note-body h2 span { color:#0f766e; }
+.note-theme-teal .note-fulinotes { background:#0f766e; }
+.note-theme-teal .note-timeline::before { background:#b5e0d8; }
+.note-theme-teal .note-timeline li::before { border-color:#0f766e; }
+
+/* 대표 그림 — 달력 + 영화표 */
+.note-hero-calticket { position:relative; display:flex; align-items:center; gap:18px; padding:28px; background:#e9f6f3; border-radius:24px; min-height:240px; overflow:hidden; }
+.nh-cal { background:#fff; border-radius:16px; padding:14px; box-shadow:0 10px 30px #0f766e14; }
+.nh-cal > b { display:block; background:#0f766e; color:#fff; border-radius:10px; padding:8px 12px; font-size:15px; margin:-4px -4px 10px; }
+.nh-cal ol, .note-cal { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; text-align:center; }
+.nh-cal li { font-size:11px; color:#4e5968; width:26px; height:22px; line-height:22px; border-radius:6px; }
+.nh-cal li.is-head { color:#8b95a1; }
+.nh-cal li.is-wed { background:#e3f4f1; color:#0f766e; font-weight:700; }
+.nh-cal li.is-circle { box-shadow:inset 0 0 0 2px #f59f00; }
+.nh-cinema { background:#1b2a4a; color:#fff; border-radius:12px; padding:14px 16px; transform:rotate(-6deg); }
+.nh-cinema small { display:block; font-size:10px; letter-spacing:.15em; color:#9fb4d8; }
+.nh-cinema b { display:block; font-size:15px; margin-top:4px; }
+.nh-cinema span { display:block; font-size:11px; color:#9fb4d8; margin-top:2px; }
+.note-hero-calticket .nh-fuli, .note-hero-gift .nh-fuli { width:96px; height:auto; border-radius:50%; margin-left:auto; }
+
+/* 대표 그림 — 선물 쿠폰 + 메모지 */
+.note-hero-gift { position:relative; display:flex; align-items:center; gap:18px; padding:30px; background:#fdf4e7; border-radius:24px; min-height:220px; }
+.nh-gift { background:#fff; border-radius:16px; padding:18px 20px; border-left:8px solid #f59f00; box-shadow:0 10px 30px #c2410c14; transform:rotate(-4deg); }
+.nh-gift small { font-size:12px; color:#8b95a1; }
+.nh-gift b { display:block; font-size:18px; margin:4px 0 8px; color:#191f28; }
+.nh-gift span { font-size:11px; padding:3px 8px; background:#fff4d6; color:#b45309; border-radius:999px; }
+.nh-memo { background:#ffe58a; padding:14px; border-radius:6px; transform:rotate(5deg); box-shadow:0 8px 20px #a1620714; }
+.nh-memo b { display:block; font-size:14px; color:#7c2d12; }
+.nh-memo span { font-size:12px; color:#92400e; }
+
+/* 아이콘 줄 */
+.note-iconrows { display:grid; gap:10px; margin:22px 0; }
+.note-iconrows li { display:flex; gap:14px; align-items:flex-start; padding:16px 18px; border:1px solid #e9edf2; border-radius:16px; background:#fff; }
+.note-iconrows i { font-style:normal; font-size:22px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; background:#f2f4f6; border-radius:12px; flex:none; }
+.note-iconrows b { font-size:16px; color:#191f28; }
+.note-iconrows p { margin:2px 0 0 !important; font-size:14px !important; color:#6b7684; line-height:1.55; }
+
+/* 달력 · 가격 타일 · 날짜 칩 */
+.note-cal { margin-top:12px; }
+.note-cal li { font-size:14px; color:#4e5968; height:38px; line-height:38px; border-radius:10px; }
+.note-cal li.is-head { color:#8b95a1; font-size:12px; height:26px; line-height:26px; }
+.note-cal li.is-filled { background:#0f766e; color:#fff; font-weight:700; }
+.note-cal li.is-today { box-shadow:inset 0 0 0 2px #f59f00; color:#c2410c; font-weight:700; }
+.note-cal li.is-light { background:#e3f4f1; color:#0f766e; }
+.note-pricetiles { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px; }
+.note-pricetiles > div { background:#e3f4f1; border-radius:16px; padding:16px; text-align:center; }
+.note-pricetiles > div.is-warm { background:#f7f1e6; }
+.note-pricetiles small { display:block; font-size:13px; color:#0f766e; }
+.note-pricetiles .is-warm small { color:#8a6a2a; }
+.note-pricetiles b { display:block; font-size:26px; font-weight:800; color:#191f28; margin-top:4px; }
+.note-chips-title { margin-top:18px; font-size:14px; font-weight:700; color:#0f766e; }
+.note-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+.note-chips li { padding:7px 14px; border:1.5px solid #0f766e; border-radius:999px; font-size:14px; font-weight:700; color:#0f766e; }
+.note-chips li.is-on { background:#0f766e; color:#fff; }
+
+/* 여섯 장 중 한 장 */
+.note-coupons { display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin:12px 0 16px; }
+.note-coupons span { height:56px; border-radius:10px; background:#1b64da; }
+.note-coupons span.is-gone { background:#e5e8eb; border:1.5px dashed #b0b8c1; }
+.note-barcmp dl { display:grid; gap:10px; }
+.note-barcmp dl > div { display:grid; grid-template-columns:80px 1fr; align-items:center; gap:10px; }
+.note-barcmp dt { font-size:14px; font-weight:700; color:#191f28; }
+.note-barcmp dd { display:flex; align-items:center; gap:8px; }
+.note-barcmp dd span { height:12px; border-radius:6px; background:#1b64da; min-width:12px; }
+.note-barcmp .is-gone dd span { background:#b0b8c1; }
+.note-barcmp dd b { font-size:13px; white-space:nowrap; color:#191f28; }
+
+/* 결말 세 칸 */
+.note-endings { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:22px 0; }
+.note-endings > div { border-radius:16px; padding:18px 12px; text-align:center; }
+.note-endings .is-blue { background:#e8f1fe; } .note-endings .is-pink { background:#fdecf2; } .note-endings .is-green { background:#eaf7e9; }
+.note-endings i { font-style:normal; font-size:26px; }
+.note-endings b { display:block; margin-top:6px; font-size:16px; color:#191f28; }
+.note-endings p { margin:4px 0 0 !important; font-size:13px !important; line-height:1.5; color:#4e5968; }
+
+/* 출처 */
+.note-sources { margin-top:28px; padding-top:16px; border-top:1px solid #e9edf2; font-size:12px; line-height:1.7; color:#8b95a1; }
+
+@media (max-width:767px) {
+  .note-hero-calticket, .note-hero-gift { padding:20px; gap:10px; flex-wrap:wrap; }
+  .note-hero-calticket .nh-fuli, .note-hero-gift .nh-fuli { width:72px; }
+  .note-endings { gap:6px; }
+  .note-endings > div { padding:14px 6px; }
+}
+
+/* 손질 — 청록 연표 마지막 칸 글자 · 모바일 대표 그림 겹침 */
+.note-theme-teal .note-timeline li.is-filled::before { background:#0f766e; }
+.note-theme-teal .note-timeline li small { color:#0f766e; }
+@media (max-width:767px) {
+  .note-hero-calticket { display:block; padding:18px 18px 70px; }
+  .note-hero-calticket .nh-cinema { position:absolute; right:16px; bottom:16px; transform:rotate(-4deg); padding:10px 12px; }
+  .note-hero-calticket .nh-fuli { position:absolute; right:14px; top:14px; width:64px; }
+  .nh-cal li { width:auto; }
+}

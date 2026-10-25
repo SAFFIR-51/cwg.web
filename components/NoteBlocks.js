@@ -83,7 +83,29 @@ function Banner({ hero }) {
   </div>;
 }
 
-const HEROES = { stillLife: StillLife, couponStack: CouponStack, ticketStack: TicketStack, dayArc: DayArc, priceBars: PriceBars, openDate: OpenDate };
+// 생활 발견 2편(10-21) — 청록 10월 달력(수요일 칸) + 영화표 + 풀리
+function CalendarTicket() {
+  const days = Array.from({ length: 35 }, (_, i) => i - 3); // 2026-10-01 은 목요일(일 시작 기준 4칸째)
+  return <div className="note-hero note-hero-calticket" aria-hidden="true">
+    <div className="nh-cal"><b>2026. 10</b>
+      <ol>{['일', '월', '화', '수', '목', '금', '토'].map((d) => <li key={d} className="is-head">{d}</li>)}
+        {days.map((d, i) => { const on = d >= 1 && d <= 31; return <li key={i} className={`${on && i % 7 === 3 ? 'is-wed' : ''} ${d === 28 ? 'is-circle' : ''}`}>{on ? d : ''}</li>; })}</ol>
+    </div>
+    <div className="nh-cinema"><small>CINEMA</small><b>수요일 저녁 7시</b><span>2026.10.28 · 5관</span></div>
+    <img className="nh-fuli" src="/mascot/v3/fuli-joy.jpg" alt="" />
+  </div>;
+}
+
+// 연재 4편(10-21) — 선물 쿠폰 + 메모지 + 하트 풀리
+function GiftCoupon() {
+  return <div className="note-hero note-hero-gift" aria-hidden="true">
+    <div className="nh-gift"><small>선물이 도착했어요</small><b>따뜻한 라떼 1잔</b><span>D-3 · 아직 안 썼어요</span></div>
+    <div className="nh-memo"><b>생일 축하해!</b><span>커피 한잔하고 힘내 ♥</span></div>
+    <img className="nh-fuli" src="/mascot/v3/fuli-heart.jpg" alt="" />
+  </div>;
+}
+
+const HEROES = { stillLife: StillLife, couponStack: CouponStack, ticketStack: TicketStack, dayArc: DayArc, priceBars: PriceBars, openDate: OpenDate, calendarTicket: CalendarTicket, giftCoupon: GiftCoupon };
 
 export function NoteHero({ hero }) {
   const H = HEROES[hero.type];
@@ -232,10 +254,45 @@ function Curve({ b }) {
     {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
 }
 
+// 아이콘 + 제목 + 한 줄(쿠폰에 담긴 마음 · 찾기 · 즐기기 · 남기기)
+function IconRows({ b }) {
+  return <ul className="note-iconrows">{b.items.map(([icon, title, desc]) => <li key={title}><i aria-hidden="true">{icon}</i><div><b>{title}</b><p>{desc}</p></div></li>)}</ul>;
+}
+
+// 달력(수요일 칸) + 가격 타일 + 날짜 칩 — 생활 발견 2편
+function Calendar({ b }) {
+  const lead = b.firstDow || 0;
+  const cells = Array.from({ length: Math.ceil((lead + b.days) / 7) * 7 }, (_, i) => i - lead + 1);
+  return <figure className="note-fig note-calendar"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <ol className="note-cal">{['일', '월', '화', '수', '목', '금', '토'].map((d) => <li key={d} className="is-head">{d}</li>)}
+      {cells.map((d, i) => {
+        const on = d >= 1 && d <= b.days;
+        const cls = !on ? 'is-empty' : (b.filled || []).includes(d) ? 'is-filled' : d === b.today ? 'is-today' : (b.light || []).includes(d) ? 'is-light' : '';
+        return <li key={i} className={cls}>{on ? d : ''}</li>;
+      })}</ol>
+    {b.tiles && <div className="note-pricetiles">{b.tiles.map(([k, v], i) => <div key={k} className={i ? 'is-warm' : ''}><small>{k}</small><b>{v}</b></div>)}</div>}
+    {b.tilesCaption && <p className="note-fig-caption">{b.tilesCaption}</p>}
+    {b.chips && <><p className="note-chips-title">{b.chipsTitle}</p><ul className="note-chips">{b.chips.map((c, i) => <li key={c} className={i === 0 ? 'is-on' : ''}>{c}</li>)}</ul></>}
+    {b.chipsCaption && <p className="note-fig-caption">{b.chipsCaption}</p>}</figure>;
+}
+
+// 여섯 장 중 한 장 — 쿠폰 칸 + 가로 막대 비교 — 연재 4편
+function BarCompare({ b }) {
+  return <figure className="note-fig note-barcmp"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <div className="note-coupons" aria-hidden="true">{Array.from({ length: b.coupons }, (_, i) => <span key={i} className={i === b.coupons - 1 ? 'is-gone' : ''} />)}</div>
+    <dl>{b.bars.map(([k, v, pct], i) => <div key={k} className={i ? 'is-gone' : ''}><dt>{k}</dt><dd><span style={{ width: `${pct}%` }} /><b>{v}</b></dd></div>)}</dl>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 결말 세 칸(쓰기 · 나누기 · 모아 두기) — 연재 4편
+function Endings({ b }) {
+  return <div className="note-endings">{b.items.map(([icon, title, desc, tone]) => <div key={title} className={`is-${tone}`}><i aria-hidden="true">{icon}</i><b>{title}</b><p>{desc}</p></div>)}</div>;
+}
+
 // 출처 · 일반 기준 같은 작은 회색 안내
 function Fine({ b }) { return <p className="note-fine">{b.text}</p>; }
 
-const FIGS = { curve: Curve, fine: Fine, flow: Flow, balance: Balance, pair: Pair, iconGrid: IconGrid, sevenDays: SevenDays, voteSample: VoteSample, alerts: Alerts, reasons: Reasons, foundCard: FoundCard, week: Week, compare: Compare, slots: Slots, homeMap: HomeMap, steps: StepList, table: Table, timeline: Timeline, cards: Cards, donate: Donate, founder: Founder };
+const FIGS = { iconRows: IconRows, calendar: Calendar, barCompare: BarCompare, endings: Endings, curve: Curve, fine: Fine, flow: Flow, balance: Balance, pair: Pair, iconGrid: IconGrid, sevenDays: SevenDays, voteSample: VoteSample, alerts: Alerts, reasons: Reasons, foundCard: FoundCard, week: Week, compare: Compare, slots: Slots, homeMap: HomeMap, steps: StepList, table: Table, timeline: Timeline, cards: Cards, donate: Donate, founder: Founder };
 
 export function NoteBlock({ b }) {
   if (typeof b === 'string') return <p><Rich text={b} /></p>;
