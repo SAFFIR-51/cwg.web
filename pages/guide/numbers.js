@@ -14,6 +14,8 @@ const SCENES = [
   { n: 2, at: 20, label: '필터 3개', line: '핵심 필터 3개만 직접 맞춰요.' },
   { n: 3, at: 38, label: '전문가 모드', line: '35개 필터 중 원하는 것만 골라 맞춰요.' },
 ];
+// 방법 1 은 맨 처음(0:00, 「번호 만드는 방법은 세 가지예요」)부터 튼다 — 바로가기 표시는 대본대로 0:05
+const sceneStart = (s) => (s.n === 1 ? 0 : s.at);
 const clock = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 
 export default function NumbersGuide() {
@@ -23,10 +25,16 @@ export default function NumbersGuide() {
   const [missing, setMissing] = useState(false);
   const app = router.query.app === '1';
 
+  // 회원이 고른 시각. 영상 정보(메타데이터)가 오기 전에 누르면 여기 두었다가 도착하면 맞춘다 —
+  // 첫 진입 시작점(?start=)보다 늘 우선이다. iOS 앱 안 창은 재생 전엔 영상을 안 불러와서,
+  // 예전엔 「방법 1」을 눌러도 뒤늦게 도착한 첫 진입 처리(방법 2 · 3)가 시각을 덮어썼다(11-01).
+  const pending = useRef(null);
   const seek = (sec) => {
     const v = video.current;
     if (!v) return;
-    try { v.currentTime = sec; v.play().catch(() => {}); } catch (_) {}
+    pending.current = sec;
+    if (v.readyState >= 1) { try { v.currentTime = sec; } catch (_) {} pending.current = null; }
+    v.play().catch(() => {});
   };
 
   useEffect(() => {
@@ -36,11 +44,18 @@ export default function NumbersGuide() {
     setScene(s.n);
     const v = video.current;
     if (v) {
-      const go = () => { v.currentTime = start > 1 ? s.at : 0; };
+      const go = () => {
+        const t = pending.current ?? sceneStart(s);
+        pending.current = null;
+        try { v.currentTime = t; } catch (_) {}
+      };
       if (v.readyState >= 1) go(); else v.addEventListener('loadedmetadata', go, { once: true });
     }
     // 앱 시트가 장면 바로가기를 누르면 부른다
-    window.fulifSeek = (sec) => { seek(sec); const hit = [...SCENES].reverse().find((x) => sec >= x.at); if (hit) setScene(hit.n); };
+    window.fulifSeek = (sec) => {
+      const hit = [...SCENES].reverse().find((x) => sec >= x.at) || SCENES[0];
+      setScene(hit.n); seek(sceneStart(hit));
+    };
     return () => { delete window.fulifSeek; };
   }, [router.isReady, router.query.start]);
 
@@ -64,7 +79,7 @@ export default function NumbersGuide() {
       <div className="ng-scenes" role="group" aria-label="장면 바로가기">
         {SCENES.map((s) => (
           <button key={s.n} type="button" className={scene === s.n ? 'on' : ''}
-            onClick={() => { setScene(s.n); seek(s.at); }}>
+            onClick={() => { setScene(s.n); seek(sceneStart(s)); }}>
             <b>방법 {s.n}</b><span>{s.label} · {clock(s.at)}</span>
           </button>
         ))}
