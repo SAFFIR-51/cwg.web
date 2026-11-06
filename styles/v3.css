@@ -601,3 +601,29 @@
   .note-comment-actions .btn-primary { margin-left: auto; }
 }
 #prize-rules { scroll-margin-top: 90px; }
+
+/* 쿠폰 나눔 카드(2026-11-06) — 표시 폭 780px 기준 */
+.share-card { box-sizing: border-box; width: 100%; min-width: 0; max-width: 780px; padding: 32px 30px 22px; border-radius: 28px; background: linear-gradient(160deg, #f2f9e6 0%, #e9f5df 100%); border: 1px solid #dcebc9; word-break: keep-all; }
+.share-card-top { display: flex; align-items: center; gap: 26px; }
+.share-card-top > img { width: 150px; height: auto; flex-shrink: 0; border-radius: 22px; mix-blend-mode: multiply; }
+.share-card-eyebrow { font-size: 14px; font-weight: 700; color: #3f8a1f; }
+.share-card h3 { margin-top: 4px; font-size: 30px; line-height: 1.25; font-weight: 800; letter-spacing: -.03em; color: #1f3514; }
+.share-card h3 span { color: #3f8a1f; }
+.share-card-lead { margin-top: 10px; font-size: 16px; line-height: 1.6; color: #4e5968; }
+.share-card-steps { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; margin: 24px 0 0; padding: 0; list-style: none; }
+.share-card-steps li { padding: 18px 18px 16px; border-radius: 18px; background: #fff; box-shadow: 0 2px 10px rgba(63, 138, 31, .06); }
+.share-card-steps b { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #3f8a1f; color: #fff; font-size: 12px; font-weight: 800; }
+.share-card-steps strong { display: block; margin-top: 10px; font-size: 16px; font-weight: 800; color: #1f2937; }
+.share-card-steps p { margin-top: 6px; font-size: 14px; line-height: 1.6; color: #4e5968; }
+.share-card-badge { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 14px; color: #333d4b; }
+.share-card-badge span { padding: 3px 10px; border-radius: 999px; background: #fde4ec; color: #e0457b; font-size: 12.5px; font-weight: 800; white-space: nowrap; }
+.share-card-fine { margin-top: 14px; padding-top: 12px; border-top: 1px solid #d6e6c3; font-size: 12.5px; line-height: 1.6; color: #8b95a1; }
+@media (max-width: 767px) {
+  .share-card { padding: 22px 16px 16px; border-radius: 22px; }
+  .share-card-top { gap: 14px; }
+  .share-card-top > img { width: 92px; border-radius: 16px; }
+  .share-card h3 { font-size: 22px; }
+  .share-card-lead { font-size: 14px; }
+  .share-card-steps { grid-template-columns: minmax(0,1fr); gap: 10px; margin-top: 18px; }
+  .share-card-badge { align-items: flex-start; font-size: 13px; }
+}

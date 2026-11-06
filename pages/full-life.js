@@ -82,9 +82,22 @@ export default function FullLife() {
         shot="/screens/one-more-v1026.png"
       />
       <Section id="donate" className="v3-donate-section">
-        <div className="v3-donate fl-donate reveal">
-          <img src="/mascot/v3/fuli-heart.jpg" alt="하트를 안은 풀리" width={270} height={245} loading="lazy" />
-          <div><h3>쿠폰 한 장으로, 아이에게 기쁜 하루를</h3><p>쓰기 어려운 금액권은 응원이 필요한 우리 곁의 아이들에게 선물할 수 있어요. 고마운 마음을 담아 포인트와 기부천사 배지를 드려요.</p></div>
+        {/* 쿠폰 나눔 카드 — 「한 번 나누면, 두 번 나눔」(2026-11-06 초록우산 기준) */}
+        <div className="share-card reveal">
+          <div className="share-card-top">
+            <img src="/mascot/v3/fuli-heart.jpg" alt="하트를 안은 풀리" width={270} height={245} loading="lazy" />
+            <div>
+              <p className="share-card-eyebrow">쿠폰 나눔</p>
+              <h3>한 번 나누면,<br /><span>두 번 나눔</span></h3>
+              <p className="share-card-lead">쓰지 않는 금액권 한 장이<br />아이들에게 두 번 전해져요.</p>
+            </div>
+          </div>
+          <ol className="share-card-steps">
+            <li><b>1</b><strong>같은 금액으로 후원</strong><p>회원님이 나눈 쿠폰 금액만큼, 풀리프가 초록우산에 후원해요.</p></li>
+            <li><b>2</b><strong>물품으로 한 번 더</strong><p>나눈 쿠폰은 풀리프가 학용품 · 생활용품으로 바꿔 직접 전해요.</p></li>
+          </ol>
+          <p className="share-card-badge"><span>♥ 기부천사</span>고마운 마음을 담아 포인트와 배지를 드려요.</p>
+          <p className="share-card-fine">풀리프는 초록우산의 협력사입니다. · 전해진 소식은 앱의 「나눔 일지」에서 볼 수 있어요.</p>
         </div>
       </Section>
 
