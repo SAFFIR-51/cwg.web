@@ -118,7 +118,7 @@ export default function FullLife() {
           { label: 'FULIF', value: '5세트까지' }, { label: 'FULIF+', value: '20세트까지' },
         ]}
         note={{ title: '모든 응모권은 같은 확률이에요', body: 'FULIF든 FULIF+든, 응모권 1개의 가치는 같아요. FULIF+는 한 회차에 더 많은 세트를 등록할 수 있어요.' }}
-        picture="/images/benefits/number-one-more-1110b.png"
+        picture="/images/benefits/number-one-more-1110c.png"
       />
 
       {/* ⑤ 오늘의 한 표 */}
