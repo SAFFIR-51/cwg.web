@@ -48,6 +48,11 @@
 
 /* ④ 낙첨 ONE MORE — 앱 화면을 작게 */
 .fl-shot-small { transform:scale(.82); transform-origin:top center; }
+/* 11-10: 낙첨 ONE MORE 는 그림 한 장(바탕 · 기울어진 폰 · QR 스캔 틀이 그림 안에) */
+.fl-picture { width:100%; max-width:440px; margin-inline:auto; }
+.fl-picture img { display:block; width:100%; height:auto; border-radius:22px; }
+@media (min-width:768px) { .feature-section:nth-of-type(even) .fl-picture { order:-1; } }
+@media (max-width:767px) { .fl-picture { max-width:340px; } }
 
 /* ⑤ 오늘의 한 표 — 질문 카드 하나 */
 .fl-vote { padding:26px; border-radius:24px; background:#fff; border:1px solid #e9edf2; box-shadow:0 20px 60px #1b4b7908; }

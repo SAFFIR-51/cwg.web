@@ -14,7 +14,7 @@ const CHIPS = [
 
 // 10-21 수정 목업: ONE MORE 는 큰 그림 대신 쿠폰 · 티켓 아이콘 카드, 오늘의 한 표는 질문 카드 하나.
 // 낙첨 ONE MORE 앱 화면은 그대로 두되 작게(.fl-shot-small).
-function Feature({ id, eyebrow, title, lead, steps, stats, fine, shot, note, children, art, after, criteria }) {
+function Feature({ id, eyebrow, title, lead, steps, stats, fine, shot, picture, note, children, art, after, criteria }) {
   return (
     <Section id={id} className={`feature-section feature-${id} scroll-mt-40`}>
       <div className={`grid gap-10 md:items-start ${id === 'one-more' ? 'fl-one-col' : 'md:grid-cols-2'}`}>
@@ -28,7 +28,10 @@ function Feature({ id, eyebrow, title, lead, steps, stats, fine, shot, note, chi
           {note && <Note className="mt-4" title={note.title}>{note.body}</Note>}
           {fine && <Fine className="mt-4">{fine}</Fine>}
         </div>
-        {id === 'one-more' ? null : id === 'vote' ? <VoteCard /> : shot && (
+        {id === 'one-more' ? null : id === 'vote' ? <VoteCard /> : picture ? (
+          // 11-10: 그림 한 장(바탕 · 폰 · 장식까지 들어 있음) — 무대 · 폰 틀 없이 그대로
+          <div className="fl-picture reveal"><img src={picture} alt={`${eyebrow} 화면`} width={728} height={1196} loading="lazy" /></div>
+        ) : shot && (
           <div className="feature-stage fl-shot-small reveal">
             <small>{eyebrow}</small>
             <Art name={art} />
@@ -103,7 +106,7 @@ export default function FullLife() {
 
       {/* ④ 낙첨 ONE MORE · 경품 추첨 */}
       <Feature
-        id="number-one-more" art="number" eyebrow="낙첨 ONE MORE" title={'아쉬운 내 번호,\n이번 주를 한 번 더'}
+        id="number-one-more" eyebrow="낙첨 ONE MORE" title={'아쉬운 내 번호,\n이번 주를 한 번 더'}
         lead="지난 회차에 아쉽게 끝난 번호가, 브랜드 파트너의 경품 응모권으로 돌아와요."
         steps={[
           { desc: 'QR과 사진으로 낙첨 번호를 등록해요. 온라인 · 모바일로 구매한 번호는 직접 입력할 수 있어요.' },
@@ -115,7 +118,7 @@ export default function FullLife() {
           { label: 'FULIF', value: '5세트까지' }, { label: 'FULIF+', value: '20세트까지' },
         ]}
         note={{ title: '모든 응모권은 같은 확률이에요', body: 'FULIF든 FULIF+든, 응모권 1개의 가치는 같아요. FULIF+는 한 회차에 더 많은 세트를 등록할 수 있어요.' }}
-        shot="/screens/number-one-more.png"
+        picture="/images/benefits/number-one-more-1110.png"
       />
 
       {/* ⑤ 오늘의 한 표 */}
