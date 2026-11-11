@@ -29,7 +29,7 @@ const mark = (v) => v === '✓' ? <><Icon name="check" size={20} /><span classNa
 // 구성은 컴팩트 최종본 v3(2026-10-14) 멤버십 장 — 요금 · 혜택 · 첫 달 무료 · 해지 · 마무리
 export default function Membership() {
   return <div className="product-page membership-product">
-    <Seo title="멤버십 FULIF+" description="월 4,900원 · 연 49,000원으로 풀리프를 더 알차게. 첫 달은 무료로 써보고 결정하세요. 창립 회원은 2026.12.31까지." />
+    <Seo title="멤버십 FULIF+" description="월 4,900원 · 연 49,000원으로 풀리프를 더 알차게. 첫 달은 무료로 써보고 결정하세요. 창립 회원은 2027.1.3까지." />
     <MembershipOpening />
     <SectionNav label="멤버십 페이지 탐색" items={[["plans","요금"],["member-benefits","FULIF+ 혜택"],["trial","첫 달 무료"],["cancel","해지 · 궁금한 점"]]} />
     <MemberPlans id="plans" className="member-single-plan" />

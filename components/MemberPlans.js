@@ -9,7 +9,7 @@ export default function MemberPlans({ id, className = '' }) {
   return <section className={`member-plans-v3 ${className}`} id={id}>
     <article className="member-price-card is-monthly"><div className="member-price-top"><span>월간</span><b className="member-badge">첫 달 무료</b></div><h3><b>4,900원</b> / 월</h3><p>1개월 무료 체험 뒤 매월 4,900원이 결제돼요. 무료 체험은 한 번만 받을 수 있어요.</p></article>
     <article className="member-price-card"><div className="member-price-top"><span>연간</span><b className="member-badge is-soft">2개월분 할인</b></div><h3><b>49,000원</b> / 년</h3><p>월간보다 1년에 9,800원 아껴요. 연간은 무료 체험 없이 바로 시작해요.</p></article>
-    <aside className="member-founder"><img src="/mascot/v3/fuli-clover.jpg" alt="네잎클로버를 든 풀리" width={270} height={235} /><div><h3>창립 회원 · 2026.12.31까지</h3><p>{FOUNDER_TEXT}</p></div></aside>
+    <aside className="member-founder"><img src="/mascot/v3/fuli-clover.jpg" alt="네잎클로버를 든 풀리" width={270} height={235} /><div><h3>창립 회원 · 2027.1.3까지</h3><p>{FOUNDER_TEXT}</p></div></aside>
     <div className="member-plans-cta"><StoreCta /></div>
   </section>;
 }
