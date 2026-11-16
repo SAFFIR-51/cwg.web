@@ -14,6 +14,15 @@ export default function LosingGuide() {
   const [missing, setMissing] = useState(false);
   const app = router.query.app === '1';
 
+  // 소리 켠 채로 먼저 재생(11-16). 앱(새 버전)은 웹뷰가 허락해 소리가 바로 나오고,
+  // 브라우저 · 옛 앱이 막으면 지금처럼 소리 없이 재생한다(그때는 컨트롤의 소리 버튼으로 켠다)
+  const startWithSound = (v) => {
+    if (!v || v.dataset.started) return;
+    v.dataset.started = '1';
+    v.muted = false;
+    v.play().catch(() => { v.muted = true; v.play().catch(() => {}); });
+  };
+
   const onEnded = () => {
     // 앱 웹뷰의 JavaScript 채널 — 「영상 끝까지 본 비율」
     try { window.FulifVideo && window.FulifVideo.postMessage('ended'); } catch (_) {}
@@ -27,7 +36,7 @@ export default function LosingGuide() {
         {missing ? (
           <div className="ng-video-missing">영상을 준비하고 있어요</div>
         ) : (
-          <video ref={(v) => { if (v) v.play().catch(() => {}); }} src={VIDEO_SRC} playsInline muted autoPlay controls
+          <video ref={startWithSound} src={VIDEO_SRC} playsInline controls
             preload="metadata" onEnded={onEnded} onError={() => setMissing(true)} />
         )}
       </div>
