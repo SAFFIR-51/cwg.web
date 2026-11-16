@@ -18,6 +18,13 @@ const SCENES = [
 ];
 const clock = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 
+// 소리 켠 채로 먼저 재생(11-16). 앱(새 버전)은 웹뷰가 허락해 소리가 바로 나오고,
+// 브라우저 · 옛 앱이 막으면 지금처럼 소리 없이 재생한다(그때는 컨트롤의 소리 버튼으로 켠다)
+function playWithSound(v) {
+  v.muted = false;
+  v.play().catch(() => { v.muted = true; v.play().catch(() => {}); });
+}
+
 export default function NumbersGuide() {
   const router = useRouter();
   const video = useRef(null);
@@ -34,7 +41,7 @@ export default function NumbersGuide() {
       const v = video.current;
       if (!v) return;
       try { v.currentTime = 0; } catch (_) {}
-      v.play().catch(() => {});
+      playWithSound(v);
     }, 0);
   };
 
@@ -51,6 +58,11 @@ export default function NumbersGuide() {
     return () => { delete window.fulifSeek; delete window.fulifScene; };
   }, [router.isReady, router.query.start]);
 
+  // 첫 영상 · 방법을 바꿔 새로 불러온 영상
+  useEffect(() => {
+    if (video.current) playWithSound(video.current);
+  }, [cur.src]);
+
   const onEnded = () => {
     // 앱 웹뷰의 JavaScript 채널 — 「영상 끝까지 본 비율」
     try { window.FulifVideo && window.FulifVideo.postMessage('ended'); } catch (_) {}
@@ -64,7 +76,7 @@ export default function NumbersGuide() {
         {missing ? (
           <div className="ng-video-missing">영상을 준비하고 있어요</div>
         ) : (
-          <video key={cur.src} ref={video} src={cur.src} playsInline muted autoPlay controls preload="metadata"
+          <video key={cur.src} ref={video} src={cur.src} playsInline controls preload="metadata"
             onEnded={onEnded} onError={() => setMissing(true)} />
         )}
       </div>
