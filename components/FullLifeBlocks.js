@@ -102,7 +102,7 @@ export function PlaygroundTiles() {
       <article className="fl-tile reveal">
         <Art name="memory" sizes="72px" />
         <h3>넘버 센스</h3>
-        <p>잠깐 본 번호를 기억해 찾아요. 성공한 단계만큼 바로 쌓이고, 실패해도 사라지지 않아요.</p>
+        <p>잠깐 본 번호를 기억해 찾아요. 성공한 단계만큼 포인트가 바로 쌓이고, 실패해도 사라지지 않아요.</p>
       </article>
       <article className="fl-tile reveal">
         <span className="fl-badge fl-badge-new">NEW</span>

@@ -55,7 +55,7 @@ export function ServiceOverview() {
 }
 
 export function DiscoveryHero() {
-  return <header className="discovery-hero"><div className="discovery-hero-copy"><p className="edition-eyebrow">FOUND AI</p><h1>일상에 필요한 것을,<br /><span>풀리가 찾아 드려요</span></h1><p className="edition-lead">내 생활권의 주유소 · 편의점 · 문화·전시 · 영화관 혜택을,<br />확인한 날짜와 함께 한곳에 정리해 드려요. FULIF · FULIF+ 모든 회원이 써요.</p><StoreBadges className="mt-8" /></div><div className="discovery-hero-visual"><div className="discovery-street"><Image src="/images/bright/found-neighborhood.png" alt="밝은 햇살 아래 파란 차양과 과일 상자가 놓인 동네 가게" fill priority sizes="(max-width: 767px) 100vw, 750px" quality={90} /></div><div className="discovery-device"><Phone src="/screens/found.png" alt="FOUND AI 생활권 혜택 앱 화면" /></div><span className="discovery-photo-caption">가까운 곳에서 발견하는 새로운 일상</span></div></header>;
+  return <header className="discovery-hero"><div className="discovery-hero-copy"><p className="edition-eyebrow">FOUND AI</p><h1>일상에 필요한 것을,<br /><span>풀리가 찾아 드려요</span></h1><p className="edition-lead">내 생활권의 주유소 · 편의점 · 문화·전시 · 영화관 혜택을,<br />확인한 날짜와 함께 한곳에 정리해 드려요. FULIF · FULIF+ 모든 회원이 써요.</p><StoreBadges className="mt-8" /></div><div className="discovery-hero-visual"><div className="discovery-street"><Image src="/images/bright/found-neighborhood.png" alt="밝은 햇살 아래 파란 차양과 과일 상자가 놓인 동네 가게" fill priority sizes="(max-width: 767px) 100vw, 750px" quality={90} /></div><div className="discovery-device"><Phone src="/screens/found-v1119.png" alt="FOUND AI 생활권 혜택 앱 화면" /></div><span className="discovery-photo-caption">가까운 곳에서 발견하는 새로운 일상</span></div></header>;
 }
 
 export function MembershipBenefits() {
@@ -71,7 +71,7 @@ export function MembershipBenefits() {
 }
 
 export function PartnerScale() {
-  return <section className="partner-scale" id="ad-scale"><div className="partner-scale-heading"><p className="edition-eyebrow">AD SCALE</p><h2>브랜드와 회원이<br /><span>같은 편에 서는 광고.</span></h2><p>회원이 본 광고 한 편이,<br />그대로 응모권과 포인트가 됩니다.</p></div><div className="partner-scale-stats">{[['10','개','광고 카테고리'],['8','개','광고 노출 화면'],['1','회','매월 브랜드 분석'],['1','사','카테고리당 브랜드']].map(([v,u,t])=><div key={t}><strong>{v}<small>{u}</small></strong><span>{t}</span></div>)}</div><p className="partner-scale-foot">단순한 노출을 넘어, 일상의 혜택으로 만나는 브랜드.<a href="#inquiry">파트너십 문의<Icon name="arrow_forward" size={18}/></a></p></section>;
+  return <section className="partner-scale" id="ad-scale"><div className="partner-scale-heading"><p className="edition-eyebrow">AD SCALE</p><h2>브랜드와 회원이<br /><span>같은 편에 서는 광고.</span></h2><p>회원이 본 광고 한 편이,<br />그대로 응모권과 포인트가 됩니다.</p></div><div className="partner-scale-stats">{[['7','개','광고 카테고리'],['13','개','브랜드 자리'],['1','회','매월 브랜드 분석'],['1','사','카테고리당 브랜드']].map(([v,u,t])=><div key={t}><strong>{v}<small>{u}</small></strong><span>{t}</span></div>)}</div><p className="partner-scale-foot">단순한 노출을 넘어, 일상의 혜택으로 만나는 브랜드.<a href="#inquiry">파트너십 문의<Icon name="arrow_forward" size={18}/></a></p></section>;
 }
 
 export function ReadingProgress() {

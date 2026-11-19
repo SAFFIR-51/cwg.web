@@ -82,7 +82,7 @@ export default function FullLife() {
           { label: '주유 영수증', value: '1장마다 1칸 · 한 주에 3장까지' }, { label: '쿠폰', value: '만료 전 알림' },
         ]}
         fine="주유 영수증은 날짜 · 주유소 · 유종 같은 정보만 읽고, 카드번호 · 결제 정보 · 차량번호는 저장하지 않아요."
-        shot="/screens/one-more-v1026.png"
+        shot="/screens/one-more-v1119.png"
       />
       <Section id="donate" className="v3-donate-section">
         {/* 쿠폰 나눔 카드 — 「한 번 나누면, 두 번 나눔」(2026-11-06 초록우산 기준) */}

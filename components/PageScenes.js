@@ -34,7 +34,7 @@ export function VotePreview() {
 }
 
 export function NeighborhoodExplorer() {
-  return <div className="neighborhood-explorer neighborhood-clean"><div className="neighborhood-image"><EditorialImage name="found-town" alt="편의점, 마트, 주유소가 모인 생활권을 표현한 일러스트" priority /></div><div className="found-hero-phone"><Phone src="/screens/found.png" alt="FOUND AI의 실제 생활권 혜택 앱 화면" /></div></div>;
+  return <div className="neighborhood-explorer neighborhood-clean"><div className="neighborhood-image"><EditorialImage name="found-town" alt="편의점, 마트, 주유소가 모인 생활권을 표현한 일러스트" priority /></div><div className="found-hero-phone"><Phone src="/screens/found-v1119.png" alt="FOUND AI의 실제 생활권 혜택 앱 화면" /></div></div>;
 }
 
 export function MembershipOpening() {
@@ -51,5 +51,5 @@ export function PartnerJourney() {
 }
 
 export function DownloadPhones() {
-  return <div className="download-phone-gallery"><span className="download-orbit orbit-one" /><span className="download-orbit orbit-two" /><div className="download-phone-side"><Phone src="/screens/one-more-v1026.png" alt="쿠폰과 티켓을 모으는 ONE MORE 화면" /></div><div className="download-phone-main"><Phone src="/screens/home-v1026.png" alt="풀리프 앱 홈 화면" /></div><div className="download-phone-side"><Phone src="/screens/found.png" alt="내 생활권 혜택을 확인하는 FOUND AI 화면" /></div><span className="download-floating download-floating-points"><Art name="points" sizes="180px" /><b>반가워요!</b></span><span className="download-floating download-floating-ticket"><Art name="ticket" sizes="175px" /></span></div>;
+  return <div className="download-phone-gallery"><span className="download-orbit orbit-one" /><span className="download-orbit orbit-two" /><div className="download-phone-side"><Phone src="/screens/one-more-v1119.png" alt="쿠폰과 티켓을 모으는 ONE MORE 화면" /></div><div className="download-phone-main"><Phone src="/screens/home-v1119.png" alt="풀리프 앱 홈 화면" /></div><div className="download-phone-side"><Phone src="/screens/found-v1119.png" alt="내 생활권 혜택을 확인하는 FOUND AI 화면" /></div><span className="download-floating download-floating-points"><Art name="points" sizes="180px" /><b>반가워요!</b></span><span className="download-floating download-floating-ticket"><Art name="ticket" sizes="175px" /></span></div>;
 }
