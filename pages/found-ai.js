@@ -28,7 +28,7 @@ export default function FoundAi() {
     </Section>
     <Section tone="gray" id="how-it-works">
       <div className="found-how">
-        <PhoneScene src="/screens/found-v1119.png" alt="FOUND AI 생활권 혜택 앱 화면" art="coupon" badge="만료가 가까운 쿠폰부터 챙겨요" />
+        <PhoneScene src="/screens/found-near-v1119.png" alt="FOUND AI 생활권 혜택 앱 화면" art="coupon" badge="만료가 가까운 쿠폰부터 챙겨요" />
         <div><SectionHead eyebrow="JUST YOUR NEIGHBORHOOD" title={'생활권만 정하면,\n나머지는 풀리가'} /><Steps className="mt-7" items={[
           {title:'생활권 정하기',desc:'시 · 구 · 동을 한 번만 정해두면 돼요. FULIF+ 회원은 집과 자주 가는 곳, 두 곳까지 정할 수 있어요.'},
           {title:'풀리가 찾아 정리',desc:'주유 가격, 편의점 행사, 문화·전시와 영화관 소식을 모아 카드로 보여드려요.'},
