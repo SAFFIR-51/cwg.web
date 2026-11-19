@@ -125,7 +125,7 @@ export default function FullLife() {
       <Feature
         id="vote" art="vote" eyebrow="오늘의 한 표" title={'정답은 없어요,\n오늘의 생각만 있을 뿐'}
         lead="요즘 내 삶의 BGM은? 같은 가벼운 질문이 하루 세 개씩 올라와요. 세 질문에 모두 답하면 포인트를 드려요."
-        shot="/screens/today-vote.png"
+        shot="/screens/today-vote-v1119.png"
       />
 
       {/* ⑥ 풀리프 놀이터 */}
