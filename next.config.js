@@ -17,6 +17,8 @@ const nextConfig = {
       { source: '/download.html', destination: '/download', permanent: true },
       { source: '/privacy.html', destination: '/privacy', permanent: true },
       { source: '/terms.html', destination: '/terms', permanent: true },
+      // 11-19 오픈일 변경 — 개정 약관 시행일 11-23 → 11-30
+      { source: '/terms/2026-11-23', destination: '/terms/2026-11-30', permanent: false },
       { source: '/delete-account.html', destination: '/delete-account', permanent: true },
       // 「기프티콘 잔액, 어디까지」는 ONE MORE 꿀팁 1편 02 로 합쳐졌다(2026-10-15)
       { source: '/notes/gifticon-balance', destination: '/notes/coupon-three-habits', permanent: false },
