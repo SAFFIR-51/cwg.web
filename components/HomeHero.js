@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Gift, Film, TrainFront, Plane, Volleyball, Music2, Sparkles, ScanLine, Check } from 'lucide-react';
 import { AppStoreBadge, GooglePlayBadge } from './StoreBadges';
 import { OPEN_LABEL } from '../lib/site';
 
@@ -8,11 +9,8 @@ import { OPEN_LABEL } from '../lib/site';
    움직이는 카드는 장식이라 통째로 aria-hidden, 읽히는 글은 오른쪽(휴대폰은 아래) 글 묶음의 h1 · p 다. */
 
 const TICKET_KINDS = [
-  ['영화', <><rect x="3" y="5" width="14" height="10" rx="2" /><path d="M6 5v10M14 5v10" /></>],
-  ['기차', <><rect x="5" y="3" width="10" height="11" rx="3" /><path d="M5 9h10M7 17l-2 2M13 17l2 2" /><circle cx="8" cy="12" r=".6" /><circle cx="12" cy="12" r=".6" /></>],
-  ['항공권', <path d="M2 11l16-6-5 11-3-4-8-1z" />],
-  ['스포츠', <><circle cx="10" cy="10" r="7" /><path d="M3 10h14M10 3c3 3 3 11 0 14M10 3c-3 3-3 11 0 14" /></>],
-  ['공연', <><path d="M8 15V4l8-2v11" /><circle cx="6" cy="15" r="2" /><circle cx="14" cy="13" r="2" /></>],
+  ['영화', Film], ['기차', TrainFront], ['항공권', Plane],
+  ['스포츠', Volleyball], ['공연', Music2],
 ];
 
 // 교환권 바코드 — 굵기만 다른 막대(x, 폭)
@@ -25,6 +23,9 @@ function OrbText({ className }) {
 function Stage() {
   return <div className="fh-stage-wrap" aria-hidden="true">
     <div className="fh-stage">
+      <div className="fh-orbit fh-orbit-one" /><div className="fh-orbit fh-orbit-two" />
+      <div className="fh-stage-caption"><Sparkles size={14} strokeWidth={1.6} /><span>EVERYDAY, ONCE MORE</span></div>
+      <div className="fh-orb-shadow" />
       <div className="fh-orb-shell">
         <div className="fh-orb-halo" />
         <div className="fh-orb-ring" />
@@ -47,7 +48,7 @@ function Stage() {
       <div className="fh-pop fh-pos-coupon"><div className="fh-float" style={{ '--r': '-9deg', '--d': '0s' }}>
         <div className="fh-card fh-coupon">
           <div className="fh-coupon-head">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#0163FA" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="10" width="16" height="10" rx="1.5" /><path d="M3 7h18v3H3zM12 7v13M12 7c-1.5-3-5-3-5-1s3 1 5 1c2 0 5 1 5-1s-3.5-2-5 1" /></svg>
+            <Gift strokeWidth={1.6} />
           </div>
           <div className="fh-coupon-body">
             <strong>교환권</strong>
@@ -63,8 +64,8 @@ function Stage() {
           <div className="fh-ticket-main">
             <span className="fh-ticket-eyebrow">TICKET</span>
             <strong>티켓</strong>
-            <div className="fh-ticket-kinds">{TICKET_KINDS.map(([label, icon], i) => <span key={label} style={{ '--i': i }}>
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{icon}</svg>{label}
+            <div className="fh-ticket-kinds">{TICKET_KINDS.map(([label, Icon], i) => <span key={label} style={{ '--i': i }}>
+              <Icon strokeWidth={1.8} />{label}
             </span>)}</div>
           </div>
           <div className="fh-ticket-stub"><i /><i /><i /></div>
@@ -73,7 +74,7 @@ function Stage() {
 
       <div className="fh-pop fh-pos-receipt"><div className="fh-float" style={{ '--r': '7deg', '--d': '-1.1s' }}>
         <div className="fh-card fh-receipt">
-          <strong>주유 영수증</strong>
+          <span className="fh-receipt-label"><ScanLine /> RECEIPT</span><strong>주유 영수증</strong>
           <i style={{ width: '70%' }} /><i style={{ width: '42%' }} /><i style={{ width: '64%' }} /><i style={{ width: '52%' }} />
           <div className="fh-receipt-sum"><span>합계</span><b /></div>
         </div>
@@ -81,7 +82,7 @@ function Stage() {
 
       <div className="fh-pop fh-pos-numbers"><div className="fh-float" style={{ '--r': '-8deg', '--d': '-1.6s' }}>
         <div className="fh-card fh-numbers">
-          <strong>낙첨번호</strong>
+          <span className="fh-number-label">ONE MORE CHANCE</span><strong>낙첨번호</strong>
           <div><span className="is-yellow">7</span><span className="is-green">18</span><span className="is-blue">33</span></div>
         </div>
       </div></div>
@@ -94,8 +95,8 @@ function Stage() {
       <span className="fh-spark" style={{ '--x': 300, '--y': 128, '--d': '-.9s' }}>+</span>
 
       <div className="fh-chips">
-        <span className="fh-chip is-points" style={{ '--d': '0s' }}>+120 P</span>
-        <span className="fh-chip is-entry" style={{ '--d': '-.4s' }}>응모권 1장</span>
+        <span className="fh-chip is-points" style={{ '--d': '0s' }}><Sparkles />+120 P</span>
+        <span className="fh-chip is-entry" style={{ '--d': '-.4s' }}><Check />응모권 1장</span>
         <span className="fh-chip is-life" style={{ '--d': '-.8s' }}>생활 혜택</span>
       </div>
     </div>
@@ -104,6 +105,67 @@ function Stage() {
 
 export default function HomeHero() {
   const root = useRef(null);
+
+  // Keep proximity transforms independent of the existing floating animations.
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    const motion = window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    const targets = [...el.querySelectorAll('.fh-orb-shell, .fh-pop, .fh-chip')];
+    let frame = 0;
+    let bounds = null;
+    let pointer = null;
+    const reset = () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      pointer = null;
+      bounds = null;
+      targets.forEach(target => {
+        ['--near-scale', '--near-x', '--near-y', '--near-rx', '--near-ry', '--near-light'].forEach(name => target.style.removeProperty(name));
+      });
+    };
+    const update = () => {
+      frame = 0;
+      if (!pointer || !bounds) return;
+      targets.forEach((target, index) => {
+        const rect = bounds[index];
+        const dx = pointer.x - (rect.left + rect.width / 2);
+        const dy = pointer.y - (rect.top + rect.height / 2);
+        const reach = Math.max(rect.width, rect.height) / 2 + 110;
+        const proximity = Math.max(0, 1 - Math.hypot(dx, dy) / reach);
+        const strength = proximity * proximity * (3 - 2 * proximity);
+        const x = Math.max(-1, Math.min(1, dx / reach));
+        const y = Math.max(-1, Math.min(1, dy / reach));
+        target.style.setProperty('--near-scale', 1 + strength * .12);
+        target.style.setProperty('--near-x', `${x * strength * 10}px`);
+        target.style.setProperty('--near-y', `${y * strength * 8 - strength * 5}px`);
+        target.style.setProperty('--near-rx', `${-y * strength * 10}deg`);
+        target.style.setProperty('--near-ry', `${x * strength * 12}deg`);
+        target.style.setProperty('--near-light', strength * .18);
+      });
+    };
+    const move = event => {
+      if (!motion.matches || event.pointerType !== 'mouse') return;
+      if (!bounds) bounds = targets.map(target => target.getBoundingClientRect());
+      pointer = { x: event.clientX, y: event.clientY };
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    el.addEventListener('pointermove', move, { passive: true });
+    el.addEventListener('pointerleave', reset);
+    window.addEventListener('blur', reset);
+    window.addEventListener('resize', reset);
+    window.addEventListener('scroll', reset, { passive: true });
+    motion.addEventListener('change', reset);
+    return () => {
+      reset();
+      el.removeEventListener('pointermove', move);
+      el.removeEventListener('pointerleave', reset);
+      window.removeEventListener('blur', reset);
+      window.removeEventListener('resize', reset);
+      window.removeEventListener('scroll', reset);
+      motion.removeEventListener('change', reset);
+    };
+  }, []);
 
   // 화면 밖으로 나가면 움직임을 멈춘다(배터리). 물 차오름도 같이 멈췄다가 돌아오면 이어서 찬다.
   useEffect(() => {
