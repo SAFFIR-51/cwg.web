@@ -12,6 +12,7 @@ import '../styles/landing.css';
 import '../styles/landing-lower.css';
 import '../styles/landing-scale.css';
 import '../styles/landing-motion.css';
+import '../styles/home-hero.css';
 import '../styles/v3.css';
 import '../styles/full-life-1021.css';
 import '../styles/notes-1021.css';

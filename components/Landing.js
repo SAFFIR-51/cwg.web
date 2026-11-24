@@ -4,8 +4,7 @@ import Link from 'next/link';
 import Seo from './Seo';
 import Icon from './Icon';
 import useLandingReveal from './useLandingReveal';
-import { AppStoreBadge, GooglePlayBadge } from './StoreBadges';
-import { OPEN_LABEL } from '../lib/site';
+import HomeHero from './HomeHero';
 import { StoryIcon, StoryLink, FlowStory, PulliStory, StartStory } from './LandingSections';
 
 function Arrow({ href, label, className = '' }) {
@@ -14,13 +13,6 @@ function Arrow({ href, label, className = '' }) {
 
 function Device({ screen, alt, className = '', priority = false }) {
   return <div className={`fulif-device ${className}`}><div className="fulif-device-bar" aria-hidden="true"><span>9:41</span><span className="fulif-device-island" /><span className="fulif-device-status">▮▮▮ <i /></span></div><div className="fulif-device-screen"><Image src={`/screens/${screen}.png`} alt={alt} width={780} height={1688} sizes="(max-width: 767px) 240px, (max-width: 1199px) 310px, 330px" priority={priority} /></div></div>;
-}
-
-function Hero() {
-  return <section id="intro" className="fulif-hero" aria-label="풀리프 소개">
-    <div className="fulif-hero-aura" aria-hidden="true" />
-    <div className="fulif-hero-content"><span className="fulif-hero-eyebrow">FULIF · 풀리프</span><h1>생활의 가치를<br /><span className="fulif-slogan-accent">한 번 더</span></h1><p>쿠폰 · 티켓 · 주유 영수증 · 낙첨 번호까지,<br />일상의 기록을 생활 혜택으로 바꿔주는 AI 리워드 플랫폼</p><p className="fulif-hero-body">그냥 지나칠 뻔한 것들을 한곳에 모아 두세요.<br />응모권으로, 포인트로, 내 생활권의 혜택으로 다시 돌아와요.</p><div className="fulif-store-links"><GooglePlayBadge /><AppStoreBadge /></div><small className="fulif-hero-note">{OPEN_LABEL} · 만 19세 이상 이용할 수 있어요</small></div>
-  </section>;
 }
 
 function Overview() {
@@ -45,5 +37,5 @@ export default function Landing() {
   const root = useRef(null);
   useLandingReveal(root);
 
-  return <><Seo /><div ref={root} className="fulif-landing"><Hero /><div className="fulif-services"><div className="fulif-page-grid" aria-hidden="true"><i /><i /><i /></div><Overview /><FlowStory /><div className="fulif-after-plus"><PulliStory /><Partners /><StartStory /></div></div></div></>;
+  return <><Seo /><div ref={root} className="fulif-landing"><HomeHero /><div className="fulif-services"><div className="fulif-page-grid" aria-hidden="true"><i /><i /><i /></div><Overview /><FlowStory /><div className="fulif-after-plus"><PulliStory /><Partners /><StartStory /></div></div></div></>;
 }

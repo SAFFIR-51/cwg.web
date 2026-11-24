@@ -27,37 +27,9 @@
 .fulif-menu-content strong { display: block; font-size: 30px; letter-spacing: -.04em; font-weight: 600; }
 .fulif-menu-content small { display: block; margin-top: 8px; color: #777; font-size: 14px; }
 .fulif-menu-start { display: inline-flex; align-items: center; gap: 50px; margin-top: 40px; font-size: 20px; color: #0078ff; }
-/* Fill the current visible viewport, including mobile browser chrome changes. */
-.fulif-hero { position: relative; width: 100%; height: 100vh; height: 100svh; height: 100dvh; min-height: 0; max-height: none; overflow: clip; isolation: isolate; color: #fff; background: #315879 url('/images/main-hero-clean-v23.png') center / cover no-repeat; }
-.fulif-hero-aura { position: absolute; inset: 0; pointer-events: none; }
-.fulif-hero-aura { z-index: -2; background: linear-gradient(90deg, #08111db3 0%, #08111d8c 50%, #08111d6b 100%); }
-.fulif-hero-content { position: absolute; z-index: 2; left: var(--fulif-gutter); right: var(--fulif-gutter); top: 47%; transform: translateY(-10%); }
-.fulif-hero-eyebrow { display: block; margin-bottom: 26px; font-size: 16px; letter-spacing: -.03em; font-weight: 400; line-height: 1.6; color: #e0ebff; }
-.fulif-hero h1 { margin: 0; font-size: clamp(52px, 4.1vw, 72px); font-weight: 550; line-height: 1.19; letter-spacing: -.052em; }
-/* 앱 홈 슬로건과 같은 「한 번 더」 — 8° 기울임 · 자간 조금 좁게 · 블루 #0163FA → 풀리 녹색 #2E9E3A.
-   어두운 사진 위라 「생활의 가치를」은 앱의 네이비 대신 흰색 그대로 둔다. */
-.fulif-hero h1 .fulif-slogan-accent { display: inline-block; padding-right: .14em; letter-spacing: -.065em; transform: skewX(-8deg); transform-origin: left bottom; color: #0163fa; -webkit-text-fill-color: #0163fa; }
-.fulif-hero-content > p { margin: 23px 0 26px; font-size: 16px; letter-spacing: -.03em; color: #ffffffe6; }
 .fulif-store-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .fulif-store-links > a { height: 50px; }
 .fulif-store-links > a:hover { opacity: .85; }
-.fulif-hero-icons { position: absolute; z-index: 1; width: clamp(470px, 43vw, 650px); aspect-ratio: 1; top: 50%; right: calc(var(--fulif-gutter) - 100px); transform: translateY(-44%); pointer-events: none; }
-.fulif-icon-orbit { position: absolute; border: 1px solid #ffffff40; border-radius: 50%; }
-.fulif-icon-orbit-outer { inset: 5%; transform: rotate(-25deg) scaleY(.78); }
-.fulif-icon-orbit-inner { inset: 18%; border-color: #ffffff20; transform: rotate(28deg) scaleY(.8); }
-.fulif-icon-halo { position: absolute; inset: 15%; border-radius: 50%; background: radial-gradient(circle, #e9f5ff73, #cae9ff20 48%, transparent 72%); filter: blur(18px); }
-.fulif-floating-icon { position: absolute; animation: fulif-icon-float 7s ease-in-out infinite; }
-.fulif-floating-icon img { width: 100%; height: auto; filter: drop-shadow(12px 25px 20px #173d982b); }
-.fulif-floating-gift { width: 55%; left: 22%; top: 27%; --icon-turn: -9deg; animation-delay: -2s; }
-.fulif-floating-coupon { width: 42%; left: -2%; top: 0; --icon-turn: -17deg; animation-delay: -4s; }
-.fulif-floating-ticket { width: 39%; right: -1%; top: 2%; --icon-turn: 13deg; animation-delay: -1s; }
-.fulif-floating-lotto { width: 32%; right: 0; bottom: 5%; --icon-turn: 12deg; animation-delay: -5s; }
-.fulif-icon-plus { position: absolute; left: 12%; bottom: 18%; font-size: 78px; line-height: 1; font-weight: 350; color: #d3efff; text-shadow: 3px 5px 0 #397de944, 0 10px 30px #2354bd22; transform: rotate(-16deg); }
-.fulif-icon-star { position: absolute; top: 2%; left: 48%; color: #ebf7ff; font-size: 36px; }
-.fulif-icon-dot { position: absolute; display: block; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #f2ffff, #8cc9ff 55%, #5d8ce3); box-shadow: 0 8px 18px #1646b626; }
-.fulif-icon-dot-one { width: 22px; height: 22px; right: 3%; top: 47%; }
-.fulif-icon-dot-two { width: 13px; height: 13px; left: 7%; top: 46%; }
-.fulif-icon-caption { position: absolute; bottom: 2%; left: 18%; font-size: 9px; letter-spacing: .2em; color: #e1eeff; }
 .fulif-device { position: relative; width: 280px; background: #f7f9fb; border: 6px solid #fff; border-radius: 37px; padding: 0 2px 3px; box-shadow: 0 10px 30px #162e5520, inset 0 0 0 1px #e7ecf1; overflow: hidden; }
 .fulif-device-bar { position: relative; height: 28px; padding: 0 17px; display: flex; align-items: center; justify-content: space-between; font-size: 9px; font-weight: 650; color: #171b20; }
 .fulif-device-island { position: absolute; left: 50%; top: 6px; width: 68px; height: 17px; background: #181c21; border-radius: 15px; transform: translateX(-50%); }
@@ -150,8 +122,6 @@
 .fulif-related nav { position: absolute; bottom: calc(100% + 7px); left: -16px; right: -16px; display: flex; flex-direction: column; background: #fff; padding: 12px 16px; border: 1px solid #e5e8eb; box-shadow: 0 5px 20px #0000000d; }
 .fulif-related nav a { padding: 9px 0; }
 .fulif-related nav a:hover { color: #0078ff; }
-@keyframes fulif-aura-drift { from { transform: scale(1); opacity: .8; } to { transform: scale(1.18) translate(-2%, 2%); opacity: 1; } }
-@keyframes fulif-icon-float { 0%, 100% { transform: translateY(0) rotate(var(--icon-turn)); } 50% { transform: translateY(-18px) rotate(calc(var(--icon-turn) + 4deg)); } }
 @media (prefers-reduced-motion: no-preference) {
   .fulif-will-enter { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
   .fulif-visible { opacity: 1; transform: none; }
@@ -164,9 +134,6 @@
   .fulif-nav { gap: 22px; }
   .fulif-nav a { font-size: 14px; }
   .fulif-download-link { display: none; }
-  .fulif-hero-icons { right: -10px; width: 47vw; min-width: 380px; }
-  .fulif-hero-content { top: 53%; }
-  .fulif-hero h1 { font-size: 58px; }
   .fulif-overview-devices { right: 7%; width: 320px; }
   .fulif-overview-devices .fulif-device { width: 200px; }
   .fulif-overview-media { min-height: 410px; }
@@ -178,7 +145,6 @@
   .fulif-message { font-size: 14px; padding: 17px 15px; }
 }
 @media (max-width: 767px) {
-  .fulif-hero { background-image: url('/images/main-hero-mobile-two.png'); background-position: center top; background-size: cover; min-height: 760px; }
   .site-shell[data-page="home"] { --fulif-gutter: 24px; }
   .fulif-header, .fulif-menu-top { height: 68px; }
   .fulif-header-inner, .fulif-menu-top { padding-inline: 23px; }
@@ -195,18 +161,8 @@
   .fulif-menu-content strong { font-size: 20px; font-weight: 550; }
   .fulif-menu-content small { font-size: 12px; margin-top: 5px; }
   .fulif-menu-start { font-size: 16px; margin-top: 28px; gap: 20px; }
-  .fulif-hero-content { left: 24px; right: 24px; top: auto; bottom: max(24px, 10svh, env(safe-area-inset-bottom)); transform: none; }
-  .fulif-hero h1 { font-size: clamp(42px, 11vw, 58px); font-weight: 550; line-height: 1.2; }
-  .fulif-hero-content > p { max-width: 280px; margin: 17px 0 23px; font-size: 13px; line-height: 1.65; }
   .fulif-store-links { gap: 8px; }
   .fulif-store-links > a { height: 44px; }
-  .fulif-hero-icons { width: min(86vw, 370px); min-width: 0; top: 102px; right: 50%; transform: translateX(50%); }
-  .fulif-hero-eyebrow { font-size: 13px; margin-bottom: 18px; letter-spacing: -.03em; }
-  .fulif-icon-plus { font-size: 49px; }
-  .fulif-icon-star { font-size: 25px; }
-  .fulif-icon-dot-one { width: 14px; height: 14px; }
-  .fulif-icon-dot-two { width: 9px; height: 9px; }
-  .fulif-icon-caption { display: none; }
   .fulif-scroll-cue { bottom: 37px; left: 24px; font-size: 8px; }
   .fulif-services { padding-top: 76px; padding-bottom: 76px; }
   .fulif-page-grid { inset-inline: 24px; }
@@ -258,24 +214,11 @@
   .fulif-partner-caption { left: 18px; bottom: 18px; font-size: 9px; }
   .fulif-related { width: 100%; }
 }
-@media (max-width: 767px) and (max-height: 780px) {
-  .fulif-hero-icons { top: 88px; width: min(78vw, 300px); }
-}
 @media (max-width: 374px) {
-  .fulif-hero h1 { font-size: 41px; }
   .fulif-download-link { display: none; }
   .fulif-pair-copy h2 { font-size: 23px; }
 }
-/* Keep the full introduction below the fixed header on short/landscape screens. */
-@media (max-height: 600px) {
-  .fulif-hero-content { top: auto; bottom: max(20px, 6svh, env(safe-area-inset-bottom)); transform: none; }
-  .fulif-hero h1 { font-size: clamp(30px, min(10vw, 8svh), 44px); line-height: 1.15; }
-  .fulif-hero-content > p { margin: 12px 0 16px; font-size: 13px; line-height: 1.6; }
-  .fulif-hero .fulif-store-links > a { height: 44px; }
-}
 @media (prefers-reduced-motion: reduce) {
-  .fulif-hero-aura, .fulif-floating-icon { animation: none; }
-  .fulif-floating-icon { transform: rotate(var(--icon-turn)); }
   .fulif-landing *, .fulif-header * { transition: none !important; }
 }
 

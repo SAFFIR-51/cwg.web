@@ -75,8 +75,6 @@
 }
 
 /* PDF 2026.09.24 content: spacing for added copy, reusing existing type and colors. */
-.fulif-hero-content > p.fulif-hero-body { margin: -10px 0 26px; max-width: 560px; font-size: 14px; line-height: 1.8; color: #ffffffcc; }
-.fulif-hero-note { display: block; margin-top: 16px; font-size: 12px; color: #ffffffb3; }
 .fulif-one-more-list { display: grid; gap: 8px; margin-top: 22px; }
 .fulif-one-more-list .fulif-detail-tag { margin-top: 0; }
 .fulif-app-heading { margin-top: 160px; }
@@ -95,7 +93,6 @@
 @media (max-width: 767px) {
   .fulif-app-heading { margin-top: 96px; padding-inline: 4px; }
   .fulif-app-heading + .fulif-pair { margin-top: 40px; }
-  .fulif-hero-content > p.fulif-hero-body { font-size: 13px; }
 }
 .fulif-services .fulif-chapter > .fulif-text-link,
 .fulif-services .fulif-chapter > .fulif-points-guard { margin-left: var(--fulif-copy-inset); }
