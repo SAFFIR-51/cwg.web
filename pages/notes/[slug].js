@@ -3,7 +3,7 @@ import Seo from '../../components/Seo';
 import { NOTES, getNote, seriesStatus, kstToday, NUMBER_NOTICE } from '../../lib/notes';
 import { ReadingProgress } from '../../components/Edition';
 import { NoteCover } from '../../components/SubpageDesign';
-import { NoteHero, NoteBlock, FuliNotes, FuliSays, Related } from '../../components/NoteBlocks';
+import { NoteHero, NoteBlock, FuliNotes, FuliSays, Related, NoteStoreBadges, SeeAlso } from '../../components/NoteBlocks';
 import NoteComments from '../../components/NoteComments';
 
 export async function getStaticPaths() {
@@ -17,7 +17,7 @@ function resolveRelated(note, today) {
   return items.map((it) => {
     if (it.episode) {
       const ep = episodes.find((e) => e.n === it.episode);
-      return { label: it.label, title: ep.title, href: ep.open ? `/notes/${ep.slug}` : null, status: ep.open ? null : ep.openOnDot };
+      return { label: it.label, title: it.title || ep.title, href: ep.open ? `/notes/${ep.slug}` : null, status: ep.open ? null : ep.openOnDot };
     }
     if (it.slug) {
       const n = getNote(it.slug);
@@ -63,12 +63,14 @@ export default function NoteDetail({ note, related }) {
           </div>
           {/* ⑥ ~ ⑧ */}
           {note.fuliNotes && <FuliNotes data={note.fuliNotes} />}
+          {note.storeBadges && <NoteStoreBadges data={note.storeBadges} />}
           {note.fuliSays && <FuliSays text={note.fuliSays} />}
           {note.comment && <NoteComments key={note.slug} slug={note.slug} prompt={note.comment} />}
           {/* ⑨ 함께 보면 좋아요 */}
           {related.length > 0 && <Related items={related} />}
           {/* 출처(참고) — 글 맨 끝(10-21 추가 글 2편) */}
           {note.sources && <p className="note-sources">{note.sources}</p>}
+          {note.seeAlso && <SeeAlso items={note.seeAlso} />}
           <p className="note-signoff">Have a Fuli Day!</p>
         </div>
       </article>

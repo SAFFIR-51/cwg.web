@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Icon from './Icon';
 import { Phone } from './ui';
+import { AppStoreBadge, GooglePlayBadge } from './StoreBadges';
 
 // 풀리 노트 글 상세 부품 — 그림은 기존 사이트 자산(앱 화면 · 풀리)과 HTML/CSS 로만 그린다.
 
@@ -107,9 +108,84 @@ function GiftCoupon() {
 
 const HEROES = { stillLife: StillLife, couponStack: CouponStack, ticketStack: TicketStack, dayArc: DayArc, priceBars: PriceBars, openDate: OpenDate, calendarTicket: CalendarTicket, giftCoupon: GiftCoupon };
 
+/* ---------- 연재 5~10편 대표 그림(11-25 목업) ---------- */
+const BALL = { yellow: '#f5b800', blue: '#3b82f6', red: '#ef4444', gray: '#9ca3af', green: '#22a559' };
+const nl = (t) => t.split('\n').map((l, i, a) => <span key={i}>{l}{i < a.length - 1 && <br />}</span>);
+
+// 5편 — 입장권 + 주유 영수증
+function TicketReceipt({ hero }) {
+  return <div className="note-hero nh5-scene is-peach" aria-hidden="true">
+    <div className="nh5-stack">
+      <div className="nh5-ticket"><small>{hero.ticket.kicker}</small><b>{hero.ticket.title}</b><span>{hero.ticket.chip}</span></div>
+      <div className="nh5-receipt"><b>{hero.receipt.title}</b><span>{hero.receipt.sub}</span></div>
+    </div>
+    <img className="nh5-fuli" src="/mascot/v3/fuli-cheer.jpg" alt="" />
+  </div>;
+}
+
+// 6편 — 오늘 동네에 온 작은 행운
+function NearbyLuck({ hero }) {
+  return <div className="note-hero nh5-scene is-sky" aria-hidden="true">
+    <div className="nh5-luck"><small>{hero.kicker}</small>
+      <ul>{hero.items.map(([e, t, chip]) => <li key={t}><b><i>{e}</i>{t}</b><em>{chip}</em></li>)}</ul></div>
+    <img className="nh5-fuli is-bottom" src="/mascot/v3/fuli-cheer.jpg" alt="" />
+  </div>;
+}
+
+// 7편 — 토요일 밤의 번호 → 응모권 1장
+function LosingToEntry({ hero }) {
+  return <div className="note-hero nh5-scene is-sky" aria-hidden="true">
+    <div className="nh5-stack">
+      <div className="nh5-balls"><small>{hero.kicker}</small>
+        <div>{hero.balls.map(([n, c]) => <span key={n} style={{ background: BALL[c] }}>{n}</span>)}</div>
+        <em>{hero.stamp}</em></div>
+      <div className="nh5-arrow"><span>↘</span><b className="is-green">{hero.pill}</b></div>
+    </div>
+    <img className="nh5-fuli" src="/mascot/v3/fuli-cheer.jpg" alt="" />
+  </div>;
+}
+
+// 8편 — 오늘의 1분 체크
+function DailyChecklist({ hero }) {
+  return <div className="note-hero nh5-scene is-cream" aria-hidden="true">
+    <div className="nh5-stack">
+      <div className="nh5-check"><small>{hero.kicker}</small><ul>{hero.checks.map((c) => <li key={c}><i>✓</i>{c}</li>)}</ul></div>
+      <div className="nh5-arrow is-plain"><b className="is-yellow">{hero.pill}</b></div>
+    </div>
+    <img className="nh5-fuli" src="/mascot/v3/fuli-cheer.jpg" alt="" />
+  </div>;
+}
+
+// 9편 — 오픈 카드
+function OpenCard({ hero }) {
+  return <div className="note-hero nh5-scene is-sky" aria-hidden="true">
+    <div className="nh5-stack">
+      <div className="nh5-open"><small>{hero.kicker}</small><b>{hero.headline}</b><strong>{hero.accent}</strong></div>
+      <div className="nh5-arrow is-plain"><b className="is-tag">{hero.tag}</b></div>
+    </div>
+    <img className="nh5-fuli is-bottom" src="/mascot/v3/fuli-cheer.jpg" alt="" />
+  </div>;
+}
+
+// 10편 — 쓰지 않을 쿠폰 › 아이들에게
+function CouponToKids({ hero }) {
+  return <div className="note-hero nh5-scene is-pinkmint" aria-hidden="true">
+    <div className="nh5-kids">
+      <div className="nh5-coupon"><small>{hero.coupon.kicker}</small><b>{hero.coupon.amount}</b><span>{hero.coupon.tag}</span></div>
+      <i className="nh5-chev">›</i>
+      <div className="nh5-to"><i>{hero.to.icon}</i><b>{hero.to.title}</b><span>{nl(hero.to.desc)}</span></div>
+    </div>
+    <b className="nh5-badge">{hero.badge}</b>
+    <img className="nh5-fuli is-bottom" src="/mascot/v3/fuli-hands.jpg" alt="" />
+  </div>;
+}
+
+const HEROES_1125 = { ticketReceipt: TicketReceipt, nearbyLuck: NearbyLuck, losingToEntry: LosingToEntry, dailyChecklist: DailyChecklist, openCard: OpenCard, couponToKids: CouponToKids };
+
 export function NoteHero({ hero }) {
   const H = HEROES[hero.type];
-  const body = hero.type === 'homeScreen' ? <HomeScreen badge={hero.badge} /> : hero.type === 'banner' ? <Banner hero={hero} /> : H ? <H /> : <OpenDate />;
+  const H2 = HEROES_1125[hero.type];
+  const body = H2 ? <H2 hero={hero} /> : hero.type === 'homeScreen' ? <HomeScreen badge={hero.badge} /> : hero.type === 'banner' ? <Banner hero={hero} /> : H ? <H /> : <OpenDate />;
   return <figure className="note-hero-figure">{body}{hero.caption && <figcaption>{hero.caption}</figcaption>}</figure>;
 }
 
@@ -157,7 +233,8 @@ function Table({ b }) {
 
 function Timeline({ b }) {
   return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
-    <ol className="note-timeline">{b.items.map(([when, title, desc, filled]) => <li key={title} className={filled ? 'is-filled' : ''}><small>{when}</small><b>{title}</b><p>{desc}</p></li>)}</ol></figure>;
+    <ol className="note-timeline">{b.items.map(([when, title, desc, filled]) => <li key={title} className={filled === 'dashed' ? 'is-dashed' : filled ? 'is-filled' : ''}><small>{when}</small><b>{title}</b><p>{desc}</p></li>)}</ol>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
 }
 
 function Cards({ b }) {
@@ -292,7 +369,72 @@ function Endings({ b }) {
 // 출처 · 일반 기준 같은 작은 회색 안내
 function Fine({ b }) { return <p className="note-fine">{b.text}</p>; }
 
-const FIGS = { iconRows: IconRows, calendar: Calendar, barCompare: BarCompare, endings: Endings, curve: Curve, fine: Fine, flow: Flow, balance: Balance, pair: Pair, iconGrid: IconGrid, sevenDays: SevenDays, voteSample: VoteSample, alerts: Alerts, reasons: Reasons, foundCard: FoundCard, week: Week, compare: Compare, slots: Slots, homeMap: HomeMap, steps: StepList, table: Table, timeline: Timeline, cards: Cards, donate: Donate, founder: Founder };
+/* ---------- 연재 5~10편 본문 그림(11-25 목업) ---------- */
+// 5편 — 티켓의 흔한 일생(마지막 칸만 흐린 점선) + 막대 한 줄
+function TicketLife({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <ol className="nb5-life">{b.steps.map(([icon, label], i) => <li key={label} className={i === b.steps.length - 1 ? 'is-faded' : ''}><i aria-hidden="true">{icon}</i>{lines(label)}</li>)}</ol>
+    <div className="nb5-bar"><b>{b.bar[0]}</b><span><i style={{ width: `${b.bar[2]}%` }} /></span><b>{b.bar[1]}</b></div>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 6편 — 큰 기쁨 한 번 vs 작은 기쁨 여러 번 + 인용
+function FrequencyCompare({ b }) {
+  const side = (it, cls) => <div className={cls}><div className="nb5-dots" aria-hidden="true">{Array.from({ length: it.dots }, (_, i) => <span key={i} />)}</div><b>{it.title}</b><small>{it.sub}</small></div>;
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <div className="nb5-freq">{side(b.left, 'is-one')}{side(b.right, 'is-many')}</div>
+    {b.quote && <blockquote className="nb5-quote" lang="en">{lines(b.quote)}</blockquote>}
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 세 칸이 › 로 이어지고 마지막 칸만 파랑(7 · 8편)
+const StepStrip = ({ steps }) => <ol className="nb5-steps">{steps.map(([t, d], i) => <li key={t} className={i === steps.length - 1 ? 'is-last' : ''}><b>{t}</b><small>{lines(d)}</small></li>)}</ol>;
+
+// 7편 — 큰 숫자 + 다섯 명 중 두 명 + 세 칸
+function BigStat({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <p className="nb5-big">{b.big}</p><p className="nb5-bigsub">{b.bigSub}</p>
+    <div className="nb5-people" aria-hidden="true">{Array.from({ length: b.people.total }, (_, i) => <span key={i} className={i < b.people.filled ? 'is-on' : ''}>🧍</span>)}</div>
+    <p className="nb5-people-cap">{b.people.caption}</p>
+    <StepStrip steps={b.steps} />
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 8편 — 점 186개 중 파란 점 하나
+function DotGrid({ b }) {
+  const mid = Math.floor(b.dots / b.cols / 2) * b.cols + Math.floor(b.cols / 2);
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <div className="nb5-grid" style={{ '--cols': b.cols }} aria-hidden="true">{Array.from({ length: b.dots }, (_, i) => <span key={i} className={i === mid ? 'is-on' : ''} />)}</div>
+    <p className="nb5-legend"><span>{b.legend[0]}</span><b>{b.legend[1]}</b></p>
+    <StepStrip steps={b.steps} />
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 10편 — 같은 쿠폰, 두 가지 결말
+function TwoEndings({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <ul className="nb5-two">{b.rows.map(([k, v, tone]) => <li key={k} className={`is-${tone}`}><b>{k}</b><i aria-hidden="true">›</i><span>{v}</span></li>)}</ul>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 10편 — 첫 번째 나눔 + 두 번째 나눔
+function PlusPair({ b }) {
+  return <div className="nb5-plus">{b.items.map((it, i) => <div key={it.title} className="nb5-plus-cell">{i > 0 && <i className="nb5-plus-sign" aria-hidden="true">+</i>}
+    <div className={`is-${it.tone}`}><i aria-hidden="true">{it.icon}</i><small>{it.kicker}</small><b>{it.title}</b><p>{lines(it.body)}</p></div></div>)}</div>;
+}
+
+// 10편 — 아이들 기부함(동전 병 + 세 줄)
+function DonationBox({ b }) {
+  return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
+    <div className="nb5-box"><div className="nb5-jar" aria-hidden="true"><div>{Array.from({ length: b.coins }, (_, i) => <span key={i} />)}</div></div>
+      <dl>{b.rows.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></div>
+    {b.caption && <p className="note-fig-caption">{b.caption}</p>}</figure>;
+}
+
+// 가운데 정렬 색 띠 한 줄
+function Notice({ b }) { return <p className={`nb5-notice is-${b.tone}`}>{b.text}</p>; }
+
+const FIGS = { ticketLife: TicketLife, frequencyCompare: FrequencyCompare, bigStat: BigStat, dotGrid: DotGrid, twoEndings: TwoEndings, plusPair: PlusPair, donationBox: DonationBox, notice: Notice, iconRows: IconRows, calendar: Calendar, barCompare: BarCompare, endings: Endings, curve: Curve, fine: Fine, flow: Flow, balance: Balance, pair: Pair, iconGrid: IconGrid, sevenDays: SevenDays, voteSample: VoteSample, alerts: Alerts, reasons: Reasons, foundCard: FoundCard, week: Week, compare: Compare, slots: Slots, homeMap: HomeMap, steps: StepList, table: Table, timeline: Timeline, cards: Cards, donate: Donate, founder: Founder };
 
 export function NoteBlock({ b }) {
   if (typeof b === 'string') return <p><Rich text={b} /></p>;
@@ -319,4 +461,15 @@ export function Related({ items }) {
     const inner = <><small>{it.label}</small><b>{it.title}{it.status && <em>{it.status}</em>}</b></>;
     return <li key={it.label + it.title}>{it.href ? <Link href={it.href}>{inner}</Link> : <div className="is-pending">{inner}</div>}</li>;
   })}</ul></section>;
+}
+
+
+// 9편 — 스토어 버튼(FULI NOTES 와 풀리의 한마디 사이)
+export function NoteStoreBadges({ data }) {
+  return <section className="nb5-stores"><p>{data.title}</p><div><GooglePlayBadge /><AppStoreBadge /></div></section>;
+}
+
+// 글 맨 아래 「함께 보기 · 카테고리」
+export function SeeAlso({ items }) {
+  return <p className="note-sources nb5-seealso">함께 보기{items.map(([label, cat]) => <span key={cat}> · <Link href={`/notes?cat=${cat}#notes`}>{label}</Link></span>)}</p>;
 }
