@@ -161,24 +161,60 @@ export default function Championship() {
         <div className="ch-why reveal"><p>왜 이렇게 하나요?</p><span>한 번의 1등으로 시즌 순위가 정해지지 않도록, 다른 회원도 끝까지 도전할 수 있게 하기 위해서예요. 명예 챔피언이 된 뒤에도 쌓아 온 누적 점수는 그대로 남아 <b>연말 시즌 챔피언에 계속 도전</b>할 수 있어요.</span></div>
       </section>
 
-      {/* 06 */}
+      {/* 06 — 시상 안내. 이모지 · 색 띠 카드 대신 상마다 그림을 따로 그린다(11-27) */}
       <section id="prize" className="ch-sec">
         <Head no={6} title="무엇을 받나요" lead={<>시상은 <b>한 해에 한 번</b> 드리는 것과 <b>시즌 중 수시로</b> 드리는 것으로 나뉘어요.</>} />
-        <p className="ch-group reveal"><span>한 해에 한 번</span></p>
-        <div className="ch-prizes is-three">
-          <div className="ch-prize reveal is-gold is-hero">
-            <img src="/mascot/championship/fuli-jump.png" alt="신나서 뛰어오르는 풀리" />
-            <span className="ch-prize-tag">한 해에 한 번</span><h3>2027 시즌 챔피언</h3><p>시즌 누적 점수 1위</p><strong>트로피는 시즌 챔피언<br />한 분께만 드려요</strong>
+
+        <p className="ch-group reveal"><span>한 해에 한 번</span><i>ONCE A SEASON</i></p>
+        <div className="pz-champ reveal">
+          <div className="pz-champ-rays" aria-hidden="true" />
+          <div className="pz-champ-copy">
+            <span className="pz-tag is-gold">한 해에 한 번</span>
+            <p className="pz-champ-eyebrow">SEASON CHAMPION</p>
+            <h3><em>2027</em> 시즌 챔피언</h3>
+            <p className="pz-champ-desc">시즌 누적 점수 1위</p>
+            <p className="pz-champ-trophy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Zm0 1H4v2a3 3 0 0 0 3 3m10-5h3v2a3 3 0 0 1-3 3M12 13v4m-4 3h8l-1-3H9l-1 3Z" /></svg><span>트로피는 시즌 챔피언<br />한 분께만 드려요</span></p>
           </div>
-          <div className="ch-prize reveal is-navy"><span className="ch-prize-emoji" aria-hidden="true">🏅</span><span className="ch-prize-tag">한 해에 한 번</span><h3>시즌 TOP 10</h3><p>시즌 챔피언을 포함한<br />TOP 10에 순위별 시상</p></div>
-          <div className="ch-prize reveal is-green"><span className="ch-prize-emoji" aria-hidden="true">🎁</span><span className="ch-prize-tag">한 해에 한 번</span><h3>시즌 경품 추첨</h3><p>FULIF+ 회원 전용</p></div>
+          <div className="pz-champ-stage" aria-hidden="true">
+            <i className="pz-confetti" /><i className="pz-confetti" /><i className="pz-confetti" /><i className="pz-confetti" /><i className="pz-confetti" />
+            <img src="/mascot/championship/fuli-jump.png" alt="" />
+            <div className="pz-podium"><span>1</span></div>
+          </div>
         </div>
-        <p className="ch-group reveal"><span>시즌 중 수시</span></p>
-        <div className="ch-prizes is-two">
-          <div className="ch-prize reveal is-purple"><span className="ch-prize-emoji" aria-hidden="true">👑</span><span className="ch-prize-tag">시즌 중 수시</span><h3>명예 챔피언</h3><p>1등 번호와 일치한<br />회원이 나오면</p></div>
-          <div className="ch-prize reveal is-blue"><span className="ch-prize-emoji" aria-hidden="true">✨</span><span className="ch-prize-tag">시즌 중 수시</span><h3>시즌 특별 이벤트</h3><p>상위권만의 잔치가 아니에요. 누적 점수 구간별 리그(상위 · 중위 · 하위)로 나눠 시즌별 이벤트 추첨을 통해 시상하고, 순위 급상승처럼 다양한 주제의 시상도 있어요.</p></div>
+
+        <div className="pz-pair">
+          <div className="pz-card reveal">
+            <div className="pz-board" aria-hidden="true">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => <div key={n} className={n <= 3 ? `is-m${n}` : ''}><b>{n}</b><i style={{ width: `${100 - (n - 1) * 7}%` }} /></div>)}
+            </div>
+            <div className="pz-card-text"><span className="pz-tag">한 해에 한 번</span><h3>시즌 TOP 10</h3><p>시즌 챔피언을 포함한<br />TOP 10에 순위별 시상</p></div>
+          </div>
+          <div className="pz-card reveal">
+            <div className="pz-ticket" aria-hidden="true">
+              <div><small>SEASON DRAW</small><b>시즌 경품 추첨</b><span>FULIF+ ONLY</span></div>
+              <em>2027</em>
+            </div>
+            <div className="pz-card-text"><span className="pz-tag">한 해에 한 번</span><h3>시즌 경품 추첨</h3><p>FULIF+ 회원 전용</p></div>
+          </div>
         </div>
-        <div className="ch-why is-soft reveal"><p>상위권이 아니어도 상을 받을 기회가 있어요.</p></div>
+
+        <p className="ch-group reveal"><span>시즌 중 수시</span><i>ANYTIME IN SEASON</i></p>
+        <div className="pz-pair is-wide">
+          <div className="pz-card is-honor reveal">
+            <div className="pz-medal" aria-hidden="true">
+              <svg viewBox="0 0 120 150"><path className="pz-ribbon-l" d="M38 70 22 140l22-12 12 20 10-62Z" /><path className="pz-ribbon-r" d="M82 70l16 70-22-12-12 20-10-62Z" /><polygon className="pz-medal-edge" points={Array.from({ length: 32 }, (_, i) => { const r = i % 2 ? 46 : 52; const t = (i / 32) * Math.PI * 2; return `${60 + r * Math.sin(t)},${58 - r * Math.cos(t)}`; }).join(' ')} /><circle className="pz-medal-face" cx="60" cy="58" r="38" /><path className="pz-medal-crown" d="M42 64l-4-20 11 9 11-14 11 14 11-9-4 20Z" /><rect className="pz-medal-crown" x="42" y="67" width="36" height="5" rx="2" /></svg>
+            </div>
+            <div className="pz-card-text"><span className="pz-tag is-purple">시즌 중 수시</span><h3>명예 챔피언</h3><p>1등 번호와 일치한<br />회원이 나오면</p></div>
+          </div>
+          <div className="pz-card is-event reveal">
+            <div className="pz-leagues" aria-hidden="true">
+              {[['상위', 92], ['중위', 66], ['하위', 44]].map(([t, h]) => <div key={t}><span className="pz-gift"><svg viewBox="0 0 24 24"><path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7c-4 0-5-4-2.5-4S12 7 12 7Zm0 0c4 0 5-4 2.5-4S12 7 12 7Z" /></svg></span><i style={{ height: h }}><b>{t}</b><small>리그</small></i></div>)}
+              <span className="pz-jump"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l4 4 6-8M15 8h5v5" /></svg>순위 급상승</span>
+            </div>
+            <div className="pz-card-text"><span className="pz-tag is-blue">시즌 중 수시</span><h3>시즌 특별 이벤트</h3><p>상위권만의 잔치가 아니에요. 누적 점수 구간별 리그(상위 · 중위 · 하위)로 나눠 시즌별 이벤트 추첨을 통해 시상하고, 순위 급상승처럼 다양한 주제의 시상도 있어요.</p></div>
+          </div>
+        </div>
+        <p className="pz-closing reveal"><img src="/mascot/championship/fuli-cheer.png" alt="" /><span><b>상위권이 아니어도</b> 상을 받을 기회가 있어요.</span></p>
       </section>
 
       {/* 07 · 08 */}
