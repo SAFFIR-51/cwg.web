@@ -283,7 +283,7 @@ function IconGrid({ b }) {
     {b.caption && <p className="note-fig-caption"><Rich text={b.caption} /></p>}</figure>;
 }
 
-// 이용한 날부터 7일 — 날짜 칸 + 규칙 두 줄 + 다섯 칸
+// 이용한 날부터 7일 — 날짜 칸 + 규칙 두 줄 + 응모 칸(11-27 세 칸)
 function SevenDays({ b }) {
   return <figure className="note-fig"><figcaption className="note-fig-title">{b.title}</figcaption>
     <ol className="note-days">{b.days.map((d, i) => <li key={d} className={i === 0 ? 'is-first' : i === b.days.length - 1 ? 'is-out' : ''}>{lines(d)}</li>)}</ol>

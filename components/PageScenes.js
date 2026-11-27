@@ -20,11 +20,11 @@ export function ServiceOpening() {
 }
 
 export function CouponWallet() {
-  return <div className="coupon-wallet-scene" aria-label="쿠폰과 티켓을 모으면 등록 다섯 번마다 응모권 한 개">
+  return <div className="coupon-wallet-scene" aria-label="쿠폰과 티켓을 모으면 등록 세 번마다 응모권 한 개">
     <div className="wallet-title"><span>내 쿠폰 · 내 티켓</span><Icon name="add" size={24} /></div>
     <div className="wallet-item"><Art name="coupon" sizes="170px" /><div><small>쿠폰</small><h3>아직 남아 있는<br />커피 한 잔의 여유</h3><span className="wallet-expiry">만료 이틀 전, 먼저 알려드려요</span></div></div>
     <div className="wallet-item wallet-ticket"><Art name="ticket" sizes="170px" /><div><small>티켓</small><h3>다녀온 날의 기억도<br />차곡차곡</h3><b>등록하면 응모 기회 한 칸</b></div></div>
-    <div className="wallet-progress"><div>{[1,2,3,4].map(n=><span key={n}><Icon name="check" size={18} /></span>)}<span className="wallet-last"><Icon name="confirmation_number" size={20} /></span></div><p>등록 <b>5번</b>이면, 응모권 <b>1개</b></p></div>
+    <div className="wallet-progress"><div>{[1,2].map(n=><span key={n}><Icon name="check" size={18} /></span>)}<span className="wallet-last"><Icon name="confirmation_number" size={20} /></span></div><p>등록 <b>3번</b>이면, 응모권 <b>1개</b></p></div>
   </div>;
 }
 

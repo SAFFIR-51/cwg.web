@@ -21,8 +21,8 @@ const REWARDS = [
   },
   {
     name: 'ticket', label: 'ONE MORE', title: <>다녀온 날의 기록이<br />한 번 더의 기회로</>,
-    desc: <>티켓을 등록하면 바로 10P.<br />쿠폰·티켓 5번 등록하면 응모권 1개.</>,
-    tag: '5번 등록하면', metric: '응모권 1개', href: '/full-life#one-more',
+    desc: <>티켓을 등록하면 바로 10P.<br />쿠폰·티켓·주유 영수증 3번 등록하면 응모권 1개.</>,
+    tag: '3번 등록하면', metric: '응모권 1개', href: '/full-life#one-more',
   },
   {
     name: 'number', label: '낙첨 ONE MORE', title: <>아쉬웠던 내 번호의<br />새로운 시작</>,

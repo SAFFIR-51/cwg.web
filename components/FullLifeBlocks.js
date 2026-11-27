@@ -69,10 +69,10 @@ export function OneMoreCriteria() {
 
 export function EntryCells() {
   return (
-    <div className="fl-cells reveal" aria-label="등록 다섯 번이면 응모권 한 개">
-      {[1, 2, 3, 4].map((n) => <span key={n} aria-hidden="true">✓</span>)}
+    <div className="fl-cells reveal" aria-label="등록 세 번이면 응모권 한 개">
+      {[1, 2].map((n) => <span key={n} aria-hidden="true">✓</span>)}
       <span className="fl-cells-last" aria-hidden="true">🎟</span>
-      <p>등록 <b>5번</b>이면, 응모권 <b>1개</b></p>
+      <p>등록 <b>3번</b>이면, 응모권 <b>1개</b></p>
     </div>
   );
 }

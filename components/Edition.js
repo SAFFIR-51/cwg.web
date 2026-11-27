@@ -51,7 +51,7 @@ export function PulliStory() {
 }
 
 export function ServiceOverview() {
-  return <div className="service-overview"><p>이미 가진 일상에서<br /><b>시작되는 새로운 가치</b></p>{[['10','P','티켓 한 장 등록하면'],['1','개','쿠폰 · 티켓 다섯 번 등록하면 응모권'],['30','P','오늘의 한 표, 세 가지 모두 답하면']].map(([value,unit,desc])=><div key={value}><strong>{value}<small>{unit}</small></strong><span>{desc}</span></div>)}</div>;
+  return <div className="service-overview"><p>이미 가진 일상에서<br /><b>시작되는 새로운 가치</b></p>{[['10','P','티켓 한 장 등록하면'],['1','개','쿠폰 · 티켓 세 번 등록하면 응모권'],['30','P','오늘의 한 표, 세 가지 모두 답하면']].map(([value,unit,desc])=><div key={value}><strong>{value}<small>{unit}</small></strong><span>{desc}</span></div>)}</div>;
 }
 
 export function DiscoveryHero() {

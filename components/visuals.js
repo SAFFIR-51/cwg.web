@@ -23,7 +23,7 @@ export function RewardArt() {
   return <div className="reward-art">
     <Image className="reward-sculpture" src="/images/one-more-sculpture.png" alt="쿠폰과 포인트를 표현한 블루 티켓 오브제" width={1254} height={1254} sizes="(max-width: 767px) 100vw, 680px" priority quality={90} />
     <div className="floating-reward reward-top"><span className="reward-icon"><Icon name="check" size={20} /></span><div><span>다 쓴 쿠폰도, 한 번 더</span><strong>사용완료하면 <b>10P</b></strong></div></div>
-    <div className="floating-reward reward-bottom"><img src="/icons/gift.png" alt="" /><div><span>새로운 기회가 쌓이는 곳</span><strong>등록 5번 → 응모권 1개</strong></div></div>
+    <div className="floating-reward reward-bottom"><img src="/icons/gift.png" alt="" /><div><span>새로운 기회가 쌓이는 곳</span><strong>등록 3번 → 응모권 1개</strong></div></div>
     <span className="art-caption">A LITTLE MORE IN EVERY DAY.</span>
   </div>;
 }
