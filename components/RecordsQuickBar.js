@@ -25,6 +25,10 @@ export default function RecordsQuickBar({ current }) {
       {list}
       <Link href="/records" className="rq-all" onClick={() => setOpen(false)}>전체 보기</Link>
     </div>
-    <button type="button" className="rq-fab" aria-expanded={open} onClick={() => setOpen((v) => !v)}><b>연재</b><span>{RECORDS[0].no}회</span></button>
+    <button type="button" className="rq-fab" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7h10M9 12h10M9 17h7" /><circle cx="5" cy="7" r="1.2" /><circle cx="5" cy="12" r="1.2" /><circle cx="5" cy="17" r="1.2" /></svg>
+      <span className="rq-fab-text"><b>연재</b><small>최신 {RECORDS[0].no}회</small></span>
+      <svg className="rq-fab-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6" /></svg>
+    </button>
   </aside>;
 }
