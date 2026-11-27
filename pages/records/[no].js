@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Seo from '../../components/Seo';
 import Icon from '../../components/Icon';
+import RecordsQuickBar from '../../components/RecordsQuickBar';
 import { RECORDS, recordByNo } from '../../lib/records';
 
 export async function getStaticPaths() {
@@ -103,5 +104,6 @@ export default function Record({ no }) {
         {newer ? <Link href={`/records/${newer.no}`}>{newer.no}회<Icon name="chevron_right" size={18} /></Link> : <Link href="/championship" className="is-primary">챔피언십 알아보기<Icon name="arrow_forward" size={18} /></Link>}
       </nav>
     </article>
+    <RecordsQuickBar current={r.no} />
   </div>;
 }

@@ -10,6 +10,7 @@ import Icon from '../components/Icon';
 import { SectionNav } from '../components/Edition';
 import { useStoreTarget } from '../components/StoreCta';
 import { RECORDS, RECORD_SCHEDULE } from '../lib/records';
+import RecordsQuickBar from '../components/RecordsQuickBar';
 
 const BALL = { 7: 'o', 15: 'b', 19: 'b', 32: 'p', 34: 'p', 43: 'g' };
 const SAMPLE = [7, 15, 19, 32, 34, 43];
@@ -275,5 +276,6 @@ export default function Championship() {
       </ul>
       <Link href="/records" className="ch-series-all">지난 회 전체 보기</Link>
     </div>
+    <RecordsQuickBar />
   </div>;
 }

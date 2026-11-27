@@ -414,3 +414,27 @@
   .pz-leagues { width:100%; max-width:260px; }
   .ch-group i { display:none; }
 }
+
+/* ===== 연재 회차 퀵바(오른쪽) ===== */
+.rq { position:fixed; z-index:40; right:24px; top:50%; transform:translate(16px,-50%); opacity:0; pointer-events:none; transition:opacity .3s, transform .3s var(--ease-out-strong); }
+.rq.is-shown { opacity:1; transform:translate(0,-50%); pointer-events:auto; }
+.rq-panel { width:168px; padding:16px 14px 12px; border-radius:20px; background:#fffffff2; backdrop-filter:blur(14px); border:1px solid #dfe7f3; box-shadow:0 18px 40px #1a315622; }
+.rq-label { display:inline-flex; height:22px; align-items:center; padding:0 8px; border-radius:6px; background:#246bfe; color:#fff; font-size:11px; font-weight:800; }
+.rq-title { margin-top:8px; font-size:13px; font-weight:800; line-height:1.4; color:#182638; letter-spacing:-.03em; }
+.rq ol { margin-top:10px; display:grid; gap:4px; max-height:260px; overflow-y:auto; }
+.rq ol a { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:9px 10px; border-radius:11px; background:#f4f7fc; font-size:13px; color:#4e5968; transition:background .2s, color .2s; }
+.rq ol a b { color:#182638; font-weight:800; }
+.rq ol a span { font-size:12px; color:#8b95a1; }
+.rq ol a:hover { background:#e6efff; }
+.rq ol a[aria-current] { background:#246bfe; } .rq ol a[aria-current] b, .rq ol a[aria-current] span { color:#fff; }
+.rq-all { display:block; margin-top:8px; text-align:center; font-size:12px; font-weight:700; color:#246bfe; padding:4px; }
+.rq-fab { display:none; }
+@media (max-width: 1319px) {
+  .rq { top:auto; bottom:20px; right:16px; transform:translateY(16px); }
+  .rq.is-shown { transform:none; }
+  .rq-panel { position:absolute; right:0; bottom:66px; opacity:0; transform:translateY(8px) scale(.97); transform-origin:bottom right; pointer-events:none; transition:opacity .2s, transform .2s; }
+  .rq.is-open .rq-panel { opacity:1; transform:none; pointer-events:auto; }
+  .rq-fab { display:flex; flex-direction:column; align-items:center; justify-content:center; width:56px; height:56px; border-radius:50%; background:#246bfe; color:#fff; box-shadow:0 12px 26px #246bfe55; line-height:1.1; }
+  .rq-fab b { font-size:13px; font-weight:800; } .rq-fab span { font-size:10px; opacity:.85; }
+  .rq.is-open .rq-fab { background:#182638; }
+}

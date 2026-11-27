@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Seo from '../../components/Seo';
 import Icon from '../../components/Icon';
+import RecordsQuickBar from '../../components/RecordsQuickBar';
 import { RECORDS, RECORD_SCHEDULE } from '../../lib/records';
 
 export default function Records() {
@@ -16,5 +17,6 @@ export default function Records() {
         {RECORDS.map((r) => <li key={r.no}><Link href={`/records/${r.no}`}><b>{r.no}회</b><span className="is-date">{r.date}</span><span className="is-period">{r.period}</span><Icon name="arrow_forward" size={20} /></Link></li>)}
       </ul>
     </div>
+    <RecordsQuickBar />
   </div>;
 }
