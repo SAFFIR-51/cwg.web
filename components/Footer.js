@@ -3,7 +3,7 @@ import { COMPANY } from '../lib/site';
 
 // PDF 2026.09.24 푸터: 메뉴 · 브랜드 파트너 문의 · 이용 안내
 const GROUPS = [
-  ['풀리프', [['홈', '/'], ['Full Life', '/full-life'], ['FOUND AI', '/found-ai'], ['멤버십', '/membership'], ['풀리 노트', '/notes'], ['다운로드', '/download']]],
+  ['풀리프', [['홈', '/'], ['Full Life', '/full-life'], ['FOUND AI', '/found-ai'], ['챔피언십', '/championship'], ['멤버십', '/membership'], ['풀리 노트', '/notes'], ['다운로드', '/download']]],
   ['브랜드 파트너', [['브랜드 파트너 문의', '/partners']]],
   ['이용 안내', [['이용약관', '/terms'], ['개인정보처리방침', '/privacy'], ['고객센터', '/support']]],
 ];

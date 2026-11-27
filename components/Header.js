@@ -5,17 +5,19 @@ import { BrandLogo } from './Brand';
 import Icon from './Icon';
 
 
-// 모바일 메뉴(PDF 2026.09.24): 홈 · Full Life · FOUND AI · 멤버십 · 풀리 노트 · 다운로드
+// 모바일 메뉴(PDF 2026.09.24): 홈 · Full Life · FOUND AI · 챔피언십 · 멤버십 · 풀리 노트 · 다운로드
+// 챔피언십은 11-26 신설 — 멤버십(가격) 앞에 그 가격의 이유를 둔다. 부제에 「복권」을 쓰지 않는다.
 const MENU = [
   { label: '홈', href: '/', detail: '생활의 가치를, 한 번 더.' },
   { label: 'Full Life', href: '/full-life', detail: '풀리프로 채우는 하루' },
   { label: 'FOUND AI', href: '/found-ai', detail: '풀리가 찾아 드려요' },
+  { label: '챔피언십', href: '/championship', detail: '내가 만든 번호로, 매주' },
   { label: '멤버십', href: '/membership', detail: 'FULIF+' },
   { label: '풀리 노트', href: '/notes', detail: '풀리가 적어둔 이야기' },
   { label: '다운로드', href: '/download', detail: 'Google Play · App Store' },
 ];
 // 데스크톱 상단 메뉴: 홈 · 다운로드는 로고와 다운로드 버튼이 대신하고, 브랜드 파트너 문의를 둔다.
-const TOP_NAV = [...MENU.slice(1, 5), { label: '브랜드 파트너', href: '/partners' }];
+const TOP_NAV = [...MENU.slice(1, 6), { label: '브랜드 파트너', href: '/partners' }];
 
 export default function Header() {
   const router = useRouter();

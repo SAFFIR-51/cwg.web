@@ -36,6 +36,8 @@ const GLYPHS = {
   chat: <path d="M20 3H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h3l5 3v-3h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM7 8h10M7 13h6" />,
   favorite: <path d="M20 5a5 5 0 0 0-8 1 5 5 0 0 0-8-1c-4 4 0 9 8 15 8-6 12-11 8-15Z" />,
   play_arrow: <path d="m8 4 12 8-12 8V4Z" />,
+  shopping_bag_off: <><path d="M3 3l18 18M6 7H5l-1 14h16l-.3-4M9 7V6a3 3 0 0 1 5.7-1.3M12 7h7l.6 7" /></>,
+  schedule: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
   group: <><circle cx="9" cy="7" r="4" /><path d="M2 21v-2a7 7 0 0 1 14 0v2M17 3a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v2" /></>,
 };
 

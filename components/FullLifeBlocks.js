@@ -121,6 +121,7 @@ export function PlaygroundTiles() {
         <Art name="score" sizes="72px" />
         <h3>챔피언십 · 럭키 스코어</h3>
         <p>직접 만든 번호로 챔피언십에 도전하고, 아쉬웠던 번호는 점수로. 현금은 지급하지 않아요.</p>
+        <Link href="/championship" className="fl-video-link">챔피언십 자세히 보기 ›</Link>
       </article>
     </div>
   );
