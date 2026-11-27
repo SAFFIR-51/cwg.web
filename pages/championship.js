@@ -167,7 +167,7 @@ export default function Championship() {
         <p className="ch-group reveal"><span>한 해에 한 번</span></p>
         <div className="ch-prizes is-three">
           <div className="ch-prize reveal is-gold is-hero">
-            <img src="/mascot/championship/fuli-trophy.png" alt="트로피를 든 풀리" />
+            <img src="/mascot/championship/fuli-jump.png" alt="신나서 뛰어오르는 풀리" />
             <span className="ch-prize-tag">한 해에 한 번</span><h3>2027 시즌 챔피언</h3><p>시즌 누적 점수 1위</p><strong>트로피는 시즌 챔피언<br />한 분께만 드려요</strong>
           </div>
           <div className="ch-prize reveal is-navy"><span className="ch-prize-emoji" aria-hidden="true">🏅</span><span className="ch-prize-tag">한 해에 한 번</span><h3>시즌 TOP 10</h3><p>시즌 챔피언을 포함한<br />TOP 10에 순위별 시상</p></div>
