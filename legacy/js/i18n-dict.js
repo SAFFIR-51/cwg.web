@@ -22,7 +22,7 @@ window.FULIF_I18N_EN = {
   'foot.ceo_v': 'Lee Han-soon',
   'foot.bizno_l': 'Business Reg. No.',
   'foot.ecom_l': 'E-commerce Reg. No.',
-  'foot.ecom_v': 'No. 2026-Seoul Gangnam-02697',
+  'foot.ecom_v': 'No. 2026-Seoul Songpa-3204',
   'foot.kr_l': 'Korea Office',
   'foot.kr_v': '1010, 10F, H Business Park Bldg. C, 26 Beopwon-ro 9-gil, Songpa-gu, Seoul, Republic of Korea',
   'foot.eu_l': 'EU Office',
